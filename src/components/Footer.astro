@@ -4,17 +4,23 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
 ---
 <footer class="site-footer">
   <div class="wrap">
+    <div class="foot-oath">
+      <p>Tools for when the network goes dark.</p>
+      <p>Evidence for when public memory does.</p>
+      <span class="stamp neutral">Kept in public</span>
+    </div>
+
     <div class="foot-grid">
       <div>
-        <h4>Dashboards</h4>
+        <h4>Open the file</h4>
         <ul>
-          <li><a href="/politicians/">Politician Cases</a></li>
-          <li><a href="/corruption/">Corruption Data</a></li>
-          <li><a href="/coverage/">Coverage &amp; gaps</a></li>
+          <li><a href="/toolkit/">The kit</a></li>
+          <li><a href="/politicians/">The record</a></li>
+          <li><a href="/signals/">The signals</a></li>
         </ul>
       </div>
       <div>
-        <h4>Trust</h4>
+        <h4>Check the work</h4>
         <ul>
           <li><a href="/methodology/">Methodology</a></li>
           <li><a href="/sources/">Source registry</a></li>
@@ -22,19 +28,46 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
         </ul>
       </div>
       <div>
-        <h4>Project</h4>
+        <h4>Keep it moving</h4>
         <ul>
-          <li><a href="/">Toolkit home</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/mirrors/">Mirrors &amp; downloads</a></li>
           <li><a href="https://github.com/iamthevengence-orsomething/india-tech-collective" rel="noopener">GitHub</a></li>
-          <li><a href="/downloads/README.txt">Data downloads</a></li>
         </ul>
       </div>
     </div>
+
     <p class="foot-disclaimer">
-      Non-partisan public-interest data. Case information is self-declared by candidates in sworn election
-      affidavits; a declared case is an accusation, not a conviction, and every person is presumed innocent
-      unless convicted by a court. Dataset {build.datasetVersion} · data as of {build.dataAsOf}
-      {build.dataMode === 'demo' ? ' · DEMO DATA — not real records' : ''} · No trackers.
+      A declared case is an accusation, not a conviction. Guilt is for courts alone.
+      Dataset {build.datasetVersion} · updated {build.dataAsOf}
+      {build.dataMode === 'demo' ? ' · DEMO DATA — not real records' : ''} · no trackers.
     </p>
+    <p class="foot-signoff">Kept in public. <span lang="hi">सत्यमेव जयते।</span></p>
   </div>
 </footer>
+
+<style>
+  .foot-oath {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 1.1rem;
+    margin-bottom: 2rem;
+    font-family: var(--display);
+    font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+    color: var(--ink-strong);
+  }
+  .foot-oath .stamp { margin-left: auto; font-size: 0.55rem; }
+  .foot-signoff {
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    color: var(--file-khaki);
+    text-transform: uppercase;
+  }
+  @media (max-width: 680px) {
+    .foot-oath { display: grid; }
+    .foot-oath .stamp { margin: 0.5rem 0 0; }
+  }
+</style>

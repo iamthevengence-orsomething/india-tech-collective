@@ -4,7 +4,7 @@
   "description": "The India Tech Collective — open-source civic toolkit and accountability dashboards",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run data:check && npm run og:generate && astro build && tsx scripts/csp-hashes.ts --verify",
+    "build": "npm run data:check && npm run og:generate && astro build && tsx scripts/sites-adapter.ts && tsx scripts/csp-hashes.ts --verify",
     "build:demo": "DATA_MODE=demo astro build --outDir dist-demo",
     "preview": "astro preview",
     "data:fetch": "tsx scripts/data-fetch.ts",

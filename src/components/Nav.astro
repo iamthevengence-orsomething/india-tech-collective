@@ -2,39 +2,74 @@
 interface Props { current?: string }
 const { current } = Astro.props;
 const primary = [
-  { href: '/toolkit/', label: 'Toolkit', key: 'toolkit' },
-  { href: '/politicians/', label: 'Politicians', key: 'politicians' },
-  { href: '/corruption/', label: 'Corruption', key: 'corruption' },
-];
-const secondary = [
-  { href: '/coverage/', label: 'Coverage', key: 'coverage' },
-  { href: '/methodology/', label: 'Methodology', key: 'methodology' },
+  { href: '/toolkit/', label: 'Tools', keys: ['toolkit', 'tools'] },
+  { href: '/politicians/', label: 'Record', keys: ['politicians', 'corruption', 'record'] },
+  { href: '/signals/', label: 'Signals', keys: ['signals'] },
+  { href: '/frontier/', label: 'Frontier', keys: ['frontier'] },
+  { href: '/contribute/', label: 'Contribute', keys: ['contribute'] },
 ];
 ---
 <nav class="site-nav" aria-label="Primary">
   <div class="site-nav-in">
-    <a class="wordmark" href="/">India Tech Collective</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" id="navToggle">
-      Menu
-    </button>
+    <a class="wordmark" href="/" aria-label="India Tech Collective home">
+      <img class="wordmark-mark" src="/brand/profile-picture.png" width="34" height="34" alt="" />
+      <span>India Tech Collective</span>
+    </a>
+
     <div class="nav-links" id="navLinks">
-      {primary.map((l) => (
-        <a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>
+      {primary.map((link) => (
+        <a href={link.href} aria-current={link.keys.includes(current ?? '') ? 'page' : undefined}>{link.label}</a>
       ))}
-      {secondary.map((l) => (
-        <a class="nav-secondary" href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>
-      ))}
+    </div>
+
+    <div class="nav-actions">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" id="navToggle">
+        Menu
+      </button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to blackout mode" title="Blackout mode">
+        <span aria-hidden="true">◐</span>
+      </button>
     </div>
   </div>
 </nav>
 <script is:inline>
   (function () {
-    var t = document.getElementById('navToggle');
-    var m = document.getElementById('navLinks');
-    if (!t || !m) return;
-    t.addEventListener('click', function () {
-      var open = m.classList.toggle('open');
-      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var menuButton = document.getElementById('navToggle');
+    var menu = document.getElementById('navLinks');
+    var themeButton = document.getElementById('themeToggle');
+
+    function currentTheme() {
+      return document.documentElement.getAttribute('data-theme') === 'blackout' ? 'blackout' : 'paper';
+    }
+
+    function setTheme(next) {
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('itc-theme', next); } catch (_) {}
+      if (themeButton) {
+        themeButton.setAttribute('aria-label', next === 'blackout' ? 'Switch to paper mode' : 'Switch to blackout mode');
+        themeButton.setAttribute('title', next === 'blackout' ? 'Paper mode' : 'Blackout mode');
+      }
+    }
+
+    if (menuButton && menu) {
+      menuButton.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    if (themeButton) {
+      setTheme(currentTheme());
+      themeButton.addEventListener('click', function () {
+        setTheme(currentTheme() === 'blackout' ? 'paper' : 'blackout');
+      });
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== '.' || event.metaKey || event.ctrlKey || event.altKey) return;
+      var target = event.target;
+      if (target && /input|textarea|select/i.test(target.tagName)) return;
+      setTheme(currentTheme() === 'blackout' ? 'paper' : 'blackout');
     });
   })();
 </script>

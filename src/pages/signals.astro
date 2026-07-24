@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+const tallies = Array.from({ length: 65 }, (_, index) => index + 1);
+---
+<Base
+  title="The Signals — India Tech Collective"
+  description="A sourced view of internet shutdowns in India, with methodology and disagreement kept visible."
+  path="/signals/"
+  current="signals"
+>
+  <div class="signals-shell">
+    <header class="signals-head wrap-wide">
+      <div>
+        <p class="signal-kicker">network status / public log</p>
+        <h1>The signals.</h1>
+        <p>Connectivity can disappear. The record of it should not.</p>
+      </div>
+      <div class="status-block" aria-label="Signal tracker status">
+        <span class="pulse" aria-hidden="true"></span>
+        <p>tracker online</p>
+        <small>method: independent records</small>
+      </div>
+    </header>
+
+    <section class="tally-section wrap-wide" aria-labelledby="tally-title">
+      <div class="tally-copy">
+        <p class="signal-kicker">India · calendar year 2025</p>
+        <h2 id="tally-title"><strong>65</strong> recorded shutdowns.</h2>
+        <p>
+          Access Now and the #KeepItOn coalition recorded 65 shutdowns in India in
+          2025. Each mark represents one recorded interruption.
+        </p>
+        <a href="https://www.accessnow.org/internet-shutdowns-2025/" rel="noopener">Open the 2025 report ↗</a>
+      </div>
+      <div class="tally-wall" aria-hidden="true">
+        {tallies.map((tally) => <i style={`--i:${tally}`}></i>)}
+      </div>
+    </section>
+
+    <section class="signal-method wrap-wide">
+      <article>
+        <span>01</span>
+        <h2>What counts.</h2>
+        <p>
+          A deliberate disruption of internet or electronic communications,
+          rendering them inaccessible or effectively unusable for a population or
+          within a location.
+        </p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Whose count.</h2>
+        <p>
+          Access Now provides the annual global dataset. SFLC.in maintains a
+          separate India tracker. Counts can differ because methods and verification
+          windows differ.
+        </p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>What is missing.</h2>
+        <p>
+          District-level event records are not yet shipped in this repository.
+          Until they are, the gap remains visible.
+        </p>
+        <span class="gap-stamp">Gap in record</span>
+      </article>
+    </section>
+
+    <footer class="signal-sources wrap-wide">
+      <p>sources / dated</p>
+      <a href="https://www.accessnow.org/internet-shutdowns-2025/" rel="noopener">
+        Access Now, 2025 annual report · published 31 Mar 2026
+      </a>
+      <a href="https://sflc.in/access/" rel="noopener">SFLC.in Internet Shutdowns Tracker</a>
+    </footer>
+  </div>
+</Base>
+
+<style>
+  .signals-shell {
+    --signal: #56f47b;
+    --signal-dim: rgba(86, 244, 123, 0.64);
+    color: #d8ffe0;
+    background:
+      repeating-linear-gradient(0deg, rgba(86, 244, 123, 0.025) 0 1px, transparent 1px 4px),
+      radial-gradient(circle at 82% 8%, rgba(86, 244, 123, 0.09), transparent 28%),
+      #090b09;
+    min-height: 100vh;
+    font-family: var(--mono);
+    padding-bottom: 5rem;
+  }
+  .signals-head {
+    display: flex; justify-content: space-between; align-items: end; gap: 2rem;
+    padding-block: clamp(4rem, 9vw, 8rem) 2rem; border-bottom: 1px solid rgba(86, 244, 123, 0.35);
+  }
+  .signal-kicker { color: var(--signal-dim); font-size: 0.65rem; letter-spacing: 0.13em; text-transform: lowercase; }
+  .signals-head h1 { color: #effff2; font-family: var(--mono); font-size: clamp(3.5rem, 10vw, 8rem); font-weight: 400; letter-spacing: -0.07em; line-height: 0.9; margin-top: 1rem; }
+  .signals-head > div > p:last-child { margin-top: 1.3rem; color: rgba(216, 255, 224, 0.72); }
+  .status-block { min-width: 180px; border: 1px solid rgba(86, 244, 123, 0.35); padding: 1rem; font-size: 0.7rem; }
+  .status-block p { display: inline; color: var(--signal); }
+  .status-block small { display: block; margin-top: 0.45rem; color: rgba(216, 255, 224, 0.48); }
+  .pulse { display: inline-block; width: 7px; height: 7px; margin-right: 0.5rem; border-radius: 50%; background: var(--signal); box-shadow: 0 0 10px var(--signal); }
+  .tally-section { display: grid; grid-template-columns: minmax(280px, 0.65fr) 1.35fr; gap: clamp(2rem, 7vw, 7rem); padding-block: clamp(4rem, 8vw, 7rem); border-bottom: 1px solid rgba(86, 244, 123, 0.25); }
+  .tally-copy h2 { color: #effff2; font-family: var(--mono); font-size: clamp(2rem, 5vw, 4.2rem); font-weight: 400; line-height: 1.05; margin-top: 1rem; }
+  .tally-copy h2 strong { display: block; color: var(--signal); font-size: 2.2em; font-weight: 400; line-height: 0.8; }
+  .tally-copy > p:not(.signal-kicker) { max-width: 42ch; margin-top: 1.5rem; color: rgba(216, 255, 224, 0.68); font-family: var(--body); }
+  .tally-copy a { display: inline-block; margin-top: 1.4rem; color: var(--signal); font-size: 0.68rem; text-underline-offset: 4px; }
+  .tally-wall { display: grid; grid-template-columns: repeat(13, 1fr); gap: clamp(0.7rem, 2vw, 1.4rem); align-content: center; }
+  .tally-wall i { display: block; height: clamp(38px, 6vw, 68px); border-left: 3px solid var(--signal); transform: rotate(calc((var(--i) - 33) * 0.035deg)); opacity: calc(0.55 + (var(--i) * 0.006)); box-shadow: -4px 0 12px rgba(86, 244, 123, 0.05); }
+  .tally-wall i:nth-child(5n) { transform: rotate(17deg) translateX(-14px); transform-origin: bottom; }
+  .signal-method { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(86, 244, 123, 0.25); border: 1px solid rgba(86, 244, 123, 0.25); margin-top: 4rem; }
+  .signal-method article { position: relative; background: #0d120e; padding: 1.5rem; min-height: 280px; }
+  .signal-method article > span:first-child { color: var(--signal); font-size: 0.68rem; }
+  .signal-method h2 { margin-top: 2.5rem; color: #effff2; font-family: var(--mono); font-weight: 400; font-size: 1.25rem; }
+  .signal-method p { margin-top: 1rem; color: rgba(216, 255, 224, 0.62); font-family: var(--body); font-size: 1rem; }
+  .gap-stamp { position: absolute; left: 1.5rem; bottom: 1.4rem; border: 1px solid var(--signal); color: var(--signal); padding: 0.3rem 0.55rem; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; transform: rotate(-2deg); }
+  .signal-sources { display: grid; gap: 0.5rem; margin-top: 3rem; font-size: 0.64rem; color: rgba(216, 255, 224, 0.48); }
+  .signal-sources p { color: var(--signal); }
+  .signal-sources a { width: fit-content; color: rgba(216, 255, 224, 0.68); text-underline-offset: 3px; }
+  @media (max-width: 760px) {
+    .signals-head, .tally-section { grid-template-columns: 1fr; display: grid; }
+    .status-block { width: fit-content; }
+    .tally-wall { grid-template-columns: repeat(10, 1fr); }
+    .signal-method { grid-template-columns: 1fr; }
+  }
+</style>

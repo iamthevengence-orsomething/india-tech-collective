@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+const benches = [
+  {
+    index: '01',
+    name: 'The Answering Machine',
+    tag: 'affidavit search',
+    copy: 'A citation-first interface for asking questions of sworn election records. If the source does not support an answer, it should say so.',
+    status: 'specification',
+  },
+  {
+    index: '02',
+    name: 'Signal Sentinel',
+    tag: 'network measurement',
+    copy: 'An open measurement layer for detecting connectivity disruption from public probes. Detection first; attribution only with evidence.',
+    status: 'research',
+  },
+  {
+    index: '03',
+    name: 'Said / Did',
+    tag: 'document diffing',
+    copy: 'A careful comparison of parliamentary records, public statements, and manifesto claims, rendered as source-linked document diffs.',
+    status: 'scoping',
+  },
+];
+---
+<Base
+  title="The Workbench — India Tech Collective"
+  description="Small, inspectable civic-tech prototypes built in public and grounded in source material."
+  path="/frontier/"
+  current="frontier"
+>
+  <header class="bench-head wrap">
+    <div class="stamp">Under construction · in public</div>
+    <p class="file-label">Frontier / workbench</p>
+    <h1>Useful before impressive.</h1>
+    <p>
+      Three prototypes. Each begins with a source, a refusal condition, and a public
+      issue tracker.
+    </p>
+  </header>
+
+  <section class="bench-list wrap-wide" aria-label="Workbench projects">
+    {benches.map((bench) => (
+      <article class="bench file-card">
+        <div class="bench-index">{bench.index}</div>
+        <div class="bench-main">
+          <p class="file-label">{bench.tag}</p>
+          <h2>{bench.name}</h2>
+          <p>{bench.copy}</p>
+        </div>
+        <div class="bench-status">
+          <span>status</span>
+          <strong>{bench.status}</strong>
+          <a href="https://github.com/iamthevengence-orsomething/india-tech-collective/issues" rel="noopener">
+            View issues ↗
+          </a>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="bench-rules wrap">
+    <p class="file-label">Workbench rules</p>
+    <div>
+      <p><strong>01</strong> Every output links back to a source.</p>
+      <p><strong>02</strong> Missing evidence is a valid result.</p>
+      <p><strong>03</strong> Evaluation happens in public.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .bench-head { padding-block: clamp(4rem, 9vw, 8rem); }
+  .bench-head .stamp { margin-bottom: 2rem; }
+  .bench-head h1 { margin-top: 1rem; font-size: clamp(3.3rem, 8vw, 6.8rem); letter-spacing: -0.045em; line-height: 0.86; max-width: 8ch; }
+  .bench-head > p:last-child { margin-top: 1.5rem; max-width: 46ch; color: var(--muted); font-size: 1.2rem; }
+  .bench-list { display: grid; gap: 1rem; }
+  .bench { display: grid; grid-template-columns: 90px 1fr 220px; gap: 2rem; align-items: start; padding: 2rem 2rem 2rem 2.6rem; min-height: 250px; }
+  .bench-index { font-family: var(--mono); font-size: 2.4rem; color: var(--seal-red); }
+  .bench-main h2 { margin-top: 0.55rem; font-size: clamp(1.8rem, 4vw, 3rem); }
+  .bench-main > p:last-child { margin-top: 1rem; max-width: 52ch; color: var(--muted); }
+  .bench-status { display: grid; gap: 0.45rem; padding-left: 1rem; border-left: 1px solid var(--line); font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .bench-status span { color: var(--faint); }
+  .bench-status strong { color: var(--stamp-violet); font-weight: 600; }
+  .bench-status a { margin-top: 2.5rem; color: var(--ink); text-underline-offset: 4px; }
+  .bench-rules { padding-block: clamp(4rem, 8vw, 7rem); }
+  .bench-rules > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+  .bench-rules p { color: var(--muted); }
+  .bench-rules strong { display: block; font-family: var(--mono); color: var(--stamp-violet); margin-bottom: 0.6rem; }
+  @media (max-width: 760px) {
+    .bench { grid-template-columns: 54px 1fr; padding: 1.5rem 1.2rem 1.5rem 2rem; gap: 1rem; }
+    .bench-status { grid-column: 2; }
+    .bench-status a { margin-top: 0.6rem; }
+    .bench-rules > div { grid-template-columns: 1fr; }
+  }
+</style>

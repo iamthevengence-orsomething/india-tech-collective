@@ -7,7 +7,7 @@ import '../styles/tokens.css';
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { isDemo } from '../lib/data';
+import { isDemo, loadBuildInfo } from '../lib/data';
 
 interface Props {
   title: string;
@@ -18,19 +18,31 @@ interface Props {
   noindex?: boolean;
   skipTarget?: string;
 }
-const { title, description, path, current, ogImage = '/og/site.png', noindex = false, skipTarget = '#main' } = Astro.props;
+const { title, description, path, current, ogImage = '/brand/social-card.png', noindex = false, skipTarget = '#main' } = Astro.props;
 const site = 'https://www.indiatechcollective.org';
 const canonical = site + path;
+const buildInfo = loadBuildInfo<{ dataAsOf: string }>();
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script is:inline>
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('itc-theme'); } catch (_) {}
+    document.documentElement.setAttribute('data-theme', saved === 'blackout' ? 'blackout' : 'paper');
+    if (new URLSearchParams(location.search).get('file') === '1') {
+      document.documentElement.setAttribute('data-file-view', 'true');
+    }
+  })();
+</script>
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="theme-color" content="#F6F1E5" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#F4EDDE" />
+<link rel="icon" href="/favicon-64.png" type="image/png" />
+<link rel="apple-touch-icon" href="/brand/profile-picture.png" />
 <link rel="canonical" href={canonical} />
 {(noindex || isDemo) && <meta name="robots" content="noindex" />}
 {isDemo && <meta name="itc-data-mode" content="demo" />}
@@ -57,9 +69,31 @@ const canonical = site + path;
   </div>
 )}
 <Nav current={current} />
-<main id="main">
+<main id="main" data-print-date={buildInfo.dataAsOf}>
   <slot />
 </main>
 <Footer />
+<div class="truth-stamp" id="truthStamp" aria-hidden="true">
+  सत्यमेव जयते<br />Truth alone triumphs.
+</div>
+<script is:inline>
+  (function () {
+    var phrase = 'satyamev';
+    var typed = '';
+    var stamp = document.getElementById('truthStamp');
+    document.addEventListener('keydown', function (event) {
+      if (event.metaKey || event.ctrlKey || event.altKey || event.key.length !== 1) return;
+      var target = event.target;
+      if (target && /input|textarea|select/i.test(target.tagName)) return;
+      typed = (typed + event.key.toLowerCase()).slice(-phrase.length);
+      if (typed !== phrase || !stamp) return;
+      console.info('सत्यमेव जयते — truth alone triumphs. still.');
+      stamp.classList.remove('show');
+      void stamp.offsetWidth;
+      stamp.classList.add('show');
+      typed = '';
+    });
+  })();
+</script>
 </body>
 </html>

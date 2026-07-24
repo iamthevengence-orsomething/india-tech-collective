@@ -1,234 +1,429 @@
 ---
 import Base from '../layouts/Base.astro';
+import { loadArtifact, loadBuildInfo } from '../lib/data';
+
+type Metric = {
+  metricId: string;
+  numerator?: number;
+  denominator?: number;
+  value: number;
+  asOf: string;
+};
+
+const kpis = loadArtifact<{ dataAsOf: string; metrics: Metric[] }>('kpis');
+const build = loadBuildInfo<{
+  dataAsOf: string;
+  datasetVersion: string;
+  counts: { sources: number; politicians: number };
+}>();
+const cases = kpis.metrics.find((metric) => metric.metricId === 'reps_with_declared_cases_pct');
+const convictions = kpis.metrics.find((metric) => metric.metricId === 'reps_with_convictions');
+const covered = kpis.metrics.find((metric) => metric.metricId === 'reps_covered');
 ---
 <Base
-  title="The India Tech Collective — a public record, kept in public"
-  description="Open-source tools for speech under pressure, and open records of public power: cases declared on oath by elected representatives, corruption enforcement statistics, audit findings. Non-partisan, lawful, grounded in Article 19."
+  title="India Tech Collective — the record survives"
+  description="Open tools for speech under pressure and public records that show their source, date, denominator, and limits."
   path="/"
   current="home"
-  ogImage="/og/site.png"
+  ogImage="/brand/social-card.png"
 >
-  <div class="wrap manifesto-wrap">
-    <header class="masthead">
-      <p class="masthead-kicker">Open-source civic infrastructure</p>
-      <p class="epigraph" lang="hi">हम भारत के लोग</p>
-      <p class="epigraph-tr">— we, the people of India</p>
-      <h1>The India Tech Collective</h1>
-      <p class="masthead-sub">A public record, kept in public.</p>
-      <p class="masthead-deck">
-        Tools for when the network goes dark. Evidence for when public memory does.
-      </p>
-      <div class="masthead-actions" aria-label="Start or share">
-        <a class="btn btn-primary hero-btn" href="#contents">Explore the public record <span aria-hidden="true">↓</span></a>
-        <button class="btn hero-btn" id="shareCollective" type="button">Share the Collective</button>
-        <a class="share-card-link" href="/og/card-1080.png" download>Download share card</a>
+  <div class="home">
+    <section class="hero wrap-wide" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-fileline">
+          <span class="file-label">Public file · ITC/01</span>
+          <span class="stamp">Public record</span>
+        </div>
+        <h1 id="hero-title">The record<br />survives.</h1>
+        <p class="hero-deck">
+          Tools for when the network goes dark.<br />
+          Evidence for when public memory does.
+        </p>
+        <p class="hero-hindi" lang="hi">चुप्पी मंज़ूरी है।</p>
+
+        <nav class="file-tabs" aria-label="Start here">
+          <a href="/toolkit/"><span>01</span> Open the kit</a>
+          <a href="/politicians/"><span>02</span> Read the record</a>
+          <a href="/contribute/"><span>03</span> Join the rolls</a>
+        </nav>
       </div>
-      <p class="share-status" id="shareStatus" aria-live="polite"></p>
-      <ul class="proof-line" aria-label="What the Collective contains">
-        <li>27 field-tested tools</li>
-        <li>Seat-by-seat sworn disclosures</li>
-        <li>Official enforcement records</li>
-      </ul>
-    </header>
 
-    <hr class="rule-double" />
-
-    <section class="manifesto" aria-label="Manifesto">
-      <p class="m-open">We, citizens of India,</p>
-      <p class="m-clause">holding that self-rule begins with self-information;</p>
-      <p class="m-clause">
-        that the freedoms of speech and assembly secured by Article 19 extend to the
-        networks where speech now lives;
-      </p>
-      <p class="m-clause">
-        that what public servants declare on oath belongs to the public — with its source, its date and its limits;
-      </p>
-      <p class="m-clause">
-        and that no verdict is ours to pass: an accusation is not guilt, and guilt is for courts alone;
-      </p>
-      <p class="m-resolve">have resolved to keep this Collective,</p>
-      <p class="m-clause">and to place in every citizen’s hands:</p>
-      <ul class="m-gives">
-        <li>tools, open to inspection, for the days when the network is cut;</li>
-        <li>the record, plainly arranged, of what those who hold public power have themselves disclosed;</li>
-        <li>and the method behind every number, so that trust may be checked and never begged.</li>
-      </ul>
-      <p class="m-close">Adopted in the open · Maintained in the open · Without party or favour</p>
+      <figure class="hero-art">
+        <img
+          src="/brand/banyan-circuit.webp"
+          width="1200"
+          height="1200"
+          fetchpriority="high"
+          alt="An engraved banyan tree whose roots become a decentralized circuit network"
+        />
+        <figcaption>Banyan circuit · one canopy, many roots</figcaption>
+      </figure>
     </section>
 
-    <p class="fleuron" aria-hidden="true">❦</p>
+    <aside class="ledger-ticker" aria-label="Current record">
+      <div class="wrap-wide ticker-inner">
+        <a href="/toolkit/"><strong>27</strong> open-source tools</a>
+        <a href="/politicians/"><strong>{cases?.numerator ?? 251}/{cases?.denominator ?? 543}</strong> MPs declared cases</a>
+        <a href="/signals/"><strong>65</strong> shutdowns recorded in 2025</a>
+        <a href="/sources/"><strong>{build.counts.sources}</strong> registered sources</a>
+        <span>release {build.datasetVersion.slice(0, 8)}</span>
+      </div>
+    </aside>
 
-    <section class="contents" id="contents" aria-label="Contents">
-      <h2 class="contents-h">Contents</h2>
-
-      <a class="part" href="/toolkit/">
-        <span class="part-no">Part I</span>
-        <span class="part-body">
-          <span class="part-title">The Toolkit</span>
-          <span class="part-desc">Twenty-seven open-source instruments for speech under pressure — mesh messengers, secure channels, circumvention, evidence.</span>
-        </span>
-        <span class="part-arrow" aria-hidden="true">→</span>
-      </a>
-
-      <a class="part" href="/politicians/">
-        <span class="part-no">Part II</span>
-        <span class="part-body">
-          <span class="part-title">Politician Cases</span>
-          <span class="part-desc">Criminal cases declared on oath by elected representatives, searchable seat by seat. A declared case is an accusation, not a conviction.</span>
-        </span>
-        <span class="part-arrow" aria-hidden="true">→</span>
-      </a>
-
-      <a class="part" href="/corruption/">
-        <span class="part-no">Part III</span>
-        <span class="part-body">
-          <span class="part-title">Corruption Data</span>
-          <span class="part-desc">Enforcement statistics, sworn disclosures and audit findings — three records, kept separate, never one score.</span>
-        </span>
-        <span class="part-arrow" aria-hidden="true">→</span>
-      </a>
+    <section class="lookup wrap" aria-labelledby="lookup-title">
+      <div class="section-index">
+        <span>01</span>
+        <p class="file-label">The record</p>
+      </div>
+      <div class="lookup-copy">
+        <h2 id="lookup-title">Find a representative.</h2>
+        <p>Search 543 Lok Sabha records by name, constituency, state, or party.</p>
+      </div>
+      <form class="record-search" method="get" action="/politicians/">
+        <label for="recordQuery">Search the public record</label>
+        <div>
+          <input id="recordQuery" name="q" type="search" placeholder="Constituency, MP, state…" autocomplete="off" />
+          <button type="submit" aria-label="Search the public record">Open file <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
     </section>
 
-    <hr class="rule-double" />
+    <section class="pillars wrap-wide" aria-labelledby="pillars-title">
+      <div class="section-head">
+        <div>
+          <p class="file-label">File index · 02</p>
+          <h2 id="pillars-title">Three working files.</h2>
+        </div>
+        <p>No slogans where a source should be.</p>
+      </div>
 
-    <section class="procedure" aria-label="Records and procedure">
-      <p class="procedure-links">
-        <a href="/methodology/">Methodology</a><span aria-hidden="true"> · </span>
-        <a href="/sources/">Sources</a><span aria-hidden="true"> · </span>
-        <a href="/coverage/">Coverage</a><span aria-hidden="true"> · </span>
-        <a href="/corrections/">Corrections &amp; right of reply</a><span aria-hidden="true"> · </span>
-        <a href="https://github.com/iamthevengence-orsomething/india-tech-collective" rel="noopener">GitHub</a>
-      </p>
-      <p class="procedure-note">
-        Every figure on this site carries its source, its date, and its denominator.
+      <figure class="systems-plate">
+        <img
+          src="/brand/systems-triptych.webp"
+          width="1800"
+          height="600"
+          loading="lazy"
+          alt="Three engraved civic-tech systems: a mesh lantern, an open data ledger, and a signal mast"
+        />
+      </figure>
+
+      <div class="pillar-grid">
+        <a class="pillar file-card" href="/toolkit/">
+          <span class="pillar-no">I</span>
+          <p class="file-label">Tools</p>
+          <h3>The kit</h3>
+          <p>Open software for offline messaging, secure channels, circumvention, and evidence.</p>
+          <span class="pillar-link">Inspect 27 tools →</span>
+        </a>
+        <a class="pillar file-card" href="/politicians/">
+          <span class="pillar-no">II</span>
+          <p class="file-label">Evidence</p>
+          <h3>The record</h3>
+          <p>Sworn disclosures and official statistics, with dates, denominators, and visible gaps.</p>
+          <span class="pillar-link">Search 543 records →</span>
+        </a>
+        <a class="pillar file-card" href="/frontier/">
+          <span class="pillar-no">III</span>
+          <p class="file-label">In public</p>
+          <h3>The workbench</h3>
+          <p>Small, inspectable prototypes for searching affidavits and sensing network disruption.</p>
+          <span class="pillar-link">Open the workbench →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="record-proof wrap" aria-labelledby="proof-title">
+      <div class="proof-intro">
+        <p class="file-label">File index · 03</p>
+        <h2 id="proof-title">Numbers that show their work.</h2>
+        <p>
+          The headline is never the whole record. Each figure carries its cohort,
+          source date, and limit.
+        </p>
+        <a class="text-link" href="/methodology/">Read the methodology →</a>
+      </div>
+
+      <article class="mp-file file-card" id="shareFile">
+        <div class="mp-file-head">
+          <span>18th Lok Sabha · 2024 winners</span>
+          <span>File LS/2024/ALL</span>
+        </div>
+        <div class="mp-stat">
+          <strong>{cases?.numerator ?? 251}<small>/{cases?.denominator ?? 543}</small></strong>
+          <p>elected MPs declared one or more criminal cases in sworn affidavits.</p>
+        </div>
+        <div class="mp-detail">
+          <p><span>{convictions?.numerator ?? 27}</span> declared a conviction</p>
+          <p><span>{covered?.numerator ?? 543}</span> records covered</p>
+          <p><span>{kpis.dataAsOf}</span> source date</p>
+        </div>
+        <div class="fairness">
+          <span class="stamp">Sworn on oath</span>
+          <span class="stamp red">Accusation ≠ conviction</span>
+        </div>
+        <p class="legal-note">
+          A declared case is an accusation, not a conviction. Guilt is for courts alone.
+          Source: ADR analysis of sworn ECI affidavits.
+        </p>
+        <div class="share-file-row no-print">
+          <a href="/politicians/">Open the records</a>
+          <button id="stampShare" type="button">Stamp &amp; copy link</button>
+        </div>
+        <span class="true-copy" aria-hidden="true">True copy · {build.dataAsOf}</span>
+      </article>
+      <p class="share-feedback" id="shareFeedback" aria-live="polite"></p>
+    </section>
+
+    <section class="builders wrap-wide" aria-labelledby="builders-title">
+      <div class="builders-copy">
+        <p class="file-label">File index · 04</p>
+        <h2 id="builders-title">Built for inspection.</h2>
+        <p>
+          The data, methods, and interface live together in public. Fork the site,
+          audit a number, or take a small issue.
+        </p>
+        <a class="btn btn-primary" href="https://github.com/iamthevengence-orsomething/india-tech-collective" rel="noopener">
+          Open the repository ↗
+        </a>
+      </div>
+      <div class="system-noting" aria-label="Project properties">
+        <div><span>architecture</span><strong>static-first</strong></div>
+        <div><span>dataset</span><strong>versioned</strong></div>
+        <div><span>sources</span><strong>{build.counts.sources} registered</strong></div>
+        <div><span>privacy</span><strong>no trackers</strong></div>
+        <div><span>record count</span><strong>{build.counts.politicians} MPs</strong></div>
+        <div><span>status</span><strong>kept in public</strong></div>
+      </div>
+    </section>
+
+    <section class="closing wrap">
+      <div>
+        <p class="file-label">Article 19(1)(a)</p>
+        <h2>Self-rule begins with self-information.</h2>
+      </div>
+      <p>
         Where the record is incomplete, the gap is stated, not filled.
+        Corrections stay public. The standard is the same for every party.
       </p>
+      <a href="/contribute/">Contribute to the file →</a>
     </section>
   </div>
 </Base>
 
 <script is:inline>
   (function () {
-    var button = document.getElementById('shareCollective');
-    var status = document.getElementById('shareStatus');
-    if (!button || !status) return;
-
-    var share = {
-      title: 'The India Tech Collective',
-      text: 'Tools for when the network goes dark. Evidence for when public memory does. A public record, kept in public.',
-      url: window.location.origin + '/',
-    };
+    var button = document.getElementById('stampShare');
+    var file = document.getElementById('shareFile');
+    var feedback = document.getElementById('shareFeedback');
+    if (!button || !file || !feedback) return;
 
     button.addEventListener('click', async function () {
+      file.classList.add('stamped');
+      var url = window.location.origin + '/politicians/';
       try {
-        if (navigator.share) {
-          await navigator.share(share);
-          status.textContent = 'Shared.';
-          return;
-        }
-        await navigator.clipboard.writeText(share.text + '\n\n' + share.url);
-        status.textContent = 'Share text copied.';
-      } catch (error) {
-        if (error && error.name === 'AbortError') return;
-        status.textContent = 'Copy this link: ' + share.url;
+        await navigator.clipboard.writeText(url);
+        feedback.textContent = 'Stamped. Record link copied.';
+      } catch (_) {
+        feedback.textContent = 'Stamped. Open ' + url;
       }
     });
   })();
 </script>
 
 <style>
-  .manifesto-wrap { max-width: 780px; }
+  .home { overflow: hidden; }
+  .hero {
+    min-height: min(800px, calc(100vh - 58px));
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+    align-items: center;
+    gap: clamp(1rem, 4vw, 4.5rem);
+    padding-block: clamp(2.5rem, 7vw, 6.5rem);
+  }
+  .hero-fileline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 610px; }
+  .hero h1 {
+    max-width: 7.2ch;
+    margin-top: 1.35rem;
+    font-size: clamp(4.25rem, 10vw, 8.9rem);
+    font-weight: 570;
+    letter-spacing: -0.055em;
+    line-height: 0.78;
+  }
+  .hero-deck {
+    margin-top: 1.75rem;
+    max-width: 30ch;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.32;
+    color: var(--ink);
+  }
+  .hero-hindi { margin-top: 0.7rem; color: var(--file-khaki); font-size: 1rem; }
+  .file-tabs { display: flex; flex-wrap: wrap; margin-top: 2rem; border-bottom: 1px solid var(--line-strong); }
+  .file-tabs a {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 0.72rem 1rem 0.72rem 0;
+    margin-right: 1.1rem;
+    font-family: var(--mono); font-size: 0.65rem; font-weight: 650;
+    letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase;
+    border-top: 2px solid transparent; transition: color 120ms, border-color 120ms;
+  }
+  .file-tabs a:hover { color: var(--stamp-violet); border-color: currentColor; }
+  .file-tabs span { color: var(--file-khaki); }
+  .hero-art { position: relative; margin: 0; }
+  .hero-art::before {
+    content: ""; position: absolute; inset: 8% 4% 4% 10%;
+    border: 1px solid var(--line); transform: rotate(1.5deg); pointer-events: none;
+  }
+  .hero-art img { position: relative; width: min(100%, 680px); margin-inline: auto; mix-blend-mode: multiply; }
+  .hero-art figcaption {
+    position: absolute; right: 0; bottom: 4%;
+    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--faint); writing-mode: vertical-rl;
+  }
+  html[data-theme="blackout"] .hero-art img { mix-blend-mode: screen; }
 
-  .masthead { text-align: center; padding: 3.6rem 0 2.4rem; }
-  .masthead-kicker {
-    font-family: var(--mono); font-size: 0.64rem; font-weight: 500;
-    letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-deep);
-    margin-bottom: 1.4rem;
+  .ledger-ticker { border-block: 1px solid var(--line-strong); background: var(--paper-2); }
+  .ticker-inner { min-height: 48px; display: flex; align-items: center; gap: 0; overflow-x: auto; }
+  .ticker-inner > * {
+    flex: none; padding: 0.55rem 1.1rem; border-right: 1px solid var(--line);
+    font-family: var(--mono); font-size: 0.62rem; text-decoration: none; letter-spacing: 0.03em; color: var(--muted);
   }
-  .epigraph { font-size: 1.5rem; color: var(--ink); letter-spacing: 0.06em; }
-  .epigraph-tr {
-    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.26em;
-    text-transform: uppercase; color: var(--faint); margin-top: 0.5rem;
-  }
-  .masthead h1 {
-    font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 540;
-    margin-top: 1.6rem; letter-spacing: 0.01em;
-  }
-  .masthead-sub { font-style: italic; color: var(--muted); font-size: 1.25rem; margin-top: 0.6rem; }
-  .masthead-deck {
-    max-width: 25ch; margin: 1.25rem auto 0; color: var(--ink-strong);
-    font-size: clamp(1.25rem, 2.5vw, 1.55rem); line-height: 1.35;
-  }
-  .masthead-actions {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-    gap: 0.7rem 0.8rem; margin-top: 1.7rem;
-  }
-  .hero-btn { min-height: 44px; }
-  .share-card-link {
-    font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em;
-    color: var(--muted); text-underline-offset: 3px;
-  }
-  .share-card-link:hover { color: var(--gold-deep); }
-  .share-status { min-height: 1.4em; margin-top: 0.6rem; color: var(--gold-deep); font-family: var(--mono); font-size: 0.68rem; }
-  .proof-line {
-    list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 0.45rem 1.35rem; margin-top: 1.2rem; color: var(--muted);
-    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase;
-  }
-  .proof-line li { position: relative; }
-  .proof-line li + li::before { content: "·"; position: absolute; left: -0.8rem; color: var(--gold); }
+  .ticker-inner > *:first-child { padding-left: 0; }
+  .ticker-inner strong { color: var(--ink-strong); font-size: 0.8rem; }
+  .ticker-inner a:hover { color: var(--stamp-violet); }
 
-  .manifesto { padding: 2.6rem 0 1.4rem; font-size: clamp(1.16rem, 1.8vw, 1.3rem); line-height: 1.62; }
-  .m-open, .m-resolve {
-    font-variant-caps: small-caps; letter-spacing: 0.14em; font-weight: 600;
-    color: var(--ink-strong); font-size: 1.16em; margin: 1.1rem 0 0.7rem;
+  .lookup {
+    display: grid; grid-template-columns: 90px minmax(210px, 0.6fr) minmax(320px, 1fr);
+    gap: clamp(1rem, 4vw, 3rem); align-items: end;
+    padding-block: clamp(4rem, 8vw, 7rem);
   }
-  .m-resolve { margin-top: 1.5rem; }
-  .m-clause { margin: 0.55rem 0; color: var(--ink); }
-  .m-gives { list-style: none; margin: 0.9rem 0 0.4rem; }
-  .m-gives li { margin: 0.6rem 0; padding-left: 1.6rem; position: relative; }
-  .m-gives li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
-  .m-close {
-    margin-top: 1.9rem; font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep);
+  .section-index span { font-family: var(--mono); font-size: 2.8rem; color: var(--seal-red); }
+  .lookup h2, .section-head h2, .proof-intro h2, .builders h2, .closing h2 {
+    font-size: clamp(2.1rem, 4vw, 3.4rem); line-height: 0.98;
+  }
+  .lookup-copy p { margin-top: 0.7rem; color: var(--muted); }
+  .record-search label { display: block; margin-bottom: 0.55rem; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .record-search > div { display: grid; grid-template-columns: 1fr auto; border-bottom: 2px solid var(--ink-strong); }
+  .record-search input {
+    min-width: 0; border: 0; background: transparent; color: var(--ink-strong);
+    padding: 0.75rem 0; font-family: var(--mono); font-size: clamp(1rem, 2vw, 1.35rem); outline: 0;
+  }
+  .record-search input::placeholder { color: var(--faint); }
+  .record-search button {
+    padding: 0.7rem 0 0.7rem 1rem; font-family: var(--mono); font-size: 0.68rem;
+    font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .record-search:focus-within > div { border-color: var(--stamp-violet); }
+
+  .pillars { padding-block: clamp(2rem, 6vw, 5rem); }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: end; gap: 2rem;
+    border-bottom: 1px solid var(--line-strong); padding-bottom: 1.25rem;
+  }
+  .section-head h2 { margin-top: 0.65rem; }
+  .section-head > p { max-width: 24ch; color: var(--muted); font-style: italic; text-align: right; }
+  .systems-plate { margin: 1.5rem 0 0; border: 1px solid var(--line); overflow: hidden; }
+  .systems-plate img { width: 100%; mix-blend-mode: multiply; }
+  html[data-theme="blackout"] .systems-plate img { mix-blend-mode: screen; filter: grayscale(1) invert(1) sepia(1) hue-rotate(70deg) saturate(4); opacity: 0.9; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+  .pillar { min-height: 280px; padding: 1.5rem 1.5rem 1.35rem 2.1rem; color: inherit; text-decoration: none; transition: transform 120ms ease-out, box-shadow 120ms ease-out; }
+  .pillar:hover { transform: translateY(-3px); box-shadow: 8px 8px 0 color-mix(in srgb, var(--stamp-violet) 18%, transparent); }
+  .pillar-no { position: absolute; right: 1.2rem; top: 1rem; font-family: var(--mono); color: var(--file-khaki); font-size: 1.3rem; }
+  .pillar h3 { margin-top: 1.5rem; font-size: 2rem; }
+  .pillar > p:not(.file-label) { margin-top: 0.8rem; color: var(--muted); max-width: 34ch; }
+  .pillar-link { position: absolute; left: 2.1rem; bottom: 1.3rem; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp-violet); }
+
+  .record-proof {
+    display: grid; grid-template-columns: minmax(250px, 0.55fr) minmax(420px, 1fr);
+    gap: clamp(2rem, 7vw, 7rem); align-items: center;
+    padding-block: clamp(5rem, 10vw, 9rem);
+  }
+  .proof-intro > p:not(.file-label) { margin-top: 1.2rem; color: var(--muted); max-width: 37ch; }
+  .text-link { display: inline-block; margin-top: 1.1rem; color: var(--stamp-violet); text-underline-offset: 4px; }
+  .mp-file { padding: 1.5rem 1.7rem 1.5rem 2.5rem; min-height: 500px; overflow: visible; }
+  .mp-file-head {
+    display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line-strong); font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .mp-stat { display: grid; grid-template-columns: auto 1fr; gap: 1.4rem; align-items: end; padding: 2.5rem 0 1.8rem; border-bottom: 1px solid var(--line); }
+  .mp-stat strong { font-family: var(--mono); font-size: clamp(4.5rem, 8vw, 7.5rem); line-height: 0.7; font-weight: 500; letter-spacing: -0.08em; color: var(--stamp-violet-dark); }
+  .mp-stat small { font-size: 0.28em; color: var(--file-khaki); letter-spacing: -0.04em; }
+  .mp-stat p { max-width: 25ch; font-size: 1.1rem; }
+  .mp-detail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .mp-detail p { display: grid; gap: 0.2rem; font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .mp-detail span { font-size: 0.9rem; color: var(--ink-strong); letter-spacing: 0; }
+  .fairness { display: flex; flex-wrap: wrap; gap: 0.8rem; padding: 1.2rem 0; }
+  .fairness .stamp { font-size: 0.52rem; }
+  .legal-note { max-width: 64ch; font-size: 0.82rem; color: var(--muted); }
+  .share-file-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.2rem; padding-top: 0.9rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .share-file-row button { color: var(--stamp-violet); }
+  .true-copy {
+    position: absolute; right: 1.6rem; bottom: 3.8rem; opacity: 0;
+    color: var(--stamp-violet); border: 3px solid currentColor; padding: 0.45rem 0.8rem;
+    font-family: var(--mono); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; transform: rotate(-7deg) scale(1.8); transition: opacity 120ms, transform 120ms;
+  }
+  .mp-file.stamped .true-copy { opacity: 0.82; transform: rotate(-7deg) scale(1); }
+  .share-feedback { grid-column: 2; margin-top: -5.5rem; min-height: 1.3em; font-family: var(--mono); font-size: 0.62rem; color: var(--stamp-violet); }
+
+  .builders {
+    display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(420px, 1.2fr);
+    gap: clamp(2rem, 8vw, 8rem); align-items: center;
+    padding-block: clamp(4rem, 8vw, 7rem); border-block: 1px solid var(--line-strong);
+  }
+  .builders-copy > p:not(.file-label) { margin: 1rem 0 1.5rem; color: var(--muted); max-width: 45ch; }
+  .system-noting { border: 1px solid var(--line-strong); background: var(--surface); }
+  .system-noting div { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1rem; padding: 0.72rem 1rem; border-bottom: 1px dotted var(--line-strong); font-family: var(--mono); font-size: 0.67rem; }
+  .system-noting div:last-child { border: 0; }
+  .system-noting span { color: var(--muted); }
+  .system-noting strong { font-weight: 500; color: var(--ink-strong); }
+  .system-noting strong::before { content: "✓ "; color: var(--stamp-violet); }
+
+  .closing {
+    display: grid; grid-template-columns: 1fr 1fr auto; gap: clamp(1.5rem, 5vw, 4rem);
+    align-items: end; padding-block: clamp(5rem, 9vw, 8rem);
+  }
+  .closing h2 { margin-top: 0.65rem; max-width: 13ch; }
+  .closing > p { color: var(--muted); max-width: 43ch; }
+  .closing > a { font-family: var(--mono); font-size: 0.67rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp-violet); white-space: nowrap; }
+
+  @media (max-width: 950px) {
+    .hero { grid-template-columns: 1fr 0.8fr; min-height: auto; }
+    .hero h1 { font-size: clamp(4.2rem, 13vw, 7rem); }
+    .lookup { grid-template-columns: 70px 1fr; }
+    .record-search { grid-column: 2; }
+    .pillar-grid { grid-template-columns: 1fr; }
+    .pillar { min-height: 220px; }
+    .record-proof { grid-template-columns: 1fr; }
+    .share-feedback { grid-column: 1; margin-top: -1.2rem; }
+    .builders { grid-template-columns: 1fr; }
+    .closing { grid-template-columns: 1fr 1fr; }
+    .closing > a { grid-column: 2; }
   }
 
-  .contents { padding: 1.2rem 0 2.2rem; }
-  .contents-h {
-    font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.26em;
-    text-transform: uppercase; color: var(--muted); text-align: center; margin-bottom: 1.2rem;
-  }
-  .part {
-    display: grid; grid-template-columns: 6.2rem 1fr auto; gap: 1.2rem; align-items: baseline;
-    padding: 1.35rem 0.4rem; border-top: 1px solid var(--line); text-decoration: none;
-    transition: background 0.15s, padding-left 0.15s;
-  }
-  .part:last-of-type { border-bottom: 1px solid var(--line); }
-  .part:hover { background: var(--surface); padding-left: 0.9rem; }
-  .part-no {
-    font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--gold-deep);
-  }
-  .part-title { display: block; font-family: var(--display); font-weight: 560; font-size: clamp(1.5rem, 3vw, 1.95rem); color: var(--ink-strong); }
-  .part-desc { display: block; color: var(--muted); font-size: 1.02rem; margin-top: 0.25rem; max-width: 52ch; }
-  .part-arrow { color: var(--faint); font-size: 1.25rem; transition: color 0.15s, transform 0.15s; }
-  .part:hover .part-arrow { color: var(--gold-deep); transform: translateX(4px); }
-  .part:hover .part-title { color: var(--gold-deep); }
-
-  .procedure { text-align: center; padding: 1.8rem 0 2.6rem; }
-  .procedure-links { font-size: 1.02rem; color: var(--muted); }
-  .procedure-links a { text-decoration-color: rgba(154, 116, 32, 0.5); text-underline-offset: 3px; }
-  .procedure-links a:hover { color: var(--gold-deep); }
-  .procedure-note { margin-top: 0.9rem; font-style: italic; color: var(--faint); font-size: 0.98rem; }
-
-  @media (max-width: 640px) {
-    .masthead { padding-top: 2.4rem; }
-    .masthead-actions { align-items: stretch; }
-    .hero-btn { width: 100%; justify-content: center; }
-    .share-card-link { width: 100%; margin-top: 0.25rem; }
-    .proof-line { display: grid; gap: 0.35rem; }
-    .proof-line li + li::before { display: none; }
-    .part { grid-template-columns: 1fr auto; }
-    .part-no { grid-column: 1 / -1; }
+  @media (max-width: 680px) {
+    .hero { grid-template-columns: 1fr; padding-top: 3rem; }
+    .hero-art { grid-row: 1; width: 78%; justify-self: center; }
+    .hero-art figcaption { display: none; }
+    .hero h1 { font-size: clamp(4.1rem, 24vw, 6.4rem); }
+    .hero-fileline { align-items: flex-start; }
+    .hero-fileline .stamp { font-size: 0.48rem; }
+    .file-tabs { display: grid; }
+    .file-tabs a { margin-right: 0; border-top: 1px solid var(--line); }
+    .lookup { grid-template-columns: 1fr; }
+    .section-index { display: flex; align-items: baseline; gap: 0.8rem; }
+    .record-search { grid-column: 1; }
+    .record-search > div { grid-template-columns: 1fr; }
+    .record-search button { padding-left: 0; text-align: left; }
+    .section-head { align-items: flex-start; }
+    .section-head > p { display: none; }
+    .systems-plate { overflow-x: auto; }
+    .systems-plate img { width: 900px; max-width: none; }
+    .mp-file { padding-left: 2rem; min-height: 0; }
+    .mp-stat { grid-template-columns: 1fr; }
+    .mp-stat strong { font-size: 5.2rem; }
+    .mp-detail { grid-template-columns: 1fr; }
+    .true-copy { bottom: 4.5rem; }
+    .closing { grid-template-columns: 1fr; }
+    .closing > a { grid-column: 1; }
   }
 </style>
