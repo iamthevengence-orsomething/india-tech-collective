@@ -1,0 +1,94 @@
+---
+import Base from '../../layouts/Base.astro';
+import CoverageBanner from '../../components/CoverageBanner.astro';
+import TrendCohorts from '../../components/TrendCohorts.astro';
+import PoliticiansDashboard from '../../components/islands/PoliticiansDashboard.tsx';
+import { loadArtifact, loadBuildInfo, loadFullProfiles } from '../../lib/data';
+import { formatInt, formatPct } from '../../lib/format';
+
+const kpis = loadArtifact<any>('kpis');
+const coverage = loadArtifact<any>('coverage');
+const build = loadBuildInfo<any>();
+const full = loadFullProfiles<any>();
+
+const m = (id: string) => kpis.metrics.find((x: any) => x.metricId === id);
+const covered = m('reps_covered');
+const withCases = m('reps_with_declared_cases_pct');
+const serious = m('reps_with_serious_cases_pct');
+const convictions = m('reps_with_convictions');
+const totalCases = m('total_declared_cases');
+const linked = m('affidavits_linked');
+const ls = coverage.rows.find((r: any) => r.houseType === 'lok_sabha');
+---
+<Base
+  title="Politician Cases — cases declared by elected representatives | India Tech Collective"
+  description="Criminal cases self-declared by India's elected representatives in their election affidavits — searchable by state, party and house, with visible denominators, sources and coverage. A declared case is an accusation, not a conviction."
+  path="/politicians/"
+  current="politicians"
+  ogImage="/og/politicians.png"
+>
+  <header class="page-head wrap">
+    <p class="kicker">Part II · Politician Cases — declared on oath</p>
+    <h1 class="page-h1">Cases declared by elected representatives</h1>
+    <p class="lede">
+      Before every election, candidates must disclose their criminal cases in a sworn affidavit
+      (<a href="/methodology/">Form 26</a>) filed with the Election Commission. This dashboard makes those
+      disclosures searchable for the winners of the 2024 Lok Sabha election. <strong>A declared case is an
+      accusation at a stated procedural stage — not a conviction.</strong> Every person is presumed innocent
+      unless a court convicts them.
+    </p>
+    <div style="margin-top:1.2rem;">
+      <CoverageBanner
+        covered={ls.summaryRecords}
+        expected={ls.expectedSeats}
+        houses={1}
+        affidavitsLinked={linked?.numerator ?? 0}
+        humanVerified={ls.recordsHumanReviewed}
+        buildDate={build.dataAsOf}
+        oldestSourceDate={kpis.dataAsOf}
+      />
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <span class="kpi-label">Representatives covered</span>
+        <span class="kpi-value num">{formatInt(covered?.value)}</span>
+        <span class="kpi-frac num">of {formatInt(covered?.denominator)} seats</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-label">Declared ≥1 pending case</span>
+        <span class="kpi-value num">{formatPct(withCases?.value, 1)}</span>
+        <span class="kpi-frac num">{formatInt(withCases?.numerator)} / {formatInt(withCases?.denominator)} people</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-label">Serious-case criteria met</span>
+        <span class="kpi-value num">{formatPct(serious?.value, 1)}</span>
+        <span class="kpi-frac num">{formatInt(serious?.numerator)} / {formatInt(serious?.denominator)} people</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-label">Declared a conviction</span>
+        <span class="kpi-value num">{formatInt(convictions?.value)}</span>
+        <span class="kpi-frac num">people, of {formatInt(convictions?.denominator)} covered</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-label">Total declared cases</span>
+        <span class="kpi-value num">{formatInt(totalCases?.value)}</span>
+        <span class="kpi-frac">declaration rows, not people</span>
+      </div>
+    </div>
+    <p class="metric-caption">
+      {withCases?.definition} Source: ADR/National Election Watch analysis of ECI affidavits (report of 6 Jun 2024)
+      joined to official OGD results (GODL). Records are machine-checked against the report's own printed totals;
+      none are human-verified yet — see the <a href="/coverage/">coverage page</a>.
+    </p>
+  </header>
+
+  <div class="wrap">
+    <PoliticiansDashboard client:load />
+
+    <section class="section" aria-labelledby="trend-h">
+      <h2 class="section-title" id="trend-h">Across elections</h2>
+      <TrendCohorts history={full.adrHistory} />
+    </section>
+  </div>
+</Base>

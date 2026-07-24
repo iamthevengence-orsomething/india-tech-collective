@@ -1,0 +1,27 @@
+---
+import { formatDate, formatInt } from '../lib/format';
+interface Props {
+  covered: number;
+  expected: number;
+  houses: number;
+  affidavitsLinked: number;
+  humanVerified: number;
+  buildDate: string;
+  oldestSourceDate: string;
+}
+const { covered, expected, houses, affidavitsLinked, humanVerified, buildDate, oldestSourceDate } = Astro.props;
+---
+<aside class="banner banner-coverage" aria-label="Data coverage">
+  <span class="banner-icon" aria-hidden="true">▦</span>
+  <div>
+    <p>
+      <strong>Coverage: {formatInt(covered)} of {formatInt(expected)} expected seats across {houses} {houses === 1 ? 'house' : 'houses'}.</strong>
+      {' '}Affidavit-derived records linked: <strong class="num">{formatInt(affidavitsLinked)}</strong> ·
+      Records manually verified: <strong class="num">{formatInt(humanVerified)}</strong>
+    </p>
+    <p class="small">
+      Last data build: {formatDate(buildDate)} · Underlying affidavit digest published: {formatDate(oldestSourceDate)} ·
+      Full gaps listed on the <a href="/coverage/">coverage page</a>.
+    </p>
+  </div>
+</aside>

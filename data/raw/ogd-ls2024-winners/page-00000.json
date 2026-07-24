@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "0",
+    "records": [
+        {
+            "_sl__no_": 1,
+            "state": "Andhra Pradesh",
+            "const_no_": 1,
+            "constituency": "Araku",
+            "constituency_type": "ST",
+            "total_valid_votes": 1113975,
+            "winner_name": "GUMMA THANUJA RANI",
+            "social_category": "ST",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 426425,
+            "runner_up_name": "KOTHAPALLI GEETHA",
+            "margin": 50580,
+            "margin__": 4.54
+        },
+        {
+            "_sl__no_": 2,
+            "state": "Andhra Pradesh",
+            "const_no_": 2,
+            "constituency": "Srikakulam",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1211081,
+            "winner_name": "KINJARAPU RAMMOHAN NAIDU",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 426427,
+            "runner_up_name": "TILAK PERADA",
+            "margin": 327901,
+            "margin__": 27.079999999999998
+        },
+        {
+            "_sl__no_": 3,
+            "state": "Andhra Pradesh",
+            "const_no_": 3,
+            "constituency": "Vizianagaram",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1275992,
+            "winner_name": "APPALANAIDU KALISETTI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 493762,
+            "runner_up_name": "BELLANA CHANDRASEKHAR",
+            "margin": 249351,
+            "margin__": 19.539999999999999
+        },
+        {
+            "_sl__no_": 4,
+            "state": "Andhra Pradesh",
+            "const_no_": 4,
+            "constituency": "Visakhapatnam",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1381812,
+            "winner_name": "SRIBHARAT MATHUKUMILI",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 403220,
+            "runner_up_name": "JHANSI LAKSHMI. BOTCHA.",
+            "margin": 504247,
+            "margin__": 36.490000000000002
+        },
+        {
+            "_sl__no_": 5,
+            "state": "Andhra Pradesh",
+            "const_no_": 5,
+            "constituency": "Anakapalle",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1299097,
+            "winner_name": "C.M.RAMESH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 465539,
+            "runner_up_name": "BUDI MUTYALA NAIDU",
+            "margin": 296530,
+            "margin__": 22.829999999999998
+        },
+        {
+            "_sl__no_": 6,
+            "state": "Andhra Pradesh",
+            "const_no_": 6,
+            "constituency": "Kakinada",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1312583,
+            "winner_name": "TANGELLA UDAY SRINIVAS (TEA TIME UDAY)",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 500208,
+            "runner_up_name": "CHALAMALASETTY SUNIL",
+            "margin": 229491,
+            "margin__": 17.48
+        },
+        {
+            "_sl__no_": 7,
+            "state": "Andhra Pradesh",
+            "const_no_": 7,
+            "constituency": "Amalapuram",
+            "constituency_type": "SC",
+            "total_valid_votes": 1287588,
+            "winner_name": "G M HARISH (BALAYOGI)",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 454785,
+            "runner_up_name": "RAPAKA VARAPRASADA RAO",
+            "margin": 342196,
+            "margin__": 26.579999999999998
+        },
+        {
+            "_sl__no_": 8,
+            "state": "Andhra Pradesh",
+            "const_no_": 8,
+            "constituency": "Rajahmundry",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1300862,
+            "winner_name": "DAGGUBATI PURANDHESHWARI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 487376,
+            "runner_up_name": "DR. GUDURI SRINIVAS",
+            "margin": 239139,
+            "margin__": 18.379999999999999
+        },
+        {
+            "_sl__no_": 9,
+            "state": "Andhra Pradesh",
+            "const_no_": 9,
+            "constituency": "Narsapuram",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1223597,
+            "winner_name": "BHUPATHI RAJU SRINIVASA VARMA (B.J.P.VARMA)",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 430636,
+            "runner_up_name": "UMABALA GUDURI",
+            "margin": 276864,
+            "margin__": 22.629999999999999
+        },
+        {
+            "_sl__no_": 10,
+            "state": "Andhra Pradesh",
+            "const_no_": 10,
+            "constituency": "Eluru",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1359534,
+            "winner_name": "PUTTA MAHESH KUMAR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 564494,
+            "runner_up_name": "KARUMURI SUNIL KUMAR",
+            "margin": 181857,
+            "margin__": 13.380000000000001
+        }
+    ]
+}

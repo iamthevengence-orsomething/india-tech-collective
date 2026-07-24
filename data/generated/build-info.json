@@ -1,0 +1,15 @@
+{
+  "builtAt": "2026-07-24T17:59:09Z",
+  "counts": {
+    "affidavits": 543,
+    "criminalCases": 1340,
+    "enforcementStates": 36,
+    "memberships": 543,
+    "politicians": 543,
+    "sources": 22
+  },
+  "dataAsOf": "2026-07-24",
+  "dataMode": "production",
+  "datasetVersion": "db590871e4212e3b",
+  "gitCommit": "9e555ea3e18ad250d2e029b47ccde9ac3154c44c"
+}

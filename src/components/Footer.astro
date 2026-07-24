@@ -1,0 +1,40 @@
+---
+import { loadBuildInfo } from '../lib/data';
+const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode: string }>();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Dashboards</h4>
+        <ul>
+          <li><a href="/politicians/">Politician Cases</a></li>
+          <li><a href="/corruption/">Corruption Data</a></li>
+          <li><a href="/coverage/">Coverage &amp; gaps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trust</h4>
+        <ul>
+          <li><a href="/methodology/">Methodology</a></li>
+          <li><a href="/sources/">Source registry</a></li>
+          <li><a href="/corrections/">Corrections &amp; right of reply</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="/">Toolkit home</a></li>
+          <li><a href="https://github.com/iamthevengence-orsomething/india-tech-collective" rel="noopener">GitHub</a></li>
+          <li><a href="/downloads/README.txt">Data downloads</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-disclaimer">
+      Non-partisan public-interest data. Case information is self-declared by candidates in sworn election
+      affidavits; a declared case is an accusation, not a conviction, and every person is presumed innocent
+      unless convicted by a court. Dataset {build.datasetVersion} · data as of {build.dataAsOf}
+      {build.dataMode === 'demo' ? ' · DEMO DATA — not real records' : ''} · No trackers.
+    </p>
+  </div>
+</footer>

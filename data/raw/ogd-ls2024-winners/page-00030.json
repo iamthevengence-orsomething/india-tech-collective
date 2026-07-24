@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "30",
+    "records": [
+        {
+            "_sl__no_": 31,
+            "state": "Assam",
+            "const_no_": 4,
+            "constituency": "Darrang-Udalguri",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1787996,
+            "winner_name": "DILIP SAIKIA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 539375,
+            "runner_up_name": "MADHAB RAJBANGSHI",
+            "margin": 329012,
+            "margin__": 18.399999999999999
+        },
+        {
+            "_sl__no_": 32,
+            "state": "Assam",
+            "const_no_": 5,
+            "constituency": "Guwahati",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1579140,
+            "winner_name": "BIJULI KALITA MEDHI",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 643797,
+            "runner_up_name": "MIRA BORTHAKUR GOSWAMI",
+            "margin": 251090,
+            "margin__": 15.9
+        },
+        {
+            "_sl__no_": 33,
+            "state": "Assam",
+            "const_no_": 6,
+            "constituency": "Diphu",
+            "constituency_type": "ST",
+            "total_valid_votes": 666568,
+            "winner_name": "AMARSING TISSO",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "IND",
+            "party_symbol": "Scissors",
+            "vote_secured": 187017,
+            "runner_up_name": "J. I. KATHAR",
+            "margin": 147603,
+            "margin__": 22.140000000000001
+        },
+        {
+            "_sl__no_": 34,
+            "state": "Assam",
+            "const_no_": 7,
+            "constituency": "Karimganj",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1143942,
+            "winner_name": "KRIPANATH MALLAH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 526733,
+            "runner_up_name": "HAFIZ RASHID AHMED CHOUDHURY",
+            "margin": 18360,
+            "margin__": 1.6000000000000001
+        },
+        {
+            "_sl__no_": 35,
+            "state": "Assam",
+            "const_no_": 8,
+            "constituency": "Silchar",
+            "constituency_type": "SC",
+            "total_valid_votes": 1076726,
+            "winner_name": "PARIMAL SUKLABAIDYA",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 388094,
+            "runner_up_name": "SURYA KANTA SARKAR",
+            "margin": 264311,
+            "margin__": 24.550000000000001
+        },
+        {
+            "_sl__no_": 36,
+            "state": "Assam",
+            "const_no_": 9,
+            "constituency": "Nagaon",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1538003,
+            "winner_name": "PRADYUT BORDOLOI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 576619,
+            "runner_up_name": "SURESH BORAH",
+            "margin": 212231,
+            "margin__": 13.800000000000001
+        },
+        {
+            "_sl__no_": 37,
+            "state": "Assam",
+            "const_no_": 10,
+            "constituency": "Kaziranga",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1605506,
+            "winner_name": "KAMAKHYA PRASAD TASA",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 648096,
+            "runner_up_name": "ROSELINA TIRKEY",
+            "margin": 248947,
+            "margin__": 15.51
+        },
+        {
+            "_sl__no_": 38,
+            "state": "Assam",
+            "const_no_": 11,
+            "constituency": "Sonitpur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1269720,
+            "winner_name": "RANJIT DUTTA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 414380,
+            "runner_up_name": "PREMLAL GANJU",
+            "margin": 361408,
+            "margin__": 28.460000000000001
+        },
+        {
+            "_sl__no_": 39,
+            "state": "Assam",
+            "const_no_": 12,
+            "constituency": "Lakhimpur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1194293,
+            "winner_name": "PRADAN BARUAH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 461865,
+            "runner_up_name": "UDAY SHANKAR HAZARIKA",
+            "margin": 201257,
+            "margin__": 16.850000000000001
+        },
+        {
+            "_sl__no_": 40,
+            "state": "Assam",
+            "const_no_": 13,
+            "constituency": "Dibrugarh",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1246067,
+            "winner_name": "SARBANANDA SONOWAL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "ASMJTYP",
+            "party_symbol": "Ship",
+            "vote_secured": 414441,
+            "runner_up_name": "LURINJYOTI GOGOI",
+            "margin": 279321,
+            "margin__": 22.420000000000002
+        }
+    ]
+}

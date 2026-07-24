@@ -1,0 +1,67 @@
+{
+  "agencyScope": "DEMO agencies",
+  "allIndia": {
+    "crt_conviction_rate": 46.2,
+    "reg_total": 97
+  },
+  "dataAsOf": "2026-07-24",
+  "dataYear": 2023,
+  "metricDefs": [
+    {
+      "definition": "DEMO metric.",
+      "label": "Total (DEMO)",
+      "metricId": "reg_total",
+      "unit": "cases"
+    },
+    {
+      "definition": "DEMO rate.",
+      "derived": true,
+      "label": "Conviction rate (DEMO)",
+      "metricId": "crt_conviction_rate",
+      "unit": "percent"
+    }
+  ],
+  "notes": [
+    "DEMO DATA. States/UTs should not be compared on raw counts alone."
+  ],
+  "publicationLabel": "DEMO stats (fixtures)",
+  "publicationYear": 2026,
+  "sourceIds": [
+    "fx-source"
+  ],
+  "states": [
+    {
+      "metrics": {
+        "crt_conviction_rate": 40,
+        "reg_total": 12
+      },
+      "state": "KL",
+      "stateName": "Kerala"
+    },
+    {
+      "metrics": {
+        "crt_conviction_rate": null,
+        "reg_total": 30
+      },
+      "state": "UP",
+      "stateName": "Uttar Pradesh"
+    },
+    {
+      "metrics": {
+        "crt_conviction_rate": 61.5,
+        "reg_total": 55
+      },
+      "state": "MH",
+      "stateName": "Maharashtra"
+    },
+    {
+      "metrics": {
+        "crt_conviction_rate": null,
+        "reg_total": 0
+      },
+      "state": "GA",
+      "stateName": "Goa"
+    }
+  ],
+  "statuteScope": "DEMO statute"
+}

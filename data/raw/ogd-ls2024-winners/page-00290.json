@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "290",
+    "records": [
+        {
+            "_sl__no_": 291,
+            "state": "Rajasthan",
+            "const_no_": 4,
+            "constituency": "JHUNJHUNU",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1112295,
+            "winner_name": "BRIJENDRA SINGH OLA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 534933,
+            "runner_up_name": "SHUBHKARAN CHOUDHARY",
+            "margin": 18235,
+            "margin__": 1.6399999999999999
+        },
+        {
+            "_sl__no_": 292,
+            "state": "Rajasthan",
+            "const_no_": 5,
+            "constituency": "SIKAR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1293590,
+            "winner_name": "AMRARAM",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 586404,
+            "runner_up_name": "SUMEDHANAND SARASWATI",
+            "margin": 72896,
+            "margin__": 5.6399999999999997
+        },
+        {
+            "_sl__no_": 293,
+            "state": "Rajasthan",
+            "const_no_": 6,
+            "constituency": "JAIPUR RURAL",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1254535,
+            "winner_name": "RAO RAJENDRA SINGH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 616262,
+            "runner_up_name": "ANIL CHOPRA",
+            "margin": 1615,
+            "margin__": 0.13
+        },
+        {
+            "_sl__no_": 294,
+            "state": "Rajasthan",
+            "const_no_": 7,
+            "constituency": "JAIPUR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1452830,
+            "winner_name": "MANJU SHARMA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 555083,
+            "runner_up_name": "PRATAP SINGH KHACHARIYAWAS",
+            "margin": 331767,
+            "margin__": 22.84
+        },
+        {
+            "_sl__no_": 295,
+            "state": "Rajasthan",
+            "const_no_": 8,
+            "constituency": "ALWAR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1247616,
+            "winner_name": "BHUPENDER YADAV",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 583710,
+            "runner_up_name": "LALIT YADAV",
+            "margin": 48282,
+            "margin__": 3.8700000000000001
+        },
+        {
+            "_sl__no_": 296,
+            "state": "Rajasthan",
+            "const_no_": 9,
+            "constituency": "BHARATPUR",
+            "constituency_type": "SC",
+            "total_valid_votes": 1127557,
+            "winner_name": "SANJNA JATAV",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 527907,
+            "runner_up_name": "RAMSWAROOP KOLI",
+            "margin": 51983,
+            "margin__": 4.6100000000000003
+        },
+        {
+            "_sl__no_": 297,
+            "state": "Rajasthan",
+            "const_no_": 10,
+            "constituency": "KARAULI-DHOLPUR",
+            "constituency_type": "SC",
+            "total_valid_votes": 980662,
+            "winner_name": "BHAJAN LAL JATAV",
+            "social_category": "SC",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 431066,
+            "runner_up_name": "INDU DEVI",
+            "margin": 98945,
+            "margin__": 10.09
+        },
+        {
+            "_sl__no_": 298,
+            "state": "Rajasthan",
+            "const_no_": 11,
+            "constituency": "DAUSA",
+            "constituency_type": "ST",
+            "total_valid_votes": 1066888,
+            "winner_name": "MURARI LAL MEENA",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 408926,
+            "runner_up_name": "KANHAIYA LAL MEENA",
+            "margin": 237340,
+            "margin__": 22.25
+        },
+        {
+            "_sl__no_": 299,
+            "state": "Rajasthan",
+            "const_no_": 12,
+            "constituency": "TONK-SAWAI MADHOPUR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1218407,
+            "winner_name": "HARISH CHANDRA MEENA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 558814,
+            "runner_up_name": "SUKHBIR SINGH JAUNAPURIA",
+            "margin": 64949,
+            "margin__": 5.3300000000000001
+        },
+        {
+            "_sl__no_": 300,
+            "state": "Rajasthan",
+            "const_no_": 13,
+            "constituency": "AJMER",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1189777,
+            "winner_name": "BHAGIRATH CHOUDHARY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 417471,
+            "runner_up_name": "RAMCHANDRA CHOUDHARY",
+            "margin": 329991,
+            "margin__": 27.739999999999998
+        }
+    ]
+}

@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "260",
+    "records": [
+        {
+            "_sl__no_": 261,
+            "state": "Odisha",
+            "const_no_": 8,
+            "constituency": "Jajpur",
+            "constituency_type": "SC",
+            "total_valid_votes": 1154420,
+            "winner_name": "RABINDRA NARAYAN BEHERA",
+            "social_category": "SC",
+            "gender": "FEMALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 532652,
+            "runner_up_name": "SARMISTHA SETHI",
+            "margin": 1587,
+            "margin__": 0.14000000000000001
+        },
+        {
+            "_sl__no_": 262,
+            "state": "Odisha",
+            "const_no_": 9,
+            "constituency": "Dhenkanal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1177896,
+            "winner_name": "RUDRA NARAYAN PANY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 522154,
+            "runner_up_name": "ABINASH SAMAL",
+            "margin": 76567,
+            "margin__": 6.5
+        },
+        {
+            "_sl__no_": 263,
+            "state": "Odisha",
+            "const_no_": 10,
+            "constituency": "Bolangir",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1384184,
+            "winner_name": "SANGEETA KUMARI SINGH DEO",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 485080,
+            "runner_up_name": "SURENDRA SINGH BHOI",
+            "margin": 132664,
+            "margin__": 9.5800000000000001
+        },
+        {
+            "_sl__no_": 264,
+            "state": "Odisha",
+            "const_no_": 11,
+            "constituency": "Kalahandi",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1314529,
+            "winner_name": "MALVIKA DEVI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 410490,
+            "runner_up_name": "LAMBODAR NIAL",
+            "margin": 133813,
+            "margin__": 10.18
+        },
+        {
+            "_sl__no_": 265,
+            "state": "Odisha",
+            "const_no_": 12,
+            "constituency": "Nabarangpur",
+            "constituency_type": "ST",
+            "total_valid_votes": 1199207,
+            "winner_name": "BALABHADRA MAJHI",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 393860,
+            "runner_up_name": "PRADEEP KUMAR MAJHI",
+            "margin": 87536,
+            "margin__": 7.2999999999999998
+        },
+        {
+            "_sl__no_": 266,
+            "state": "Odisha",
+            "const_no_": 13,
+            "constituency": "Kandhamal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 980371,
+            "winner_name": "SUKANTA KUMAR PANIGRAHI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 395044,
+            "runner_up_name": "ACHYUTANANDA SAMANTA",
+            "margin": 21371,
+            "margin__": 2.1800000000000002
+        },
+        {
+            "_sl__no_": 267,
+            "state": "Odisha",
+            "const_no_": 14,
+            "constituency": "Cuttack",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1112636,
+            "winner_name": "BHARTRUHARI MAHTAB",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 474524,
+            "runner_up_name": "SANTRUPT MISRA",
+            "margin": 57077,
+            "margin__": 5.1299999999999999
+        },
+        {
+            "_sl__no_": 268,
+            "state": "Odisha",
+            "const_no_": 15,
+            "constituency": "Kendrapara",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1271293,
+            "winner_name": "BAIJAYANT PANDA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 549169,
+            "runner_up_name": "ANSHUMAN MOHANTY",
+            "margin": 66536,
+            "margin__": 5.2300000000000004
+        },
+        {
+            "_sl__no_": 269,
+            "state": "Odisha",
+            "const_no_": 16,
+            "constituency": "Jagatsinghpur",
+            "constituency_type": "SC",
+            "total_valid_votes": 1281405,
+            "winner_name": "BIBHU PRASAD TARAI",
+            "social_category": "SC",
+            "gender": "FEMALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 548397,
+            "runner_up_name": "DR. RAJASHREE MALLICK",
+            "margin": 40696,
+            "margin__": 3.1800000000000002
+        },
+        {
+            "_sl__no_": 270,
+            "state": "Odisha",
+            "const_no_": 17,
+            "constituency": "Puri",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1189328,
+            "winner_name": "SAMBIT PATRA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 524621,
+            "runner_up_name": "ARUP MOHAN PATNAIK",
+            "margin": 104709,
+            "margin__": 8.8000000000000007
+        }
+    ]
+}

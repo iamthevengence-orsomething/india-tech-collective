@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Page not found | India Tech Collective"
+  description="This page does not exist."
+  path="/404"
+  noindex={true}
+>
+  <div class="wrap" style="max-width:720px;">
+    <header class="page-head" style="text-align:center;padding:6rem 0;">
+      <p class="kicker" style="justify-content:center;">404</p>
+      <h1 class="page-h1" style="margin-inline:auto;">This page isn’t on the record.</h1>
+      <p class="lede" style="margin-inline:auto;">
+        The address may have changed, or the profile you’re after may use a different spelling.
+      </p>
+      <div class="share-row" style="justify-content:center;margin-top:1.4rem;">
+        <a class="btn btn-primary" href="/politicians/">Search representatives</a>
+        <a class="btn" href="/">Toolkit home</a>
+        <a class="btn" href="/coverage/">Coverage</a>
+      </div>
+    </header>
+  </div>
+</Base>

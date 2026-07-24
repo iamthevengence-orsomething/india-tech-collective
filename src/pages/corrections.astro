@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadCurated } from '../lib/data';
+import { formatDate } from '../lib/format';
+const log = loadCurated<any>('corrections-log');
+const issueUrl =
+  'https://github.com/iamthevengence-orsomething/india-tech-collective/issues/new?template=correction-request.yml&title=' +
+  encodeURIComponent('Correction request: [profile or page]');
+---
+<Base
+  title="Corrections & right of reply | India Tech Collective"
+  description="How to request a correction to any record on the accountability dashboards — including for representatives named on the site — and the public, append-only correction log."
+  path="/corrections/"
+  current="methodology"
+>
+  <div class="wrap" style="max-width:880px;">
+    <header class="page-head">
+      <p class="kicker">Corrections · right of reply</p>
+      <h1 class="page-h1">Get the record fixed</h1>
+      <p class="lede">
+        If any record here is wrong, outdated, or missing context — especially if it concerns
+        <strong> you</strong> — ask for a correction. Requests are tracked publicly, applied in data (never by
+        silent edits), and logged below permanently.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">How to request a correction</h2>
+      <div class="banner banner-review" style="margin:0.8rem 0;">
+        <span class="banner-icon" aria-hidden="true">⚠</span>
+        <p class="small">
+          <strong>Do not post private personal data</strong> (phone numbers, addresses, medical or financial
+          details) in a public request. Court orders and published documents are enough; redact anything private.
+        </p>
+      </div>
+      <ol class="prose" style="margin-left:1.2rem;">
+        <li>Open a correction request on GitHub (public, trackable):<br />
+          <a class="btn btn-primary" style="margin-top:0.5rem;" href={issueUrl} rel="noopener">Open a correction request ↗</a>
+        </li>
+        <li>Include: the <strong>page URL</strong>, the <strong>disputed field</strong>, <strong>what it should say</strong>, and an <strong>authoritative source</strong> (court order, ECI record, gazette, official press note).</li>
+        <li>A maintainer verifies the source, updates the data with a new dataset version, and appends an entry to the public log below. Materially adverse changes require human review before publication.</li>
+      </ol>
+      <p class="small" style="color:var(--muted);margin-top:0.8rem;">
+        If you are the person named and cannot use GitHub, any representative may file on your behalf; the
+        takedown/escalation path is documented in <code>docs/corrections-policy.md</code> in the repository.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Public correction log</h2>
+      {log.corrections.length === 0 ? (
+        <div class="empty-state">
+          <p><strong>No corrections yet.</strong></p>
+          <p class="small">Every future correction appears here permanently: date, field, old value, new value, reason and source.</p>
+        </div>
+      ) : (
+        <div class="table-scroll">
+          <table class="data">
+            <caption>Append-only correction log</caption>
+            <thead>
+              <tr><th scope="col">Date</th><th scope="col">Page</th><th scope="col">Field</th><th scope="col">Old</th><th scope="col">New</th><th scope="col">Reason / source</th></tr>
+            </thead>
+            <tbody>
+              {log.corrections.map((c: any) => (
+                <tr>
+                  <td>{formatDate(c.date)}</td>
+                  <td>{c.profileUrl ? <a href={c.profileUrl}>{c.profileUrl}</a> : '—'}</td>
+                  <td>{c.field}</td>
+                  <td>{c.oldValue}</td>
+                  <td>{c.newValue}</td>
+                  <td class="small">{c.reason}{c.authoritativeSourceUrl && <> · <a href={c.authoritativeSourceUrl} rel="noopener">source ↗</a></>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  </div>
+</Base>

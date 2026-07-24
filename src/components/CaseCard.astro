@@ -1,0 +1,79 @@
+---
+import ReviewChip from './ReviewChip.astro';
+import { formatDate } from '../lib/format';
+
+interface Provision { actId: string; section: string; mappingStatus: string }
+interface Props {
+  ordinal: number;
+  declarationType: 'pending' | 'conviction';
+  declaredStatus: string;
+  actsSectionsRaw: string;
+  normalizedProvisions: Provision[];
+  caseNumberRaw?: string;
+  firNumberRaw?: string;
+  policeStationRaw?: string;
+  courtNameRaw?: string;
+  chargesFramed?: boolean;
+  sentenceRaw?: string;
+  appealStatusRaw?: string;
+  statusAsOf: string;
+  pageReference?: string;
+  corruptionQualification: 'yes' | 'no' | 'needs_review';
+  reviewStatus: 'unreviewed' | 'machine_checked' | 'human_verified' | 'rejected';
+  sourceUrl: string;
+  actLabels: Record<string, string>;
+}
+const p = Astro.props;
+const provisionLabel = (pr: Provision) =>
+  pr.mappingStatus === 'unmapped' ? pr.section : `${p.actLabels[pr.actId] ?? pr.actId}${pr.section ? ` s.${pr.section}` : ''}`;
+const seen = new Set<string>();
+const provisions = p.normalizedProvisions.filter((pr) => {
+  const k = provisionLabel(pr);
+  if (seen.has(k)) return false;
+  seen.add(k);
+  return true;
+});
+---
+<article class="case-card">
+  <h4>
+    {p.declarationType === 'conviction'
+      ? <span class="chip chip-alert">Declared conviction</span>
+      : <span class="chip">Declared pending case</span>}
+    <span style="color:var(--muted);font-weight:500;">Case {p.ordinal}</span>
+    {p.corruptionQualification === 'yes' && <span class="chip chip-data" title="Cites the Prevention of Corruption Act under the reviewed mapping rules">PC Act</span>}
+    {p.corruptionQualification === 'needs_review' && <span class="chip" title="Contains statutes that are never auto-classified; awaiting manual review">classification pending review</span>}
+    <ReviewChip status={p.reviewStatus} />
+  </h4>
+
+  <div class="provision-chips" aria-label="Statutes cited (normalized)">
+    {provisions.slice(0, 12).map((pr) => (
+      <span class={`chip ${pr.mappingStatus === 'unmapped' ? 'chip-warn' : ''}`} title={pr.mappingStatus === 'unmapped' ? 'Not yet mapped to the statute dictionary; raw text below' : `Mapping: ${pr.mappingStatus}`}>
+        {provisionLabel(pr)}
+      </span>
+    ))}
+    {provisions.length > 12 && <span class="chip">+{provisions.length - 12} more</span>}
+  </div>
+
+  <dl class="case-kv">
+    {p.caseNumberRaw && <><dt>Case number (as declared)</dt><dd>{p.caseNumberRaw}</dd></>}
+    {p.firNumberRaw && <><dt>FIR / police reference</dt><dd>{p.firNumberRaw}</dd></>}
+    {p.policeStationRaw && <><dt>Police station</dt><dd>{p.policeStationRaw}</dd></>}
+    {p.courtNameRaw && <><dt>Court</dt><dd>{p.courtNameRaw}</dd></>}
+    <dt>Charges framed</dt><dd>{p.chargesFramed === undefined ? 'Not stated in digest' : p.chargesFramed ? 'Yes (as declared)' : 'No (as declared)'}</dd>
+    {p.sentenceRaw && <><dt>Sentence (as declared)</dt><dd>{p.sentenceRaw}</dd></>}
+    {p.appealStatusRaw && <><dt>Appeal status (as declared)</dt><dd>{p.appealStatusRaw}</dd></>}
+    <dt>Declared status</dt><dd>{p.declaredStatus}</dd>
+    <dt>Status as of</dt><dd>{formatDate(p.statusAsOf)} (affidavit digest date)</dd>
+    {p.pageReference && <><dt>Record locator</dt><dd>{p.pageReference}</dd></>}
+  </dl>
+
+  <details class="expander" style="margin-top:.55rem;">
+    <summary>Raw declaration text (unedited)</summary>
+    <p class="small" style="margin-top:.4rem;color:var(--muted);overflow-wrap:anywhere;">{p.actsSectionsRaw}</p>
+  </details>
+
+  <p class="metric-caption" style="margin-top:.55rem;">
+    <a href={p.sourceUrl} rel="noopener">Source document ↗</a> · This is the status disclosed in the election
+    affidavit as digested on {formatDate(p.statusAsOf)}. The case may have changed since then.
+  </p>
+</article>

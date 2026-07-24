@@ -1,0 +1,259 @@
+{
+  "version": "1.0.0",
+  "note": "Codes follow ISO 3166-2:IN as amended (CG, OD, TG, UK). Aliases cover ECI/NCRB/OGD naming variants; joins happen on normalized alias match.",
+  "states": [
+    {
+      "code": "AP",
+      "name": "Andhra Pradesh",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "AR",
+      "name": "Arunachal Pradesh",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "AS",
+      "name": "Assam",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "BR",
+      "name": "Bihar",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "CG",
+      "name": "Chhattisgarh",
+      "type": "state",
+      "aliases": [
+        "Chhatisgarh",
+        "Chattisgarh"
+      ]
+    },
+    {
+      "code": "GA",
+      "name": "Goa",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "GJ",
+      "name": "Gujarat",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "HR",
+      "name": "Haryana",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "HP",
+      "name": "Himachal Pradesh",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "JH",
+      "name": "Jharkhand",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "KA",
+      "name": "Karnataka",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "KL",
+      "name": "Kerala",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "MP",
+      "name": "Madhya Pradesh",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "MH",
+      "name": "Maharashtra",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "MN",
+      "name": "Manipur",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "ML",
+      "name": "Meghalaya",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "MZ",
+      "name": "Mizoram",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "NL",
+      "name": "Nagaland",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "OD",
+      "name": "Odisha",
+      "type": "state",
+      "aliases": [
+        "Orissa"
+      ]
+    },
+    {
+      "code": "PB",
+      "name": "Punjab",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "RJ",
+      "name": "Rajasthan",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "SK",
+      "name": "Sikkim",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "TN",
+      "name": "Tamil Nadu",
+      "type": "state",
+      "aliases": [
+        "Tamilnadu"
+      ]
+    },
+    {
+      "code": "TG",
+      "name": "Telangana",
+      "type": "state",
+      "aliases": [
+        "Telengana"
+      ]
+    },
+    {
+      "code": "TR",
+      "name": "Tripura",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "UP",
+      "name": "Uttar Pradesh",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "UK",
+      "name": "Uttarakhand",
+      "type": "state",
+      "aliases": [
+        "Uttaranchal"
+      ]
+    },
+    {
+      "code": "WB",
+      "name": "West Bengal",
+      "type": "state",
+      "aliases": []
+    },
+    {
+      "code": "AN",
+      "name": "Andaman and Nicobar Islands",
+      "type": "ut",
+      "aliases": [
+        "A & N Islands",
+        "A&N Islands",
+        "Andaman & Nicobar Islands",
+        "Andaman & Nicobar"
+      ]
+    },
+    {
+      "code": "CH",
+      "name": "Chandigarh",
+      "type": "ut",
+      "aliases": []
+    },
+    {
+      "code": "DH",
+      "name": "Dadra and Nagar Haveli and Daman and Diu",
+      "type": "ut",
+      "aliases": [
+        "Dadra & Nagar Haveli and Daman & Diu",
+        "DNH and DD",
+        "D&N Haveli and Daman & Diu",
+        "Dadra and Nagar Haveli",
+        "Daman and Diu",
+        "Daman & Diu",
+        "Dadra & Nagar Haveli"
+      ]
+    },
+    {
+      "code": "DL",
+      "name": "Delhi",
+      "type": "ut",
+      "aliases": [
+        "NCT of Delhi",
+        "Delhi (UT)",
+        "Delhi UT",
+        "National Capital Territory of Delhi",
+        "Delhi (NCT)",
+        "DELHI (NCT)"
+      ]
+    },
+    {
+      "code": "JK",
+      "name": "Jammu and Kashmir",
+      "type": "ut",
+      "aliases": [
+        "Jammu & Kashmir",
+        "J&K",
+        "J & K"
+      ]
+    },
+    {
+      "code": "LA",
+      "name": "Ladakh",
+      "type": "ut",
+      "aliases": []
+    },
+    {
+      "code": "LD",
+      "name": "Lakshadweep",
+      "type": "ut",
+      "aliases": []
+    },
+    {
+      "code": "PY",
+      "name": "Puducherry",
+      "type": "ut",
+      "aliases": [
+        "Pondicherry"
+      ]
+    }
+  ]
+}

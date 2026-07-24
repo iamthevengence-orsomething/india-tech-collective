@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "270",
+    "records": [
+        {
+            "_sl__no_": 271,
+            "state": "Odisha",
+            "const_no_": 18,
+            "constituency": "Bhubaneswar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1073913,
+            "winner_name": "APARAJITA SARANGI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 477367,
+            "runner_up_name": "MANMATH KUMAR ROUTRAY",
+            "margin": 35152,
+            "margin__": 3.27
+        },
+        {
+            "_sl__no_": 272,
+            "state": "Odisha",
+            "const_no_": 19,
+            "constituency": "Aska",
+            "constituency_type": "GEN",
+            "total_valid_votes": 995973,
+            "winner_name": "ANITA SUBHADARSHINI",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 394252,
+            "runner_up_name": "RANJITA SAHU",
+            "margin": 99974,
+            "margin__": 10.039999999999999
+        },
+        {
+            "_sl__no_": 273,
+            "state": "Odisha",
+            "const_no_": 20,
+            "constituency": "Berhampur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1026981,
+            "winner_name": "DR. PRADEEP KUMAR PANIGRAHY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 347626,
+            "runner_up_name": "BHRUGU BAXIPATRA",
+            "margin": 165476,
+            "margin__": 16.109999999999999
+        },
+        {
+            "_sl__no_": 274,
+            "state": "Odisha",
+            "const_no_": 21,
+            "constituency": "Koraput",
+            "constituency_type": "ST",
+            "total_valid_votes": 1110513,
+            "winner_name": "SAPTAGIRI SANKAR ULAKA",
+            "social_category": "ST",
+            "gender": "FEMALE",
+            "party": "BJD",
+            "party_symbol": "Conch",
+            "vote_secured": 323318,
+            "runner_up_name": "KAUSALYA HIKAKA",
+            "margin": 147728,
+            "margin__": 13.300000000000001
+        },
+        {
+            "_sl__no_": 275,
+            "state": "Punjab",
+            "const_no_": 1,
+            "constituency": "Gurdaspur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1074472,
+            "winner_name": "SUKHJINDER SINGH RANDHAWA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 281182,
+            "runner_up_name": "DINESH SINGH BABBU",
+            "margin": 82861,
+            "margin__": 7.71
+        },
+        {
+            "_sl__no_": 276,
+            "state": "Punjab",
+            "const_no_": 2,
+            "constituency": "Amritsar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 901942,
+            "winner_name": "GURJEET SINGH AUJLA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "AAAP",
+            "party_symbol": "Broom",
+            "vote_secured": 214880,
+            "runner_up_name": "KULDEEP SINGH DHALIWAL",
+            "margin": 40301,
+            "margin__": 4.4699999999999998
+        },
+        {
+            "_sl__no_": 277,
+            "state": "Punjab",
+            "const_no_": 3,
+            "constituency": "Khadoor Sahib",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1043713,
+            "winner_name": "AMRITPAL SINGH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 207310,
+            "runner_up_name": "KULBIR SINGH ZIRA",
+            "margin": 197120,
+            "margin__": 18.890000000000001
+        },
+        {
+            "_sl__no_": 278,
+            "state": "Punjab",
+            "const_no_": 4,
+            "constituency": "Jalandhar",
+            "constituency_type": "SC",
+            "total_valid_votes": 984364,
+            "winner_name": "CHARANJIT SINGH CHANNI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 214060,
+            "runner_up_name": "SUSHIL KUMAR RINKU",
+            "margin": 175993,
+            "margin__": 17.879999999999999
+        },
+        {
+            "_sl__no_": 279,
+            "state": "Punjab",
+            "const_no_": 5,
+            "constituency": "Hoshiarpur",
+            "constituency_type": "SC",
+            "total_valid_votes": 942933,
+            "winner_name": "DR. RAJ KUMAR CHABBEWAL",
+            "social_category": "SC",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 259748,
+            "runner_up_name": "YAMINI GOMAR",
+            "margin": 44111,
+            "margin__": 4.6799999999999997
+        },
+        {
+            "_sl__no_": 280,
+            "state": "Punjab",
+            "const_no_": 6,
+            "constituency": "Anandpur Sahib",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1070721,
+            "winner_name": "MALVINDER SINGH KANG",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 302371,
+            "runner_up_name": "VIJAY INDER SINGLA",
+            "margin": 10846,
+            "margin__": 1.01
+        }
+    ]
+}

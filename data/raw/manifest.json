@@ -1,0 +1,543 @@
+[
+  {
+    "bytes": 8441632,
+    "cached": true,
+    "file": "data/raw/adr-ls2024-report/report.pdf",
+    "notes": "Single retrieval of a published report; cached thereafter. Citation-based use per ADR terms.",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "03c9529c32aa3259d2a0c21ad89099cde0e5fe35d6a5ae4979c925a691796120",
+    "sourceId": "adr-ls2024-report",
+    "url": "https://adrindia.org/sites/default/files/Lok_Sabha_Elections_2024_Criminal_and_Financial_background_details_of_Winning_Candidates_Finalver_English%20%281%29.pdf"
+  },
+  {
+    "bytes": 9371,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00000.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "6f6d35b4c3c282444467003d31654c2b2f5f14402c45011ca2340b2efdea4813",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9413,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00010.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "26c4b65c4ef5f1d9491789b14a9904af0631a7f6c1f1410ffbac0faf0d0aae53",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9224,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00020.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "84904a2e9bf5f4fb8e7007757b07f78e2c3365451c55bb3bfceb8cff87a2d03b",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9119,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00030.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "e762117ff0019316fdc95c9fbd80e77c62f17dc2f1a64db9406b99c5f35b18ca",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9141,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00040.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "42ad28370419dadac3774b9d36e339610b541c17bdd922e122665dc597624f3d",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9206,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00050.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "98f4354a8c7a8b5c602bded1d2e178ff58d595f656a3906aff66a1479d227f57",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9200,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00060.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "07c9948b940dc70ef32b273d27c6efcac0427f1419e0e3a72546ea0b82919dc5",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9052,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00070.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "ec6a5dca2a5458c089dabcc50bcee16c78e4d5b105fb88b3d23cffd3e80a59ff",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9215,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00080.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "3da72f50c69b2f9c9c9548b289a9d4747f2dc6a9710cad9c81ee5c0b27020ea1",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9268,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00090.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "18d1df15375a5c14b468d8ec22fead5d5091e4b490d1aeab9afad5769163cffc",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9270,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00100.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "14459417ee3bea070942031bdc2b30a03cb18f381643294f915cebdbee5fdb7c",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9105,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00110.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "5049c9ee1bcbed81796de8d5f46c7761ec57036e2e5e83cb245829ef0bc8a0bf",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9197,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00120.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "35f1f6b854917cf03a75325e8fadd619a2965bc548d545c782af1a037c6bd6b8",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9246,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00130.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "aed4f09050aefe4476e0a1487cedfcfe3797efec55dfe1b324ab2e121523fd20",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9161,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00140.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "f46640fa2ce0549707dc241152b7246e3d4f629dfb3395bb026604f937fc309f",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9279,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00150.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "307a2ca1878bb4682d78a01244b60243d86a0814863aa247c7a3cb4093913f69",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9263,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00160.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "eceeb64a8b4acdb0cece88b1a7dc50c32779ca305f86f5bf05dec172d70fcffc",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9312,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00170.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "2f459f0987ebff74511f98ea2c906e494deff1d710d226ba4f9a0322f9a44452",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9251,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00180.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "0f97134eef777de96d0dda0461c0eabcb812a830d3001f10d5123b63e5e2e79a",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9182,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00190.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "6a9b24d99cd07020f37b12d9a892bdd605ab8a95cfae4d10a49482c18174e34d",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9293,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00200.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "5757c726fe4995124c7a6df87f2fc8d036ecc298b247ea5fedcd4cb07a0b3959",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9381,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00210.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "8b8b5c745f2355e61dc15da04fa77f93c5421fa9cbe546eda3cb2b13a127ad55",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9364,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00220.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "f6de74d77198ae9e1f99138485b1a33955e786b453c00e9f6092ff24ad8e8c40",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9353,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00230.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "4d07abad81a500db19b5779858d0ead5ea20bcfc12b5f406c9b24b4ab4e55e8d",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9387,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00240.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "2feddf43339f2dda4411de120c639d22b623534c199d834d30cf11930ec9488d",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9093,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00250.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "7f8d9ccafd3d7f46c773a12a444fb2e94488650cd348dff98be824e40b3f1406",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9147,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00260.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "a4100c83184edc33c65080a966df85f8d37adeff5fc4d3689142182580e7c992",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9164,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00270.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "21888e12193a26fbe1cad5dfc725a6fa9761d80ccdfc454a5d01d44da71a7e38",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9114,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00280.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "bca6f6febd8c3e5af57ec837f5b14f45c3f71f4d01bf0da267fd9efa4ed2fbb0",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9126,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00290.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "5e16b770d88aa231d7e23a53b58df1bf0d18e2b53b641f3aca386c66c1a70f06",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9153,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00300.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "7c535f85ab8f093ce6b7e6293b95ab51308d3bba845b64592c91aae50b67453f",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9206,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00310.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "b63cbe85d3819310285d6d8ce06a63d8037474795346597a364761e96e5a1d4e",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9151,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00320.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "b84056815800113d6670b8ea2282abcac5ad6715542c08ebcc5c1976e8806b18",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9195,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00330.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "f5e79051ac9a8a49fa3e5c5aea8e42ac7289b3e5d297a19adecfe3f36c45472b",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9226,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00340.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "65c323f9a9912286173c3b07491ec4d6342e4ec05503c0759ece512cfbc5522c",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9225,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00350.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "03760c61829470f0d107f67b24f3843ca8f819d27e980b08c2a2352e76a4de40",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9168,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00360.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "0ca5b5f6ac7566f044014ea7493e9275bfc3326f1479d075f40c8ea46b0b9471",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9206,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00370.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "95a3c88fa8a1d59d2c9cce8ef01770bda04e44cfdb4190d3843227a77b5b2c8d",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9171,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00380.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "b031ea0f47b2be2dfa91967a5005349f6ec5539b6362b9843eea85aeda5da71a",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9228,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00390.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "ca0e65fb2e5a0c4d662928d2d65a86759d3dde94ae0b34bdf4793128aa419984",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9185,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00400.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "52d0d46f88bda0d4b784e428f6bd322c87967c50634db5d6918ae07806527680",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9328,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00410.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "7084c42b7f1e88a7b68175d9506a8b070627856f3502af9d5b28a32f4807d828",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9204,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00420.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "2a4451973cafb02dbfe095f45a568ec3cf145d9a799ae8d2f3a7bf027019a391",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9255,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00430.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "6d10594086d6c6ce0c28e7a995ffad9000968d53d96b79a3e88c96d344c3dd4c",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9256,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00440.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "3e559f627e84c8649c77eb023afbbfdea22fe7c688022a00040e8baf0280127d",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9120,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00450.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "e5a2eb4dec2b9b53d5e0f1ea44fc973cf4d7f7cbe004f57fdf5b314dc38b67ff",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9256,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00460.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "da6a03799dea0aef96ad98fca36a733e2ff57b85107c6d272bcf5ec267f54c5e",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9172,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00470.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "0ba04f191614617547949889a3d67dabc0d3cbcce7ebab346474072e16465f80",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9089,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00480.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "34a92f9cbfd6160c80036345817ed4ad84c1f9030ffb18fe29a68de75bdb68ce",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9148,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00490.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "a7aefee840e4eb88ce457af2e26d6c7be6a7a5f34ed3d3b51565c2431cbb3fee",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9113,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00500.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "93cd31a329716aec332570f725017b13370b17dcd7c58e8a6494e1c1534f44b2",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9216,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00510.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "f7c67b3441e201ca4abeca514bc1ad519fead8157b30c2da0817f3e428912f78",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9268,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00520.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "757e655812165912942f0c547c28ceefb7795b7a1404cf88ad83d5b067f5acf6",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 9254,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00530.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "82e1f0e5efb0c67308a81e4ffff26c6940d70a6f1299e85b37b8ffe2ef1957a5",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 4535,
+    "cached": true,
+    "file": "data/raw/ogd-ls2024-winners/page-00540.json",
+    "retrievedAt": "2026-07-24T17:15:05Z",
+    "sha256": "61c68cf5a47d71d91dde3c7e3ef3a231925bac4897ac15070fcf4ead9ae1ae58",
+    "sourceId": "ogd-ls2024-winners",
+    "url": "https://api.data.gov.in/resource/194d454f-3ea8-4621-a915-b211c66e46a7"
+  },
+  {
+    "bytes": 3161,
+    "cached": false,
+    "contentType": "text/csv",
+    "file": "data/raw/ogd-ncrb-court-disposal-2023/NCRB_CII_2023_Table_8C.4.csv",
+    "httpStatus": 200,
+    "notes": "Court disposal of ACB/Vigilance/Lokayukta PC Act cases during 2023.",
+    "retrievedAt": "2026-07-24T17:15:16Z",
+    "sha256": "905af8ddb2e182703a25e59b7b9dcedb259418cbdaa332832965fd7c4a5e8484",
+    "sourceId": "ogd-ncrb-court-disposal-2023",
+    "url": "https://www.data.gov.in/files/ogdpv2dms/s3fs-public/NCRB_CII_2023_Table_8C.4_0.csv"
+  },
+  {
+    "bytes": 1240,
+    "cached": false,
+    "contentType": "text/csv",
+    "file": "data/raw/ogd-ncrb-pca-registered-2023/NCRB_CII_2023_Table_8C.2.csv",
+    "httpStatus": 200,
+    "notes": "PC Act cases registered by ACB/Vigilance during 2023, by type (trap/DA/criminal misconduct/others).",
+    "retrievedAt": "2026-07-24T17:15:08Z",
+    "sha256": "3807dccd3c1b19bbcee5867805591aba8f04ffd52f65abb6c3307bc51ea1bc74",
+    "sourceId": "ogd-ncrb-pca-registered-2023",
+    "url": "https://www.data.gov.in/files/ogdpv2dms/s3fs-public/NCRB_CII_2023_Table_8C.2_0.csv"
+  },
+  {
+    "bytes": 1917,
+    "cached": false,
+    "contentType": "text/csv",
+    "file": "data/raw/ogd-ncrb-police-disposal-2023/NCRB_CII_2023_Table_8C.3.csv",
+    "httpStatus": 200,
+    "notes": "Police disposal of ACB/Vigilance/Lokayukta PC Act cases during 2023.",
+    "retrievedAt": "2026-07-24T17:15:14Z",
+    "sha256": "0e0a62260e6522d7183f7ed573b01a06a367c75f209009a39f27e834369b546a",
+    "sourceId": "ogd-ncrb-police-disposal-2023",
+    "url": "https://www.data.gov.in/files/ogdpv2dms/s3fs-public/NCRB_CII_2023_Table_8C.3_0.csv"
+  }
+]

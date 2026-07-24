@@ -1,0 +1,32 @@
+{
+  "activeFallbacks": [
+    {
+      "area": "Everything",
+      "effect": "No real records are shown.",
+      "id": "fx-demo",
+      "reason": "DEMO fixtures loaded"
+    }
+  ],
+  "dataAsOf": "2024-06-06",
+  "lastPipelineRun": "2026-07-24T00:00:00Z",
+  "rows": [
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "DEMO House",
+      "electionId": "fx-ls-2024",
+      "expectedSeats": 8,
+      "houseType": "lok_sabha",
+      "knownGaps": [
+        "This is fixture data for UI testing."
+      ],
+      "latestSourceDate": "2024-06-06",
+      "membersIdentified": 8,
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 8,
+      "status": "partial",
+      "summaryRecords": 7,
+      "termLabel": "DEMO"
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "510",
+    "records": [
+        {
+            "_sl__no_": 511,
+            "state": "Telangana",
+            "const_no_": 5,
+            "constituency": "Zahirabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1233616,
+            "winner_name": "SURESH KUMAR SHETKAR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 482230,
+            "runner_up_name": "B. B. PATIL",
+            "margin": 46188,
+            "margin__": 3.7400000000000002
+        },
+        {
+            "_sl__no_": 512,
+            "state": "Telangana",
+            "const_no_": 6,
+            "constituency": "Medak",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1381622,
+            "winner_name": "MADHAVANENI RAGHUNANDAN RAO",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 432078,
+            "runner_up_name": "NEELAM MADHU",
+            "margin": 39139,
+            "margin__": 2.8300000000000001
+        },
+        {
+            "_sl__no_": 513,
+            "state": "Telangana",
+            "const_no_": 7,
+            "constituency": "Malkajgiri",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1920477,
+            "winner_name": "EATALA RAJENDER",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 599567,
+            "runner_up_name": "PATNAM SUNEETHA MAHENDER REDDY",
+            "margin": 391475,
+            "margin__": 20.379999999999999
+        },
+        {
+            "_sl__no_": 514,
+            "state": "Telangana",
+            "const_no_": 8,
+            "constituency": "Secunderabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1042493,
+            "winner_name": "G. KISHAN REDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 423068,
+            "runner_up_name": "DANAM NAGENDER",
+            "margin": 49944,
+            "margin__": 4.79
+        },
+        {
+            "_sl__no_": 515,
+            "state": "Telangana",
+            "const_no_": 9,
+            "constituency": "Hyderabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1077418,
+            "winner_name": "ASADUDDIN OWAISI",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 323894,
+            "runner_up_name": "MADHAVI LATHA KOMPELLA",
+            "margin": 338087,
+            "margin__": 31.379999999999999
+        },
+        {
+            "_sl__no_": 516,
+            "state": "Telangana",
+            "const_no_": 10,
+            "constituency": "Chevella",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1668931,
+            "winner_name": "KONDA VISHWESHWAR REDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 636985,
+            "runner_up_name": "DR GADDAM RANJITH REDDY",
+            "margin": 172897,
+            "margin__": 10.359999999999999
+        },
+        {
+            "_sl__no_": 517,
+            "state": "Telangana",
+            "const_no_": 11,
+            "constituency": "Mahbubnagar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1221748,
+            "winner_name": "ARUNA. D. K",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 506247,
+            "runner_up_name": "CHALLA VAMSHI CHAND REDDY",
+            "margin": 4500,
+            "margin__": 0.37
+        },
+        {
+            "_sl__no_": 518,
+            "state": "Telangana",
+            "const_no_": 12,
+            "constituency": "Nagarkurnool",
+            "constituency_type": "SC",
+            "total_valid_votes": 1214643,
+            "winner_name": "DR.MALLU RAVI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 370658,
+            "runner_up_name": "BHARATH PRASAD POTHUGANTI",
+            "margin": 94414,
+            "margin__": 7.7699999999999996
+        },
+        {
+            "_sl__no_": 519,
+            "state": "Telangana",
+            "const_no_": 13,
+            "constituency": "Nalgonda",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1290238,
+            "winner_name": "KUNDURU RAGHUVEER",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 224432,
+            "runner_up_name": "SAIDI REDDY SHANAMPUDI",
+            "margin": 559905,
+            "margin__": 43.399999999999999
+        },
+        {
+            "_sl__no_": 520,
+            "state": "Telangana",
+            "const_no_": 14,
+            "constituency": "Bhongir",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1396750,
+            "winner_name": "CHAMALA KIRAN KUMAR REDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 406973,
+            "runner_up_name": "DR. BOORA NARSAIAH GOUD",
+            "margin": 222170,
+            "margin__": 15.91
+        }
+    ]
+}

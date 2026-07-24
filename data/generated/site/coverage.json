@@ -1,0 +1,597 @@
+{
+  "activeFallbacks": [
+    {
+      "area": "Politician Cases",
+      "effect": "Case records come from the ADR published digest; profiles cite the digest, not the primary PDF.",
+      "id": "eci-affidavit-403",
+      "reason": "affidavit.eci.gov.in returns HTTP 403 to automated access (no bypass attempted)"
+    },
+    {
+      "area": "Politician Cases",
+      "effect": "Winner party attribution comes from the ADR analysis and is reconciled against its printed party-wise seat table.",
+      "id": "ogd-winner-party-corrupt",
+      "reason": "The OGD datastore copy of the winners list collapsed duplicate winner/runner-up columns at ingestion, corrupting winner party fields"
+    },
+    {
+      "area": "Corruption — audit findings",
+      "effect": "The audit-findings lens lists real report metadata only; zero findings are shown.",
+      "id": "cag-pipeline-review",
+      "reason": "CAG report finding extraction is not yet reviewed"
+    },
+    {
+      "area": "Maps",
+      "effect": "Geographic views use an accessible state-tile grid instead of a choropleth; no political boundary is depicted.",
+      "id": "boundaries-pending",
+      "reason": "No Survey of India-published boundary file could be verified this release (SoI portal products and government map services were unreachable or unverifiable from the build environment)"
+    }
+  ],
+  "dataAsOf": "2024-06-06",
+  "lastPipelineRun": "2026-07-24T00:00:00Z",
+  "rows": [
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Lok Sabha",
+      "electionId": "ls-2024",
+      "expectedSeats": 543,
+      "houseType": "lok_sabha",
+      "knownGaps": [
+        "Surat (uncontested) is absent from the official OGD results file; its winner is recorded from the ADR analysis and marked accordingly.",
+        "Primary affidavit PDFs are not yet linked: affidavit.eci.gov.in returned HTTP 403 to automated access on 2026-07-24.",
+        "Case-level records derive from the ADR published digest of affidavits; machine-checked, not yet human-verified.",
+        "Membership changes after 2024-06-04 (deaths, resignations, by-elections, party changes) are not yet imported — status shown is winner-at-election."
+      ],
+      "latestSourceDate": "2024-06-06",
+      "membersIdentified": 543,
+      "nextPlannedUpdate": "Link primary ECI affidavit PDFs and record post-election membership changes.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 542,
+      "status": "partial",
+      "summaryRecords": 543,
+      "termLabel": "18th Lok Sabha (2024–)"
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Rajya Sabha",
+      "expectedSeats": 233,
+      "houseType": "rajya_sabha",
+      "knownGaps": [
+        "Planned after the Lok Sabha import is complete and reviewed."
+      ],
+      "membersIdentified": 0,
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "status": "planned",
+      "summaryRecords": 0,
+      "termLabel": "Current (elected seats)"
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Andhra Pradesh Legislative Assembly",
+      "expectedSeats": 175,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "AP",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Arunachal Pradesh Legislative Assembly",
+      "expectedSeats": 60,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "AR",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Assam Legislative Assembly",
+      "expectedSeats": 126,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "AS",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Bihar Legislative Assembly",
+      "expectedSeats": 243,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "BR",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Chhattisgarh Legislative Assembly",
+      "expectedSeats": 90,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "CG",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Goa Legislative Assembly",
+      "expectedSeats": 40,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "GA",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Gujarat Legislative Assembly",
+      "expectedSeats": 182,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "GJ",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Haryana Legislative Assembly",
+      "expectedSeats": 90,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "HR",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Himachal Pradesh Legislative Assembly",
+      "expectedSeats": 68,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "HP",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Jharkhand Legislative Assembly",
+      "expectedSeats": 81,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "JH",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Karnataka Legislative Assembly",
+      "expectedSeats": 224,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "KA",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Kerala Legislative Assembly",
+      "expectedSeats": 140,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "KL",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Madhya Pradesh Legislative Assembly",
+      "expectedSeats": 230,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "MP",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Maharashtra Legislative Assembly",
+      "expectedSeats": 288,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "MH",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Manipur Legislative Assembly",
+      "expectedSeats": 60,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "MN",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Meghalaya Legislative Assembly",
+      "expectedSeats": 60,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "ML",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Mizoram Legislative Assembly",
+      "expectedSeats": 40,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "MZ",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Nagaland Legislative Assembly",
+      "expectedSeats": 60,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "NL",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Odisha Legislative Assembly",
+      "expectedSeats": 147,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "OD",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Punjab Legislative Assembly",
+      "expectedSeats": 117,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "PB",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Rajasthan Legislative Assembly",
+      "expectedSeats": 200,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "RJ",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Sikkim Legislative Assembly",
+      "expectedSeats": 32,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "SK",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Tamil Nadu Legislative Assembly",
+      "expectedSeats": 234,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "TN",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Telangana Legislative Assembly",
+      "expectedSeats": 119,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "TG",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Tripura Legislative Assembly",
+      "expectedSeats": 60,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "TR",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Uttar Pradesh Legislative Assembly",
+      "expectedSeats": 403,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "UP",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Uttarakhand Legislative Assembly",
+      "expectedSeats": 70,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "UK",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "West Bengal Legislative Assembly",
+      "expectedSeats": 294,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "WB",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Delhi Legislative Assembly",
+      "expectedSeats": 70,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "DL",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Jammu and Kashmir Legislative Assembly",
+      "expectedSeats": 90,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "JK",
+      "status": "not_imported",
+      "summaryRecords": 0
+    },
+    {
+      "affidavitsLocated": 0,
+      "affidavitsParsed": 0,
+      "bodyName": "Puducherry Legislative Assembly",
+      "expectedSeats": 30,
+      "houseType": "assembly",
+      "knownGaps": [
+        "Not yet imported."
+      ],
+      "membersIdentified": 0,
+      "nextPlannedUpdate": "State-by-state import as clean structured sources are verified.",
+      "recordsHumanReviewed": 0,
+      "resultsSourced": 0,
+      "stateCode": "PY",
+      "status": "not_imported",
+      "summaryRecords": 0
+    }
+  ]
+}

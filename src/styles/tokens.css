@@ -1,0 +1,61 @@
+/* ============================================================
+   Design tokens — "records of the republic" system.
+   Cream manuscript paper, warm ink, antique-gold rules; set in
+   EB Garamond with Geist Mono for data. No gradients, no glass.
+   ============================================================ */
+:root {
+  /* paper & ink */
+  --paper: #F6F1E5;
+  --paper-2: #F1EAD9;
+  --surface: #FBF7EC;
+  --ink: #211A10;
+  --ink-strong: #14100A;
+  --muted: rgba(33, 26, 16, 0.72);
+  --faint: rgba(33, 26, 16, 0.66);
+
+  /* ornament & accents */
+  --gold: #9A7420;
+  --gold-deep: #6E5214;
+  --oxblood: #7B2D26;
+  --line: rgba(33, 26, 16, 0.18);
+  --line-strong: rgba(33, 26, 16, 0.42);
+
+  /* type */
+  --display: "EB Garamond Variable", "EB Garamond", "Noto Serif Devanagari", Georgia, "Times New Roman", serif;
+  --body: "EB Garamond Variable", "EB Garamond", "Noto Serif Devanagari", Georgia, "Times New Roman", serif;
+  --mono: "Geist Mono Variable", "Geist Mono", ui-monospace, "SF Mono", Consolas, monospace;
+
+  /* geometry — print-like, rectangular */
+  --radius: 2px;
+  --pad: clamp(1.25rem, 4vw, 2.5rem);
+  --maxw: 1080px;
+
+  /* categorical data hues — fixed order, six-checks validated on --paper
+     (L band 0.43–0.77, chroma ≥ 0.1, ΔE_CVD ≥ 8, normal ≥ 15, contrast ≥ 3:1) */
+  --data-1: #9A7420;
+  --data-2: #2E62A8;
+  --data-3: #94491E;
+  --data-4: #7A3D85;
+  --data-muted: rgba(33, 26, 16, 0.22);
+
+  /* sequential (magnitude) ramp, low → high: pale vellum → deep gold-brown ink */
+  --seq-1: #EDE2C4;
+  --seq-2: #DCC58C;
+  --seq-3: #C0A052;
+  --seq-4: #7F5E12;
+  --seq-5: #59410C;
+  --seq-none: #F1ECDD; /* no data — dashed outline, never mid-ramp */
+
+  /* status (reserved; text-bearing chips, never series colors) */
+  --ok: #3E6B2E;
+  --warn: #8A5A12;
+  --alert: #9C2B23;
+
+  --focus: #2E62A8;
+
+  /* legacy aliases still referenced by shared components */
+  --bg: var(--paper);
+  --bg-2: var(--paper-2);
+  --saffron: var(--gold);
+  --green-lit: var(--ok);
+}

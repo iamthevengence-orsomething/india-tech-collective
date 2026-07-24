@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "120",
+    "records": [
+        {
+            "_sl__no_": 121,
+            "state": "Himachal Pradesh",
+            "const_no_": 3,
+            "constituency": "HAMIRPUR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1042085,
+            "winner_name": "ANURAG SINGH THAKUR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 424711,
+            "runner_up_name": "SATPAL RAIZADA",
+            "margin": 182357,
+            "margin__": 17.5
+        },
+        {
+            "_sl__no_": 122,
+            "state": "Himachal Pradesh",
+            "const_no_": 4,
+            "constituency": "SHIMLA",
+            "constituency_type": "SC",
+            "total_valid_votes": 964035,
+            "winner_name": "Suresh Kumar Kashyap",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 428297,
+            "runner_up_name": "Vinod Sultanpuri",
+            "margin": 91451,
+            "margin__": 9.4900000000000002
+        },
+        {
+            "_sl__no_": 123,
+            "state": "Karnataka",
+            "const_no_": 1,
+            "constituency": "Chikkodi",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1390485,
+            "winner_name": "PRIYANKA SATISH JARKIHOLI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 622627,
+            "runner_up_name": "ANNASAHEB SHANKAR JOLLE",
+            "margin": 90834,
+            "margin__": 6.5300000000000002
+        },
+        {
+            "_sl__no_": 124,
+            "state": "Karnataka",
+            "const_no_": 2,
+            "constituency": "Belgaum",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1378163,
+            "winner_name": "JAGADISH SHETTAR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 583592,
+            "runner_up_name": "MRINAL R HEBBALKAR",
+            "margin": 178437,
+            "margin__": 12.949999999999999
+        },
+        {
+            "_sl__no_": 125,
+            "state": "Karnataka",
+            "const_no_": 3,
+            "constituency": "Bagalkot",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1314141,
+            "winner_name": "GADDIGOUDAR. PARVATAGOUDA. CHANDANAGOUDA.",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 602640,
+            "runner_up_name": "SAMYUKTA SHIVANAND PATIL",
+            "margin": 68399,
+            "margin__": 5.2000000000000002
+        },
+        {
+            "_sl__no_": 126,
+            "state": "Karnataka",
+            "const_no_": 4,
+            "constituency": "Bijapur",
+            "constituency_type": "SC",
+            "total_valid_votes": 1288612,
+            "winner_name": "RAMESH JIGAJINAGI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 595552,
+            "runner_up_name": "RAJU ALAGUR.",
+            "margin": 77229,
+            "margin__": 5.9900000000000002
+        },
+        {
+            "_sl__no_": 127,
+            "state": "Karnataka",
+            "const_no_": 5,
+            "constituency": "Gulbarga",
+            "constituency_type": "SC",
+            "total_valid_votes": 1302048,
+            "winner_name": "RADHAKRISHNA",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 625116,
+            "runner_up_name": "DR. UMESH G JADHAV",
+            "margin": 27205,
+            "margin__": 2.0899999999999999
+        },
+        {
+            "_sl__no_": 128,
+            "state": "Karnataka",
+            "const_no_": 6,
+            "constituency": "Raichur",
+            "constituency_type": "ST",
+            "total_valid_votes": 1289769,
+            "winner_name": "G. KUMAR NAIK.",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 591185,
+            "runner_up_name": "RAJA AMARESHWARA NAIK.",
+            "margin": 79781,
+            "margin__": 6.1900000000000004
+        },
+        {
+            "_sl__no_": 129,
+            "state": "Karnataka",
+            "const_no_": 7,
+            "constituency": "Bidar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1237636,
+            "winner_name": "SAGAR ESHWAR KHANDRE",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 537442,
+            "runner_up_name": "BHAGWANTH KHUBA",
+            "margin": 128875,
+            "margin__": 10.41
+        },
+        {
+            "_sl__no_": 130,
+            "state": "Karnataka",
+            "const_no_": 8,
+            "constituency": "Koppal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1325417,
+            "winner_name": "K. RAJASHEKAR BASAVARAJ HITNAL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 617154,
+            "runner_up_name": "DR . BASAVARAJ. K. SHARANAPPA",
+            "margin": 46357,
+            "margin__": 3.5
+        }
+    ]
+}

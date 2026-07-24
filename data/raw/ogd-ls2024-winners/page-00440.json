@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "440",
+    "records": [
+        {
+            "_sl__no_": 441,
+            "state": "West Bengal",
+            "const_no_": 7,
+            "constituency": "Maldaha Uttar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1410301,
+            "winner_name": "KHAGEN MURMU",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "AITC",
+            "party_symbol": "Flowers and Grass",
+            "vote_secured": 449315,
+            "runner_up_name": "PRASUN BANERJEE",
+            "margin": 77708,
+            "margin__": 5.5099999999999998
+        },
+        {
+            "_sl__no_": 442,
+            "state": "West Bengal",
+            "const_no_": 8,
+            "constituency": "Maldaha Dakshin",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1366992,
+            "winner_name": "ISHA KHAN CHOUDHURY",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 444027,
+            "runner_up_name": "SREERUPA MITRA CHAUDHURY (NIRBHAYA DIDI)",
+            "margin": 128368,
+            "margin__": 9.3900000000000006
+        },
+        {
+            "_sl__no_": 443,
+            "state": "West Bengal",
+            "const_no_": 9,
+            "constituency": "Jangipur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1352475,
+            "winner_name": "KHALILUR RAHAMAN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 427790,
+            "runner_up_name": "MURTOJA HOSSAIN BOKUL",
+            "margin": 116637,
+            "margin__": 8.6199999999999992
+        },
+        {
+            "_sl__no_": 444,
+            "state": "West Bengal",
+            "const_no_": 10,
+            "constituency": "Baharampur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1377285,
+            "winner_name": "PATHAN YUSUF",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 439494,
+            "runner_up_name": "ADHIR RANJAN CHOWDHURY",
+            "margin": 85022,
+            "margin__": 6.1699999999999999
+        },
+        {
+            "_sl__no_": 445,
+            "state": "West Bengal",
+            "const_no_": 11,
+            "constituency": "Murshidabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1528289,
+            "winner_name": "ABU TAHER KHAN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 518227,
+            "runner_up_name": "MD SALIM",
+            "margin": 164215,
+            "margin__": 10.75
+        },
+        {
+            "_sl__no_": 446,
+            "state": "West Bengal",
+            "const_no_": 12,
+            "constituency": "Krishnanagar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1418901,
+            "winner_name": "MAHUA MOITRA",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 572084,
+            "runner_up_name": "AMRITA ROY",
+            "margin": 56705,
+            "margin__": 4
+        },
+        {
+            "_sl__no_": 447,
+            "state": "West Bengal",
+            "const_no_": 13,
+            "constituency": "Ranaghat",
+            "constituency_type": "SC",
+            "total_valid_votes": 1530739,
+            "winner_name": "JAGANNATH SARKAR",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "AITC",
+            "party_symbol": "Flowers and Grass",
+            "vote_secured": 595497,
+            "runner_up_name": "MUKUT MANI ADHIKARI",
+            "margin": 186899,
+            "margin__": 12.210000000000001
+        },
+        {
+            "_sl__no_": 448,
+            "state": "West Bengal",
+            "const_no_": 14,
+            "constituency": "Bangaon",
+            "constituency_type": "SC",
+            "total_valid_votes": 1486423,
+            "winner_name": "SHANTANU THAKUR",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "AITC",
+            "party_symbol": "Flowers and Grass",
+            "vote_secured": 645812,
+            "runner_up_name": "BISWAJIT DAS S\/O LATE BIJAY KRISHNA DAS",
+            "margin": 73693,
+            "margin__": 4.96
+        },
+        {
+            "_sl__no_": 449,
+            "state": "West Bengal",
+            "const_no_": 15,
+            "constituency": "Barrackpur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1130778,
+            "winner_name": "PARTHA BHOWMICK",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 455793,
+            "runner_up_name": "ARJUN SINGH",
+            "margin": 64438,
+            "margin__": 5.7000000000000002
+        },
+        {
+            "_sl__no_": 450,
+            "state": "West Bengal",
+            "const_no_": 16,
+            "constituency": "Dum dum",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1248712,
+            "winner_name": "SOUGATA RAY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 457919,
+            "runner_up_name": "SILBHADRA DATTA",
+            "margin": 70660,
+            "margin__": 5.6600000000000001
+        }
+    ]
+}

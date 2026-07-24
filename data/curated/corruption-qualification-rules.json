@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-24",
+  "note": "A declared case counts as a corruption offence for dashboard purposes ONLY when a qualifying rule below matches. PMLA, cheating, breach of trust, and unmapped provisions are never auto-classified — they go to needs_review. Ordinary offences under other statutes are 'no'.",
+  "qualifying": [
+    {
+      "qualificationRuleId": "cq-pca-1988",
+      "actId": "in-act-pca-1988",
+      "citation": "Prevention of Corruption Act, 1988 — https://www.indiacode.nic.in/bitstream/123456789/15395/1/preventionofcorruptionact1988.pdf"
+    },
+    {
+      "qualificationRuleId": "cq-pca-1947",
+      "actId": "in-act-pca-1947",
+      "citation": "Prevention of Corruption Act, 1947 (predecessor statute, mapped and documented in docs/methodology.md)"
+    }
+  ],
+  "explicitlyNotAuto": [
+    {
+      "qualificationRuleId": "cq-nr-pmla",
+      "actId": "in-act-pmla-2002",
+      "reason": "Money-laundering is not a corruption offence for this dashboard's definition; individual review required before any classification."
+    },
+    {
+      "qualificationRuleId": "cq-nr-ipc-cheating",
+      "actId": "in-act-ipc-1860",
+      "sections": ["415", "417", "418", "420"],
+      "reason": "Cheating offences are not auto-classified as corruption."
+    },
+    {
+      "qualificationRuleId": "cq-nr-ipc-breach-of-trust",
+      "actId": "in-act-ipc-1860",
+      "sections": ["405", "406", "407", "408", "409"],
+      "reason": "Criminal breach of trust (including by public servant) is not auto-classified as corruption."
+    },
+    {
+      "qualificationRuleId": "cq-nr-ipc-electoral-bribery",
+      "actId": "in-act-ipc-1860",
+      "sections": ["171B", "171E"],
+      "reason": "Electoral bribery under IPC Chapter IXA requires individual review before classification."
+    },
+    {
+      "qualificationRuleId": "cq-nr-bns-cheating",
+      "actId": "in-act-bns-2023",
+      "sections": ["316", "318"],
+      "reason": "BNS successor provisions to cheating/breach of trust are not auto-classified as corruption."
+    }
+  ],
+  "defaultRuleId": "cq-default"
+}

@@ -1,0 +1,47 @@
+{
+  "affidavitDateRange": {},
+  "cohortLabel": "DEMO cohort — fixtures, not real records",
+  "corruptionStatute": {
+    "covered": 7,
+    "note": "DEMO note: fixtures only.",
+    "withQualifyingCase": 1
+  },
+  "dataAsOf": "2024-06-06",
+  "electionIds": [
+    "fx-ls-2024"
+  ],
+  "minPartySample": 5,
+  "notes": [
+    "DEMO"
+  ],
+  "parties": [
+    {
+      "covered": 5,
+      "missingRecords": 1,
+      "party": "Demo Party Alpha",
+      "partyId": "demo-a",
+      "partyShort": "DPA",
+      "pct": 60,
+      "suppressed": false,
+      "withConvictions": 1,
+      "withDeclared": 3,
+      "withSeriousDeclared": 2
+    },
+    {
+      "covered": 2,
+      "missingRecords": 0,
+      "party": "Demo Party Beta",
+      "partyId": "demo-b",
+      "partyShort": "DPB",
+      "pct": 50,
+      "suppressed": true,
+      "withConvictions": 0,
+      "withDeclared": 1,
+      "withSeriousDeclared": 0
+    }
+  ],
+  "qualifyingRulesVersion": "1.0.0",
+  "sourceIds": [
+    "fx-source"
+  ]
+}

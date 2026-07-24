@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "130",
+    "records": [
+        {
+            "_sl__no_": 131,
+            "state": "Karnataka",
+            "const_no_": 9,
+            "constituency": "Bellary",
+            "constituency_type": "ST",
+            "total_valid_votes": 1382025,
+            "winner_name": "E. TUKARAM",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 631853,
+            "runner_up_name": "B. SREERAMULU",
+            "margin": 98992,
+            "margin__": 7.1600000000000001
+        },
+        {
+            "_sl__no_": 132,
+            "state": "Karnataka",
+            "const_no_": 10,
+            "constituency": "Haveri",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1384947,
+            "winner_name": "BASAVARAJ BOMMAI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 662025,
+            "runner_up_name": "ANANDSWAMY GADDADEVARMATH",
+            "margin": 43513,
+            "margin__": 3.1400000000000001
+        },
+        {
+            "_sl__no_": 133,
+            "state": "Karnataka",
+            "const_no_": 11,
+            "constituency": "Dharwad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1360344,
+            "winner_name": "PRALHAD JOSHI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 618907,
+            "runner_up_name": "VINOD ASOOTI",
+            "margin": 97324,
+            "margin__": 7.1500000000000004
+        },
+        {
+            "_sl__no_": 134,
+            "state": "Karnataka",
+            "const_no_": 12,
+            "constituency": "Uttara Kannada",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1252585,
+            "winner_name": "VISHWESHWAR HEGDE KAGERI",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 445067,
+            "runner_up_name": "DR. ANJALI NIMBALKAR",
+            "margin": 337428,
+            "margin__": 26.940000000000001
+        },
+        {
+            "_sl__no_": 135,
+            "state": "Karnataka",
+            "const_no_": 13,
+            "constituency": "Davanagere",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1317192,
+            "winner_name": "DR. PRABHA MALLIKARJUN",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 606965,
+            "runner_up_name": "GAYITHRI SIDDESHWARA",
+            "margin": 26094,
+            "margin__": 1.98
+        },
+        {
+            "_sl__no_": 136,
+            "state": "Karnataka",
+            "const_no_": 14,
+            "constituency": "Shimoga",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1372892,
+            "winner_name": "B.Y.RAGHAVENDRA",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 535006,
+            "runner_up_name": "GEETHA SHIVARAJKUMAR",
+            "margin": 243715,
+            "margin__": 17.75
+        },
+        {
+            "_sl__no_": 137,
+            "state": "Karnataka",
+            "const_no_": 15,
+            "constituency": "Udupi Chikmagalur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1218149,
+            "winner_name": "KOTA SRINIVAS POOJARY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 473059,
+            "runner_up_name": "K. JAYAPRAKASH HEGDE",
+            "margin": 259175,
+            "margin__": 21.280000000000001
+        },
+        {
+            "_sl__no_": 138,
+            "state": "Karnataka",
+            "const_no_": 16,
+            "constituency": "Hassan",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1346466,
+            "winner_name": "SHREYAS. M. PATEL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "JD(S)",
+            "party_symbol": "A lady farmer carrying paddy on her head",
+            "vote_secured": 630339,
+            "runner_up_name": "PRAJWAL REVANNA",
+            "margin": 42649,
+            "margin__": 3.1699999999999999
+        },
+        {
+            "_sl__no_": 139,
+            "state": "Karnataka",
+            "const_no_": 17,
+            "constituency": "Dakshina Kannada",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1392194,
+            "winner_name": "CAPTAIN BRIJESH CHOWTA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 614924,
+            "runner_up_name": "PADMARAJ.R.POOJARY",
+            "margin": 149208,
+            "margin__": 10.720000000000001
+        },
+        {
+            "_sl__no_": 140,
+            "state": "Karnataka",
+            "const_no_": 18,
+            "constituency": "Chitradurga",
+            "constituency_type": "SC",
+            "total_valid_votes": 1363719,
+            "winner_name": "GOVIND MAKTHAPPA KARJOL",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 636769,
+            "runner_up_name": "B.N.CHANDRAPPA",
+            "margin": 48121,
+            "margin__": 3.5299999999999998
+        }
+    ]
+}

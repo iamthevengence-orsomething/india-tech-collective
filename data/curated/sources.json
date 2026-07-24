@@ -1,0 +1,211 @@
+{
+  "version": "1.0.0",
+  "note": "Source registry — every displayed number traces to entries here via sourceIds. retrievalDate = when we last fetched or verified the URL. Machine-readable copy is published at /data/sources.json.",
+  "sources": [
+    {
+      "id": "eci-affidavit-portal",
+      "publisher": "Election Commission of India",
+      "title": "Candidate Affidavit Portal",
+      "url": "https://affidavit.eci.gov.in/",
+      "sourceType": "official_portal",
+      "retrievalDate": "2026-07-24",
+      "notes": ["Primary host of candidate Form 26 affidavits.", "Returned HTTP 403 to automated access on 2026-07-24; no WAF/CAPTCHA circumvention attempted beyond normal browser requests."]
+    },
+    {
+      "id": "eci-nomination-forms",
+      "publisher": "Election Commission of India",
+      "title": "Nomination-related forms (including Form 26)",
+      "url": "https://www.eci.gov.in/nomination-related-forms/",
+      "sourceType": "official_document",
+      "retrievalDate": "2026-07-24",
+      "notes": ["Form 26 defines the criminal-case disclosure fields candidates must file."]
+    },
+    {
+      "id": "eci-statistical-reports",
+      "publisher": "Election Commission of India",
+      "title": "Statistical reports of general elections",
+      "url": "https://www.eci.gov.in/statistical-reports",
+      "sourceType": "official_report",
+      "retrievalDate": "2026-07-24",
+      "notes": ["Authority for seat totals and result statistics."]
+    },
+    {
+      "id": "eci-know-your-candidate",
+      "publisher": "Election Commission of India",
+      "title": "Know Your Candidate (KYC) portal",
+      "url": "https://www.eci.gov.in/know-your-candidate",
+      "sourceType": "official_portal",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "eci-instructions",
+      "publisher": "Election Commission of India",
+      "title": "Important instructions (criminal-antecedent disclosure directions, amended Form 26)",
+      "url": "https://www.eci.gov.in/important-instructions/",
+      "sourceType": "official_document",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "ogd-ls2024-results",
+      "publisher": "Open Government Data Platform India / Election Commission of India",
+      "title": "Constituency-wise detailed result during 2024 (Lok Sabha)",
+      "url": "https://www.data.gov.in/resource/constituency-wise-detailed-result-during-2024",
+      "sourceType": "official_dataset",
+      "licenceOrTermsUrl": "https://www.data.gov.in/government-open-data-license-india",
+      "licenceName": "Government Open Data License – India (GODL)",
+      "notes": ["Membership backbone for the 18th Lok Sabha (winners, party, constituency, state)."]
+    },
+    {
+      "id": "adr-ls2024-report",
+      "publisher": "Association for Democratic Reforms (ADR) / National Election Watch",
+      "title": "Lok Sabha Elections 2024: Criminal and financial background details of winning candidates",
+      "url": "https://adrindia.org/sites/default/files/Lok_Sabha_Elections_2024_Criminal_and_Financial_background_details_of_Winning_Candidates_Finalver_English%20%281%29.pdf",
+      "sourceType": "ngo_report",
+      "licenceOrTermsUrl": "https://adrindia.org/content/adr-terms-use",
+      "notes": [
+        "Single retrieval of a published report, used with citation for non-commercial information dissemination per ADR's stated terms.",
+        "No scraping of MyNeta or ADR web pages — their terms prohibit systematic/automated collection without written consent.",
+        "ADR's analysis is itself derived from candidates' sworn Form 26 affidavits."
+      ]
+    },
+    {
+      "id": "adr-terms",
+      "publisher": "Association for Democratic Reforms",
+      "title": "ADR terms of use",
+      "url": "https://adrindia.org/content/adr-terms-use",
+      "sourceType": "terms_or_licence",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "myneta-portal",
+      "publisher": "Association for Democratic Reforms",
+      "title": "MyNeta",
+      "url": "https://myneta.info/",
+      "sourceType": "official_portal",
+      "notes": ["Referenced for readers; NOT scraped. Systematic/automated collection prohibited without express written consent."]
+    },
+    {
+      "id": "ogd-ncrb-pca-registered-2023",
+      "publisher": "Open Government Data Platform India / National Crime Records Bureau",
+      "title": "State/UT-wise Prevention of Corruption Act, 1988 (PC Act) cases registered by Anti-Corruption Bureaus during 2023",
+      "url": "https://www.data.gov.in/resource/stateut-wise-prevention-corruption-act-1988-pc-act-cases-registered-anti-corruption-0",
+      "sourceType": "official_dataset",
+      "licenceOrTermsUrl": "https://www.data.gov.in/government-open-data-license-india",
+      "licenceName": "Government Open Data License – India (GODL)",
+      "notes": ["Data year 2023; publication year shown separately in the UI."]
+    },
+    {
+      "id": "ogd-ncrb-police-disposal-2023",
+      "publisher": "Open Government Data Platform India / National Crime Records Bureau",
+      "title": "State/UT-wise police disposal of ACB/Vigilance/Lokayukta cases under PC Act during 2023",
+      "url": "https://www.data.gov.in/resource/stateut-wise-police-disposal-cases-anti-corruption-bureau-vigilance-and-lokayukta-under-0",
+      "sourceType": "official_dataset",
+      "licenceOrTermsUrl": "https://www.data.gov.in/government-open-data-license-india",
+      "licenceName": "Government Open Data License – India (GODL)",
+      "notes": []
+    },
+    {
+      "id": "ogd-ncrb-court-disposal-2023",
+      "publisher": "Open Government Data Platform India / National Crime Records Bureau",
+      "title": "State/UT-wise court disposal of ACB/Vigilance/Lokayukta cases under PC Act during 2023",
+      "url": "https://www.data.gov.in/resource/stateut-wise-court-disposal-anti-corruption-vigilance-and-lokayukta-cases-under-0",
+      "sourceType": "official_dataset",
+      "licenceOrTermsUrl": "https://www.data.gov.in/government-open-data-license-india",
+      "licenceName": "Government Open Data License – India (GODL)",
+      "notes": []
+    },
+    {
+      "id": "ncrb-cii-2023",
+      "publisher": "National Crime Records Bureau, Ministry of Home Affairs",
+      "title": "Crime in India 2023",
+      "url": "https://www.data.gov.in/catalog/crime-india-2023",
+      "sourceType": "official_report",
+      "retrievalDate": "2026-07-24",
+      "notes": ["The 2023 statistical year was published later; the UI shows both the data year and the publication year."]
+    },
+    {
+      "id": "indiacode-pca-1988",
+      "publisher": "India Code (Legislative Department)",
+      "title": "The Prevention of Corruption Act, 1988",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/15395/1/preventionofcorruptionact1988.pdf",
+      "sourceType": "legal_text",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "cag-report-search",
+      "publisher": "Comptroller and Auditor General of India",
+      "title": "Audit report search",
+      "url": "https://cag.gov.in/en/audit-report/",
+      "sourceType": "official_portal",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "cag-report-status",
+      "publisher": "Comptroller and Auditor General of India",
+      "title": "Status of audit reports",
+      "url": "https://cag.gov.in/en/status-of-audit-reports",
+      "sourceType": "official_portal",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "soi-outline-maps",
+      "publisher": "Survey of India",
+      "title": "Outline maps of India",
+      "url": "https://www.surveyofindia.gov.in/pages/outline-maps-of-india",
+      "sourceType": "boundary_data",
+      "retrievalDate": "2026-07-24",
+      "notes": ["Reference standard for India's official external boundary depiction."]
+    },
+    {
+      "id": "soi-onlinemaps",
+      "publisher": "Survey of India",
+      "title": "Digital administrative boundary products",
+      "url": "https://onlinemaps.surveyofindia.gov.in/Digital_Product_Show.aspx",
+      "sourceType": "boundary_data",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "dst-geospatial-guidelines",
+      "publisher": "Department of Science and Technology",
+      "title": "Guidelines on acquiring and producing geospatial data (2021)",
+      "url": "https://dst.gov.in/sites/default/files/Final%20Approved%20Guidelines%20on%20Geospatial%20Data_0.pdf",
+      "sourceType": "official_document",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "dpdp-act-2023",
+      "publisher": "India Code (Legislative Department)",
+      "title": "Digital Personal Data Protection Act, 2023",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/22037/2/a2023-22.pdf",
+      "sourceType": "legal_text",
+      "retrievalDate": "2026-07-24",
+      "notes": ["Editorial guardrail reference; not a substitute for legal advice."]
+    },
+    {
+      "id": "dpdp-commencement-2025",
+      "publisher": "Ministry of Electronics and Information Technology",
+      "title": "DPDP Act commencement notification / rules timeline",
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "sourceType": "legal_text",
+      "retrievalDate": "2026-07-24",
+      "notes": []
+    },
+    {
+      "id": "bns-2023",
+      "publisher": "India Code (Legislative Department)",
+      "title": "Bharatiya Nyaya Sanhita, 2023 (including s.356 defamation)",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/20062/1/a202345.pdf",
+      "sourceType": "legal_text",
+      "retrievalDate": "2026-07-24",
+      "notes": ["Editorial guardrail reference; not a substitute for legal advice."]
+    }
+  ]
+}

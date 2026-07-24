@@ -1,0 +1,143 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadArtifact, loadBuildInfo, loadDataQuality } from '../lib/data';
+import { formatDate, formatInt } from '../lib/format';
+
+const coverage = loadArtifact<any>('coverage');
+const build = loadBuildInfo<any>();
+const dq = loadDataQuality<any>();
+const houses = coverage.rows.filter((r: any) => r.houseType !== 'assembly');
+const assemblies = coverage.rows.filter((r: any) => r.houseType === 'assembly');
+const statusChip = (s: string) =>
+  s === 'imported' ? 'chip-ok' : s === 'partial' ? 'chip-warn' : s === 'planned' ? 'chip-data' : 'chip-alert';
+---
+<Base
+  title="Coverage & gaps | India Tech Collective"
+  description="Exactly what the accountability dashboards cover — expected seats, records imported, review states, and every known gap, stated plainly. Missing data is shown as missing, never as zero."
+  path="/coverage/"
+  current="coverage"
+  ogImage="/og/coverage.png"
+>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">Coverage · nothing hidden</p>
+      <h1 class="page-h1">What this data covers — and what it doesn’t yet</h1>
+      <p class="lede">
+        Every number on this site comes with a denominator, and this page is the denominator for the whole
+        project. Where coverage is partial, that is stated here; missing data reduces coverage — it is never
+        silently shown as zero. Last pipeline run: {formatDate(build.dataAsOf)} · dataset&nbsp;<code>{build.datasetVersion}</code>.
+      </p>
+    </header>
+
+    <section class="section" aria-labelledby="mat-h">
+      <h2 class="section-title" id="mat-h">Houses</h2>
+      <div class="table-scroll">
+        <table class="data">
+          <caption>Coverage matrix — national houses</caption>
+          <thead>
+            <tr>
+              <th scope="col">Body</th><th scope="col">Status</th>
+              <th scope="col" class="num">Expected seats</th>
+              <th scope="col" class="num">Members identified</th>
+              <th scope="col" class="num">Results sourced</th>
+              <th scope="col" class="num">Affidavit PDFs located</th>
+              <th scope="col" class="num">Affidavits parsed</th>
+              <th scope="col" class="num">Summary records</th>
+              <th scope="col" class="num">Human-reviewed</th>
+              <th scope="col">Latest source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {houses.map((r: any) => (
+              <tr>
+                <th scope="row" style="font-weight:600;">{r.bodyName}{r.termLabel ? ` — ${r.termLabel}` : ''}</th>
+                <td><span class={`chip ${statusChip(r.status)}`}>{r.status.replace('_', ' ')}</span></td>
+                <td class="num">{formatInt(r.expectedSeats)}</td>
+                <td class="num">{formatInt(r.membersIdentified)}</td>
+                <td class="num">{formatInt(r.resultsSourced)}</td>
+                <td class="num">{formatInt(r.affidavitsLocated)}</td>
+                <td class="num">{formatInt(r.affidavitsParsed)}</td>
+                <td class="num">{formatInt(r.summaryRecords)}</td>
+                <td class="num">{formatInt(r.recordsHumanReviewed)}</td>
+                <td>{r.latestSourceDate ? formatDate(r.latestSourceDate) : '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {houses.map((r: any) => r.knownGaps.length > 0 && (
+        <div class="card card-tight" style="margin-top:0.8rem;">
+          <p class="small" style="font-weight:600;color:var(--ink-strong);">{r.bodyName}: known gaps</p>
+          <ul class="small" style="margin:0.4rem 0 0 1.2rem;color:var(--muted);">
+            {r.knownGaps.map((g: string) => <li>{g}</li>)}
+          </ul>
+          {r.nextPlannedUpdate && <p class="small" style="margin-top:0.4rem;color:var(--faint);">Next planned update: {r.nextPlannedUpdate}</p>}
+        </div>
+      ))}
+    </section>
+
+    <section class="section" aria-labelledby="asm-h">
+      <h2 class="section-title" id="asm-h">State legislative assemblies</h2>
+      <p class="section-sub">
+        The schema and coverage categories exist for all 31 assemblies (28 states + Delhi, Jammu &amp; Kashmir,
+        Puducherry), but none has been imported yet. No national claim is made about MLA coverage.
+      </p>
+      <div class="table-scroll" style="margin-top:0.9rem;">
+        <table class="data">
+          <caption>Coverage matrix — assemblies (import pending, state by state)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Assembly</th><th scope="col">Status</th>
+              <th scope="col" class="num">Expected seats</th>
+              <th scope="col" class="num">Imported</th>
+              <th scope="col">Next update</th>
+            </tr>
+          </thead>
+          <tbody>
+            {assemblies.map((r: any) => (
+              <tr>
+                <th scope="row" style="font-weight:500;">{r.bodyName}</th>
+                <td><span class={`chip ${statusChip(r.status)}`}>{r.status.replace('_', ' ')}</span></td>
+                <td class="num">{formatInt(r.expectedSeats)}</td>
+                <td class="num">{formatInt(r.summaryRecords)}</td>
+                <td class="small">{r.nextPlannedUpdate ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fb-h">
+      <h2 class="section-title" id="fb-h">Active fallbacks</h2>
+      <p class="section-sub">Where the honest path differs from the ideal path, and what that changes on the site.</p>
+      <div style="display:grid;gap:0.8rem;margin-top:1rem;">
+        {coverage.activeFallbacks.map((f: any) => (
+          <div class="banner">
+            <span class="banner-icon" aria-hidden="true">↪</span>
+            <div class="small">
+              <p><strong>{f.area}:</strong> {f.reason}.</p>
+              <p style="color:var(--muted);">Effect: {f.effect}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {dq && (
+      <section class="section" aria-labelledby="dq-h">
+        <h2 class="section-title" id="dq-h">Data-quality snapshot</h2>
+        <div class="kpi-row">
+          <div class="kpi"><span class="kpi-label">Case records</span><span class="kpi-value num">{formatInt(dq.counts.caseRecords)}</span><span class="kpi-frac">machine-checked, 0 human-verified</span></div>
+          <div class="kpi"><span class="kpi-label">Reconciliation</span><span class="kpi-value" style="font-size:1.3rem;">All gates passed</span><span class="kpi-frac">543 / 251 / 170 / 27 match the source report’s own totals</span></div>
+          <div class="kpi"><span class="kpi-label">Unmapped statute strings</span><span class="kpi-value num">{formatInt(dq.unmappedActStringsTotal ?? dq.unmappedActStrings.length)}</span><span class="kpi-frac">distinct raw strings awaiting dictionary review</span></div>
+          <div class="kpi"><span class="kpi-label">Validation</span><span class="kpi-value num">{dq.validation.errors.length} errors</span><span class="kpi-frac num">{dq.validation.warnings.length} warnings (listed in repo report)</span></div>
+        </div>
+        <p class="metric-caption">
+          Full machine-generated report: <code>data/generated/data-quality-report.json</code> in the repository.
+          {dq.unitNotes?.map((n: string) => ` ${n}`)}
+        </p>
+      </section>
+    )}
+  </div>
+</Base>

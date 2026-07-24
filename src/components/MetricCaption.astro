@@ -1,0 +1,19 @@
+---
+interface Props {
+  definition: string;
+  numerator?: number | null;
+  denominator?: number | null;
+  asOf: string;
+  sourceLabel: string;
+  unit?: string;
+}
+const { definition, numerator, denominator, asOf, sourceLabel, unit } = Astro.props;
+import { formatDate, formatInt } from '../lib/format';
+---
+<p class="metric-caption">
+  {definition}
+  {numerator !== undefined && numerator !== null && denominator !== undefined && denominator !== null && (
+    <> <strong class="num">{formatInt(numerator)} / {formatInt(denominator)}</strong>{unit ? ` ${unit}` : ''}.</>
+  )}
+  {' '}Data as of <strong>{formatDate(asOf)}</strong> · Source: {sourceLabel}.
+</p>

@@ -1,0 +1,5 @@
+{
+  "version": "1.0.0",
+  "note": "Append-only public correction log. Never edit or remove an entry; corrections to corrections get new entries.",
+  "corrections": []
+}

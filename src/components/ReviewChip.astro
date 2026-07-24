@@ -1,0 +1,12 @@
+---
+interface Props { status: 'unreviewed' | 'machine_checked' | 'human_verified' | 'rejected' }
+const { status } = Astro.props;
+const label = {
+  unreviewed: 'Unreviewed',
+  machine_checked: 'Machine-checked, not human-verified',
+  human_verified: 'Human-verified',
+  rejected: 'Rejected',
+}[status];
+const cls = { unreviewed: 'chip-alert', machine_checked: 'chip-warn', human_verified: 'chip-ok', rejected: 'chip-alert' }[status];
+---
+<span class={`chip ${cls}`} title="Review status of this record">{label}</span>

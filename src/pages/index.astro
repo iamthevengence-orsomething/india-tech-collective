@@ -1,0 +1,234 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="The India Tech Collective — a public record, kept in public"
+  description="Open-source tools for speech under pressure, and open records of public power: cases declared on oath by elected representatives, corruption enforcement statistics, audit findings. Non-partisan, lawful, grounded in Article 19."
+  path="/"
+  current="home"
+  ogImage="/og/site.png"
+>
+  <div class="wrap manifesto-wrap">
+    <header class="masthead">
+      <p class="masthead-kicker">Open-source civic infrastructure</p>
+      <p class="epigraph" lang="hi">हम भारत के लोग</p>
+      <p class="epigraph-tr">— we, the people of India</p>
+      <h1>The India Tech Collective</h1>
+      <p class="masthead-sub">A public record, kept in public.</p>
+      <p class="masthead-deck">
+        Tools for when the network goes dark. Evidence for when public memory does.
+      </p>
+      <div class="masthead-actions" aria-label="Start or share">
+        <a class="btn btn-primary hero-btn" href="#contents">Explore the public record <span aria-hidden="true">↓</span></a>
+        <button class="btn hero-btn" id="shareCollective" type="button">Share the Collective</button>
+        <a class="share-card-link" href="/og/card-1080.png" download>Download share card</a>
+      </div>
+      <p class="share-status" id="shareStatus" aria-live="polite"></p>
+      <ul class="proof-line" aria-label="What the Collective contains">
+        <li>27 field-tested tools</li>
+        <li>Seat-by-seat sworn disclosures</li>
+        <li>Official enforcement records</li>
+      </ul>
+    </header>
+
+    <hr class="rule-double" />
+
+    <section class="manifesto" aria-label="Manifesto">
+      <p class="m-open">We, citizens of India,</p>
+      <p class="m-clause">holding that self-rule begins with self-information;</p>
+      <p class="m-clause">
+        that the freedoms of speech and assembly secured by Article 19 extend to the
+        networks where speech now lives;
+      </p>
+      <p class="m-clause">
+        that what public servants declare on oath belongs to the public — with its source, its date and its limits;
+      </p>
+      <p class="m-clause">
+        and that no verdict is ours to pass: an accusation is not guilt, and guilt is for courts alone;
+      </p>
+      <p class="m-resolve">have resolved to keep this Collective,</p>
+      <p class="m-clause">and to place in every citizen’s hands:</p>
+      <ul class="m-gives">
+        <li>tools, open to inspection, for the days when the network is cut;</li>
+        <li>the record, plainly arranged, of what those who hold public power have themselves disclosed;</li>
+        <li>and the method behind every number, so that trust may be checked and never begged.</li>
+      </ul>
+      <p class="m-close">Adopted in the open · Maintained in the open · Without party or favour</p>
+    </section>
+
+    <p class="fleuron" aria-hidden="true">❦</p>
+
+    <section class="contents" id="contents" aria-label="Contents">
+      <h2 class="contents-h">Contents</h2>
+
+      <a class="part" href="/toolkit/">
+        <span class="part-no">Part I</span>
+        <span class="part-body">
+          <span class="part-title">The Toolkit</span>
+          <span class="part-desc">Twenty-seven open-source instruments for speech under pressure — mesh messengers, secure channels, circumvention, evidence.</span>
+        </span>
+        <span class="part-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="part" href="/politicians/">
+        <span class="part-no">Part II</span>
+        <span class="part-body">
+          <span class="part-title">Politician Cases</span>
+          <span class="part-desc">Criminal cases declared on oath by elected representatives, searchable seat by seat. A declared case is an accusation, not a conviction.</span>
+        </span>
+        <span class="part-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="part" href="/corruption/">
+        <span class="part-no">Part III</span>
+        <span class="part-body">
+          <span class="part-title">Corruption Data</span>
+          <span class="part-desc">Enforcement statistics, sworn disclosures and audit findings — three records, kept separate, never one score.</span>
+        </span>
+        <span class="part-arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <hr class="rule-double" />
+
+    <section class="procedure" aria-label="Records and procedure">
+      <p class="procedure-links">
+        <a href="/methodology/">Methodology</a><span aria-hidden="true"> · </span>
+        <a href="/sources/">Sources</a><span aria-hidden="true"> · </span>
+        <a href="/coverage/">Coverage</a><span aria-hidden="true"> · </span>
+        <a href="/corrections/">Corrections &amp; right of reply</a><span aria-hidden="true"> · </span>
+        <a href="https://github.com/iamthevengence-orsomething/india-tech-collective" rel="noopener">GitHub</a>
+      </p>
+      <p class="procedure-note">
+        Every figure on this site carries its source, its date, and its denominator.
+        Where the record is incomplete, the gap is stated, not filled.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<script is:inline>
+  (function () {
+    var button = document.getElementById('shareCollective');
+    var status = document.getElementById('shareStatus');
+    if (!button || !status) return;
+
+    var share = {
+      title: 'The India Tech Collective',
+      text: 'Tools for when the network goes dark. Evidence for when public memory does. A public record, kept in public.',
+      url: window.location.origin + '/',
+    };
+
+    button.addEventListener('click', async function () {
+      try {
+        if (navigator.share) {
+          await navigator.share(share);
+          status.textContent = 'Shared.';
+          return;
+        }
+        await navigator.clipboard.writeText(share.text + '\n\n' + share.url);
+        status.textContent = 'Share text copied.';
+      } catch (error) {
+        if (error && error.name === 'AbortError') return;
+        status.textContent = 'Copy this link: ' + share.url;
+      }
+    });
+  })();
+</script>
+
+<style>
+  .manifesto-wrap { max-width: 780px; }
+
+  .masthead { text-align: center; padding: 3.6rem 0 2.4rem; }
+  .masthead-kicker {
+    font-family: var(--mono); font-size: 0.64rem; font-weight: 500;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-deep);
+    margin-bottom: 1.4rem;
+  }
+  .epigraph { font-size: 1.5rem; color: var(--ink); letter-spacing: 0.06em; }
+  .epigraph-tr {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--faint); margin-top: 0.5rem;
+  }
+  .masthead h1 {
+    font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 540;
+    margin-top: 1.6rem; letter-spacing: 0.01em;
+  }
+  .masthead-sub { font-style: italic; color: var(--muted); font-size: 1.25rem; margin-top: 0.6rem; }
+  .masthead-deck {
+    max-width: 25ch; margin: 1.25rem auto 0; color: var(--ink-strong);
+    font-size: clamp(1.25rem, 2.5vw, 1.55rem); line-height: 1.35;
+  }
+  .masthead-actions {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 0.7rem 0.8rem; margin-top: 1.7rem;
+  }
+  .hero-btn { min-height: 44px; }
+  .share-card-link {
+    font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em;
+    color: var(--muted); text-underline-offset: 3px;
+  }
+  .share-card-link:hover { color: var(--gold-deep); }
+  .share-status { min-height: 1.4em; margin-top: 0.6rem; color: var(--gold-deep); font-family: var(--mono); font-size: 0.68rem; }
+  .proof-line {
+    list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.45rem 1.35rem; margin-top: 1.2rem; color: var(--muted);
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .proof-line li { position: relative; }
+  .proof-line li + li::before { content: "·"; position: absolute; left: -0.8rem; color: var(--gold); }
+
+  .manifesto { padding: 2.6rem 0 1.4rem; font-size: clamp(1.16rem, 1.8vw, 1.3rem); line-height: 1.62; }
+  .m-open, .m-resolve {
+    font-variant-caps: small-caps; letter-spacing: 0.14em; font-weight: 600;
+    color: var(--ink-strong); font-size: 1.16em; margin: 1.1rem 0 0.7rem;
+  }
+  .m-resolve { margin-top: 1.5rem; }
+  .m-clause { margin: 0.55rem 0; color: var(--ink); }
+  .m-gives { list-style: none; margin: 0.9rem 0 0.4rem; }
+  .m-gives li { margin: 0.6rem 0; padding-left: 1.6rem; position: relative; }
+  .m-gives li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+  .m-close {
+    margin-top: 1.9rem; font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep);
+  }
+
+  .contents { padding: 1.2rem 0 2.2rem; }
+  .contents-h {
+    font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--muted); text-align: center; margin-bottom: 1.2rem;
+  }
+  .part {
+    display: grid; grid-template-columns: 6.2rem 1fr auto; gap: 1.2rem; align-items: baseline;
+    padding: 1.35rem 0.4rem; border-top: 1px solid var(--line); text-decoration: none;
+    transition: background 0.15s, padding-left 0.15s;
+  }
+  .part:last-of-type { border-bottom: 1px solid var(--line); }
+  .part:hover { background: var(--surface); padding-left: 0.9rem; }
+  .part-no {
+    font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-deep);
+  }
+  .part-title { display: block; font-family: var(--display); font-weight: 560; font-size: clamp(1.5rem, 3vw, 1.95rem); color: var(--ink-strong); }
+  .part-desc { display: block; color: var(--muted); font-size: 1.02rem; margin-top: 0.25rem; max-width: 52ch; }
+  .part-arrow { color: var(--faint); font-size: 1.25rem; transition: color 0.15s, transform 0.15s; }
+  .part:hover .part-arrow { color: var(--gold-deep); transform: translateX(4px); }
+  .part:hover .part-title { color: var(--gold-deep); }
+
+  .procedure { text-align: center; padding: 1.8rem 0 2.6rem; }
+  .procedure-links { font-size: 1.02rem; color: var(--muted); }
+  .procedure-links a { text-decoration-color: rgba(154, 116, 32, 0.5); text-underline-offset: 3px; }
+  .procedure-links a:hover { color: var(--gold-deep); }
+  .procedure-note { margin-top: 0.9rem; font-style: italic; color: var(--faint); font-size: 0.98rem; }
+
+  @media (max-width: 640px) {
+    .masthead { padding-top: 2.4rem; }
+    .masthead-actions { align-items: stretch; }
+    .hero-btn { width: 100%; justify-content: center; }
+    .share-card-link { width: 100%; margin-top: 0.25rem; }
+    .proof-line { display: grid; gap: 0.35rem; }
+    .proof-line li + li::before { display: none; }
+    .part { grid-template-columns: 1fr auto; }
+    .part-no { grid-column: 1 / -1; }
+  }
+</style>

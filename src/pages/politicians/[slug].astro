@@ -1,0 +1,205 @@
+---
+import Base from '../../layouts/Base.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import ReviewChip from '../../components/ReviewChip.astro';
+import ShareRow from '../../components/islands/ShareRow.tsx';
+import { loadFullProfiles, loadCurated } from '../../lib/data';
+import { formatDate, formatInt } from '../../lib/format';
+
+export async function getStaticPaths() {
+  const full = loadFullProfiles<any>();
+  const dict = loadCurated<any>('statute-dictionary');
+  const actLabels: Record<string, string> = {};
+  for (const a of dict.acts) actLabels[a.actId] = a.shortName ?? a.name;
+  return full.profiles.map((profile: any) => ({
+    params: { slug: profile.slug },
+    props: { profile, cohortLabel: full.cohortLabel, dataAsOf: full.dataAsOf, election: full.election, actLabels },
+  }));
+}
+
+const { profile: p, election, actLabels } = Astro.props as any;
+const pending = p.cases.filter((c: any) => c.declarationType === 'pending');
+const convictions = p.cases.filter((c: any) => c.declarationType === 'conviction');
+const adverse = (p.declaredCases ?? 0) > 0;
+const noindex = adverse && p.reviewStatus !== 'human_verified';
+const desc = `${p.name} (${p.partyShort}), ${p.constituency}, ${p.stateName} — ${
+  p.declaredCases === null ? 'no affidavit-derived data yet' : `${p.declaredCases} criminal case(s) self-declared in the 2024 election affidavit`
+}. A declared case is an accusation, not a conviction.`;
+---
+<Base
+  title={`${p.name} — declared cases | India Tech Collective`}
+  description={desc}
+  path={`/politicians/${p.slug}/`}
+  current="politicians"
+  ogImage={`/og/profiles/${p.slug}.png`}
+  noindex={noindex}
+>
+  <div class="wrap" style="max-width:880px;">
+    <header class="page-head" style="padding-bottom:0.6rem;">
+      <p class="kicker">{p.constituency} · {p.stateName} · Lok Sabha</p>
+      <h1 class="page-h1" style="max-width:none;">{p.name}</h1>
+      <p class="lede">
+        <strong>{p.party}</strong> ({p.partyShort}) — party at the {election.year} election.
+        Won {p.constituency} in the {election.termLabel.replace(' (2024–)', '')} general election.
+      </p>
+      <div class="filter-bar" style="margin-top:0.8rem;">
+        <span class="chip">Status: winner at election, as of {formatDate(p.statusAsOf)}</span>
+        <ReviewChip status={p.reviewStatus} />
+        {p.age !== null && <span class="chip">Age at election: {p.age}</span>}
+      </div>
+      <p class="metric-caption">
+        Post-election membership changes (resignation, by-election, party change) are <strong>not yet verified </strong>
+        for any profile — this page shows the election result and the affidavit disclosure. Current party is shown
+        only when independently verified; none are yet. See <a href="/coverage/">coverage</a>.
+        {p.officialResultName && p.officialResultName.toLowerCase() !== p.name.toLowerCase() && (
+          <> Official result record name: “{p.officialResultName}”.</>
+        )}
+      </p>
+    </header>
+
+    <section class="section" aria-labelledby="decl-h">
+      <h2 class="section-title" id="decl-h">Affidavit declarations</h2>
+      <div class="kpi-row" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));">
+        <div class="kpi">
+          <span class="kpi-label">Declared pending cases</span>
+          <span class="kpi-value num">{formatInt(p.affidavit.declaredSummary?.pendingCases ?? null)}</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Declared convictions</span>
+          <span class="kpi-value num">{formatInt(p.affidavit.declaredSummary?.convictions ?? null)}</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-label">Serious-case criteria</span>
+          <span class="kpi-value" style="font-size:1.25rem;">{p.hasSeriousDeclared === null ? '—' : p.hasSeriousDeclared ? 'Met by ≥1 case' : 'Not met'}</span>
+          <span class="kpi-frac">source report’s criteria</span>
+        </div>
+      </div>
+      <p class="metric-caption">
+        Basis: {p.affidavit.declaredSummary?.basis === 'parsed_cases'
+          ? 'case-level rows parsed from the published affidavit digest (below)'
+          : 'published analysis of all 543 winners — this representative is recorded with zero declared cases'}.
+        Digest date {formatDate(Astro.props.dataAsOf)} · extraction: {p.affidavit.extractionMethod} (parser v{p.affidavit.parserVersion}) ·
+        <ReviewChip status={p.affidavit.reviewStatus} />
+      </p>
+      <div class="share-row" style="margin-top:0.6rem;">
+        <a class="btn btn-small" href={p.affidavit.sourceUrl} rel="noopener">Source: affidavit digest (ADR report) ↗</a>
+        <a class="btn btn-small" href="https://affidavit.eci.gov.in/" rel="noopener">ECI affidavit portal ↗</a>
+      </div>
+      <p class="metric-caption">
+        The primary Form 26 PDF for this representative is not yet linked (the ECI portal refused automated access
+        on {formatDate('2026-07-24')}; no bypass was attempted). Case details below come from ADR/National Election
+        Watch’s published digest of the sworn affidavit, machine-checked against that report’s own totals.
+      </p>
+    </section>
+
+    {adverse && (
+      <section class="section" aria-labelledby="cases-h">
+        <h2 class="section-title" id="cases-h">Declared cases ({p.cases.length})</h2>
+        {convictions.length > 0 && (
+          <>
+            <h3 style="font-size:1.02rem;margin:0.8rem 0 0.5rem;color:var(--muted);">Disclosed convictions ({convictions.length})</h3>
+            {convictions.map((c: any, i: number) => (
+              <CaseCard
+                ordinal={i + 1}
+                declarationType={c.declarationType}
+                declaredStatus={c.declaredStatus}
+                actsSectionsRaw={c.actsSectionsRaw}
+                normalizedProvisions={c.normalizedProvisions}
+                caseNumberRaw={c.caseNumberRaw}
+                firNumberRaw={c.firNumberRaw}
+                policeStationRaw={c.policeStationRaw}
+                courtNameRaw={c.courtNameRaw}
+                chargesFramed={c.chargesFramed}
+                sentenceRaw={c.sentenceRaw}
+                appealStatusRaw={c.appealStatusRaw}
+                statusAsOf={c.statusAsOf}
+                pageReference={c.pageReference}
+                corruptionQualification={c.corruptionQualification}
+                reviewStatus={c.reviewStatus}
+                sourceUrl={p.affidavit.sourceUrl}
+                actLabels={actLabels}
+              />
+            ))}
+          </>
+        )}
+        {pending.length > 0 && (
+          <>
+            <h3 style="font-size:1.02rem;margin:1.1rem 0 0.5rem;color:var(--muted);">Declared pending cases ({pending.length})</h3>
+            {pending.map((c: any, i: number) => (
+              <CaseCard
+                ordinal={i + 1}
+                declarationType={c.declarationType}
+                declaredStatus={c.declaredStatus}
+                actsSectionsRaw={c.actsSectionsRaw}
+                normalizedProvisions={c.normalizedProvisions}
+                caseNumberRaw={c.caseNumberRaw}
+                firNumberRaw={c.firNumberRaw}
+                policeStationRaw={c.policeStationRaw}
+                courtNameRaw={c.courtNameRaw}
+                chargesFramed={c.chargesFramed}
+                sentenceRaw={c.sentenceRaw}
+                appealStatusRaw={c.appealStatusRaw}
+                statusAsOf={c.statusAsOf}
+                pageReference={c.pageReference}
+                corruptionQualification={c.corruptionQualification}
+                reviewStatus={c.reviewStatus}
+                sourceUrl={p.affidavit.sourceUrl}
+                actLabels={actLabels}
+              />
+            ))}
+          </>
+        )}
+      </section>
+    )}
+    {!adverse && (
+      <section class="section">
+        <div class="empty-state">
+          <p><strong>No criminal cases declared.</strong></p>
+          <p class="small">
+            The published analysis of all 543 winners records zero declared cases for this representative’s
+            2024 affidavit.
+          </p>
+        </div>
+      </section>
+    )}
+
+    <section class="section" aria-labelledby="means-h">
+      <h2 class="section-title" id="means-h">What this page means</h2>
+      <div class="banner">
+        <span class="banner-icon" aria-hidden="true">§</span>
+        <div class="small">
+          <p>
+            Candidates must self-declare criminal cases in a sworn affidavit (Form 26) when contesting an election.
+            This page republishes those <strong>self-declarations</strong> with their procedural stage as stated.
+            An FIR or pending case is an accusation. Only a court decides guilt; a declared conviction is shown
+            separately and as declared. Statute mappings are dictionary-based and reviewed — nothing here is an
+            editorial judgment of any person.
+          </p>
+          <p>
+            This is the status disclosed in the election affidavit digest dated {formatDate(Astro.props.dataAsOf)}.
+            <strong> The case may have changed since then.</strong> Post-affidavit updates appear only when supported
+            by a primary source, with their own dates.
+          </p>
+        </div>
+      </div>
+      <div class="share-row" style="margin-top:0.8rem;">
+        <a class="btn btn-small" href="/methodology/">Methodology</a>
+        <a class="btn btn-small" href="/corrections/">Request a correction / right of reply</a>
+        <a class="btn btn-small" href="/sources/">Sources</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <ShareRow
+        client:visible
+        spec={{
+          headline: `${p.name} (${p.partyShort}, ${p.constituency}) — ${p.declaredCases ?? '?'} case(s) self-declared in the 2024 election affidavit`,
+          definition: 'Self-declared criminal cases from the sworn Form 26 election affidavit, with procedural stage as stated.',
+          asOf: Astro.props.dataAsOf,
+          source: 'ADR/National Election Watch digest of ECI affidavits',
+          url: `https://www.indiatechcollective.org/politicians/${p.slug}/`,
+        }}
+      />
+    </section>
+  </div>
+</Base>

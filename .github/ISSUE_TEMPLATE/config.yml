@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: General volunteering / other topics
+    url: https://github.com/iamthevengence-orsomething/india-tech-collective/issues/new
+    about: For anything that is not a data correction, open a regular issue.

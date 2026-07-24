@@ -1,0 +1,191 @@
+---
+import Base from '../layouts/Base.astro';
+import { METRIC_DEFS } from '../lib/metrics/registry';
+import { loadBuildInfo } from '../lib/data';
+const build = loadBuildInfo<any>();
+---
+<Base
+  title="Methodology | India Tech Collective"
+  description="How the accountability dashboards work: Form 26 affidavits, why a declared case is not a conviction, every metric's exact definition, statute mapping rules, denominators, data freshness, and why there is no corruption score."
+  path="/methodology/"
+  current="methodology"
+  ogImage="/og/methodology.png"
+>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">Methodology · plain English</p>
+      <h1 class="page-h1">Every number, defined</h1>
+      <p class="lede">
+        This page explains what the data is, where it comes from, exactly how each figure is computed, and the
+        limits you should keep in mind. If anything here is unclear or wrong, use the
+        <a href="/corrections/">corrections process</a>.
+      </p>
+    </header>
+
+    <div class="prose section">
+      <h2 id="form26">What Form 26 contains</h2>
+      <p>
+        Every candidate in an Indian election must file a sworn affidavit — <strong>Form 26</strong> — with their
+        nomination papers, under the Conduct of Elections Rules and Election Commission directions. It requires
+        disclosure of: pending criminal cases (with FIR/case numbers, police station, court, the Acts and sections,
+        and whether a court has taken cognizance or framed charges), past convictions with sentence, plus assets,
+        liabilities and education. Candidates sign it under oath; filing a false affidavit is itself an offence.
+        The ECI publishes these affidavits on its <a href="https://affidavit.eci.gov.in/" rel="noopener">affidavit portal</a>.
+      </p>
+
+      <h2 id="not-conviction">Why a declared case is not a conviction</h2>
+      <p>
+        A criminal case moves through stages, and most entries in affidavits are at an early one. On this site,
+        every case is shown at the stage the candidate declared, and nothing more:
+      </p>
+      <ul>
+        <li><strong>FIR registered</strong> — the police recorded an allegation. Nobody has weighed evidence yet.</li>
+        <li><strong>Investigation</strong> — the police are collecting evidence; it can end in a chargesheet or a closure report.</li>
+        <li><strong>Cognizance taken</strong> — a magistrate has formally taken notice of the case for judicial process.</li>
+        <li><strong>Charges framed</strong> — a court found enough material to put specific charges to trial. Still not a finding of guilt.</li>
+        <li><strong>Trial</strong> — evidence is heard. Ends in conviction, acquittal, or discharge.</li>
+        <li><strong>Conviction</strong> — a court found guilt. Can be appealed and stayed or reversed.</li>
+        <li><strong>Acquittal</strong> — the court found the person not guilty.</li>
+        <li><strong>Discharge</strong> — the court found insufficient grounds even to frame charges.</li>
+        <li><strong>Quashed</strong> — a higher court annulled the proceedings.</li>
+        <li><strong>Closure report</strong> — police concluded there was no case to pursue (court may accept or reject).</li>
+        <li><strong>Appeal</strong> — a higher court is re-examining a verdict; a conviction under appeal is shown exactly as declared.</li>
+      </ul>
+      <p>
+        <strong>Presumption of innocence applies throughout.</strong> This site never calls a person a criminal.
+        Declared pending cases and disclosed convictions are presented separately and labelled as declared.
+      </p>
+
+      <h2 id="sources-used">The data actually used in this release</h2>
+      <ul>
+        <li>
+          <strong>Winners and constituencies:</strong> the official “State/UT-wise List of Successful Candidate
+          during 2024” dataset on data.gov.in (Government Open Data License – India). It contains 542 rows —
+          Surat’s uncontested seat is excluded at source and is recorded here from the analysis report below,
+          with a note.
+        </li>
+        <li>
+          <strong>Party at election and all case data:</strong> the Association for Democratic Reforms /
+          National Election Watch report <em>“Lok Sabha Elections 2024: Analysis of Criminal Background…of
+          Winning Candidates”</em> (6 June 2024), which digests all 543 winners’ sworn affidavits obtained from
+          the ECI portal. We downloaded this published report once and extracted its tables; we did <strong>not</strong>
+          scrape MyNeta or ADR pages (their terms prohibit systematic collection). Party attribution was
+          cross-checked: our extracted seat totals equal the report’s own printed party table exactly
+          (240 BJP, 99 INC, 37 SP, 29 AITC, 22 DMK, 16 TDP, 7 SHS among the anchors).
+        </li>
+        <li>
+          <strong>Why not the official winner-party column?</strong> The machine-readable copy of the official
+          results file collapsed duplicate winner/runner-up columns during the portal’s ingestion, corrupting the
+          winner-party field (documented in the coverage page fallbacks). Names, constituencies and states are
+          used from the official file; party comes from the report above, reconciled as described.
+        </li>
+        <li>
+          <strong>State enforcement:</strong> NCRB “Crime in India 2023” tables 8C.2–8C.4 via data.gov.in (GODL) —
+          data year 2023, published later (both years shown). Sums of states were verified against the printed
+          All-India rows for every column.
+        </li>
+      </ul>
+      <p>
+        Every record carries a review state. In this release everything is <strong>machine-checked</strong>
+        (validated against the source’s own printed totals) and <strong>nothing is human-verified yet</strong> —
+        profiles with adverse records are excluded from search-engine indexing until a human review pass is done.
+      </p>
+
+      <h2 id="metrics">Exact metric definitions</h2>
+      <ul>
+        {Object.entries(METRIC_DEFS).map(([id, def]) => (
+          <li><code>{id}</code> — {def.definition}</li>
+        ))}
+      </ul>
+      <p>Additional derived figures shown in the corruption dashboard use NCRB’s own published rate columns, whose formulas appear in the column headings (e.g. Conviction Rate = cases convicted ÷ trials completed × 100).</p>
+
+      <h2 id="serious">“Serious” cases</h2>
+      <p>
+        The serious-case flag uses the source report’s printed criteria, quoted: offences with maximum punishment
+        of five years or more; non-bailable offences; electoral offences (e.g. bribery); offences causing loss to
+        the exchequer; offences of assault, murder, kidnapping, or crimes against women. It is a
+        <em>charge-level</em> flag (a representative meets it if any declared charge does), not a case count.
+      </p>
+
+      <h2 id="party-rules">Party denominator rules</h2>
+      <ul>
+        <li>Party is <strong>party at election</strong>; later defections and mergers are not reflected until verified separately.</li>
+        <li>Denominators are covered representatives (those with affidavit-derived data), shown on every bar.</li>
+        <li>Parties with fewer than <strong>5</strong> covered representatives are displayed but never ranked; their raw numerator/denominator stays visible.</li>
+        <li>One person with several cases counts once in any “people” metric. Rows are seat-winners: a person who won two seats appears once per seat, matching the source report’s unit.</li>
+      </ul>
+
+      <h2 id="state-limits">State-comparison limitations</h2>
+      <p>
+        NCRB counts are <strong>reported enforcement activity</strong>. More registered cases can reflect more
+        underlying corruption, more reporting, stronger agencies, or all three — so raw counts are never presented
+        as a corruption ranking, and no normalized rate is invented here: only NCRB’s own published rates are
+        shown, with their formulas. Affidavit-based counts and NCRB counts are different datasets with different
+        units and are never joined or added.
+      </p>
+
+      <h2 id="statutes">Statute normalization</h2>
+      <p>
+        Raw statute text from declarations is preserved verbatim on every case card. A versioned, reviewed
+        dictionary maps known acts (IPC, BNS, PC Act, Arms Act, …) for filtering and category views; strings that
+        don’t match stay visibly <em>unmapped</em> and are excluded from category rankings. A case counts as a
+        <strong>corruption case</strong> only if it cites the Prevention of Corruption Act 1988 (or its mapped
+        1947 predecessor) under rule ids recorded on the record. PMLA, cheating (IPC 415–420), criminal breach of
+        trust (IPC 405–409) and electoral bribery are <strong>never auto-classified</strong> — they are marked
+        “needs review”. The IPC↔BNS crosswalk is display-only and marks each pair’s review status; differently
+        numbered provisions are never silently equated.
+      </p>
+
+      <h2 id="identity">Identity matching</h2>
+      <p>
+        Records are joined on state + constituency (unique per election), with names cross-checked and both
+        spellings kept (the official result spelling appears on each profile). People are <strong>not</strong>
+        merged across elections or houses by name similarity; cross-election history will appear only after human
+        review. Two same-name winners are distinguished by constituency in ids and URLs.
+      </p>
+
+      <h2 id="freshness">Data freshness</h2>
+      <p>
+        Case information reflects the affidavit digest dated <strong>6 June 2024</strong>; each card repeats
+        “the case may have changed since then”. Membership status is the election result as of 4 June 2024;
+        deaths, resignations, by-elections and party changes since are <em>not yet imported</em> and profiles say
+        so. Post-affidavit case events will be added only from primary sources, each with its own date. Current
+        dataset: <code>{build.datasetVersion}</code>, built {build.dataAsOf}.
+      </p>
+
+      <h2 id="corrections">Corrections and versioning</h2>
+      <p>
+        Anyone — especially a person named on this site — can request a correction via the
+        <a href="/corrections/">corrections page</a>. Corrections are applied in data, not by silent edits: the
+        public log records date, old value, new value, reason and source, and the dataset version changes. The
+        full policy lives in <code>docs/corrections-policy.md</code>.
+      </p>
+
+      <h2 id="no-score">Why there is no corruption score</h2>
+      <p>
+        Any single “corruption score” would have to mix accusations with convictions, enforcement activity with
+        underlying behaviour, and self-declared data with agency statistics — hiding every judgment inside one
+        opaque number. This site refuses that: it shows each dataset separately, with its unit, denominator,
+        source and limits. If you see a composite corruption index built from these numbers elsewhere, treat it
+        with suspicion.
+      </p>
+
+      <h2 id="boundaries">About the map</h2>
+      <p>
+        No Survey of India-published boundary file could be verified for this release, so geographic views use a
+        <strong>state tile grid</strong> — equal squares arranged to approximate geography — which depicts no
+        political boundary at all. A choropleth will ship only with boundaries that follow the Survey of India
+        depiction of India’s external boundary.
+      </p>
+
+      <h2 id="legal">Editorial guardrails</h2>
+      <p>
+        The site publishes sworn self-declarations and official statistics with attribution — it adds no
+        allegations of its own. Statutory context considered in the editorial policy includes the Bharatiya Nyaya
+        Sanhita 2023 (s.356, defamation) and the Digital Personal Data Protection Act 2023; the launch checklist
+        requires a pre-publication review by an Indian lawyer, which has <strong>not yet been done</strong> — see
+        <code>docs/editorial-policy.md</code>. This site is not legal advice.
+      </p>
+    </div>
+  </div>
+</Base>

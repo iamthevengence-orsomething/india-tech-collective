@@ -1,0 +1,1013 @@
+{
+  "adrHistory": [
+    {
+      "analyzed": 8,
+      "withCases": 2,
+      "withCasesPct": 25,
+      "withSerious": 1,
+      "withSeriousPct": 13,
+      "year": 2009
+    },
+    {
+      "analyzed": 8,
+      "withCases": 3,
+      "withCasesPct": 38,
+      "withSerious": 1,
+      "withSeriousPct": 13,
+      "year": 2014
+    },
+    {
+      "analyzed": 8,
+      "withCases": 3,
+      "withCasesPct": 38,
+      "withSerious": 2,
+      "withSeriousPct": 25,
+      "year": 2019
+    },
+    {
+      "analyzed": 8,
+      "withCases": 4,
+      "withCasesPct": 50,
+      "withSerious": 2,
+      "withSeriousPct": 25,
+      "year": 2024
+    }
+  ],
+  "cohortLabel": "DEMO cohort — fixtures, not real records",
+  "dataAsOf": "2024-06-06",
+  "election": {
+    "bodyName": "DEMO House",
+    "id": "fx-ls-2024",
+    "sourceIds": [
+      "fx-source"
+    ],
+    "termLabel": "DEMO",
+    "type": "lok_sabha",
+    "year": 2024
+  },
+  "profiles": [
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "declaredSummary": {
+          "basis": "parsed_cases",
+          "convictions": 1,
+          "hasSeriousDeclared": true,
+          "pendingCases": 5,
+          "sourceIds": [
+            "fx-source"
+          ]
+        },
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "pdf_text",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-01",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-01",
+        "reviewStatus": "machine_checked",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "case_rows_parsed",
+      "age": 52,
+      "cases": [
+        {
+          "actsSectionsRaw": "IPC Sections - 420, Other Details - Section 13(2) PC Act, Case No. - DEMO/1, Court - DEMO Court, FIR No. - DEMO PS CC 1/2020, Charges Framed - Yes, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-01",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": true,
+          "corruptionQualification": "yes",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-01-pending-0",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "420"
+            },
+            {
+              "actId": "in-act-pca-1988",
+              "mappingStatus": "reviewed_alias",
+              "section": "13(2)"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-01",
+          "qualificationRuleId": "cq-pca-1988",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        },
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-01",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-01-pending-1",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-01",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        },
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-01",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-01-pending-2",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-01",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        },
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-01",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-01-pending-3",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-01",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        },
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-01",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-01-pending-4",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-01",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        },
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-01",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "conviction",
+          "declaredStatus": "Convicted (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-01-conviction-0",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-01",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        }
+      ],
+      "chargesFramedAny": true,
+      "constituency": "Demo South",
+      "convictionsDeclared": 1,
+      "declaredCases": 6,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": true,
+      "hasSeriousDeclared": true,
+      "house": "lok_sabha",
+      "id": "fx-pol-01",
+      "membership": {
+        "constituencyName": "Demo South",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-01",
+        "partyAtElectionId": "demo-a",
+        "politicianId": "fx-pol-01",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "KL",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "Demo Netaji Extraordinarily-Long-Name Venkatasubramanian",
+      "officialResultName": null,
+      "party": "Demo Party Alpha",
+      "partyId": "demo-a",
+      "partyShort": "DPA",
+      "pcActCase": true,
+      "politician": {
+        "aliases": [],
+        "displayName": "Demo Netaji Extraordinarily-Long-Name Venkatasubramanian",
+        "fixture": true,
+        "id": "fx-pol-01",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "demo netaji extraordinarily-long-name venkatasubramanian",
+        "slug": "demo-1",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-1",
+      "state": "KL",
+      "stateName": "Kerala",
+      "statusAsOf": "2024-06-04"
+    },
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "declaredSummary": {
+          "basis": "parsed_cases",
+          "convictions": 0,
+          "hasSeriousDeclared": true,
+          "pendingCases": 2,
+          "sourceIds": [
+            "fx-source"
+          ]
+        },
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "pdf_text",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-02",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-02",
+        "reviewStatus": "machine_checked",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "case_rows_parsed",
+      "age": 52,
+      "cases": [
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-02",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-02-pending-0",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-02",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        },
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-02",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-02-pending-1",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-02",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        }
+      ],
+      "chargesFramedAny": false,
+      "constituency": "Demo North",
+      "convictionsDeclared": 0,
+      "declaredCases": 2,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": true,
+      "hasSeriousDeclared": true,
+      "house": "lok_sabha",
+      "id": "fx-pol-02",
+      "membership": {
+        "constituencyName": "Demo North",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-02",
+        "partyAtElectionId": "demo-a",
+        "politicianId": "fx-pol-02",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "UP",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "अजय डेमो कुमार",
+      "officialResultName": null,
+      "party": "Demo Party Alpha",
+      "partyId": "demo-a",
+      "partyShort": "DPA",
+      "pcActCase": false,
+      "politician": {
+        "aliases": [],
+        "displayName": "अजय डेमो कुमार",
+        "fixture": true,
+        "id": "fx-pol-02",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "अजय डेमो कुमार",
+        "slug": "demo-2",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-2",
+      "state": "UP",
+      "stateName": "Uttar Pradesh",
+      "statusAsOf": "2024-06-04"
+    },
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "declaredSummary": {
+          "basis": "published_report",
+          "convictions": 0,
+          "hasSeriousDeclared": false,
+          "pendingCases": 0,
+          "sourceIds": [
+            "fx-source"
+          ]
+        },
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "aggregate_report",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-03",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-03",
+        "reviewStatus": "machine_checked",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "summary_only",
+      "age": 52,
+      "cases": [],
+      "chargesFramedAny": false,
+      "constituency": "Demo Central",
+      "convictionsDeclared": 0,
+      "declaredCases": 0,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": false,
+      "hasSeriousDeclared": false,
+      "house": "lok_sabha",
+      "id": "fx-pol-03",
+      "membership": {
+        "constituencyName": "Demo Central",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-03",
+        "partyAtElectionId": "demo-a",
+        "politicianId": "fx-pol-03",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "UP",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "Demo Clean Record",
+      "officialResultName": null,
+      "party": "Demo Party Alpha",
+      "partyId": "demo-a",
+      "partyShort": "DPA",
+      "pcActCase": false,
+      "politician": {
+        "aliases": [],
+        "displayName": "Demo Clean Record",
+        "fixture": true,
+        "id": "fx-pol-03",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "demo clean record",
+        "slug": "demo-3",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-3",
+      "state": "UP",
+      "stateName": "Uttar Pradesh",
+      "statusAsOf": "2024-06-04"
+    },
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "manual",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-04",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-04",
+        "reviewStatus": "unreviewed",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "missing",
+      "age": 52,
+      "cases": [],
+      "chargesFramedAny": null,
+      "constituency": "Demo East",
+      "convictionsDeclared": null,
+      "declaredCases": null,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": false,
+      "hasSeriousDeclared": null,
+      "house": "lok_sabha",
+      "id": "fx-pol-04",
+      "membership": {
+        "constituencyName": "Demo East",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-04",
+        "partyAtElectionId": "demo-a",
+        "politicianId": "fx-pol-04",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "MH",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "Demo Missing Affidavit",
+      "officialResultName": null,
+      "party": "Demo Party Alpha",
+      "partyId": "demo-a",
+      "partyShort": "DPA",
+      "pcActCase": null,
+      "politician": {
+        "aliases": [],
+        "displayName": "Demo Missing Affidavit",
+        "fixture": true,
+        "id": "fx-pol-04",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "demo missing affidavit",
+        "slug": "demo-4",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-4",
+      "state": "MH",
+      "stateName": "Maharashtra",
+      "statusAsOf": "2024-06-04"
+    },
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "declaredSummary": {
+          "basis": "parsed_cases",
+          "convictions": 0,
+          "hasSeriousDeclared": false,
+          "pendingCases": 1,
+          "sourceIds": [
+            "fx-source"
+          ]
+        },
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "pdf_text",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-05",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-05",
+        "reviewStatus": "machine_checked",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "case_rows_parsed",
+      "age": 52,
+      "cases": [
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-05",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-05-pending-0",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-05",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        }
+      ],
+      "chargesFramedAny": false,
+      "constituency": "Demo West",
+      "convictionsDeclared": 0,
+      "declaredCases": 1,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": true,
+      "hasSeriousDeclared": false,
+      "house": "lok_sabha",
+      "id": "fx-pol-05",
+      "membership": {
+        "constituencyName": "Demo West",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-05",
+        "partyAtElectionId": "demo-a",
+        "politicianId": "fx-pol-05",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "MH",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "Demo Member Five",
+      "officialResultName": null,
+      "party": "Demo Party Alpha",
+      "partyId": "demo-a",
+      "partyShort": "DPA",
+      "pcActCase": false,
+      "politician": {
+        "aliases": [],
+        "displayName": "Demo Member Five",
+        "fixture": true,
+        "id": "fx-pol-05",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "demo member five",
+        "slug": "demo-5",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-5",
+      "state": "MH",
+      "stateName": "Maharashtra",
+      "statusAsOf": "2024-06-04"
+    },
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "declaredSummary": {
+          "basis": "published_report",
+          "convictions": 0,
+          "hasSeriousDeclared": false,
+          "pendingCases": 0,
+          "sourceIds": [
+            "fx-source"
+          ]
+        },
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "aggregate_report",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-06",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-06",
+        "reviewStatus": "machine_checked",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "summary_only",
+      "age": 52,
+      "cases": [],
+      "chargesFramedAny": false,
+      "constituency": "Demo Coast",
+      "convictionsDeclared": 0,
+      "declaredCases": 0,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": false,
+      "hasSeriousDeclared": false,
+      "house": "lok_sabha",
+      "id": "fx-pol-06",
+      "membership": {
+        "constituencyName": "Demo Coast",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-06",
+        "partyAtElectionId": "demo-a",
+        "politicianId": "fx-pol-06",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "KL",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "Demo Member Six",
+      "officialResultName": null,
+      "party": "Demo Party Alpha",
+      "partyId": "demo-a",
+      "partyShort": "DPA",
+      "pcActCase": false,
+      "politician": {
+        "aliases": [],
+        "displayName": "Demo Member Six",
+        "fixture": true,
+        "id": "fx-pol-06",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "demo member six",
+        "slug": "demo-6",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-6",
+      "state": "KL",
+      "stateName": "Kerala",
+      "statusAsOf": "2024-06-04"
+    },
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "declaredSummary": {
+          "basis": "parsed_cases",
+          "convictions": 0,
+          "hasSeriousDeclared": false,
+          "pendingCases": 1,
+          "sourceIds": [
+            "fx-source"
+          ]
+        },
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "pdf_text",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-07",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-07",
+        "reviewStatus": "machine_checked",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "case_rows_parsed",
+      "age": 52,
+      "cases": [
+        {
+          "actsSectionsRaw": "IPC Sections - 147, 341, Other Details - Some Unmapped State Act 5, Case No. - DEMO/2, Court - DEMO Court, FIR No. - DEMO PS CC 2/2021, Charges Framed - No, Appeal Filed - No",
+          "affidavitId": "fx-aff-fx-pol-07",
+          "caseNumberRaw": "DEMO/1",
+          "chargesFramed": false,
+          "corruptionQualification": "needs_review",
+          "courtNameRaw": "DEMO Court",
+          "declarationType": "pending",
+          "declaredStatus": "Pending (as declared)",
+          "fixture": true,
+          "id": "fx-case-fx-pol-07-pending-0",
+          "normalizedProvisions": [
+            {
+              "actId": "in-act-ipc-1860",
+              "mappingStatus": "reviewed_alias",
+              "section": "147"
+            },
+            {
+              "actId": "unmapped",
+              "mappingStatus": "unmapped",
+              "section": "Some Unmapped State Act 5"
+            }
+          ],
+          "pageReference": "DEMO p. 1",
+          "politicianId": "fx-pol-07",
+          "qualificationRuleId": "cq-default",
+          "reviewStatus": "machine_checked",
+          "sourceIds": [
+            "fx-source"
+          ],
+          "statusAsOf": "2024-06-06"
+        }
+      ],
+      "chargesFramedAny": false,
+      "constituency": "Demo Hills",
+      "convictionsDeclared": 0,
+      "declaredCases": 1,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": true,
+      "hasSeriousDeclared": false,
+      "house": "lok_sabha",
+      "id": "fx-pol-07",
+      "membership": {
+        "constituencyName": "Demo Hills",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-07",
+        "partyAtElectionId": "demo-b",
+        "politicianId": "fx-pol-07",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "GA",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "Demo Small-Party One",
+      "officialResultName": null,
+      "party": "Demo Party Beta",
+      "partyId": "demo-b",
+      "partyShort": "DPB",
+      "pcActCase": false,
+      "politician": {
+        "aliases": [],
+        "displayName": "Demo Small-Party One",
+        "fixture": true,
+        "id": "fx-pol-07",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "demo small-party one",
+        "slug": "demo-7",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-7",
+      "state": "GA",
+      "stateName": "Goa",
+      "statusAsOf": "2024-06-04"
+    },
+    {
+      "adrPageRef": 1,
+      "affidavit": {
+        "declaredSummary": {
+          "basis": "published_report",
+          "convictions": 0,
+          "hasSeriousDeclared": false,
+          "pendingCases": 0,
+          "sourceIds": [
+            "fx-source"
+          ]
+        },
+        "electionId": "fx-ls-2024",
+        "extractionMethod": "aggregate_report",
+        "fixture": true,
+        "id": "fx-aff-fx-pol-08",
+        "languageCodes": [
+          "en"
+        ],
+        "lastVerifiedAt": "2026-07-24T00:00:00Z",
+        "parserVersion": "demo",
+        "politicianId": "fx-pol-08",
+        "reviewStatus": "machine_checked",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "sourceUrl": "https://example.com/demo.pdf"
+      },
+      "affidavitStatus": "summary_only",
+      "age": 52,
+      "cases": [],
+      "chargesFramedAny": false,
+      "constituency": "Demo Valley",
+      "convictionsDeclared": 0,
+      "declaredCases": 0,
+      "electionId": "fx-ls-2024",
+      "fixture": true,
+      "hasCaseRecords": false,
+      "hasSeriousDeclared": false,
+      "house": "lok_sabha",
+      "id": "fx-pol-08",
+      "membership": {
+        "constituencyName": "Demo Valley",
+        "electionId": "fx-ls-2024",
+        "fixture": true,
+        "houseType": "lok_sabha",
+        "id": "fx-mem-fx-pol-08",
+        "partyAtElectionId": "demo-b",
+        "politicianId": "fx-pol-08",
+        "sourceIds": [
+          "fx-source"
+        ],
+        "stateCode": "GA",
+        "status": "winner_at_election",
+        "statusAsOf": "2024-06-04"
+      },
+      "membershipStatus": "winner_at_election",
+      "name": "Demo Small-Party Two",
+      "officialResultName": null,
+      "party": "Demo Party Beta",
+      "partyId": "demo-b",
+      "partyShort": "DPB",
+      "pcActCase": false,
+      "politician": {
+        "aliases": [],
+        "displayName": "Demo Small-Party Two",
+        "fixture": true,
+        "id": "fx-pol-08",
+        "identityReviewStatus": "auto_matched",
+        "normalizedName": "demo small-party two",
+        "slug": "demo-8",
+        "sourceIds": [
+          "fx-source"
+        ]
+      },
+      "reviewStatus": "machine_checked",
+      "slug": "demo-8",
+      "state": "GA",
+      "stateName": "Goa",
+      "statusAsOf": "2024-06-04"
+    }
+  ]
+}

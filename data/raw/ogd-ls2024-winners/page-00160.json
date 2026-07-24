@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "160",
+    "records": [
+        {
+            "_sl__no_": 161,
+            "state": "Kerala",
+            "const_no_": 11,
+            "constituency": "Chalakudy",
+            "constituency_type": "GEN",
+            "total_valid_votes": 943224,
+            "winner_name": "BENNY BEHANAN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 330417,
+            "runner_up_name": "PROF C RAVEENDRANATH",
+            "margin": 63754,
+            "margin__": 6.7599999999999998
+        },
+        {
+            "_sl__no_": 162,
+            "state": "Kerala",
+            "const_no_": 12,
+            "constituency": "Ernakulam",
+            "constituency_type": "GEN",
+            "total_valid_votes": 902744,
+            "winner_name": "HIBI EDEN",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 231932,
+            "runner_up_name": "K. J. SHINE TEACHER",
+            "margin": 250385,
+            "margin__": 27.739999999999998
+        },
+        {
+            "_sl__no_": 163,
+            "state": "Kerala",
+            "const_no_": 13,
+            "constituency": "Idukki",
+            "constituency_type": "GEN",
+            "total_valid_votes": 831138,
+            "winner_name": "ADV. DEAN KURIAKOSE",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 298645,
+            "runner_up_name": "ADV. JOICE GEORGE",
+            "margin": 133727,
+            "margin__": 16.09
+        },
+        {
+            "_sl__no_": 164,
+            "state": "Kerala",
+            "const_no_": 14,
+            "constituency": "Kottayam",
+            "constituency_type": "GEN",
+            "total_valid_votes": 824290,
+            "winner_name": "ADV K FRANCIS GEORGE",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "KEC(M)",
+            "party_symbol": "Two leaves",
+            "vote_secured": 277365,
+            "runner_up_name": "THOMAS CHAZHIKADAN",
+            "margin": 87266,
+            "margin__": 10.59
+        },
+        {
+            "_sl__no_": 165,
+            "state": "Kerala",
+            "const_no_": 15,
+            "constituency": "Alappuzha",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1051338,
+            "winner_name": "K. C VENUGOPAL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 341047,
+            "runner_up_name": "A. M ARIFF",
+            "margin": 63513,
+            "margin__": 6.04
+        },
+        {
+            "_sl__no_": 166,
+            "state": "Kerala",
+            "const_no_": 16,
+            "constituency": "Mavelikkara",
+            "constituency_type": "SC",
+            "total_valid_votes": 885088,
+            "winner_name": "KODIKUNNIL SURESH",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "CPI",
+            "party_symbol": "Ears of corn and sickle",
+            "vote_secured": 358648,
+            "runner_up_name": "ADV ARUN KUMAR C A",
+            "margin": 10868,
+            "margin__": 1.23
+        },
+        {
+            "_sl__no_": 167,
+            "state": "Kerala",
+            "const_no_": 17,
+            "constituency": "Pathanamthitta",
+            "constituency_type": "GEN",
+            "total_valid_votes": 911158,
+            "winner_name": "ANTO ANTONY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 301504,
+            "runner_up_name": "DR.T.M.THOMAS ISSAC",
+            "margin": 66119,
+            "margin__": 7.2599999999999998
+        },
+        {
+            "_sl__no_": 168,
+            "state": "Kerala",
+            "const_no_": 18,
+            "constituency": "Kollam",
+            "constituency_type": "GEN",
+            "total_valid_votes": 909145,
+            "winner_name": "N K PREMACHANDRAN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 293326,
+            "runner_up_name": "M MUKESH",
+            "margin": 150302,
+            "margin__": 16.530000000000001
+        },
+        {
+            "_sl__no_": 169,
+            "state": "Kerala",
+            "const_no_": 19,
+            "constituency": "Attingal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 975550,
+            "winner_name": "ADOOR PRAKASH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(M)",
+            "party_symbol": "Hammer, Sickle and Star",
+            "vote_secured": 327367,
+            "runner_up_name": "V JOY",
+            "margin": 684,
+            "margin__": 0.070000000000000007
+        },
+        {
+            "_sl__no_": 170,
+            "state": "Kerala",
+            "const_no_": 20,
+            "constituency": "Thiruvananthapuram",
+            "constituency_type": "GEN",
+            "total_valid_votes": 956230,
+            "winner_name": "SHASHI THAROOR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 342078,
+            "runner_up_name": "RAJEEV CHANDRASEKHAR",
+            "margin": 16077,
+            "margin__": 1.6799999999999999
+        }
+    ]
+}

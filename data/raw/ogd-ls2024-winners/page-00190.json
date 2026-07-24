@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "190",
+    "records": [
+        {
+            "_sl__no_": 191,
+            "state": "Madhya Pradesh",
+            "const_no_": 21,
+            "constituency": "DEWAS",
+            "constituency_type": "SC",
+            "total_valid_votes": 1458715,
+            "winner_name": "MAHENDRA SINGH SOLANKY",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 503716,
+            "runner_up_name": "RAJENDRA RADHAKISHAN MALVIYA",
+            "margin": 425225,
+            "margin__": 29.149999999999999
+        },
+        {
+            "_sl__no_": 192,
+            "state": "Madhya Pradesh",
+            "const_no_": 22,
+            "constituency": "UJJAIN",
+            "constituency_type": "SC",
+            "total_valid_votes": 1319248,
+            "winner_name": "ANIL FIROJIYA",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 460244,
+            "runner_up_name": "MAHESH PARMAR",
+            "margin": 375860,
+            "margin__": 28.489999999999998
+        },
+        {
+            "_sl__no_": 193,
+            "state": "Madhya Pradesh",
+            "const_no_": 23,
+            "constituency": "MANDSOUR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1421830,
+            "winner_name": "SUDHEER GUPTA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 445106,
+            "runner_up_name": "DILIP SINGH GURJAR",
+            "margin": 500655,
+            "margin__": 35.210000000000001
+        },
+        {
+            "_sl__no_": 194,
+            "state": "Madhya Pradesh",
+            "const_no_": 24,
+            "constituency": "RATLAM",
+            "constituency_type": "ST",
+            "total_valid_votes": 1500908,
+            "winner_name": "ANITA NAGARSINGH CHOUHAN",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 588631,
+            "runner_up_name": "KANTILAL BHURIA",
+            "margin": 207232,
+            "margin__": 13.81
+        },
+        {
+            "_sl__no_": 195,
+            "state": "Madhya Pradesh",
+            "const_no_": 25,
+            "constituency": "DHAR",
+            "constituency_type": "ST",
+            "total_valid_votes": 1409393,
+            "winner_name": "SAVITRI THAKUR",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 575784,
+            "runner_up_name": "RADHESHYAM MUVEL",
+            "margin": 218665,
+            "margin__": 15.51
+        },
+        {
+            "_sl__no_": 196,
+            "state": "Madhya Pradesh",
+            "const_no_": 26,
+            "constituency": "INDORE",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1343294,
+            "winner_name": "SHANKAR LALWANI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BSP",
+            "party_symbol": "Elephant",
+            "vote_secured": 51659,
+            "runner_up_name": "SANJAY S\/O LAKSHMAN SOLANKI",
+            "margin": 1175092,
+            "margin__": 87.480000000000004
+        },
+        {
+            "_sl__no_": 197,
+            "state": "Madhya Pradesh",
+            "const_no_": 27,
+            "constituency": "KHARGONE",
+            "constituency_type": "ST",
+            "total_valid_votes": 1540521,
+            "winner_name": "GAJENDRA SINGH PATEL",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 684845,
+            "runner_up_name": "PORLAL BATHA KHARTE",
+            "margin": 135018,
+            "margin__": 8.7599999999999998
+        },
+        {
+            "_sl__no_": 198,
+            "state": "Madhya Pradesh",
+            "const_no_": 28,
+            "constituency": "KHANDWA",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1499703,
+            "winner_name": "GYANESHWAR PATIL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 592708,
+            "runner_up_name": "NARENDRA PATEL",
+            "margin": 269971,
+            "margin__": 18
+        },
+        {
+            "_sl__no_": 199,
+            "state": "Madhya Pradesh",
+            "const_no_": 29,
+            "constituency": "BETUL",
+            "constituency_type": "ST",
+            "total_valid_votes": 1375698,
+            "winner_name": "DURGADAS (D. D.) UIKEY",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 468475,
+            "runner_up_name": "RAMU TEKAM",
+            "margin": 379761,
+            "margin__": 27.600000000000001
+        },
+        {
+            "_sl__no_": 200,
+            "state": "Maharashtra",
+            "const_no_": 1,
+            "constituency": "Nandurbar",
+            "constituency_type": "ST",
+            "total_valid_votes": 1379546,
+            "winner_name": "ADV GOWAAL KAGADA PADAVI",
+            "social_category": "ST",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 586878,
+            "runner_up_name": "DR HEENA VIJAYKUMAR GAVIT",
+            "margin": 159120,
+            "margin__": 11.529999999999999
+        }
+    ]
+}

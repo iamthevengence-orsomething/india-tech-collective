@@ -1,0 +1,350 @@
+{
+  "version": "1.0.0",
+  "note": "Canonical party registry with reviewed aliases as they appear in ECI/OGD result files and published reports. The pipeline fails on any party string that does not resolve here — add the alias (reviewed) rather than guessing.",
+  "parties": [
+    {
+      "partyId": "aap",
+      "name": "Aam Aadmi Party",
+      "shortName": "AAP",
+      "aliases": [
+        "AAAP"
+      ]
+    },
+    {
+      "partyId": "admk",
+      "name": "All India Anna Dravida Munnetra Kazhagam",
+      "shortName": "AIADMK",
+      "aliases": [
+        "ADMK"
+      ]
+    },
+    {
+      "partyId": "agp",
+      "name": "Asom Gana Parishad",
+      "shortName": "AGP",
+      "aliases": []
+    },
+    {
+      "partyId": "aimim",
+      "name": "All India Majlis-E-Ittehadul Muslimeen",
+      "shortName": "AIMIM",
+      "aliases": [
+        "Majlis-e-Ittehadul Muslimeen"
+      ]
+    },
+    {
+      "partyId": "aitc",
+      "name": "All India Trinamool Congress",
+      "shortName": "AITC",
+      "aliases": [
+        "TMC",
+        "Trinamool Congress",
+        "All India Trinamool Congress (AITC)"
+      ]
+    },
+    {
+      "partyId": "ajsu",
+      "name": "AJSU Party",
+      "shortName": "AJSU",
+      "aliases": [
+        "All Jharkhand Students Union"
+      ]
+    },
+    {
+      "partyId": "apna-dal-s",
+      "name": "Apna Dal (Soneylal)",
+      "shortName": "AD(S)",
+      "aliases": [
+        "Apna Dal (Sonelal)",
+        "ADAL"
+      ]
+    },
+    {
+      "partyId": "asp-kr",
+      "name": "Azad Samaj Party (Kanshi Ram)",
+      "shortName": "ASP(KR)",
+      "aliases": [
+        "Azad Samaj Party",
+        "ASPKR",
+        "Aazad Samaj Party (Kanshi Ram)"
+      ]
+    },
+    {
+      "partyId": "bhrt-adv",
+      "name": "Bharat Adivasi Party",
+      "shortName": "BAP",
+      "aliases": [
+        "BHRTADVSIP"
+      ]
+    },
+    {
+      "partyId": "bjp",
+      "name": "Bharatiya Janata Party",
+      "shortName": "BJP",
+      "aliases": [
+        "B.J.P."
+      ]
+    },
+    {
+      "partyId": "cpi",
+      "name": "Communist Party of India",
+      "shortName": "CPI",
+      "aliases": []
+    },
+    {
+      "partyId": "cpim",
+      "name": "Communist Party of India (Marxist)",
+      "shortName": "CPI(M)",
+      "aliases": [
+        "CPM",
+        "CPI (M)",
+        "CPI(M)"
+      ]
+    },
+    {
+      "partyId": "cpiml-l",
+      "name": "Communist Party of India (Marxist-Leninist) (Liberation)",
+      "shortName": "CPI(ML)(L)",
+      "aliases": [
+        "CPI(ML)L",
+        "CPI (ML) (Liberation)"
+      ]
+    },
+    {
+      "partyId": "dmk",
+      "name": "Dravida Munnetra Kazhagam",
+      "shortName": "DMK",
+      "aliases": []
+    },
+    {
+      "partyId": "ham-s",
+      "name": "Hindustani Awam Morcha (Secular)",
+      "shortName": "HAM(S)",
+      "aliases": [
+        "HAMS",
+        "Hindustani Awam Morcha"
+      ]
+    },
+    {
+      "partyId": "inc",
+      "name": "Indian National Congress",
+      "shortName": "INC",
+      "aliases": [
+        "Congress",
+        "I.N.C."
+      ]
+    },
+    {
+      "partyId": "ind",
+      "name": "Independent",
+      "shortName": "IND",
+      "aliases": [
+        "Independents",
+        "(IND)"
+      ]
+    },
+    {
+      "partyId": "iuml",
+      "name": "Indian Union Muslim League",
+      "shortName": "IUML",
+      "aliases": [
+        "Muslim League",
+        "Indian Union Muslim League (IUML)"
+      ]
+    },
+    {
+      "partyId": "jds",
+      "name": "Janata Dal (Secular)",
+      "shortName": "JD(S)",
+      "aliases": [
+        "JDS"
+      ]
+    },
+    {
+      "partyId": "jdu",
+      "name": "Janata Dal (United)",
+      "shortName": "JD(U)",
+      "aliases": [
+        "JDU",
+        "Janata Dal (United) - JD(U)"
+      ]
+    },
+    {
+      "partyId": "jkn",
+      "name": "Jammu & Kashmir National Conference",
+      "shortName": "JKN",
+      "aliases": [
+        "JKNC",
+        "National Conference",
+        "Jammu and Kashmir National Conference"
+      ]
+    },
+    {
+      "partyId": "jmm",
+      "name": "Jharkhand Mukti Morcha",
+      "shortName": "JMM",
+      "aliases": []
+    },
+    {
+      "partyId": "jnp",
+      "name": "Janasena Party",
+      "shortName": "JnP",
+      "aliases": [
+        "Jana Sena Party",
+        "JSP"
+      ]
+    },
+    {
+      "partyId": "kec",
+      "name": "Kerala Congress",
+      "shortName": "KEC",
+      "aliases": [
+        "Kerala Congress (M)",
+        "KC(M)"
+      ]
+    },
+    {
+      "partyId": "ljp-rv",
+      "name": "Lok Janshakti Party (Ram Vilas)",
+      "shortName": "LJP(RV)",
+      "aliases": [
+        "LJPRV",
+        "Lok Janshakti Party(Ram Vilas)"
+      ]
+    },
+    {
+      "partyId": "mdmk",
+      "name": "Marumalarchi Dravida Munnetra Kazhagam",
+      "shortName": "MDMK",
+      "aliases": []
+    },
+    {
+      "partyId": "ncp",
+      "name": "Nationalist Congress Party",
+      "shortName": "NCP",
+      "aliases": []
+    },
+    {
+      "partyId": "ncp-sp",
+      "name": "Nationalist Congress Party – Sharadchandra Pawar",
+      "shortName": "NCP(SP)",
+      "aliases": [
+        "Nationalist Congress Party Sharadchandra Pawar",
+        "NCPSP",
+        "NCP (SP)"
+      ]
+    },
+    {
+      "partyId": "rjd",
+      "name": "Rashtriya Janata Dal",
+      "shortName": "RJD",
+      "aliases": []
+    },
+    {
+      "partyId": "rld",
+      "name": "Rashtriya Lok Dal",
+      "shortName": "RLD",
+      "aliases": []
+    },
+    {
+      "partyId": "rltp",
+      "name": "Rashtriya Loktantrik Party",
+      "shortName": "RLP",
+      "aliases": [
+        "RLTP"
+      ]
+    },
+    {
+      "partyId": "rsp",
+      "name": "Revolutionary Socialist Party",
+      "shortName": "RSP",
+      "aliases": []
+    },
+    {
+      "partyId": "sad",
+      "name": "Shiromani Akali Dal",
+      "shortName": "SAD",
+      "aliases": []
+    },
+    {
+      "partyId": "shs",
+      "name": "Shiv Sena",
+      "shortName": "SHS",
+      "aliases": [
+        "Shivsena",
+        "SS"
+      ]
+    },
+    {
+      "partyId": "shs-ubt",
+      "name": "Shiv Sena (Uddhav Balasaheb Thackrey)",
+      "shortName": "SHS(UBT)",
+      "aliases": [
+        "Shiv Sena (Uddhav Balasaheb Thackeray)",
+        "SS(UBT)",
+        "Shivsena (Uddhav Balasaheb Thackrey)",
+        "SHSUBT",
+        "ShivSena (Uddhav Balasaheb Thackeray)"
+      ]
+    },
+    {
+      "partyId": "skm",
+      "name": "Sikkim Krantikari Morcha",
+      "shortName": "SKM",
+      "aliases": []
+    },
+    {
+      "partyId": "sp",
+      "name": "Samajwadi Party",
+      "shortName": "SP",
+      "aliases": []
+    },
+    {
+      "partyId": "tdp",
+      "name": "Telugu Desam Party",
+      "shortName": "TDP",
+      "aliases": [
+        "Telugu Desam"
+      ]
+    },
+    {
+      "partyId": "uppl",
+      "name": "United People's Party Liberal",
+      "shortName": "UPPL",
+      "aliases": [
+        "United Peoples Party Liberal"
+      ]
+    },
+    {
+      "partyId": "vck",
+      "name": "Viduthalai Chiruthaigal Katchi",
+      "shortName": "VCK",
+      "aliases": []
+    },
+    {
+      "partyId": "votpp",
+      "name": "Voice of the People Party",
+      "shortName": "VOTPP",
+      "aliases": [
+        "Voice of The People Party"
+      ]
+    },
+    {
+      "partyId": "ysrcp",
+      "name": "Yuvajana Sramika Rythu Congress Party",
+      "shortName": "YSRCP",
+      "aliases": [
+        "YSR Congress Party",
+        "YSRCparty"
+      ]
+    },
+    {
+      "partyId": "zpm",
+      "name": "Zoram People's Movement",
+      "shortName": "ZPM",
+      "aliases": [
+        "Zoram Peoples Movement"
+      ]
+    }
+  ]
+}

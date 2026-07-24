@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "80",
+    "records": [
+        {
+            "_sl__no_": 81,
+            "state": "Bihar",
+            "const_no_": 40,
+            "constituency": "Jamui",
+            "constituency_type": "SC",
+            "total_valid_votes": 953051,
+            "winner_name": "ARUN BHARTI",
+            "social_category": "SC",
+            "gender": "FEMALE",
+            "party": "RJD",
+            "party_symbol": "Hurricane lamp",
+            "vote_secured": 396564,
+            "runner_up_name": "ARCHANA KUMARI",
+            "margin": 112482,
+            "margin__": 11.800000000000001
+        },
+        {
+            "_sl__no_": 82,
+            "state": "Goa",
+            "const_no_": 1,
+            "constituency": "North Goa",
+            "constituency_type": "GEN",
+            "total_valid_votes": 450436,
+            "winner_name": "SHRIPAD YESSO NAIK",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 141534,
+            "runner_up_name": "RAMAKANT KHALAP",
+            "margin": 116252,
+            "margin__": 25.809999999999999
+        },
+        {
+            "_sl__no_": 83,
+            "state": "Goa",
+            "const_no_": 2,
+            "constituency": "South Goa",
+            "constituency_type": "GEN",
+            "total_valid_votes": 445683,
+            "winner_name": "CAPTAIN VIRIATO FERNANDES",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 204301,
+            "runner_up_name": "PALLAVI SHRINIVAS DEMPO",
+            "margin": 13535,
+            "margin__": 3.04
+        },
+        {
+            "_sl__no_": 84,
+            "state": "Gujarat",
+            "const_no_": 1,
+            "constituency": "Kachchh",
+            "constituency_type": "SC",
+            "total_valid_votes": 1076415,
+            "winner_name": "CHAVDA VINOD LAKHAMSHI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 390792,
+            "runner_up_name": "NITESH PARBATBHAI LALAN (MATANG)",
+            "margin": 268782,
+            "margin__": 24.969999999999999
+        },
+        {
+            "_sl__no_": 85,
+            "state": "Gujarat",
+            "const_no_": 2,
+            "constituency": "Banaskantha",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1353736,
+            "winner_name": "GENIBEN NAGAJI THAKOR",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 641477,
+            "runner_up_name": "DR. REKHABEN HITESHBHAI CHAUDHARI",
+            "margin": 30406,
+            "margin__": 2.25
+        },
+        {
+            "_sl__no_": 86,
+            "state": "Gujarat",
+            "const_no_": 3,
+            "constituency": "Patan",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1176403,
+            "winner_name": "DABHI BHARATSINHJI SHANKARJI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 560071,
+            "runner_up_name": "CHANDANJI TALAJI THAKOR",
+            "margin": 31876,
+            "margin__": 2.71
+        },
+        {
+            "_sl__no_": 87,
+            "state": "Gujarat",
+            "const_no_": 4,
+            "constituency": "Mahesana",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1065201,
+            "winner_name": "HARIBHAI PATEL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 358360,
+            "runner_up_name": "RAMJI THAKOR",
+            "margin": 328046,
+            "margin__": 30.800000000000001
+        },
+        {
+            "_sl__no_": 88,
+            "state": "Gujarat",
+            "const_no_": 5,
+            "constituency": "Sabarkantha",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1248282,
+            "winner_name": "SHOBHANABEN MAHENDRASINH BARAIYA",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 521636,
+            "runner_up_name": "CHAUDHARI TUSHAR AMARSINH",
+            "margin": 155682,
+            "margin__": 12.470000000000001
+        },
+        {
+            "_sl__no_": 89,
+            "state": "Gujarat",
+            "const_no_": 6,
+            "constituency": "Gandhinagar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1299797,
+            "winner_name": "AMIT SHAH",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 266256,
+            "runner_up_name": "SONAL RAMANBHAI PATEL",
+            "margin": 744716,
+            "margin__": 57.289999999999999
+        },
+        {
+            "_sl__no_": 90,
+            "state": "Gujarat",
+            "const_no_": 7,
+            "constituency": "Ahmedabad East",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1117836,
+            "winner_name": "HASMUKHBHAI PATEL (H.S.PATEL)",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 308704,
+            "runner_up_name": "HIMMATSINH PRAHLADSINH PATEL",
+            "margin": 461755,
+            "margin__": 41.310000000000002
+        }
+    ]
+}

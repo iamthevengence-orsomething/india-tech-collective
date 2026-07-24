@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "10",
+    "records": [
+        {
+            "_sl__no_": 11,
+            "state": "Andhra Pradesh",
+            "const_no_": 11,
+            "constituency": "Machilipatnam",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1299878,
+            "winner_name": "BALASHOWRY VALLABHANENI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 501260,
+            "runner_up_name": "SIMHADRI CHANDRA SEKHAR RAO",
+            "margin": 223179,
+            "margin__": 17.170000000000002
+        },
+        {
+            "_sl__no_": 12,
+            "state": "Andhra Pradesh",
+            "const_no_": 12,
+            "constituency": "Vijayawada",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1355212,
+            "winner_name": "KESINENI SIVANATH (CHINNI)",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 512069,
+            "runner_up_name": "KESINENI SRINIVAS (NANI)",
+            "margin": 282085,
+            "margin__": 20.809999999999999
+        },
+        {
+            "_sl__no_": 13,
+            "state": "Andhra Pradesh",
+            "const_no_": 13,
+            "constituency": "Guntur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1417984,
+            "winner_name": "DR CHANDRA SEKHAR PEMMASANI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 520253,
+            "runner_up_name": "KILARI VENKATA ROSAIAH",
+            "margin": 344695,
+            "margin__": 24.309999999999999
+        },
+        {
+            "_sl__no_": 14,
+            "state": "Andhra Pradesh",
+            "const_no_": 14,
+            "constituency": "Narsaraopet",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1488370,
+            "winner_name": "LAVU SRIKRISHNA DEVARAYALU",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 648267,
+            "runner_up_name": "ANIL KUMAR POLUBOINA",
+            "margin": 159729,
+            "margin__": 10.73
+        },
+        {
+            "_sl__no_": 15,
+            "state": "Andhra Pradesh",
+            "const_no_": 15,
+            "constituency": "Bapatla",
+            "constituency_type": "SC",
+            "total_valid_votes": 1287022,
+            "winner_name": "KRISHNA PRASAD TENNETI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 509462,
+            "runner_up_name": "NANDIGAM SURESH BABU",
+            "margin": 208031,
+            "margin__": 16.16
+        },
+        {
+            "_sl__no_": 16,
+            "state": "Andhra Pradesh",
+            "const_no_": 16,
+            "constituency": "Ongole",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1409009,
+            "winner_name": "MAGUNTA SREENIVASULU REDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 651695,
+            "runner_up_name": "DR CHEVIREDDY BHASKAR REDD",
+            "margin": 50199,
+            "margin__": 3.5600000000000001
+        },
+        {
+            "_sl__no_": 17,
+            "state": "Andhra Pradesh",
+            "const_no_": 17,
+            "constituency": "Nandyal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1393721,
+            "winner_name": "DR BYREDDY SHABARI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 589156,
+            "runner_up_name": "POCHA BRAHMANANDA REDDY",
+            "margin": 111975,
+            "margin__": 8.0299999999999994
+        },
+        {
+            "_sl__no_": 18,
+            "state": "Andhra Pradesh",
+            "const_no_": 18,
+            "constituency": "Kurnoolu",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1320269,
+            "winner_name": "BASTIPATI NAGARAJU PANCHALINGALA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 547616,
+            "runner_up_name": "B Y RAMAIAH",
+            "margin": 111298,
+            "margin__": 8.4299999999999997
+        },
+        {
+            "_sl__no_": 19,
+            "state": "Andhra Pradesh",
+            "const_no_": 19,
+            "constituency": "Ananthapur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1431229,
+            "winner_name": "AMBICA G LAKSHMINARAYANA VALMIKI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 579690,
+            "runner_up_name": "MALAGUNDLA SANKAR NARAYANA",
+            "margin": 188555,
+            "margin__": 13.17
+        },
+        {
+            "_sl__no_": 20,
+            "state": "Andhra Pradesh",
+            "const_no_": 20,
+            "constituency": "Hindupur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1398368,
+            "winner_name": "B K PARTHASARATHI",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 593107,
+            "runner_up_name": "J SHANTHA",
+            "margin": 132427,
+            "margin__": 9.4700000000000006
+        }
+    ]
+}

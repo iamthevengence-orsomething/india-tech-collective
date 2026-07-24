@@ -1,0 +1,473 @@
+{
+  "activeFallbacks": [
+    {
+      "area": "Politician Cases",
+      "effect": "Case records come from the ADR published digest; profiles cite the digest, not the primary PDF.",
+      "id": "eci-affidavit-403",
+      "reason": "affidavit.eci.gov.in returns HTTP 403 to automated access (no bypass attempted)"
+    },
+    {
+      "area": "Politician Cases",
+      "effect": "Winner party attribution comes from the ADR analysis and is reconciled against its printed party-wise seat table.",
+      "id": "ogd-winner-party-corrupt",
+      "reason": "The OGD datastore copy of the winners list collapsed duplicate winner/runner-up columns at ingestion, corrupting winner party fields"
+    },
+    {
+      "area": "Corruption — audit findings",
+      "effect": "The audit-findings lens lists real report metadata only; zero findings are shown.",
+      "id": "cag-pipeline-review",
+      "reason": "CAG report finding extraction is not yet reviewed"
+    },
+    {
+      "area": "Maps",
+      "effect": "Geographic views use an accessible state-tile grid instead of a choropleth; no political boundary is depicted.",
+      "id": "boundaries-pending",
+      "reason": "No Survey of India-published boundary file could be verified this release (SoI portal products and government map services were unreachable or unverifiable from the build environment)"
+    }
+  ],
+  "counts": {
+    "caseRecords": 1340,
+    "convictionCaseRecords": 76,
+    "corruptionNeedsReview": 179,
+    "corruptionQualifying": 20,
+    "pendingCaseRecords": 1264,
+    "profiles": 543,
+    "withDeclaredCases": 251,
+    "withDeclaredConvictions": 27,
+    "withSeriousDeclared": 170
+  },
+  "joinStats": {
+    "caseCountMismatches": 0,
+    "joined": 542,
+    "ncrbCrossTableMismatches": 0,
+    "ogdStates": 36
+  },
+  "normalizeNotes": [
+    "adr-caseblocks: NOTE Tangella Uday Srinivas (Tea Time Uday) joined by unique name match (state line wrapped in PDF)",
+    "adr-caseblocks: NOTE Vishnu Datt Sharma (V.D.Sharma) joined by unique name match (state line wrapped in PDF)"
+  ],
+  "reviewLadder": {
+    "human_verified": 0,
+    "machine_checked": 543,
+    "note": "No record is human-verified yet; adverse records are displayed only with machine_checked review state and per-record source citations."
+  },
+  "unitNotes": [
+    "Rows are seat-winners: a person who won two seats in the same election appears once per seat (matching the source report’s own unit). Cross-seat person deduplication has not been human-reviewed."
+  ],
+  "unmappedActStrings": [
+    {
+      "count": 31,
+      "raw": "Section 3 Maharashtra Protection of Interest of Depositors (in Financial Establishments) Act 1999"
+    },
+    {
+      "count": 18,
+      "raw": "Section 3"
+    },
+    {
+      "count": 11,
+      "raw": "Section 4 of KPDPP"
+    },
+    {
+      "count": 11,
+      "raw": "PCO 2019"
+    },
+    {
+      "count": 8,
+      "raw": "Section 7 CLA Act"
+    },
+    {
+      "count": 8,
+      "raw": "Sec.13(1)D(2)"
+    },
+    {
+      "count": 8,
+      "raw": "(3) Prevention of Corruption Act"
+    },
+    {
+      "count": 8,
+      "raw": "Section 39 r"
+    },
+    {
+      "count": 7,
+      "raw": "Section 138 of Negotiable Instrument Act"
+    },
+    {
+      "count": 7,
+      "raw": "Section 3 of Bihar Prevention of Defacement of Public Property Act"
+    },
+    {
+      "count": 7,
+      "raw": "w 121 of KP Act"
+    },
+    {
+      "count": 6,
+      "raw": "Sec. 276CC"
+    },
+    {
+      "count": 6,
+      "raw": "278(b)(1) of Income Tax Act.1961"
+    },
+    {
+      "count": 5,
+      "raw": "U"
+    },
+    {
+      "count": 5,
+      "raw": "Section 51(b) of DM Act 2005"
+    },
+    {
+      "count": 5,
+      "raw": "Investigation is pending"
+    },
+    {
+      "count": 4,
+      "raw": "Section-37(1)(3) r"
+    },
+    {
+      "count": 4,
+      "raw": "Sec.3"
+    },
+    {
+      "count": 4,
+      "raw": "ST Act"
+    },
+    {
+      "count": 4,
+      "raw": "Section 6 of KPWRA & P Act 2011"
+    },
+    {
+      "count": 4,
+      "raw": "Section 4 r"
+    },
+    {
+      "count": 4,
+      "raw": "Sec.39, 121 KP Act"
+    },
+    {
+      "count": 3,
+      "raw": "153B(1)(C)"
+    },
+    {
+      "count": 3,
+      "raw": "Section 3-ED ACT 1897"
+    },
+    {
+      "count": 3,
+      "raw": "Section 147"
+    },
+    {
+      "count": 3,
+      "raw": "ST Prevention of Atrocities Amendment Act- 2015"
+    },
+    {
+      "count": 3,
+      "raw": "Section 5, 4(2)(a) of KEDO"
+    },
+    {
+      "count": 3,
+      "raw": "4 Explosive Substance Act"
+    },
+    {
+      "count": 3,
+      "raw": "Section 77(B), 39, 121 of K.P. Act."
+    },
+    {
+      "count": 3,
+      "raw": "Section 51(b) of Disaster Management Act & Section 8B National Highway Act"
+    },
+    {
+      "count": 3,
+      "raw": "Sec,3(i)(x) ST & SC (PA) Act"
+    },
+    {
+      "count": 3,
+      "raw": "Case is Under Investigation"
+    },
+    {
+      "count": 3,
+      "raw": "118(e) KP Act 4(2),(a),5 KEDO2020"
+    },
+    {
+      "count": 3,
+      "raw": "Sec. 39, 121 KP Act"
+    },
+    {
+      "count": 3,
+      "raw": "Section 7 Crl. Amendment Act"
+    },
+    {
+      "count": 2,
+      "raw": "Revision Application is filed yet"
+    },
+    {
+      "count": 2,
+      "raw": "07"
+    },
+    {
+      "count": 2,
+      "raw": "Section 135 M.P. Act"
+    },
+    {
+      "count": 2,
+      "raw": "505(1)(2)"
+    },
+    {
+      "count": 2,
+      "raw": "Section- 67 ITA Act 2008"
+    },
+    {
+      "count": 2,
+      "raw": "Section 7 of Religious Institutions (Prevention of Misuse) Act 1988"
+    },
+    {
+      "count": 2,
+      "raw": "Section 126 OREURPA"
+    },
+    {
+      "count": 2,
+      "raw": "Section 51(b) DM Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section 7 of Criminal Law amendment Act Section 147, 151 fo Railways Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section 147 of Railway Act"
+    },
+    {
+      "count": 2,
+      "raw": "171(E)"
+    },
+    {
+      "count": 2,
+      "raw": "171(F)"
+    },
+    {
+      "count": 2,
+      "raw": "Under Sec.4(1) (1- A) 22 R"
+    },
+    {
+      "count": 2,
+      "raw": "Rule 3(1) 42(1)Mines"
+    },
+    {
+      "count": 2,
+      "raw": "minerals development"
+    },
+    {
+      "count": 2,
+      "raw": "Regulation Act of MMRD"
+    },
+    {
+      "count": 2,
+      "raw": "Sec.21(1)"
+    },
+    {
+      "count": 2,
+      "raw": "21(2)"
+    },
+    {
+      "count": 2,
+      "raw": "44(1), 44(2)"
+    },
+    {
+      "count": 2,
+      "raw": "44(3) of MMRD Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section 7 Criminal Law Amendment Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section- 138, 141 Negotiable Instrument Act 1881"
+    },
+    {
+      "count": 2,
+      "raw": "Section- 3 Epidemic Disease Act"
+    },
+    {
+      "count": 2,
+      "raw": "Sec. 51(B) Disaster Management Act 2005"
+    },
+    {
+      "count": 2,
+      "raw": "Section 37(3), 135 M.P. Act"
+    },
+    {
+      "count": 2,
+      "raw": "s 3"
+    },
+    {
+      "count": 2,
+      "raw": "120(B)"
+    },
+    {
+      "count": 2,
+      "raw": "Section- 3 of ED Act, 1897, Sec. 4A (1a) of TNOPPD Act, Sec. 51 of DM Act, 2005"
+    },
+    {
+      "count": 2,
+      "raw": "Section- 4(2) (e), 5 Kerala Epidemic Disease Ordinance 2021"
+    },
+    {
+      "count": 2,
+      "raw": "Sections 4(2)(E), 5 of Kerala Epidemic Diseases Ordinance 2020"
+    },
+    {
+      "count": 2,
+      "raw": "Section 3 Epidemic Act, Section 51 Disaster Management Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section 51(b) of Disaster Management Act 2005"
+    },
+    {
+      "count": 2,
+      "raw": "Section 51(b) of Disaster Management Act 2005 & Section 8B National Highway Act"
+    },
+    {
+      "count": 2,
+      "raw": "4 D.P. Act"
+    },
+    {
+      "count": 2,
+      "raw": "w 6 of KPRAP Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section 4(2)(e) r"
+    },
+    {
+      "count": 2,
+      "raw": "w 5 of Kerala Epidemic Diseases Ordinance, 2020"
+    },
+    {
+      "count": 2,
+      "raw": "R"
+    },
+    {
+      "count": 2,
+      "raw": "118(e) KP Act 4(2),3(e), KEDO2020"
+    },
+    {
+      "count": 2,
+      "raw": "283 149"
+    },
+    {
+      "count": 2,
+      "raw": "Section 51(B) of DM Act"
+    },
+    {
+      "count": 2,
+      "raw": "W 121 KP Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section- 7 Crl. A Act."
+    },
+    {
+      "count": 2,
+      "raw": "4 Epidemic Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section 3 Epidemic Act"
+    },
+    {
+      "count": 2,
+      "raw": "Section 41(6) CP Act"
+    },
+    {
+      "count": 1,
+      "raw": "Case is Pending for Arguments in Discharge Petition filed by the Accused Nos. 1 to 3 No Appeal, Revision Application is filed yet"
+    },
+    {
+      "count": 1,
+      "raw": "Case is Pending for Issuance of Fresh Summons to the Accused No Appeal"
+    },
+    {
+      "count": 1,
+      "raw": "Order on Charge 01"
+    },
+    {
+      "count": 1,
+      "raw": "2019"
+    },
+    {
+      "count": 1,
+      "raw": "Section 13(1)(C) R"
+    },
+    {
+      "count": 1,
+      "raw": "04"
+    },
+    {
+      "count": 1,
+      "raw": "2016, 13"
+    },
+    {
+      "count": 1,
+      "raw": "2018"
+    },
+    {
+      "count": 1,
+      "raw": "Transferred to CCS Hyderabad Renumbered as Crime No. 361"
+    },
+    {
+      "count": 1,
+      "raw": "23"
+    },
+    {
+      "count": 1,
+      "raw": "Section 135 of MPA"
+    },
+    {
+      "count": 1,
+      "raw": "w 135 Mumbai Police Act"
+    },
+    {
+      "count": 1,
+      "raw": "Section 13(1)(d)(e) of Prevention of Corruption Act"
+    },
+    {
+      "count": 1,
+      "raw": "Section 21 & 23, 4(1A) of MMRD Act"
+    },
+    {
+      "count": 1,
+      "raw": "Section 104, 104(c) of Karnataka Forest Act"
+    },
+    {
+      "count": 1,
+      "raw": "Section 13(1)(d) of Prevention of Corruption Act"
+    },
+    {
+      "count": 1,
+      "raw": "Section 21(2)"
+    },
+    {
+      "count": 1,
+      "raw": "23 of MMRD Act."
+    },
+    {
+      "count": 1,
+      "raw": "Section 13(1)(c), 13(1)(d), 13(2) of Prevention of Corruption Act"
+    }
+  ],
+  "unmappedActStringsTotal": 549,
+  "validation": {
+    "errors": [],
+    "stats": {
+      "caseCountMismatches": 0,
+      "joined": 542,
+      "ncrbCrossTableMismatches": 0,
+      "ogdStates": 36
+    },
+    "warnings": [
+      "normalize: adr-caseblocks: NOTE Tangella Uday Srinivas (Tea Time Uday) joined by unique name match (state line wrapped in PDF)",
+      "normalize: adr-caseblocks: NOTE Vishnu Datt Sharma (V.D.Sharma) joined by unique name match (state line wrapped in PDF)"
+    ]
+  }
+}

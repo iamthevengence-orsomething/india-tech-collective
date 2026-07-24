@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "340",
+    "records": [
+        {
+            "_sl__no_": 341,
+            "state": "Tamil Nadu",
+            "const_no_": 28,
+            "constituency": "MAYILADUTHURAI",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1079013,
+            "winner_name": "SUDHA R",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "ADMK",
+            "party_symbol": "Two leaves",
+            "vote_secured": 247276,
+            "runner_up_name": "BABU P",
+            "margin": 271183,
+            "margin__": 25.129999999999999
+        },
+        {
+            "_sl__no_": 342,
+            "state": "Tamil Nadu",
+            "const_no_": 29,
+            "constituency": "NAGAPATTINAM",
+            "constituency_type": "SC",
+            "total_valid_votes": 964093,
+            "winner_name": "SELVARAJ V",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "ADMK",
+            "party_symbol": "Two leaves",
+            "vote_secured": 256087,
+            "runner_up_name": "DR SURSITH SANKAR G",
+            "margin": 208957,
+            "margin__": 21.670000000000002
+        },
+        {
+            "_sl__no_": 343,
+            "state": "Tamil Nadu",
+            "const_no_": 30,
+            "constituency": "THANJAVUR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1015873,
+            "winner_name": "MURASOLI S",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "DMDK",
+            "party_symbol": "Nagara",
+            "vote_secured": 182662,
+            "runner_up_name": "SIVANESAN P",
+            "margin": 319583,
+            "margin__": 31.460000000000001
+        },
+        {
+            "_sl__no_": 344,
+            "state": "Tamil Nadu",
+            "const_no_": 31,
+            "constituency": "SIVAGANGA",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1045230,
+            "winner_name": "KARTI P CHIDAMBARAM",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "ADMK",
+            "party_symbol": "Two leaves",
+            "vote_secured": 222013,
+            "runner_up_name": "XAVIERDASS A",
+            "margin": 205664,
+            "margin__": 19.68
+        },
+        {
+            "_sl__no_": 345,
+            "state": "Tamil Nadu",
+            "const_no_": 32,
+            "constituency": "MADURAI",
+            "constituency_type": "GEN",
+            "total_valid_votes": 975795,
+            "winner_name": "VENKATESAN S",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 220914,
+            "runner_up_name": "RAAMA SREENIVASAN",
+            "margin": 209409,
+            "margin__": 21.460000000000001
+        },
+        {
+            "_sl__no_": 346,
+            "state": "Tamil Nadu",
+            "const_no_": 33,
+            "constituency": "THENI",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1129883,
+            "winner_name": "THANGA TAMILSELVAN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "AMMKMNKZ",
+            "party_symbol": "Pressure cooker",
+            "vote_secured": 292668,
+            "runner_up_name": "TTV DHINAKARAN",
+            "margin": 278825,
+            "margin__": 24.68
+        },
+        {
+            "_sl__no_": 347,
+            "state": "Tamil Nadu",
+            "const_no_": 34,
+            "constituency": "VIRUDHUNAGAR",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1052493,
+            "winner_name": "MANICKAM TAGORE B",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "DMDK",
+            "party_symbol": "Nagara",
+            "vote_secured": 380877,
+            "runner_up_name": "VIJAYAPRABHAKARAN V",
+            "margin": 4379,
+            "margin__": 0.41999999999999998
+        },
+        {
+            "_sl__no_": 348,
+            "state": "Tamil Nadu",
+            "const_no_": 35,
+            "constituency": "RAMANATHAPURAM",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1103558,
+            "winner_name": "NAVASKANI K",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "IND",
+            "party_symbol": "Jackfruit",
+            "vote_secured": 342882,
+            "runner_up_name": "PANNEERSELVAM O S\/O OTTAKARATHEVAR",
+            "margin": 166782,
+            "margin__": 15.109999999999999
+        },
+        {
+            "_sl__no_": 349,
+            "state": "Tamil Nadu",
+            "const_no_": 36,
+            "constituency": "THOOTHUKKUDI",
+            "constituency_type": "GEN",
+            "total_valid_votes": 968720,
+            "winner_name": "KANIMOZHI KARUNANIDHI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "ADMK",
+            "party_symbol": "Two leaves",
+            "vote_secured": 147991,
+            "runner_up_name": "SIVASAMY VELUMANI R",
+            "margin": 392738,
+            "margin__": 40.539999999999999
+        },
+        {
+            "_sl__no_": 350,
+            "state": "Tamil Nadu",
+            "const_no_": 37,
+            "constituency": "TENKASI",
+            "constituency_type": "SC",
+            "total_valid_votes": 1021954,
+            "winner_name": "DR RANI SRIKUMAR",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "ADMK",
+            "party_symbol": "Two leaves",
+            "vote_secured": 229480,
+            "runner_up_name": "DR K KRISHNASAMY",
+            "margin": 196199,
+            "margin__": 19.199999999999999
+        }
+    ]
+}

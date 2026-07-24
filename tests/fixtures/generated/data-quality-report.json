@@ -1,0 +1,19 @@
+{
+  "activeFallbacks": [
+    {
+      "area": "Everything",
+      "effect": "No real records are shown.",
+      "id": "fx-demo",
+      "reason": "DEMO fixtures loaded"
+    }
+  ],
+  "counts": {},
+  "fixture": true,
+  "reviewLadder": {},
+  "unmappedActStrings": [],
+  "unmappedActStringsTotal": 1,
+  "validation": {
+    "errors": [],
+    "warnings": []
+  }
+}

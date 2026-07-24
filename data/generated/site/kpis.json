@@ -1,0 +1,103 @@
+{
+  "cohortLabel": "18th Lok Sabha — winners of the 2024 general election",
+  "dataAsOf": "2024-06-06",
+  "metrics": [
+    {
+      "asOf": "2024-06-06",
+      "definition": "Elected representatives in this cohort with affidavit-derived case data (parsed case rows or a cited published summary), out of expected seats.",
+      "denominator": 543,
+      "label": "Representatives covered",
+      "metricId": "reps_covered",
+      "numerator": 543,
+      "sourceIds": [
+        "adr-ls2024-report",
+        "ogd-ls2024-results"
+      ],
+      "unit": "people",
+      "value": 543
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "Covered representatives who declared one or more criminal cases in their election affidavit ÷ covered representatives. Counts people, not cases. A declared case is an accusation, not a conviction.",
+      "denominator": 543,
+      "label": "Declared ≥1 criminal case",
+      "metricId": "reps_with_declared_cases_pct",
+      "numerator": 251,
+      "sourceIds": [
+        "adr-ls2024-report",
+        "ogd-ls2024-results"
+      ],
+      "unit": "percent",
+      "value": 46.224677716390424
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "Covered representatives with one or more 'serious' declared cases ÷ covered representatives with serious-case data, using the source report's own definition of serious (quoted on the methodology page).",
+      "denominator": 543,
+      "label": "Declared ≥1 serious case",
+      "metricId": "reps_with_serious_cases_pct",
+      "numerator": 170,
+      "sourceIds": [
+        "adr-ls2024-report",
+        "ogd-ls2024-results"
+      ],
+      "unit": "percent",
+      "value": 31.30755064456722
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "Covered representatives whose affidavit-derived records disclose at least one conviction. Null when no conviction-level data has been imported for this cohort.",
+      "denominator": 543,
+      "label": "Declared a conviction",
+      "metricId": "reps_with_convictions",
+      "numerator": 27,
+      "sourceIds": [
+        "adr-ls2024-report",
+        "ogd-ls2024-results"
+      ],
+      "unit": "people",
+      "value": 27
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "Sum of declared-case counts across covered representatives, as counted by the underlying source. One person may account for several cases; do not read this as unique court cases.",
+      "denominator": 543,
+      "label": "Total declared cases",
+      "metricId": "total_declared_cases",
+      "sourceIds": [
+        "adr-ls2024-report",
+        "ogd-ls2024-results"
+      ],
+      "unit": "declaration-rows",
+      "value": 1340
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "Representatives whose profile links affidavit-derived data (parsed rows or published summary), out of all representatives identified in the cohort.",
+      "denominator": 543,
+      "label": "Affidavit records linked",
+      "metricId": "affidavits_linked",
+      "numerator": 543,
+      "sourceIds": [
+        "adr-ls2024-report",
+        "ogd-ls2024-results"
+      ],
+      "unit": "people",
+      "value": 543
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "Covered representatives ÷ expected seats for this cohort. Anything below 100% is listed on the coverage page with reasons.",
+      "denominator": 543,
+      "label": "Coverage",
+      "metricId": "coverage_pct",
+      "numerator": 543,
+      "sourceIds": [
+        "adr-ls2024-report",
+        "ogd-ls2024-results"
+      ],
+      "unit": "percent",
+      "value": 100
+    }
+  ]
+}

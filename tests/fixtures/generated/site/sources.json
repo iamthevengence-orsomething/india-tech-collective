@@ -1,0 +1,17 @@
+{
+  "note": "DEMO source registry (fixtures).",
+  "sources": [
+    {
+      "fixture": true,
+      "id": "fx-source",
+      "notes": [
+        "Fixture"
+      ],
+      "publisher": "DEMO",
+      "retrieval": null,
+      "sourceType": "official_dataset",
+      "title": "DEMO fixture source",
+      "url": "https://example.com/demo"
+    }
+  ]
+}

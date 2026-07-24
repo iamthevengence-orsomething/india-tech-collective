@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadArtifact } from '../lib/data';
+import { formatDate } from '../lib/format';
+const registry = loadArtifact<any>('sources');
+const typeLabel: Record<string, string> = {
+  official_portal: 'Official portal',
+  official_dataset: 'Official dataset',
+  official_report: 'Official report',
+  official_document: 'Official document',
+  ngo_report: 'NGO report',
+  terms_or_licence: 'Terms / licence',
+  legal_text: 'Legal text',
+  boundary_data: 'Boundary data',
+};
+---
+<Base
+  title="Source registry | India Tech Collective"
+  description="Every source behind the accountability dashboards: publisher, URL, licence/terms, retrieval date and known limitations — human-readable here, machine-readable at /data/sources.json."
+  path="/sources/"
+  current="methodology"
+>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">Sources · cite everything</p>
+      <h1 class="page-h1">Source registry</h1>
+      <p class="lede">
+        Every displayed number traces to entries below via source ids recorded on each record. Machine-readable
+        copy: <a href="/data/sources.json"><code>/data/sources.json</code></a>. Raw-file checksums live in the
+        repository manifest (<code>data/raw/manifest.json</code>).
+      </p>
+    </header>
+
+    <section class="section">
+      <div class="table-scroll">
+        <table class="data">
+          <caption>All registered sources ({registry.sources.length})</caption>
+          <thead>
+            <tr>
+              <th scope="col">Source</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Type</th>
+              <th scope="col">Licence / terms</th>
+              <th scope="col">Retrieved</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {registry.sources.map((s: any) => (
+              <tr id={s.id}>
+                <th scope="row" style="font-weight:600;max-width:18rem;">
+                  <a href={s.url} rel="noopener">{s.title} ↗</a>
+                  <div class="small" style="color:var(--faint);font-weight:400;"><code>{s.id}</code></div>
+                </th>
+                <td>{s.publisher}</td>
+                <td><span class="chip">{typeLabel[s.sourceType] ?? s.sourceType}</span></td>
+                <td class="small">
+                  {s.licenceName ?? (s.licenceOrTermsUrl ? 'See terms' : '—')}
+                  {s.licenceOrTermsUrl && <><br /><a href={s.licenceOrTermsUrl} rel="noopener">terms ↗</a></>}
+                </td>
+                <td class="small">{s.retrieval?.retrievedAt ? formatDate(s.retrieval.retrievedAt.slice(0, 10)) : s.retrievalDate ? formatDate(s.retrievalDate) : '—'}</td>
+                <td class="small" style="max-width:24rem;">{(s.notes ?? []).join(' ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="metric-caption">
+        ADR/MyNeta material is used strictly as a single published report, cited, for non-commercial information
+        dissemination; no systematic or automated collection from their sites occurs, per their terms. Government
+        datasets are used under the Government Open Data License – India. This registry updates with every data
+        build.
+      </p>
+    </section>
+  </div>
+</Base>

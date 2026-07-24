@@ -1,0 +1,49 @@
+name: Correction request
+description: Report an error on a dashboard page or a representative profile (right of reply).
+title: "Correction request: [profile or page]"
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the record accurate. **Do not post private personal data**
+        (phone numbers, addresses, medical or financial details). Court orders and published
+        documents are enough — redact anything private before attaching.
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: The exact page on indiatechcollective.org that contains the error.
+      placeholder: https://www.indiatechcollective.org/politicians/...
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Disputed field
+      description: Which specific value or statement is wrong (e.g. "declared pending cases", "party at election", "case 3 court name").
+    validations:
+      required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: What is wrong, and what should it say?
+      description: Explain the error and the correct information.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Authoritative source
+      description: Link or citation to a primary source that verifies the correction (court order, ECI record, gazette notification, official press note). Corrections are applied only from verifiable sources.
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      options:
+        - label: I have not included private personal data in this public request.
+          required: true
+        - label: I understand the correction, once verified, will appear in the public correction log (date, field, old value, new value, reason, source).
+          required: true

@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "70",
+    "records": [
+        {
+            "_sl__no_": 71,
+            "state": "Bihar",
+            "const_no_": 30,
+            "constituency": "Patna Sahib",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1069937,
+            "winner_name": "RAVI SHANKAR PRASAD",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 434424,
+            "runner_up_name": "ANSHUL AVIJIT",
+            "margin": 153846,
+            "margin__": 14.380000000000001
+        },
+        {
+            "_sl__no_": 72,
+            "state": "Bihar",
+            "const_no_": 31,
+            "constituency": "Patliputra",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1224493,
+            "winner_name": "MISHA BHARTI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 528109,
+            "runner_up_name": "RAM KRIPAL YADAV",
+            "margin": 85174,
+            "margin__": 6.96
+        },
+        {
+            "_sl__no_": 73,
+            "state": "Bihar",
+            "const_no_": 32,
+            "constituency": "Arrah",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1079598,
+            "winner_name": "SUDAMA PRASAD",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 469574,
+            "runner_up_name": "R. K. SINGH",
+            "margin": 59808,
+            "margin__": 5.54
+        },
+        {
+            "_sl__no_": 74,
+            "state": "Bihar",
+            "const_no_": 33,
+            "constituency": "Buxar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1064142,
+            "winner_name": "SUDHAKAR SINGH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 408254,
+            "runner_up_name": "MITHILESH TIWARI",
+            "margin": 30091,
+            "margin__": 2.8300000000000001
+        },
+        {
+            "_sl__no_": 75,
+            "state": "Bihar",
+            "const_no_": 34,
+            "constituency": "Sasaram",
+            "constituency_type": "SC",
+            "total_valid_votes": 1079856,
+            "winner_name": "MANOJ KUMAR",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 493847,
+            "runner_up_name": "SHIVESH KUMAR",
+            "margin": 19157,
+            "margin__": 1.77
+        },
+        {
+            "_sl__no_": 76,
+            "state": "Bihar",
+            "const_no_": 35,
+            "constituency": "Karakat",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1010023,
+            "winner_name": "RAJA RAM SINGH FATHER-LATE DIPAN SINGH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "IND",
+            "party_symbol": "Scissors",
+            "vote_secured": 274723,
+            "runner_up_name": "PAWAN SINGH",
+            "margin": 105858,
+            "margin__": 10.48
+        },
+        {
+            "_sl__no_": 77,
+            "state": "Bihar",
+            "const_no_": 36,
+            "constituency": "Jahanabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 914315,
+            "winner_name": "SURENDRA PRASAD YADAV",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "JD(U)",
+            "party_symbol": "Arrow",
+            "vote_secured": 300444,
+            "runner_up_name": "CHANDESHWAR PRASAD",
+            "margin": 142591,
+            "margin__": 15.6
+        },
+        {
+            "_sl__no_": 78,
+            "state": "Bihar",
+            "const_no_": 37,
+            "constituency": "Aurangabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 923253,
+            "winner_name": "ABHAY KUMAR SINHA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 386456,
+            "runner_up_name": "SUSHIL KUMAR SINGH",
+            "margin": 79111,
+            "margin__": 8.5700000000000003
+        },
+        {
+            "_sl__no_": 79,
+            "state": "Bihar",
+            "const_no_": 38,
+            "constituency": "Gaya",
+            "constituency_type": "SC",
+            "total_valid_votes": 946388,
+            "winner_name": "JITAN RAM MANJHI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "RJD",
+            "party_symbol": "Hurricane lamp",
+            "vote_secured": 393148,
+            "runner_up_name": "KUMAR SARVJEET",
+            "margin": 101812,
+            "margin__": 10.76
+        },
+        {
+            "_sl__no_": 80,
+            "state": "Bihar",
+            "const_no_": 39,
+            "constituency": "Nawada",
+            "constituency_type": "GEN",
+            "total_valid_votes": 857278,
+            "winner_name": "VIVEK THAKUR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "RJD",
+            "party_symbol": "Hurricane lamp",
+            "vote_secured": 342938,
+            "runner_up_name": "SHRAWAN KUMAR",
+            "margin": 67670,
+            "margin__": 7.8899999999999997
+        }
+    ]
+}

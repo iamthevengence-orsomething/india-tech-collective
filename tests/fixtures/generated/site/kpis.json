@@ -1,0 +1,83 @@
+{
+  "cohortLabel": "DEMO cohort — fixtures, not real records",
+  "dataAsOf": "2024-06-06",
+  "metrics": [
+    {
+      "asOf": "2024-06-06",
+      "definition": "DEMO: covered fixtures over total fixtures.",
+      "denominator": 8,
+      "label": "Representatives covered",
+      "metricId": "reps_covered",
+      "numerator": 7,
+      "sourceIds": [
+        "fx-source"
+      ],
+      "unit": "people",
+      "value": 7
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "DEMO: fixtures with ≥1 case over covered fixtures.",
+      "denominator": 7,
+      "label": "Declared ≥1 criminal case",
+      "metricId": "reps_with_declared_cases_pct",
+      "numerator": 4,
+      "sourceIds": [
+        "fx-source"
+      ],
+      "unit": "percent",
+      "value": 57.14285714285714
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "DEMO serious flag.",
+      "denominator": 7,
+      "label": "Declared ≥1 serious case",
+      "metricId": "reps_with_serious_cases_pct",
+      "numerator": 2,
+      "sourceIds": [
+        "fx-source"
+      ],
+      "unit": "percent",
+      "value": 28.57142857142857
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "DEMO convictions.",
+      "denominator": 7,
+      "label": "Declared a conviction",
+      "metricId": "reps_with_convictions",
+      "numerator": 1,
+      "sourceIds": [
+        "fx-source"
+      ],
+      "unit": "people",
+      "value": 1
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "DEMO rows.",
+      "denominator": 7,
+      "label": "Total declared cases",
+      "metricId": "total_declared_cases",
+      "sourceIds": [
+        "fx-source"
+      ],
+      "unit": "declaration-rows",
+      "value": 10
+    },
+    {
+      "asOf": "2024-06-06",
+      "definition": "DEMO linked.",
+      "denominator": 8,
+      "label": "Affidavit records linked",
+      "metricId": "affidavits_linked",
+      "numerator": 7,
+      "sourceIds": [
+        "fx-source"
+      ],
+      "unit": "people",
+      "value": 7
+    }
+  ]
+}

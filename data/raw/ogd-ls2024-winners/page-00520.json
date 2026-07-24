@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "520",
+    "records": [
+        {
+            "_sl__no_": 521,
+            "state": "Telangana",
+            "const_no_": 15,
+            "constituency": "Warangal",
+            "constituency_type": "SC",
+            "total_valid_votes": 1259566,
+            "winner_name": "KADIYAM KAVYA",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 360955,
+            "runner_up_name": "AROORI RAMESH",
+            "margin": 220339,
+            "margin__": 17.489999999999998
+        },
+        {
+            "_sl__no_": 522,
+            "state": "Telangana",
+            "const_no_": 16,
+            "constituency": "Mahabubabad",
+            "constituency_type": "ST",
+            "total_valid_votes": 1102195,
+            "winner_name": "BALRAM NAIK PORIKA",
+            "social_category": "ST",
+            "gender": "FEMALE",
+            "party": "BHRS",
+            "party_symbol": "Car",
+            "vote_secured": 263609,
+            "runner_up_name": "KAVITHA MALOTH",
+            "margin": 349165,
+            "margin__": 31.68
+        },
+        {
+            "_sl__no_": 523,
+            "state": "Telangana",
+            "const_no_": 17,
+            "constituency": "Khammam",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1244501,
+            "winner_name": "RAMASAHAYAM RAGHURAM REDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BHRS",
+            "party_symbol": "Car",
+            "vote_secured": 299082,
+            "runner_up_name": "NAMA NAGESWARA RAO",
+            "margin": 467847,
+            "margin__": 37.590000000000003
+        },
+        {
+            "_sl__no_": 524,
+            "state": "Andaman & Nicobar Islands",
+            "const_no_": 1,
+            "constituency": "Andaman & Nicobar Islands",
+            "constituency_type": "GEN",
+            "total_valid_votes": 200705,
+            "winner_name": "BISHNU PADA RAY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 78040,
+            "runner_up_name": "KULDEEP RAI SHARMA",
+            "margin": 24396,
+            "margin__": 12.16
+        },
+        {
+            "_sl__no_": 525,
+            "state": "Chandigarh",
+            "const_no_": 1,
+            "constituency": "Chandigarh",
+            "constituency_type": "GEN",
+            "total_valid_votes": 446363,
+            "winner_name": "MANISH TEWARI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 214153,
+            "runner_up_name": "SANJAY TANDON",
+            "margin": 2504,
+            "margin__": 0.56000000000000005
+        },
+        {
+            "_sl__no_": 526,
+            "state": "Dadra & Nagar Haveli and Daman & Diu",
+            "const_no_": 1,
+            "constituency": "Daman & Diu",
+            "constituency_type": "GEN",
+            "total_valid_votes": 91432,
+            "winner_name": "PATEL UMESHBHAI BABUBHAI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 36298,
+            "runner_up_name": "LALUBHAI BABUBHAI PATEL",
+            "margin": 6225,
+            "margin__": 6.8099999999999996
+        },
+        {
+            "_sl__no_": 527,
+            "state": "Dadra & Nagar Haveli and Daman & Diu",
+            "const_no_": 2,
+            "constituency": "Dadar & Nagar Haveli",
+            "constituency_type": "ST",
+            "total_valid_votes": 200437,
+            "winner_name": "DELKAR KALABEN MOHANBHAI",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 63490,
+            "runner_up_name": "AJIT RAMJIBHAI MAHALA",
+            "margin": 57584,
+            "margin__": 28.73
+        },
+        {
+            "_sl__no_": 528,
+            "state": "NCT OF Delhi",
+            "const_no_": 1,
+            "constituency": "Chandni Chowk",
+            "constituency_type": "GEN",
+            "total_valid_votes": 960539,
+            "winner_name": "PRAVEEN KHANDELWAL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 427171,
+            "runner_up_name": "JAI PRAKASH AGARWAL",
+            "margin": 89325,
+            "margin__": 9.3000000000000007
+        },
+        {
+            "_sl__no_": 529,
+            "state": "NCT OF Delhi",
+            "const_no_": 2,
+            "constituency": "North-East Delhi",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1546858,
+            "winner_name": "MANOJ TIWARI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 685673,
+            "runner_up_name": "KANHAIYA KUMAR",
+            "margin": 138778,
+            "margin__": 8.9700000000000006
+        },
+        {
+            "_sl__no_": 530,
+            "state": "NCT OF Delhi",
+            "const_no_": 3,
+            "constituency": "East Delhi",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1258655,
+            "winner_name": "HARSH MALHOTRA",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "AAAP",
+            "party_symbol": "Broom",
+            "vote_secured": 571156,
+            "runner_up_name": "KULDEEP KUMAR (MONU)",
+            "margin": 93663,
+            "margin__": 7.4400000000000004
+        }
+    ]
+}

@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "490",
+    "records": [
+        {
+            "_sl__no_": 491,
+            "state": "Jharkhand",
+            "const_no_": 4,
+            "constituency": "Chatra",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1077870,
+            "winner_name": "KALI CHARAN SINGH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 353597,
+            "runner_up_name": "KRISHNA NAND TRIPATHI",
+            "margin": 220959,
+            "margin__": 20.5
+        },
+        {
+            "_sl__no_": 492,
+            "state": "Jharkhand",
+            "const_no_": 5,
+            "constituency": "Kodarma",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1327812,
+            "winner_name": "ANNPURNA DEVI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "CPI(ML)(L)",
+            "party_symbol": "Flag with three stars",
+            "vote_secured": 414643,
+            "runner_up_name": "VINOD KUMAR SINGH",
+            "margin": 377014,
+            "margin__": 28.390000000000001
+        },
+        {
+            "_sl__no_": 493,
+            "state": "Jharkhand",
+            "const_no_": 6,
+            "constituency": "Giridih",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1258789,
+            "winner_name": "CHANDRA PRAKASH CHOUDHARY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "JMM",
+            "party_symbol": "Bow & arrow",
+            "vote_secured": 370259,
+            "runner_up_name": "MATHURA PRASAD MAHATO",
+            "margin": 80880,
+            "margin__": 6.4299999999999997
+        },
+        {
+            "_sl__no_": 494,
+            "state": "Jharkhand",
+            "const_no_": 7,
+            "constituency": "Dhanbad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1420653,
+            "winner_name": "DULU MAHATO",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 457589,
+            "runner_up_name": "ANUPAMA SINGH",
+            "margin": 331583,
+            "margin__": 23.34
+        },
+        {
+            "_sl__no_": 495,
+            "state": "Jharkhand",
+            "const_no_": 8,
+            "constituency": "Ranchi",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1439628,
+            "winner_name": "SANJAY SETH",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 544220,
+            "runner_up_name": "YASHASWINI SAHAY",
+            "margin": 120512,
+            "margin__": 8.3699999999999992
+        },
+        {
+            "_sl__no_": 496,
+            "state": "Jharkhand",
+            "const_no_": 9,
+            "constituency": "Jamshedpur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1270303,
+            "winner_name": "BIDYUT BARAN MAHATO",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "JMM",
+            "party_symbol": "Bow & arrow",
+            "vote_secured": 466392,
+            "runner_up_name": "SAMIR KUMAR MOHANTY",
+            "margin": 259782,
+            "margin__": 20.449999999999999
+        },
+        {
+            "_sl__no_": 497,
+            "state": "Jharkhand",
+            "const_no_": 10,
+            "constituency": "Singhbhum",
+            "constituency_type": "ST",
+            "total_valid_votes": 983615,
+            "winner_name": "JOBA MAJHI",
+            "social_category": "ST",
+            "gender": "FEMALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 351762,
+            "runner_up_name": "GEETA KORA",
+            "margin": 168402,
+            "margin__": 17.120000000000001
+        },
+        {
+            "_sl__no_": 498,
+            "state": "Jharkhand",
+            "const_no_": 11,
+            "constituency": "Khunti",
+            "constituency_type": "ST",
+            "total_valid_votes": 914763,
+            "winner_name": "KALI CHARAN MUNDA",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 361972,
+            "runner_up_name": "ARJUN MUNDA",
+            "margin": 149675,
+            "margin__": 16.359999999999999
+        },
+        {
+            "_sl__no_": 499,
+            "state": "Jharkhand",
+            "const_no_": 12,
+            "constituency": "Lohardaga",
+            "constituency_type": "ST",
+            "total_valid_votes": 955741,
+            "winner_name": "SUKHDEO BHAGAT",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 343900,
+            "runner_up_name": "SAMIR ORAON",
+            "margin": 139138,
+            "margin__": 14.56
+        },
+        {
+            "_sl__no_": 500,
+            "state": "Jharkhand",
+            "const_no_": 13,
+            "constituency": "Palamu",
+            "constituency_type": "SC",
+            "total_valid_votes": 1366395,
+            "winner_name": "VISHNU DAYAL RAM",
+            "social_category": "SC",
+            "gender": "FEMALE",
+            "party": "RJD",
+            "party_symbol": "Hurricane lamp",
+            "vote_secured": 481555,
+            "runner_up_name": "MAMTA BHUIYAN",
+            "margin": 288807,
+            "margin__": 21.140000000000001
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "note": "Expected elected seats per body, used as coverage denominators. Elected seats only (nominated members excluded). Seat totals per ECI statistical reports; verify against the latest ECI figures before each release.",
+  "sourceIds": ["eci-statistical-reports"],
+  "houses": [
+    { "houseType": "lok_sabha", "bodyName": "Lok Sabha", "electionYear": 2024, "termLabel": "18th Lok Sabha (2024–)", "expectedSeats": 543 },
+    { "houseType": "rajya_sabha", "bodyName": "Rajya Sabha", "termLabel": "Current (elected seats)", "expectedSeats": 233, "status": "planned" }
+  ],
+  "assemblies": [
+    { "stateCode": "AP", "bodyName": "Andhra Pradesh Legislative Assembly", "expectedSeats": 175 },
+    { "stateCode": "AR", "bodyName": "Arunachal Pradesh Legislative Assembly", "expectedSeats": 60 },
+    { "stateCode": "AS", "bodyName": "Assam Legislative Assembly", "expectedSeats": 126 },
+    { "stateCode": "BR", "bodyName": "Bihar Legislative Assembly", "expectedSeats": 243 },
+    { "stateCode": "CG", "bodyName": "Chhattisgarh Legislative Assembly", "expectedSeats": 90 },
+    { "stateCode": "GA", "bodyName": "Goa Legislative Assembly", "expectedSeats": 40 },
+    { "stateCode": "GJ", "bodyName": "Gujarat Legislative Assembly", "expectedSeats": 182 },
+    { "stateCode": "HR", "bodyName": "Haryana Legislative Assembly", "expectedSeats": 90 },
+    { "stateCode": "HP", "bodyName": "Himachal Pradesh Legislative Assembly", "expectedSeats": 68 },
+    { "stateCode": "JH", "bodyName": "Jharkhand Legislative Assembly", "expectedSeats": 81 },
+    { "stateCode": "KA", "bodyName": "Karnataka Legislative Assembly", "expectedSeats": 224 },
+    { "stateCode": "KL", "bodyName": "Kerala Legislative Assembly", "expectedSeats": 140 },
+    { "stateCode": "MP", "bodyName": "Madhya Pradesh Legislative Assembly", "expectedSeats": 230 },
+    { "stateCode": "MH", "bodyName": "Maharashtra Legislative Assembly", "expectedSeats": 288 },
+    { "stateCode": "MN", "bodyName": "Manipur Legislative Assembly", "expectedSeats": 60 },
+    { "stateCode": "ML", "bodyName": "Meghalaya Legislative Assembly", "expectedSeats": 60 },
+    { "stateCode": "MZ", "bodyName": "Mizoram Legislative Assembly", "expectedSeats": 40 },
+    { "stateCode": "NL", "bodyName": "Nagaland Legislative Assembly", "expectedSeats": 60 },
+    { "stateCode": "OD", "bodyName": "Odisha Legislative Assembly", "expectedSeats": 147 },
+    { "stateCode": "PB", "bodyName": "Punjab Legislative Assembly", "expectedSeats": 117 },
+    { "stateCode": "RJ", "bodyName": "Rajasthan Legislative Assembly", "expectedSeats": 200 },
+    { "stateCode": "SK", "bodyName": "Sikkim Legislative Assembly", "expectedSeats": 32 },
+    { "stateCode": "TN", "bodyName": "Tamil Nadu Legislative Assembly", "expectedSeats": 234 },
+    { "stateCode": "TG", "bodyName": "Telangana Legislative Assembly", "expectedSeats": 119 },
+    { "stateCode": "TR", "bodyName": "Tripura Legislative Assembly", "expectedSeats": 60 },
+    { "stateCode": "UP", "bodyName": "Uttar Pradesh Legislative Assembly", "expectedSeats": 403 },
+    { "stateCode": "UK", "bodyName": "Uttarakhand Legislative Assembly", "expectedSeats": 70 },
+    { "stateCode": "WB", "bodyName": "West Bengal Legislative Assembly", "expectedSeats": 294 },
+    { "stateCode": "DL", "bodyName": "Delhi Legislative Assembly", "expectedSeats": 70 },
+    { "stateCode": "JK", "bodyName": "Jammu and Kashmir Legislative Assembly", "expectedSeats": 90 },
+    { "stateCode": "PY", "bodyName": "Puducherry Legislative Assembly", "expectedSeats": 30 }
+  ]
+}

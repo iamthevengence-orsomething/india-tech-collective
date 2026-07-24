@@ -1,0 +1,66 @@
+---
+/**
+ * Equivalent-cohort trend: % of winners with declared / serious declared cases
+ * across the 2009–2024 Lok Sabha elections, as printed in the source report.
+ * Static SVG (no island); direct labels + legend + table twin.
+ */
+interface H { year: number; analyzed: number; withCases: number; withCasesPct: number; withSerious: number; withSeriousPct: number }
+interface Props { history: H[] }
+const { history } = Astro.props;
+const pts = [...history].sort((a, b) => a.year - b.year);
+const W = 560, HT = 220, PAD = { l: 42, r: 96, t: 18, b: 30 };
+const maxY = 60;
+const x = (i: number) => PAD.l + (i * (W - PAD.l - PAD.r)) / Math.max(1, pts.length - 1);
+const y = (v: number) => HT - PAD.b - (v / maxY) * (HT - PAD.t - PAD.b);
+const path = (get: (h: H) => number) => pts.map((h, i) => `${i === 0 ? 'M' : 'L'}${x(i).toFixed(1)},${y(get(h)).toFixed(1)}`).join(' ');
+const gridLines = [0, 20, 40, 60];
+---
+<figure class="card" style="padding:1rem 1.1rem;">
+  <figcaption style="font-weight:600;color:var(--ink-strong);margin-bottom:.4rem;">
+    Winners declaring criminal cases — equivalent election cohorts, 2009–2024
+  </figcaption>
+  <svg viewBox={`0 0 ${W} ${HT}`} role="img" aria-label={`Line chart: winners with declared cases rose from ${pts[0]?.withCasesPct}% in ${pts[0]?.year} to ${pts[pts.length - 1]?.withCasesPct}% in ${pts[pts.length - 1]?.year}; serious cases from ${pts[0]?.withSeriousPct}% to ${pts[pts.length - 1]?.withSeriousPct}%. Full data in the table below.`} style="width:100%;height:auto;">
+    {gridLines.map((g) => (
+      <>
+        <line x1={PAD.l} x2={W - PAD.r} y1={y(g)} y2={y(g)} stroke="var(--line)" stroke-width="1" />
+        <text x={PAD.l - 8} y={y(g) + 4} text-anchor="end" font-size="11" fill="var(--faint)">{g}%</text>
+      </>
+    ))}
+    <path d={path((h) => h.withCasesPct)} fill="none" stroke="var(--data-1)" stroke-width="2" stroke-linecap="round" />
+    <path d={path((h) => h.withSeriousPct)} fill="none" stroke="var(--data-2)" stroke-width="2" stroke-linecap="round" />
+    {pts.map((h, i) => (
+      <>
+        <circle cx={x(i)} cy={y(h.withCasesPct)} r="4" fill="var(--data-1)" stroke="var(--bg-2)" stroke-width="2" />
+        <circle cx={x(i)} cy={y(h.withSeriousPct)} r="4" fill="var(--data-2)" stroke="var(--bg-2)" stroke-width="2" />
+        <text x={x(i)} y={HT - 8} text-anchor="middle" font-size="11" fill="var(--muted)">{h.year}</text>
+        <text x={x(i)} y={y(h.withCasesPct) - 9} text-anchor="middle" font-size="11" fill="var(--ink)" font-weight="600">{h.withCasesPct}%</text>
+        <text x={x(i)} y={y(h.withSeriousPct) + 16} text-anchor="middle" font-size="11" fill="var(--muted)">{h.withSeriousPct}%</text>
+      </>
+    ))}
+    <text x={W - PAD.r + 8} y={y(pts[pts.length - 1]?.withCasesPct ?? 0) + 4} font-size="11.5" fill="var(--ink)" font-weight="600">≥1 declared case</text>
+    <text x={W - PAD.r + 8} y={y(pts[pts.length - 1]?.withSeriousPct ?? 0) + 4} font-size="11.5" fill="var(--ink)">serious criteria</text>
+  </svg>
+  <details class="expander" style="margin-top:.5rem;">
+    <summary>Data table</summary>
+    <div class="table-scroll" style="margin-top:.5rem;">
+      <table class="data">
+        <caption class="visually-hidden">Winners with declared criminal cases by election year</caption>
+        <thead><tr><th scope="col">Election</th><th scope="col" class="num">Analysed</th><th scope="col" class="num">≥1 declared case</th><th scope="col" class="num">Serious criteria</th></tr></thead>
+        <tbody>
+          {pts.map((h) => (
+            <tr>
+              <th scope="row">{h.year}</th>
+              <td class="num">{h.analyzed}</td>
+              <td class="num">{h.withCases} ({h.withCasesPct}%)</td>
+              <td class="num">{h.withSerious} ({h.withSeriousPct}%)</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <p class="metric-caption">
+    Each point is a separate, comparable cohort (all winners of that general election, as analysed from their own
+    affidavits by ADR/National Election Watch) — not a continuous time series. Numerators and denominators in the table.
+  </p>
+</figure>

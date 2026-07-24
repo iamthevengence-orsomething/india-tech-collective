@@ -1,0 +1,167 @@
+---
+import Base from '../layouts/Base.astro';
+import ShareRow from '../components/islands/ShareRow.tsx';
+import { CATS, TOOLS } from '../data/tools';
+
+const grouped = Object.entries(CATS).map(([key, cat]) => ({
+  key,
+  label: cat.label,
+  tools: TOOLS.filter((t) => t.cat === key),
+}));
+const repoIssues = 'https://github.com/iamthevengence-orsomething/india-tech-collective/issues/new';
+---
+<Base
+  title="The Toolkit — open-source instruments for speech under pressure | India Tech Collective"
+  description="Twenty-seven open-source tools for difficult days: mesh messengers that need no internet, secure channels, censorship circumvention, evidence preservation, monitoring, organizing and whistleblowing. Every entry links to its official source."
+  path="/toolkit/"
+  current="toolkit"
+  ogImage="/og/toolkit.png"
+>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">Part I · The Toolkit</p>
+      <h1 class="page-h1">Instruments, open to inspection</h1>
+      <p class="lede">
+        Twenty-seven open-source tools for when the network turns hostile: mesh messengers that work
+        without internet, channels that keep a confidence, lawful ways through blocks, and means of
+        preserving evidence. Every entry links to its official source; every line of code is open to
+        anyone’s reading — <em>trust is checked, not begged</em>.
+      </p>
+      <p class="metric-caption">
+        Chosen is not endorsed. Security is a moving target — read each project’s own documentation and
+        recent audits before trusting it with anything sensitive.
+      </p>
+    </header>
+
+    <div class="filter-bar" id="catFilters" role="group" aria-label="Filter tools by category">
+      <button class="fchip" type="button" data-cat="all" aria-pressed="true">All · {TOOLS.length}</button>
+      {grouped.map((g) => (
+        <button class="fchip" type="button" data-cat={g.key} aria-pressed="false">{g.label} · {g.tools.length}</button>
+      ))}
+    </div>
+
+    {grouped.map((g) => (
+      <section class="section cat-section" data-cat={g.key} aria-labelledby={`cat-${g.key}`}>
+        <h2 class="section-title" id={`cat-${g.key}`}>{g.label}</h2>
+        <div class="tool-rows">
+          {g.tools.map((t) => (
+            <article class="tool-row">
+              <div class="tool-head">
+                <a class="tool-name" href={t.url} rel="noopener">{t.name} <span aria-hidden="true">↗</span></a>
+                <span class="chip">{g.label}</span>
+              </div>
+              <p class="tool-desc">{t.desc}</p>
+              <p class="tool-proof"><span class="tool-proof-label">{t.proofKind === 'why' ? 'Why it matters' : 'In the field'}</span> {t.proof}</p>
+              {t.caveat && <p class="tool-caveat">⚠ {t.caveat}</p>}
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <hr class="rule-double" />
+
+    <section class="section" aria-labelledby="learn-h">
+      <p class="kicker">Habits</p>
+      <h2 class="section-title" id="learn-h">Tools are half the answer</h2>
+      <p class="section-sub">Start from a threat model, not an app list. Three free guides used by journalists and human-rights defenders:</p>
+      <div class="tool-rows" style="margin-top:1rem;">
+        <article class="tool-row">
+          <a class="tool-name" href="https://securityinabox.org" rel="noopener">Security-in-a-Box <span aria-hidden="true">↗</span></a>
+          <p class="tool-desc">Front Line Defenders’ practical guides — device security, safer communication, account protection, step by step.</p>
+        </article>
+        <article class="tool-row">
+          <a class="tool-name" href="https://ssd.eff.org" rel="noopener">EFF Surveillance Self-Defense <span aria-hidden="true">↗</span></a>
+          <p class="tool-desc">Threat-modelling first: what are you protecting, from whom, and what follows from the answer.</p>
+        </article>
+        <article class="tool-row">
+          <a class="tool-name" href="https://secfirst.org" rel="noopener">Umbrella <span aria-hidden="true">↗</span></a>
+          <p class="tool-desc">Digital and physical safety lessons — including how to attend protests safely and lawfully.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="eco-h">
+      <p class="kicker">Company</p>
+      <h2 class="section-title" id="eco-h">You are not starting from zero</h2>
+      <div class="tool-rows" style="margin-top:1rem;">
+        <article class="tool-row">
+          <a class="tool-name" href="https://internetfreedom.in" rel="noopener">Internet Freedom Foundation <span aria-hidden="true">↗</span></a>
+          <p class="tool-desc">Litigation, policy and civic literacy for Indian digital rights.</p>
+        </article>
+        <article class="tool-row">
+          <a class="tool-name" href="https://sflc.in" rel="noopener">SFLC.in <span aria-hidden="true">↗</span></a>
+          <p class="tool-desc">Legal services for digital freedoms — and the team behind India’s internet-shutdown tracker.</p>
+        </article>
+        <article class="tool-row">
+          <a class="tool-name" href="https://datameet.org" rel="noopener">DataMeet <span aria-hidden="true">↗</span></a>
+          <p class="tool-desc">India’s open-data community — accountability starts with public numbers.</p>
+        </article>
+        <article class="tool-row">
+          <a class="tool-name" href="https://www.accessnow.org/campaign/keepiton" rel="noopener">Access Now · #KeepItOn <span aria-hidden="true">↗</span></a>
+          <p class="tool-desc">The global coalition against internet shutdowns — three hundred organizations, one demand.</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="rule-double" />
+
+    <section class="section" aria-labelledby="join-h">
+      <p class="kicker">Service</p>
+      <h2 class="section-title" id="join-h">Lend a hand</h2>
+      <p class="section-sub">Everything happens in the open, in the repository. One line about what you can do is enough.</p>
+      <div class="share-row" style="margin-top:1rem;">
+        <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('I want to help: [what I can do]')}`} rel="noopener">Volunteer — open an issue</a>
+        <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('Translation: [your language]')}`} rel="noopener">Translate</a>
+        <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('Workshop chapter: [your city]')}`} rel="noopener">Run a workshop</a>
+      </div>
+      <div style="margin-top:1.4rem;">
+        <ShareRow
+          client:visible
+          spec={{
+            headline: 'The India Tech Collective — a public record, kept in public',
+            definition: 'Open-source tools for speech under pressure, and open records of public power.',
+            asOf: '2026',
+            source: 'indiatechcollective.org',
+            url: 'https://www.indiatechcollective.org/toolkit/',
+            disclaimer: 'Non-partisan · lawful · grounded in Article 19.',
+          }}
+        />
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tool-rows { display: flex; flex-direction: column; }
+  .tool-row { border-top: 1px solid var(--line); padding: 1.05rem 0.3rem 1.1rem; transition: background 0.15s, padding-left 0.15s; }
+  .tool-row:last-child { border-bottom: 1px solid var(--line); }
+  .tool-row:hover { background: var(--surface); padding-left: 0.8rem; }
+  .tool-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .tool-name { font-family: var(--display); font-weight: 580; font-size: 1.3rem; color: var(--ink-strong); text-decoration: none; }
+  .tool-name:hover { color: var(--gold-deep); }
+  .tool-desc { color: var(--ink); margin-top: 0.25rem; max-width: 64ch; }
+  .tool-proof { margin-top: 0.35rem; color: var(--muted); font-size: 0.95rem; max-width: 66ch; }
+  .tool-proof-label {
+    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-deep); margin-right: 0.5rem;
+  }
+  .tool-caveat { margin-top: 0.35rem; color: var(--alert); font-size: 0.92rem; max-width: 66ch; }
+  .cat-section.hidden { display: none; }
+</style>
+
+<script is:inline>
+  (function () {
+    var chips = document.querySelectorAll('#catFilters .fchip');
+    var sections = document.querySelectorAll('.cat-section');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var cat = chip.getAttribute('data-cat');
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+        sections.forEach(function (s) {
+          s.classList.toggle('hidden', cat !== 'all' && s.getAttribute('data-cat') !== cat);
+        });
+      });
+    });
+  })();
+</script>

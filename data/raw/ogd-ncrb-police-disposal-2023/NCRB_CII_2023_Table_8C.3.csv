@@ -1,0 +1,40 @@
+Sl. No. ( Col. 1 ),State/UT ( Col. 2 ),Cases Pending Investigation from Previous Year ( Col. 3 ),Cases Reported during the year ( Col. 4 ),Cases ReOpened for Investigation ( Col. 5 ),Cases Transferred to other State or Agency ( Col. 6 ),Cases With drawn by the Govt ( Col. 7 ),Cases in Which Final Reports Submitted ( Col. 8 ),Cases Chargesheeted ( Col. 9 ),Cases Pending Investigation at End of the Year ( Col. 10 )
+1,Andhra Pradesh,462,160,0,0,0,34,153,435
+2,Arunachal Pradesh,82,9,0,0,0,6,5,80
+3,Assam,116,110,0,0,0,4,44,178
+4,Bihar,355,40,0,0,0,6,80,309
+5,Chhattisgarh,53,0,3,0,0,6,5,45
+6,Goa,38,0,0,0,0,0,0,38
+7,Gujarat,282,205,0,0,0,11,265,211
+8,Haryana,223,205,1,0,0,2,197,230
+9,Himachal Pradesh,155,73,3,1,0,3,31,196
+10,Jharkhand,121,55,0,0,0,8,69,99
+11,Karnataka,1298,362,0,1,1,15,195,1448
+12,Kerala,167,211,24,1,0,97,108,196
+13,Madhya Pradesh,650,262,0,0,0,38,287,587
+14,Maharashtra,1507,812,1,0,0,4,522,1794
+15,Manipur,36,0,0,0,0,0,3,33
+16,Meghalaya,18,2,0,0,0,1,0,19
+17,Mizoram,14,4,0,0,0,4,8,6
+18,Nagaland,24,1,0,0,0,5,1,19
+19,Odisha,1519,267,0,0,0,47,361,1378
+20,Punjab,515,287,2,2,1,13,182,606
+21,Rajasthan,1763,316,27,0,0,61,287,1758
+22,Sikkim,31,1,0,0,0,6,3,23
+23,Tamil Nadu,529,302,176,0,0,389,176,442
+24,Telangana,361,87,0,0,0,4,69,375
+25,Tripura,0,0,0,0,0,0,0,0
+26,Uttar Pradesh,105,169,0,0,0,6,123,145
+27,Uttarakhand,8,21,0,1,0,2,18,8
+28,West Bengal,36,8,0,0,0,0,11,33
+Total State(S),Total State(S),10468,3969,237,6,2,772,3203,10691
+29,Andaman and Nicobar Islands,13,8,0,0,0,0,3,18
+30,Chandigarh,17,7,0,0,0,2,7,15
+31,Dadra and Nagar Haveli and Daman and Diu,4,0,0,0,0,0,0,4
+32,Delhi,157,19,2,0,1,12,27,138
+33,Jammu and Kashmir,452,62,13,3,0,24,80,420
+34,Ladakh,2,0,0,0,0,0,0,2
+35,Lakshadweep,7,0,0,0,0,0,1,6
+36,Puducherry,22,4,1,0,0,0,3,24
+Total UT(S),Total UT(S),674,100,16,3,1,38,121,627
+Total All India,Total All India,11142,4069,253,9,3,810,3324,11318

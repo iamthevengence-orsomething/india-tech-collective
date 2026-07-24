@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "note": "Reviewed join overrides between ADR and OGD parliamentary-constituency spellings, keyed by '<STATECODE>-<adr-slug>' -> '<STATECODE>-<ogd-slug>'. Only add entries after manually confirming both refer to the same PC.",
+  "overrides": {
+    "AN-andaman-and-nicobar-islands": "AN-andaman-nicobar-islands",
+    "AP-kurnool": "AP-kurnoolu",
+    "BR-pataliputra": "BR-patliputra",
+    "UK-nainital-udham-singh-nagar": "UK-nainital-udhamsingh-nagar",
+    "UP-bahraich": "UP-baharaich",
+    "WB-burdwan-durgapur": "WB-bardhaman-durgapur",
+    "WB-cooch-behar": "WB-coochbehar"
+  }
+}

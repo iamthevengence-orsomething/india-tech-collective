@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "500",
+    "records": [
+        {
+            "_sl__no_": 501,
+            "state": "Jharkhand",
+            "const_no_": 14,
+            "constituency": "Hazaribagh",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1257467,
+            "winner_name": "MANISH JAISWAL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 377927,
+            "runner_up_name": "JAI PRAKASH BHAI PATEL",
+            "margin": 276686,
+            "margin__": 22
+        },
+        {
+            "_sl__no_": 502,
+            "state": "Uttarakhand",
+            "const_no_": 1,
+            "constituency": "Tehri Garhwal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 854583,
+            "winner_name": "MALA RAJYA LAKSHMI SHAH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 190110,
+            "runner_up_name": "JOT SINGH GUNSOLA",
+            "margin": 272493,
+            "margin__": 31.890000000000001
+        },
+        {
+            "_sl__no_": 503,
+            "state": "Uttarakhand",
+            "const_no_": 2,
+            "constituency": "Garhwal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 726056,
+            "winner_name": "ANIL BALUNI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 268656,
+            "runner_up_name": "GANESH GODIYAL",
+            "margin": 163503,
+            "margin__": 22.52
+        },
+        {
+            "_sl__no_": 504,
+            "state": "Uttarakhand",
+            "const_no_": 3,
+            "constituency": "Almora",
+            "constituency_type": "SC",
+            "total_valid_votes": 651478,
+            "winner_name": "AJAY TAMTA",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 195070,
+            "runner_up_name": "PRADEEP TAMTA",
+            "margin": 234097,
+            "margin__": 35.93
+        },
+        {
+            "_sl__no_": 505,
+            "state": "Uttarakhand",
+            "const_no_": 4,
+            "constituency": "Nainital-Udhamsingh Nagar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1255585,
+            "winner_name": "AJAY BHATT",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 438123,
+            "runner_up_name": "PRAKASH JOSHI",
+            "margin": 334548,
+            "margin__": 26.640000000000001
+        },
+        {
+            "_sl__no_": 506,
+            "state": "Uttarakhand",
+            "const_no_": 5,
+            "constituency": "Haridwar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1295795,
+            "winner_name": "TRIVENDRA SINGH RAWAT",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 489752,
+            "runner_up_name": "VIRENDRA RAWAT",
+            "margin": 164056,
+            "margin__": 12.66
+        },
+        {
+            "_sl__no_": 507,
+            "state": "Telangana",
+            "const_no_": 1,
+            "constituency": "Adilabad",
+            "constituency_type": "ST",
+            "total_valid_votes": 1223835,
+            "winner_name": "GODAM NAGESH",
+            "social_category": "ST",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 477516,
+            "runner_up_name": "ATHRAM SUGUNA",
+            "margin": 90652,
+            "margin__": 7.4100000000000001
+        },
+        {
+            "_sl__no_": 508,
+            "state": "Telangana",
+            "const_no_": 2,
+            "constituency": "Peddapalle",
+            "constituency_type": "SC",
+            "total_valid_votes": 1089584,
+            "winner_name": "VAMSI KRISHNA GADDAM",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 344223,
+            "runner_up_name": "SRINIVAS GOMASE",
+            "margin": 131364,
+            "margin__": 12.06
+        },
+        {
+            "_sl__no_": 509,
+            "state": "Telangana",
+            "const_no_": 3,
+            "constituency": "Karimnagar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1307414,
+            "winner_name": "BANDI SANJAY KUMAR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 359907,
+            "runner_up_name": "VELCHALA RAJENDER RAO",
+            "margin": 225209,
+            "margin__": 17.23
+        },
+        {
+            "_sl__no_": 510,
+            "state": "Telangana",
+            "const_no_": 4,
+            "constituency": "Nizamabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1229098,
+            "winner_name": "ARVIND DHARMAPURI",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 483077,
+            "runner_up_name": "JEEVANREDDY THATIPARTHI",
+            "margin": 109241,
+            "margin__": 8.8900000000000006
+        }
+    ]
+}

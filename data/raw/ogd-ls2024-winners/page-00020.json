@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "20",
+    "records": [
+        {
+            "_sl__no_": 21,
+            "state": "Andhra Pradesh",
+            "const_no_": 21,
+            "constituency": "Kadapa",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1305129,
+            "winner_name": "Y. S. AVINASH REDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "TDP",
+            "party_symbol": "Bicycle",
+            "vote_secured": 542448,
+            "runner_up_name": "CHADIPIRALLA BHUPESH SUBBARAMI REDDY",
+            "margin": 62695,
+            "margin__": 4.7999999999999998
+        },
+        {
+            "_sl__no_": 22,
+            "state": "Andhra Pradesh",
+            "const_no_": 22,
+            "constituency": "Nellore",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1360072,
+            "winner_name": "PRABHAKAR REDDY VEMIREDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 520300,
+            "runner_up_name": "VENUMBAKA VIJAYASAI REDDY",
+            "margin": 245902,
+            "margin__": 18.079999999999998
+        },
+        {
+            "_sl__no_": 23,
+            "state": "Andhra Pradesh",
+            "const_no_": 23,
+            "constituency": "Thirupathi",
+            "constituency_type": "SC",
+            "total_valid_votes": 1366452,
+            "winner_name": "GURUMOORTHY MADDILA",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 617659,
+            "runner_up_name": "VARA PRASAD RAO VELAGAPALLI",
+            "margin": 14569,
+            "margin__": 1.0700000000000001
+        },
+        {
+            "_sl__no_": 24,
+            "state": "Andhra Pradesh",
+            "const_no_": 24,
+            "constituency": "Rajampet",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1321539,
+            "winner_name": "P V MIDHUN REDDY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 568773,
+            "runner_up_name": "NALLARI KIRAN KUMAR REDDY",
+            "margin": 76071,
+            "margin__": 5.7599999999999998
+        },
+        {
+            "_sl__no_": 25,
+            "state": "Andhra Pradesh",
+            "const_no_": 25,
+            "constituency": "Chittoor",
+            "constituency_type": "SC",
+            "total_valid_votes": 1406881,
+            "winner_name": "DAGGUMALLA PRASADA RAO",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "YSRCP",
+            "party_symbol": "Ceiling fan",
+            "vote_secured": 557592,
+            "runner_up_name": "REDDEPPA.N .",
+            "margin": 220479,
+            "margin__": 15.67
+        },
+        {
+            "_sl__no_": 26,
+            "state": "Arunachal Pradesh",
+            "const_no_": 1,
+            "constituency": "Arunachal West",
+            "constituency_type": "GEN",
+            "total_valid_votes": 397508,
+            "winner_name": "KIREN RIJIJU",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 104679,
+            "runner_up_name": "NABAM TUKI",
+            "margin": 100738,
+            "margin__": 25.34
+        },
+        {
+            "_sl__no_": 27,
+            "state": "Arunachal Pradesh",
+            "const_no_": 2,
+            "constituency": "Arunachal East",
+            "constituency_type": "GEN",
+            "total_valid_votes": 318548,
+            "winner_name": "TAPIR GAO",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 115160,
+            "runner_up_name": "BOSIRAM SIRAM",
+            "margin": 30421,
+            "margin__": 9.5500000000000007
+        },
+        {
+            "_sl__no_": 28,
+            "state": "Assam",
+            "const_no_": 1,
+            "constituency": "Kokrajhar",
+            "constituency_type": "ST",
+            "total_valid_votes": 1227584,
+            "winner_name": "JOYANTA BASUMATARY",
+            "social_category": "ST",
+            "gender": "MALE",
+            "party": "BOPF",
+            "party_symbol": "Nangol",
+            "vote_secured": 437412,
+            "runner_up_name": "KAMPA BORGOYARI",
+            "margin": 51583,
+            "margin__": 4.2000000000000002
+        },
+        {
+            "_sl__no_": 29,
+            "state": "Assam",
+            "const_no_": 2,
+            "constituency": "Dhubri",
+            "constituency_type": "GEN",
+            "total_valid_votes": 2438593,
+            "winner_name": "RAKIBUL HUSSAIN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "AIUDF",
+            "party_symbol": "Lock and key",
+            "vote_secured": 459409,
+            "runner_up_name": "MOHAMMED BADRUDDIN AJMAL",
+            "margin": 1012476,
+            "margin__": 41.520000000000003
+        },
+        {
+            "_sl__no_": 30,
+            "state": "Assam",
+            "const_no_": 3,
+            "constituency": "Barpeta",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1668826,
+            "winner_name": "PHANI BHUSAN CHOUDHURY",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 637762,
+            "runner_up_name": "DEEP BAYAN",
+            "margin": 222351,
+            "margin__": 13.32
+        }
+    ]
+}

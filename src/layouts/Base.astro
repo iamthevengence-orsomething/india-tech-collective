@@ -1,0 +1,65 @@
+---
+import '@fontsource-variable/eb-garamond';
+import '@fontsource-variable/eb-garamond/wght-italic.css';
+import '@fontsource-variable/geist-mono';
+import '@fontsource/noto-serif-devanagari/400.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { isDemo } from '../lib/data';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;            // canonical path, e.g. "/politicians/"
+  current?: string;        // nav highlight key
+  ogImage?: string;        // path under site root
+  noindex?: boolean;
+  skipTarget?: string;
+}
+const { title, description, path, current, ogImage = '/og/site.png', noindex = false, skipTarget = '#main' } = Astro.props;
+const site = 'https://www.indiatechcollective.org';
+const canonical = site + path;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="theme-color" content="#F6F1E5" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href={canonical} />
+{(noindex || isDemo) && <meta name="robots" content="noindex" />}
+{isDemo && <meta name="itc-data-mode" content="demo" />}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The India Tech Collective" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={site + ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${title} — The India Tech Collective`} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={site + ogImage} />
+<meta name="twitter:image:alt" content={`${title} — The India Tech Collective`} />
+</head>
+<body>
+<a class="skip" href={skipTarget}>Skip to content</a>
+{isDemo && (
+  <div style="background:#5B2121;color:#FFDFDF;text-align:center;padding:.45rem .8rem;font-size:.85rem;font-weight:600;" data-demo-banner>
+    DEMO DATA — fixtures for UI testing, not real records
+  </div>
+)}
+<Nav current={current} />
+<main id="main">
+  <slot />
+</main>
+<Footer />
+</body>
+</html>

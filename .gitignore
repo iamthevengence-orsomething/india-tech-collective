@@ -1,0 +1,15 @@
+.claude/
+node_modules/
+dist/
+dist-demo/
+.astro/
+data/work/
+data/raw/_large/
+public/og/
+public/og-card.png
+playwright-report/
+test-results/
+__pycache__/
+*.pyc
+.venv/
+screenshots/

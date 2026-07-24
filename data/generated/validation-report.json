@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "stats": {
+    "caseCountMismatches": 0,
+    "joined": 542,
+    "ncrbCrossTableMismatches": 0,
+    "ogdStates": 36
+  },
+  "warnings": [
+    "normalize: adr-caseblocks: NOTE Tangella Uday Srinivas (Tea Time Uday) joined by unique name match (state line wrapped in PDF)",
+    "normalize: adr-caseblocks: NOTE Vishnu Datt Sharma (V.D.Sharma) joined by unique name match (state line wrapped in PDF)"
+  ]
+}

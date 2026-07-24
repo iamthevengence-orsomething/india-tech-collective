@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-24",
+  "note": "Reviewed alias dictionary for statute normalization. Raw affidavit text is always preserved next to normalized provisions. The IPC↔BNS crosswalk is display-only and marks each pair's review status — differently numbered provisions are never silently equated.",
+  "acts": [
+    {
+      "actId": "in-act-pca-1988",
+      "name": "Prevention of Corruption Act, 1988",
+      "shortName": "PC Act 1988",
+      "aliases": ["PC Act", "P.C. Act", "P C Act", "PCA 1988", "Prevention of Corruption Act 1988", "Prevention of Corruption (Amendment) Act"]
+    },
+    {
+      "actId": "in-act-pca-1947",
+      "name": "Prevention of Corruption Act, 1947",
+      "shortName": "PC Act 1947",
+      "aliases": ["Prevention of Corruption Act 1947"]
+    },
+    {
+      "actId": "in-act-ipc-1860",
+      "name": "Indian Penal Code, 1860",
+      "shortName": "IPC",
+      "aliases": ["I.P.C.", "I P C", "Indian Penal Code", "IPC 1860"]
+    },
+    {
+      "actId": "in-act-bns-2023",
+      "name": "Bharatiya Nyaya Sanhita, 2023",
+      "shortName": "BNS",
+      "aliases": ["B.N.S.", "Bharatiya Nyaya Sanhita"]
+    },
+    {
+      "actId": "in-act-crpc-1973",
+      "name": "Code of Criminal Procedure, 1973",
+      "shortName": "CrPC",
+      "aliases": ["Cr.P.C.", "Cr P C", "Code of Criminal Procedure"]
+    },
+    {
+      "actId": "in-act-bnss-2023",
+      "name": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+      "shortName": "BNSS",
+      "aliases": ["B.N.S.S."]
+    },
+    {
+      "actId": "in-act-pmla-2002",
+      "name": "Prevention of Money-Laundering Act, 2002",
+      "shortName": "PMLA",
+      "aliases": ["Prevention of Money Laundering Act", "P.M.L.A.", "Money Laundering Act"]
+    },
+    {
+      "actId": "in-act-rpa-1951",
+      "name": "Representation of the People Act, 1951",
+      "shortName": "RP Act",
+      "aliases": ["R.P. Act", "Representation of People Act", "RPA 1951"]
+    },
+    {
+      "actId": "in-act-arms-1959",
+      "name": "Arms Act, 1959",
+      "shortName": "Arms Act",
+      "aliases": []
+    },
+    {
+      "actId": "in-act-uapa-1967",
+      "name": "Unlawful Activities (Prevention) Act, 1967",
+      "shortName": "UAPA",
+      "aliases": ["U.A.P.A.", "Unlawful Activities Prevention Act"]
+    },
+    {
+      "actId": "in-act-scst-1989",
+      "name": "Scheduled Castes and the Scheduled Tribes (Prevention of Atrocities) Act, 1989",
+      "shortName": "SC/ST Act",
+      "aliases": ["SC ST Act", "SC/ST (Prevention of Atrocities) Act", "Prevention of Atrocities Act"]
+    },
+    {
+      "actId": "in-act-ni-1881",
+      "name": "Negotiable Instruments Act, 1881",
+      "shortName": "NI Act",
+      "aliases": ["N.I. Act", "Negotiable Instruments Act"]
+    },
+    {
+      "actId": "in-act-pdpp-1984",
+      "name": "Prevention of Damage to Public Property Act, 1984",
+      "shortName": "PDPP Act",
+      "aliases": ["Prevention of Damage to Public Property"]
+    },
+    {
+      "actId": "in-act-it-2000",
+      "name": "Information Technology Act, 2000",
+      "shortName": "IT Act",
+      "aliases": ["I.T. Act", "Information Technology Act"]
+    },
+    {
+      "actId": "in-act-mcoca-1999",
+      "name": "Maharashtra Control of Organised Crime Act, 1999",
+      "shortName": "MCOCA",
+      "aliases": ["M.C.O.C.A."]
+    },
+    {
+      "actId": "in-act-nsa-1980",
+      "name": "National Security Act, 1980",
+      "shortName": "NSA",
+      "aliases": ["National Security Act"]
+    },
+    {
+      "actId": "in-act-ndps-1985",
+      "name": "Narcotic Drugs and Psychotropic Substances Act, 1985",
+      "shortName": "NDPS Act",
+      "aliases": ["N.D.P.S.", "NDPS"]
+    }
+  ],
+  "ipcBnsCrosswalk": [
+    { "ipcSection": "302", "bnsSection": "103(1)", "offence": "Murder", "status": "reviewed" },
+    { "ipcSection": "307", "bnsSection": "109", "offence": "Attempt to murder", "status": "reviewed" },
+    { "ipcSection": "420", "bnsSection": "318(4)", "offence": "Cheating and dishonestly inducing delivery of property", "status": "reviewed" },
+    { "ipcSection": "406", "bnsSection": "316(2)", "offence": "Criminal breach of trust", "status": "reviewed" },
+    { "ipcSection": "409", "bnsSection": "316(5)", "offence": "Criminal breach of trust by public servant", "status": "reviewed" },
+    { "ipcSection": "153A", "bnsSection": "196", "offence": "Promoting enmity between groups", "status": "reviewed" },
+    { "ipcSection": "500", "bnsSection": "356(2)", "offence": "Defamation", "status": "reviewed" }
+  ],
+  "crosswalkCitation": "Bharatiya Nyaya Sanhita, 2023 (Act 45 of 2023), Gazette of India — https://www.indiacode.nic.in/bitstream/123456789/20062/1/a202345.pdf"
+}

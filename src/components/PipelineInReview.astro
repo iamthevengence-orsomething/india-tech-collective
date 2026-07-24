@@ -1,0 +1,12 @@
+---
+interface Props { area: string; reason: string }
+const { area, reason } = Astro.props;
+---
+<div class="empty-state" role="status">
+  <p style="font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--ink-strong);margin-bottom:.4rem;">
+    Data pipeline in review
+  </p>
+  <p class="small">{area}: {reason}</p>
+  <p class="small">Nothing is shown here rather than showing unverified or invented numbers.</p>
+  <slot />
+</div>

@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+import CaveatBanner from '../components/CaveatBanner.astro';
+import PipelineInReview from '../components/PipelineInReview.astro';
+import EnforcementLens from '../components/islands/EnforcementLens.tsx';
+import DisclosuresLens from '../components/islands/DisclosuresLens.tsx';
+import { loadArtifact, loadCurated } from '../lib/data';
+import { formatDate } from '../lib/format';
+import { AUDIT_FINDING_LABEL } from '../lib/schemas/stats';
+
+const stats = loadArtifact<any>('corruption.stats');
+const cag = loadCurated<any>('cag-reports');
+---
+<Base
+  title="Corruption Data — enforcement, disclosures, audits | India Tech Collective"
+  description="Prevention of Corruption Act enforcement by state (NCRB), corruption-statute disclosures by elected representatives, and CAG audit findings — three separate lenses, honestly labelled. No composite corruption score."
+  path="/corruption/"
+  current="corruption"
+  ogImage="/og/corruption.png"
+>
+  <header class="page-head wrap">
+    <p class="kicker green">Part III · Corruption Data — three records, kept separate</p>
+    <h1 class="page-h1">Corruption data without a fake score</h1>
+    <p class="lede">
+      “Corruption” is not one number. This dashboard keeps three very different kinds of public records in
+      three clearly separated views: <strong>state enforcement</strong> statistics from the NCRB,
+      <strong> disclosures by elected representatives</strong> from their own election affidavits, and
+      <strong> audit findings</strong> from the CAG. They use different units and cannot be added together —
+      so this site never combines them into a score.
+    </p>
+    <nav class="subnav" aria-label="Corruption dashboard sections" style="margin-top:1.2rem;">
+      <a href="#enforcement">State enforcement</a>
+      <a href="#disclosures">Representative disclosures</a>
+      <a href="#audit">Audit findings</a>
+      <a href="/methodology/">Methodology ↗</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <!-- ============ LENS A: STATE ENFORCEMENT ============ -->
+    <section class="section" id="enforcement" aria-labelledby="enf-h">
+      <p class="kicker">Lens A · NCRB statistics</p>
+      <h2 class="section-title" id="enf-h">Reported enforcement activity, by state</h2>
+      <p class="section-sub">
+        Prevention of Corruption Act cases handled by Anti-Corruption Bureaus, Vigilance bodies and Lokayuktas —
+        registrations, police disposal and court outcomes, exactly as published in {stats.publicationLabel}.
+        Data year <strong>{stats.dataYear}</strong>, publication year <strong>{stats.publicationYear}</strong>.
+      </p>
+      <div style="margin:1rem 0;">
+        <CaveatBanner title="This is reported enforcement activity — not a corruption level">
+          <p class="small">
+            More registered cases can reflect more underlying corruption, more reporting, stronger enforcement,
+            or all three. States/UTs should not be compared on raw counts alone. Only NCRB-published values and
+            NCRB-published rates are shown; this site adds no denominators of its own.
+          </p>
+        </CaveatBanner>
+      </div>
+      <EnforcementLens client:load />
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ============ LENS B: REPRESENTATIVE DISCLOSURES ============ -->
+    <section class="section" id="disclosures" aria-labelledby="dis-h">
+      <p class="kicker">Lens B · affidavit disclosures</p>
+      <h2 class="section-title" id="dis-h">What representatives themselves declared</h2>
+      <p class="section-sub">
+        A different dataset with a different unit: criminal cases <em>self-declared</em> by winners of the 2024
+        Lok Sabha election in sworn affidavits. Only cases mapped to the Prevention of Corruption Act under
+        reviewed rules count as “corruption cases” here — PMLA, cheating and breach of trust are never
+        auto-classified. These numbers are never joined to the NCRB statistics above.
+      </p>
+      <div style="margin:1rem 0;">
+        <CaveatBanner title="Declared ≠ convicted">
+          <p class="small">
+            A declared case is an accusation at a stated procedural stage. Disclosed convictions are shown
+            separately. Party comparisons use party-at-election and a minimum sample of 5 covered
+            representatives; smaller parties are listed but never ranked.
+          </p>
+        </CaveatBanner>
+      </div>
+      <DisclosuresLens client:load />
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ============ LENS C: AUDIT FINDINGS ============ -->
+    <section class="section" id="audit" aria-labelledby="aud-h">
+      <p class="kicker">Lens C · CAG audits</p>
+      <h2 class="section-title" id="aud-h">Audit findings</h2>
+      <p class="section-sub">
+        Findings from Comptroller and Auditor General reports — every future entry will carry the label
+        “{AUDIT_FINDING_LABEL}”, a typed amount (loss ≠ blocked funds ≠ irregular expenditure), a paragraph/page
+        reference and the government’s response where published. Unlike figures are never totalled into a
+        “money lost” counter.
+      </p>
+      <div style="margin-top:1rem;">
+        <PipelineInReview
+          area="CAG audit findings"
+          reason="finding extraction from report PDFs has not yet passed review, so zero findings are displayed"
+        >
+          <div style="text-align:left;margin-top:1.2rem;">
+            <p class="small" style="font-weight:600;color:var(--ink);">Latest real reports on the CAG portal (metadata only, retrieved {formatDate('2026-07-24')}):</p>
+            <ul style="list-style:none;margin-top:.5rem;">
+              {cag.reports.map((r: any) => (
+                <li style="margin:.45rem 0;border-top:1px solid var(--line);padding-top:.45rem;">
+                  <a class="small" href={r.url} rel="noopener" style="color:var(--ink);text-decoration-color:rgba(154,116,32,.5);">{r.title} ↗</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </PipelineInReview>
+      </div>
+    </section>
+  </div>
+
+  <script is:inline>
+    // highlight the active lens in the sticky subnav while scrolling
+    (function () {
+      var links = document.querySelectorAll('.subnav a[href^="#"]');
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('active'); });
+            var a = map[e.target.id];
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      ['enforcement', 'disclosures', 'audit'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+  </script>
+</Base>

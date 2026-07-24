@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "220",
+    "records": [
+        {
+            "_sl__no_": 221,
+            "state": "Maharashtra",
+            "const_no_": 22,
+            "constituency": "Palghar",
+            "constituency_type": "ST",
+            "total_valid_votes": 1352689,
+            "winner_name": "DR. HEMANT VISHNU SAVARA",
+            "social_category": "ST",
+            "gender": "FEMALE",
+            "party": "SHSUBT",
+            "party_symbol": "Flaming torch",
+            "vote_secured": 417938,
+            "runner_up_name": "BHARTI BHARAT KAMDI",
+            "margin": 183306,
+            "margin__": 13.550000000000001
+        },
+        {
+            "_sl__no_": 222,
+            "state": "Maharashtra",
+            "const_no_": 23,
+            "constituency": "Bhiwandi",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1244052,
+            "winner_name": "BALYA MAMA - SURESH GOPINATH MHATRE",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 433343,
+            "runner_up_name": "KAPIL MORESHWAR PATIL",
+            "margin": 66121,
+            "margin__": 5.3099999999999996
+        },
+        {
+            "_sl__no_": 223,
+            "state": "Maharashtra",
+            "const_no_": 24,
+            "constituency": "Kalyan",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1034050,
+            "winner_name": "DR SHRIKANT EKNATH SHINDE",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "SHSUBT",
+            "party_symbol": "Flaming torch",
+            "vote_secured": 380492,
+            "runner_up_name": "VAISHALI DAREKAR - RANE",
+            "margin": 209144,
+            "margin__": 20.23
+        },
+        {
+            "_sl__no_": 224,
+            "state": "Maharashtra",
+            "const_no_": 25,
+            "constituency": "Thane",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1291167,
+            "winner_name": "NARESH GANPAT MHASKE",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "SHSUBT",
+            "party_symbol": "Flaming torch",
+            "vote_secured": 517220,
+            "runner_up_name": "RAJAN BABURAO VICHARE",
+            "margin": 217011,
+            "margin__": 16.809999999999999
+        },
+        {
+            "_sl__no_": 225,
+            "state": "Maharashtra",
+            "const_no_": 26,
+            "constituency": "Mumbai North",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1022147,
+            "winner_name": "PIYUSH GOYAL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 322538,
+            "runner_up_name": "BHUSHAN PATIL",
+            "margin": 357608,
+            "margin__": 34.990000000000002
+        },
+        {
+            "_sl__no_": 226,
+            "state": "Maharashtra",
+            "const_no_": 27,
+            "constituency": "Mumbai North West",
+            "constituency_type": "GEN",
+            "total_valid_votes": 939778,
+            "winner_name": "RAVINDRA DATTARAM WAIKAR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "SHSUBT",
+            "party_symbol": "Flaming torch",
+            "vote_secured": 452596,
+            "runner_up_name": "AMOL GAJANAN KIRTIKAR",
+            "margin": 48,
+            "margin__": 0.01
+        },
+        {
+            "_sl__no_": 227,
+            "state": "Maharashtra",
+            "const_no_": 28,
+            "constituency": "Mumbai North East",
+            "constituency_type": "GEN",
+            "total_valid_votes": 916296,
+            "winner_name": "SANJAY DINA PATIL",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 421076,
+            "runner_up_name": "MIHIR CHANDRAKANT KOTECHA",
+            "margin": 29861,
+            "margin__": 3.2599999999999998
+        },
+        {
+            "_sl__no_": 228,
+            "state": "Maharashtra",
+            "const_no_": 29,
+            "constituency": "Mumbai North Central",
+            "constituency_type": "GEN",
+            "total_valid_votes": 900813,
+            "winner_name": "GAIKWAD VARSHA EKNATH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 429031,
+            "runner_up_name": "ADV UJWAL NIKAM",
+            "margin": 16514,
+            "margin__": 1.8300000000000001
+        },
+        {
+            "_sl__no_": 229,
+            "state": "Maharashtra",
+            "const_no_": 30,
+            "constituency": "Mumbai South Central",
+            "constituency_type": "GEN",
+            "total_valid_votes": 781101,
+            "winner_name": "ANIL YESHWANT DESAI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "SHS",
+            "party_symbol": "Bow and arrow",
+            "vote_secured": 341754,
+            "runner_up_name": "RAHUL RAMESH SHEWALE",
+            "margin": 53384,
+            "margin__": 6.8300000000000001
+        },
+        {
+            "_sl__no_": 230,
+            "state": "Maharashtra",
+            "const_no_": 31,
+            "constituency": "Mumbai South",
+            "constituency_type": "GEN",
+            "total_valid_votes": 759702,
+            "winner_name": "ARVIND GANPAT SAWANT",
+            "social_category": "SC",
+            "gender": "FEMALE",
+            "party": "SHS",
+            "party_symbol": "Bow and arrow",
+            "vote_secured": 342982,
+            "runner_up_name": "YAMINI YASHWANT JADHAV",
+            "margin": 52673,
+            "margin__": 6.9299999999999997
+        }
+    ]
+}

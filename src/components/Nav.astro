@@ -1,0 +1,40 @@
+---
+interface Props { current?: string }
+const { current } = Astro.props;
+const primary = [
+  { href: '/toolkit/', label: 'Toolkit', key: 'toolkit' },
+  { href: '/politicians/', label: 'Politicians', key: 'politicians' },
+  { href: '/corruption/', label: 'Corruption', key: 'corruption' },
+];
+const secondary = [
+  { href: '/coverage/', label: 'Coverage', key: 'coverage' },
+  { href: '/methodology/', label: 'Methodology', key: 'methodology' },
+];
+---
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav-in">
+    <a class="wordmark" href="/">India Tech Collective</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" id="navToggle">
+      Menu
+    </button>
+    <div class="nav-links" id="navLinks">
+      {primary.map((l) => (
+        <a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>
+      ))}
+      {secondary.map((l) => (
+        <a class="nav-secondary" href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>
+      ))}
+    </div>
+  </div>
+</nav>
+<script is:inline>
+  (function () {
+    var t = document.getElementById('navToggle');
+    var m = document.getElementById('navLinks');
+    if (!t || !m) return;
+    t.addEventListener('click', function () {
+      var open = m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>

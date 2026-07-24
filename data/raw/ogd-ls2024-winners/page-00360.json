@@ -1,0 +1,309 @@
+{
+    "index_name": "194d454f-3ea8-4621-a915-b211c66e46a7",
+    "title": "State\/UT-wise List of Successful Candidate during 2024",
+    "desc": "State\/UT-wise List of Successful Candidate during 2024",
+    "org_type": "Central",
+    "org": [
+        "Election Commission of India"
+    ],
+    "sector": [
+        "Governance and Administration",
+        "Parliament Of india"
+    ],
+    "source": "data.gov.in",
+    "catalog_uuid": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+    "visualizable": "0",
+    "active": "1",
+    "created": 1757779848,
+    "updated": 1757779848,
+    "created_date": "2025-09-13T18:10:48Z",
+    "updated_date": "2025-09-13T18:10:48Z",
+    "external_ws": 0,
+    "external_ws_url": "",
+    "target_bucket": {
+        "index": "api",
+        "type": "560e038e-ce8e-42d5-aab9-e53e1417bd55",
+        "field": "194d454f-3ea8-4621-a915-b211c66e46a7"
+    },
+    "field": [
+        {
+            "id": "_sl__no_",
+            "name": "SL. NO.",
+            "type": "double"
+        },
+        {
+            "id": "state",
+            "name": "State",
+            "type": "keyword"
+        },
+        {
+            "id": "const_no_",
+            "name": "Const No.",
+            "type": "double"
+        },
+        {
+            "id": "constituency",
+            "name": "Constituency",
+            "type": "keyword"
+        },
+        {
+            "id": "constituency_type",
+            "name": "Constituency Type",
+            "type": "keyword"
+        },
+        {
+            "id": "total_valid_votes",
+            "name": "Total Valid Votes",
+            "type": "double"
+        },
+        {
+            "id": "winner_name",
+            "name": "Winner Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "runner_up_name",
+            "name": "Runner Up Name",
+            "type": "keyword"
+        },
+        {
+            "id": "social_category",
+            "name": "Social Category",
+            "type": "keyword"
+        },
+        {
+            "id": "gender",
+            "name": "Gender",
+            "type": "keyword"
+        },
+        {
+            "id": "party",
+            "name": "Party",
+            "type": "keyword"
+        },
+        {
+            "id": "party_symbol",
+            "name": "Party Symbol",
+            "type": "keyword"
+        },
+        {
+            "id": "vote_secured",
+            "name": "Vote Secured",
+            "type": "double"
+        },
+        {
+            "id": "margin",
+            "name": "Margin",
+            "type": "double"
+        },
+        {
+            "id": "margin__",
+            "name": "Margin %",
+            "type": "double"
+        }
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 542,
+    "count": 10,
+    "limit": "10",
+    "offset": "360",
+    "records": [
+        {
+            "_sl__no_": 361,
+            "state": "Uttar Pradesh",
+            "const_no_": 7,
+            "constituency": "Rampur",
+            "constituency_type": "GEN",
+            "total_valid_votes": 962426,
+            "winner_name": "MOHIBBULLAH",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 394069,
+            "runner_up_name": "GHANSHYAM SINGH LODHI",
+            "margin": 87434,
+            "margin__": 9.0800000000000001
+        },
+        {
+            "_sl__no_": 362,
+            "state": "Uttar Pradesh",
+            "const_no_": 8,
+            "constituency": "Sambhal",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1187766,
+            "winner_name": "ZIA UR REHMAN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "BJP",
+            "party_symbol": "Lotus",
+            "vote_secured": 449667,
+            "runner_up_name": "PARMESHWAR LAL SAINI",
+            "margin": 121494,
+            "margin__": 10.23
+        },
+        {
+            "_sl__no_": 363,
+            "state": "Uttar Pradesh",
+            "const_no_": 9,
+            "constituency": "Amroha",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1104790,
+            "winner_name": "KANWAR SINGH TANWAR",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 447836,
+            "runner_up_name": "KUNWAR DANISH ALI",
+            "margin": 28670,
+            "margin__": 2.6000000000000001
+        },
+        {
+            "_sl__no_": 364,
+            "state": "Uttar Pradesh",
+            "const_no_": 10,
+            "constituency": "Meerut",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1177703,
+            "winner_name": "ARUN GOVIL",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "SP",
+            "party_symbol": "Bicycle",
+            "vote_secured": 535884,
+            "runner_up_name": "SUNITA VERMA",
+            "margin": 10585,
+            "margin__": 0.90000000000000002
+        },
+        {
+            "_sl__no_": 365,
+            "state": "Uttar Pradesh",
+            "const_no_": 11,
+            "constituency": "Baghpat",
+            "constituency_type": "GEN",
+            "total_valid_votes": 928663,
+            "winner_name": "DR RAJKUMAR SANGWAN",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "SP",
+            "party_symbol": "Bicycle",
+            "vote_secured": 329508,
+            "runner_up_name": "AMARPAL",
+            "margin": 159459,
+            "margin__": 17.170000000000002
+        },
+        {
+            "_sl__no_": 366,
+            "state": "Uttar Pradesh",
+            "const_no_": 12,
+            "constituency": "Ghaziabad",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1462219,
+            "winner_name": "ATUL GARG",
+            "social_category": "GENERAL",
+            "gender": "FEMALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 517205,
+            "runner_up_name": "DOLLY SHARMA",
+            "margin": 336965,
+            "margin__": 23.039999999999999
+        },
+        {
+            "_sl__no_": 367,
+            "state": "Uttar Pradesh",
+            "const_no_": 13,
+            "constituency": "Gautam Buddha Nagar",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1426920,
+            "winner_name": "DR. MAHESH SHARMA",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "SP",
+            "party_symbol": "Bicycle",
+            "vote_secured": 298357,
+            "runner_up_name": "DR. MAHENDRA SINGH NAGAR",
+            "margin": 559472,
+            "margin__": 39.210000000000001
+        },
+        {
+            "_sl__no_": 368,
+            "state": "Uttar Pradesh",
+            "const_no_": 14,
+            "constituency": "Bulandshahr",
+            "constituency_type": "SC",
+            "total_valid_votes": 1047474,
+            "winner_name": "DR BHOLA SINGH",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "INC",
+            "party_symbol": "Hand",
+            "vote_secured": 322176,
+            "runner_up_name": "SHIVRAM",
+            "margin": 275134,
+            "margin__": 26.27
+        },
+        {
+            "_sl__no_": 369,
+            "state": "Uttar Pradesh",
+            "const_no_": 15,
+            "constituency": "Aligarh",
+            "constituency_type": "GEN",
+            "total_valid_votes": 1128432,
+            "winner_name": "SATISH KUMAR GAUTAM",
+            "social_category": "GENERAL",
+            "gender": "MALE",
+            "party": "SP",
+            "party_symbol": "Bicycle",
+            "vote_secured": 486187,
+            "runner_up_name": "BIJENDRA SINGH",
+            "margin": 15647,
+            "margin__": 1.3899999999999999
+        },
+        {
+            "_sl__no_": 370,
+            "state": "Uttar Pradesh",
+            "const_no_": 16,
+            "constituency": "Hathras",
+            "constituency_type": "SC",
+            "total_valid_votes": 1076421,
+            "winner_name": "ANOOP PRADHAN BALMIKI",
+            "social_category": "SC",
+            "gender": "MALE",
+            "party": "SP",
+            "party_symbol": "Bicycle",
+            "vote_secured": 307428,
+            "runner_up_name": "JASVEER VALMIKI",
+            "margin": 247318,
+            "margin__": 22.98
+        }
+    ]
+}
