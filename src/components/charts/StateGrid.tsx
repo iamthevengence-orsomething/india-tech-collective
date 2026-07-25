@@ -1,26 +1,14 @@
-import { useId, useState } from 'react';
+import { useId, useMemo, useState, type KeyboardEvent } from 'react';
+import { INDIA_MAP_PATHS, INDIA_MAP_VIEWBOX } from '../../data/india-map';
 
 /**
- * Accessible India state/UT tile grid (cartogram). Deliberately NOT a
- * choropleth: no verified Survey of India boundary file was available, and a
- * tile grid depicts no political boundary at all (see /methodology/).
- * Tiles are toggle buttons (keyboard operable); a data-table twin is included.
+ * Geographic India state/UT data map.
+ *
+ * The boundary geometry is generated from the 2024 Local Government Directory
+ * layer. Every map action has an equivalent HTML button in the adjacent data
+ * index, and the full table remains available below.
  */
 
-// (col,row) per state code — hand-laid to approximate geography, 8×8
-const LAYOUT: Record<string, [number, number]> = {
-  JK: [3, 0], LA: [4, 0],
-  PB: [2, 1], HP: [3, 1], UK: [4, 1],
-  CH: [1, 2], HR: [2, 2], DL: [3, 2], UP: [4, 2], SK: [6, 2], AR: [7, 2],
-  GJ: [0, 3], RJ: [1, 3], MP: [2, 3], CG: [3, 3], BR: [4, 3], AS: [6, 3], NL: [7, 3],
-  DH: [0, 4], MH: [1, 4], TG: [2, 4], OD: [3, 4], JH: [4, 4], WB: [5, 4], ML: [6, 4], MN: [7, 4],
-  GA: [1, 5], KA: [2, 5], AP: [3, 5], TR: [6, 5], MZ: [7, 5],
-  LD: [1, 6], KL: [2, 6], TN: [3, 6], PY: [4, 6],
-  AN: [5, 7],
-};
-
-// [fill, text] pairs — text flips light on the deep upper ramp steps so tile
-// labels keep ≥4.5:1 contrast at every magnitude
 const RAMP: Array<[string, string]> = [
   ['var(--seq-1)', 'var(--ink-strong)'],
   ['var(--seq-2)', 'var(--ink-strong)'],
@@ -29,18 +17,20 @@ const RAMP: Array<[string, string]> = [
   ['var(--seq-5)', '#FCF8ED'],
 ];
 
+const SMALL_TERRITORIES = new Set(['AN', 'CH', 'DH', 'DL', 'GA', 'LD', 'PY']);
+
 export interface StateTileDatum {
   code: string;
   name: string;
-  value: number | null; // percent 0..100 (null = no data)
-  detail: string;       // e.g. "12 of 25 covered members"
+  value: number | null;
+  detail: string;
 }
 
-function rampColor(value: number | null, max: number): [string, string] {
-  if (value === null) return ['var(--seq-none)', 'var(--muted)'];
-  if (max <= 0) return RAMP[0];
-  const idx = Math.min(RAMP.length - 1, Math.floor((value / max) * RAMP.length));
-  return RAMP[idx];
+function rampColor(value: number | null, max: number): [string, string, number] {
+  if (value === null) return ['var(--seq-none)', 'var(--muted)', -1];
+  if (max <= 0) return [...RAMP[0], 0];
+  const index = Math.min(RAMP.length - 1, Math.floor((value / max) * RAMP.length));
+  return [...RAMP[index], index];
 }
 
 export default function StateGrid({
@@ -57,73 +47,178 @@ export default function StateGrid({
   maxValue?: number;
 }) {
   const [showTable, setShowTable] = useState(false);
+  const [activeCode, setActiveCode] = useState<string | null>(null);
+  const titleId = useId();
+  const descId = useId();
   const tableId = useId();
-  const max = maxValue ?? Math.max(1, ...data.map((d) => d.value ?? 0));
-  const byCode = new Map(data.map((d) => [d.code, d]));
-  const cols = 8;
-  const rows = 8;
+  const max = maxValue ?? Math.max(1, ...data.map((datum) => datum.value ?? 0));
+  const byCode = useMemo(() => new Map(data.map((datum) => [datum.code, datum])), [data]);
+  const sorted = useMemo(
+    () => [...data].sort((a, b) => (b.value ?? -1) - (a.value ?? -1) || a.name.localeCompare(b.name)),
+    [data],
+  );
+  const defaultCode = selected[0] ?? sorted[0]?.code ?? null;
+  const currentCode = activeCode ?? defaultCode;
+  const current = currentCode ? byCode.get(currentCode) : undefined;
+  const currentMapPath = currentCode ? INDIA_MAP_PATHS.find((path) => path.code === currentCode) : undefined;
+
+  const keyboardToggle = (event: KeyboardEvent<SVGPathElement>, code: string) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    onToggle(code);
+  };
 
   return (
-    <div className="tile-grid-wrap">
-      <div
-        className="tile-grid"
-        role="group"
-        aria-label={`State and union-territory tiles: ${metricLabel}. Positions approximate geography; no boundary is depicted.`}
-        style={{ gridTemplateColumns: `repeat(${cols}, minmax(2.2rem, 1fr))`, maxWidth: '34rem' }}
-      >
-        {Array.from({ length: rows }).flatMap((_, r) =>
-          Array.from({ length: cols }).map((_, c) => {
-            const code = Object.keys(LAYOUT).find((k) => LAYOUT[k][0] === c && LAYOUT[k][1] === r);
-            if (!code) return <span key={`${c}-${r}`} aria-hidden="true" />;
-            const d = byCode.get(code);
-            const value = d?.value ?? null;
-            const [bg, fg] = rampColor(value, max);
-            return (
+    <div className="india-map-wrap">
+      <div className="india-map-shell">
+        <div className="india-map-stage">
+          <div className="india-map-stage__head" aria-hidden="true">
+            <span>INDIA / STATE + UT / 2024</span>
+            <span>LGD BOUNDARY LAYER</span>
+          </div>
+          <svg
+            className="india-map"
+            viewBox={INDIA_MAP_VIEWBOX}
+            role="group"
+            aria-labelledby={`${titleId} ${descId}`}
+          >
+            <title id={titleId}>Interactive map of India by state and union territory</title>
+            <desc id={descId}>
+              {metricLabel}. Each state and union territory can be focused and toggled as a filter. The same controls
+              and values are available in the adjacent data index and table.
+            </desc>
+            <g className="india-map__states">
+              {INDIA_MAP_PATHS.map((mapPath) => {
+                const datum = byCode.get(mapPath.code);
+                const value = datum?.value ?? null;
+                const [fill, , ramp] = rampColor(value, max);
+                const isSelected = selected.includes(mapPath.code);
+                const isActive = currentCode === mapPath.code;
+                const label = `${datum?.name ?? mapPath.name}: ${
+                  value === null ? 'no data' : `${value.toFixed(1)} percent`
+                }. ${datum?.detail ?? ''}. ${isSelected ? 'Selected as a filter.' : 'Activate to filter.'}`;
+                return (
+                  <path
+                    key={mapPath.code}
+                    d={mapPath.path}
+                    className={`india-map__state${isSelected ? ' is-selected' : ''}${isActive ? ' is-active' : ''}`}
+                    style={{ fill }}
+                    data-ramp={ramp}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={label}
+                    aria-pressed={isSelected}
+                    onFocus={() => setActiveCode(mapPath.code)}
+                    onMouseEnter={() => setActiveCode(mapPath.code)}
+                    onClick={() => onToggle(mapPath.code)}
+                    onKeyDown={(event) => keyboardToggle(event, mapPath.code)}
+                  >
+                    <title>{label}</title>
+                  </path>
+                );
+              })}
+            </g>
+            <g className="india-map__markers" aria-hidden="true">
+              {INDIA_MAP_PATHS.filter((path) => SMALL_TERRITORIES.has(path.code)).map((path) => (
+                <circle
+                  key={path.code}
+                  cx={path.label[0]}
+                  cy={path.label[1]}
+                  r={currentCode === path.code || selected.includes(path.code) ? 5.5 : 3.5}
+                />
+              ))}
+            </g>
+          </svg>
+          <p className="india-map-stage__note">Boundaries provide geographic orientation; values and filters are available without the map.</p>
+        </div>
+
+        <aside className="india-map-index" aria-label="State and union territory data index">
+          <div className="india-map-readout" aria-live="polite" aria-atomic="true">
+            <p className="file-label">Current map record</p>
+            <div className="india-map-readout__code" aria-hidden="true">{current?.code ?? 'IN'}</div>
+            <h3>{current?.name ?? currentMapPath?.name ?? 'India'}</h3>
+            <strong className="num">{current?.value === null || current?.value === undefined ? 'No data' : `${current.value.toFixed(1)}%`}</strong>
+            <p>{current?.detail ?? 'Focus a state or union territory to inspect its value.'}</p>
+            {current && (
               <button
-                key={code}
                 type="button"
-                className={`tile${value === null ? ' tile-none' : ''}`}
-                style={value === null ? undefined : { background: bg }}
-                aria-pressed={selected.includes(code)}
-                aria-label={`${d?.name ?? code}: ${value === null ? 'no data' : `${value.toFixed(0)}%`} — ${d?.detail ?? ''}. Toggle to filter.`}
-                title={`${d?.name ?? code} — ${d?.detail ?? 'no data'}`}
-                onClick={() => onToggle(code)}
+                className="btn btn-small"
+                aria-pressed={selected.includes(current.code)}
+                onClick={() => onToggle(current.code)}
               >
-                <span className="tile-code" aria-hidden="true" style={{ color: fg }}>{code}</span>
-                <span className="tile-val" aria-hidden="true" style={{ color: fg, opacity: 0.92 }}>{value === null ? '—' : `${value.toFixed(0)}%`}</span>
+                {selected.includes(current.code) ? 'Remove state filter' : 'Filter to this state'}
               </button>
-            );
-          })
-        )}
+            )}
+          </div>
+
+          <ul className="india-map-list" aria-label="All state and union territory values">
+            {sorted.map((datum) => {
+              const isSelected = selected.includes(datum.code);
+              return (
+                <li key={datum.code}>
+                  <button
+                    type="button"
+                    className={currentCode === datum.code ? 'is-current' : undefined}
+                    aria-label={`${datum.name}: ${datum.value === null ? 'no data' : `${datum.value.toFixed(1)} percent`}. ${isSelected ? 'Selected; activate to remove filter.' : 'Activate to filter.'}`}
+                    aria-pressed={isSelected}
+                    onFocus={() => setActiveCode(datum.code)}
+                    onMouseEnter={() => setActiveCode(datum.code)}
+                    onClick={() => onToggle(datum.code)}
+                  >
+                    <span>{datum.code}</span>
+                    <strong>{datum.name}</strong>
+                    <i className="num">{datum.value === null ? '—' : `${datum.value.toFixed(0)}%`}</i>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </aside>
       </div>
-      <div className="tile-legend">
+
+      <div className="tile-legend" aria-label={`Color scale from zero to ${max.toFixed(0)} percent`}>
         <span>0%</span>
         <span className="swatches" aria-hidden="true">
-          {RAMP.map((c) => (
-            <span key={c} className="sw" style={{ background: c }} />
-          ))}
+          {RAMP.map(([color]) => <span key={color} className="sw" style={{ background: color }} />)}
         </span>
         <span>{max.toFixed(0)}%</span>
         <span aria-hidden="true">·</span>
         <span className="sw" style={{ background: 'var(--seq-none)', border: '1px dashed var(--line)', width: 14 }} aria-hidden="true" />
         <span>no data</span>
-        <button type="button" className="btn btn-small" aria-expanded={showTable} aria-controls={tableId} onClick={() => setShowTable((s) => !s)}>
-          {showTable ? 'Hide' : 'Show'} data table
+        <button
+          type="button"
+          className="btn btn-small"
+          aria-expanded={showTable}
+          aria-controls={tableId}
+          onClick={() => setShowTable((state) => !state)}
+        >
+          {showTable ? 'Hide' : 'Show'} accessible data table
         </button>
       </div>
+
       {showTable && (
         <div className="table-scroll" id={tableId} style={{ marginTop: '0.8rem' }}>
           <table className="data">
-            <caption>{metricLabel} — same data as the tile view</caption>
+            <caption>{metricLabel} — same data as the geographic map</caption>
             <thead>
-              <tr><th scope="col">State/UT</th><th scope="col" className="num">Value</th><th scope="col">Basis</th></tr>
+              <tr><th scope="col">State/UT</th><th scope="col" className="num">Value</th><th scope="col">Basis</th><th scope="col">Filter</th></tr>
             </thead>
             <tbody>
-              {[...data].sort((a, b) => a.name.localeCompare(b.name)).map((d) => (
-                <tr key={d.code}>
-                  <th scope="row" style={{ fontWeight: 500 }}>{d.name}</th>
-                  <td className="num">{d.value === null ? '—' : `${d.value.toFixed(1)}%`}</td>
-                  <td>{d.detail}</td>
+              {[...data].sort((a, b) => a.name.localeCompare(b.name)).map((datum) => (
+                <tr key={datum.code}>
+                  <th scope="row" style={{ fontWeight: 500 }}>{datum.name}</th>
+                  <td className="num">{datum.value === null ? '—' : `${datum.value.toFixed(1)}%`}</td>
+                  <td>{datum.detail}</td>
+                  <td>
+                    <button
+                      type="button"
+                      className="btn btn-small"
+                      aria-pressed={selected.includes(datum.code)}
+                      onClick={() => onToggle(datum.code)}
+                    >
+                      {selected.includes(datum.code) ? 'Remove' : 'Select'}
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

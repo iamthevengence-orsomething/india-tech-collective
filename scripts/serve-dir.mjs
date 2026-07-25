@@ -5,9 +5,10 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { existsSync, statSync } from 'node:fs';
-import { extname, join, normalize } from 'node:path';
+import { extname, join, resolve, sep } from 'node:path';
 
 const [dir = 'dist', port = '4331'] = process.argv.slice(2);
+const root = resolve(dir);
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css',
   '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png',
@@ -18,12 +19,12 @@ const TYPES = {
 createServer(async (req, res) => {
   try {
     const url = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-    let path = normalize(join(dir, url)).replace(/^(\.\.[/\\])+/, '');
-    if (!path.startsWith(dir)) path = dir;
+    let path = resolve(root, url.replace(/^[/\\]+/, ''));
+    if (path !== root && !path.startsWith(`${root}${sep}`)) path = root;
     if (existsSync(path) && statSync(path).isDirectory()) path = join(path, 'index.html');
     else if (!existsSync(path) && existsSync(path + '.html')) path = path + '.html';
     if (!existsSync(path)) {
-      const notFound = join(dir, '404.html');
+      const notFound = join(root, '404.html');
       res.writeHead(404, { 'content-type': 'text/html; charset=utf-8' });
       res.end(existsSync(notFound) ? await readFile(notFound) : 'Not found');
       return;

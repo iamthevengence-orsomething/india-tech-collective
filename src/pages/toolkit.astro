@@ -129,8 +129,9 @@ const repoIssues = 'https://github.com/iamthevengence-orsomething/india-tech-col
       <a class="btn btn-primary" href={`${repoIssues}?title=${encodeURIComponent('Toolkit proposal: [tool name]')}`} rel="noopener">Propose a tool ↗</a>
       <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('Toolkit correction: [tool name]')}`} rel="noopener">Correct an entry ↗</a>
     </div>
-    <ShareRow
-      client:visible
+      <ShareRow
+        client:visible
+        cardHref="/og/toolkit.png"
       spec={{
         headline: 'The India Tech Collective — tools for difficult networks',
         definition: 'Twenty-seven open-source tools for offline communication, secure channels, circumvention, evidence, monitoring, and public-interest work.',
@@ -188,6 +189,7 @@ const repoIssues = 'https://github.com/iamthevengence-orsomething/india-tech-col
   .scenario-buttons button:hover { background: var(--paper-2); }
   .scenario-buttons button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
   .scenario-buttons span { font-family: var(--mono); color: var(--seal-red); }
+  .scenario-buttons button[aria-pressed="true"] span { color: var(--phosphor); }
   .scenario-buttons strong { margin-top: 2rem; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; }
   .scenario-buttons small { margin-top: auto; color: var(--muted); font-size: .72rem; }
   .scenario-buttons button[aria-pressed="true"] small { color: color-mix(in srgb, var(--paper) 62%, transparent); }

@@ -48,9 +48,12 @@ export function fail(step: string, errors: string[]): never {
 
 /** Run a python extractor from the project venv, returning parsed JSON stdout. */
 export function runPython<T = unknown>(script: string, args: string[]): T {
-  const out = execFileSync('.venv/bin/python', [script, ...args], {
+  const python = process.env.ITC_PYTHON
+    ?? (process.platform === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python');
+  const out = execFileSync(python, [script, ...args], {
     maxBuffer: 256 * 1024 * 1024,
     encoding: 'utf8',
+    env: { ...process.env, PYTHONUTF8: '1', PYTHONIOENCODING: 'utf-8' },
   });
   return JSON.parse(out) as T;
 }

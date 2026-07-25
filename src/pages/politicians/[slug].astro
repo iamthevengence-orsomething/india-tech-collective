@@ -200,6 +200,7 @@ const desc = `${p.name} (${p.partyShort}), ${p.constituency}, ${p.stateName} —
     <section class="section">
       <ShareRow
         client:visible
+        cardHref={`/og/profiles/${p.slug}.png`}
         spec={{
           headline: `${p.name} (${p.partyShort}, ${p.constituency}) — ${p.declaredCases ?? '?'} case(s) self-declared in the 2024 election affidavit`,
           definition: 'Self-declared criminal cases from the sworn Form 26 election affidavit, with procedural stage as stated.',

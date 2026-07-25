@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { PoliticianIndexRow } from '../../lib/schemas/artifacts';
 
 /**
@@ -15,6 +15,10 @@ export default function DataTable({ rows }: { rows: PoliticianIndexRow[] }) {
   const [sortKey, setSortKey] = useState<SortKey>('name');
   const [dir, setDir] = useState<1 | -1>(1);
   const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    setPage(0);
+  }, [rows]);
 
   const sorted = useMemo(() => {
     const copy = [...rows];
@@ -41,6 +45,7 @@ export default function DataTable({ rows }: { rows: PoliticianIndexRow[] }) {
     >
       <button
         type="button"
+        aria-label={`Sort by ${label}${sortKey === key ? `, currently ${dir === 1 ? 'ascending' : 'descending'}` : ''}`}
         onClick={() => {
           if (sortKey === key) setDir((d) => (d === 1 ? -1 : 1));
           else {

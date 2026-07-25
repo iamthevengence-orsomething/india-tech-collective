@@ -14,12 +14,12 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
           Where a record ends, the gap is marked.
         </p>
       </div>
-      <div class="footer-system" aria-label="Current site status">
-        <div><span>dataset</span><strong>{build.datasetVersion}</strong></div>
-        <div><span>updated</span><strong>{build.dataAsOf}</strong></div>
-        <div><span>mode</span><strong>{build.dataMode}</strong></div>
-        <div><span>tracking</span><strong>none</strong></div>
-      </div>
+      <dl class="footer-system" aria-label="Current site status">
+        <div><dt>dataset</dt><dd>{build.datasetVersion}</dd></div>
+        <div><dt>updated</dt><dd>{build.dataAsOf}</dd></div>
+        <div><dt>mode</dt><dd>{build.dataMode}</dd></div>
+        <div><dt>tracking</dt><dd>none</dd></div>
+      </dl>
     </div>
 
     <div class="foot-grid">

@@ -9,7 +9,12 @@ import { existsSync } from 'node:fs';
  * Uses the pre-staged Chromium when present (remote env) instead of downloading.
  */
 const stagedChromium = '/opt/pw-browsers/chromium';
-const launchOptions = existsSync(stagedChromium) ? { executablePath: stagedChromium } : {};
+const windowsChrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+const launchOptions = existsSync(stagedChromium)
+  ? { executablePath: stagedChromium }
+  : existsSync(windowsChrome)
+    ? { executablePath: windowsChrome }
+    : {};
 
 export default defineConfig({
   testDir: 'tests/e2e',
@@ -28,7 +33,7 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: 'node scripts/serve-dir.mjs dist 4331',
+      command: 'node scripts/serve-dir.mjs dist/client 4331',
       url: 'http://127.0.0.1:4331/',
       reuseExistingServer: true,
       timeout: 20_000,

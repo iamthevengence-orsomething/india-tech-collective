@@ -88,6 +88,7 @@ export default function DisclosuresLens() {
       {cs && <p className="metric-caption">{cs.note}</p>}
 
       <ShareRow
+        cardHref="/og/politicians.png"
         spec={{
           headline: `Party-wise affidavit disclosures — ${artifact.cohortLabel}`,
           definition: 'Share of covered representatives per party declaring ≥1 case in their sworn 2024 affidavit (people, not cases; visible denominators; small parties suppressed from ranking).',

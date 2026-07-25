@@ -203,7 +203,7 @@ export default function EnforcementLens() {
           url: typeof window !== 'undefined' ? window.location.href : 'https://www.indiatechcollective.org/corruption/',
           disclaimer: 'More registered cases can reflect more reporting or stronger enforcement, not just more corruption.',
         }}
-        cardHref="/og/card-corruption-enforcement.png"
+        cardHref="/og/corruption.png"
       />
     </div>
   );

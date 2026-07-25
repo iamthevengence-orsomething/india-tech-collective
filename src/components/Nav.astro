@@ -26,9 +26,9 @@ const primary = [
     </div>
 
     <div class="nav-actions">
-      <span class="nav-mode-label" title="English interface; Hindi contribution lane is open">EN / हिं</span>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" id="navToggle">
-        Menu
+      <span class="nav-mode-label" title="English interface; Hindi contribution lane is open">EN / <span lang="hi">हिं</span></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu" id="navToggle">
+        <span aria-hidden="true">Menu</span>
       </button>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to blackout mode" title="Blackout mode">
         <span aria-hidden="true">◐</span>
@@ -56,9 +56,21 @@ const primary = [
     }
 
     if (menuButton && menu) {
-      menuButton.addEventListener('click', function () {
-        var open = menu.classList.toggle('open');
+      function setMenu(open) {
+        menu.classList.toggle('open', open);
         menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      menuButton.addEventListener('click', function () {
+        setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+      });
+      menu.addEventListener('click', function (event) {
+        if (event.target && event.target.closest('a')) setMenu(false);
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape' || menuButton.getAttribute('aria-expanded') !== 'true') return;
+        setMenu(false);
+        menuButton.focus();
       });
     }
 

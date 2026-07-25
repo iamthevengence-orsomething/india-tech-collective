@@ -172,6 +172,20 @@
       "notes": []
     },
     {
+      "id": "bharatlas-lgd-states-2024",
+      "publisher": "Local Government Directory via Bharatlas",
+      "title": "States and Union Territories (2024 LGD boundary layer)",
+      "url": "https://bharatlas.com/view/lgd_states",
+      "sourceType": "boundary_data",
+      "licenceName": "CC0-1.0 / CC-BY-4.0",
+      "licenceOrTermsUrl": "https://bharatlas.com/view/lgd_states",
+      "retrievalDate": "2026-07-24",
+      "notes": [
+        "36 state and Union Territory polygons from the 2024 Local Government Directory snapshot.",
+        "Geometry is projected and visually simplified at build time; source coordinates remain authoritative."
+      ]
+    },
+    {
       "id": "dst-geospatial-guidelines",
       "publisher": "Department of Science and Technology",
       "title": "Guidelines on acquiring and producing geospatial data (2021)",

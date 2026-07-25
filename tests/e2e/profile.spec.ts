@@ -12,12 +12,23 @@ test.describe('representative profile', () => {
     await expect(page.locator('.case-card').first().getByText('Machine-checked, not human-verified')).toBeVisible();
     // the standing disclaimer
     await expect(page.getByText('The case may have changed since then.').first()).toBeVisible();
-    await expect(page.getByText('may use a different spelling').or(page.getByText('presumed innocent')).first()).toBeVisible();
+    await expect(page.getByText('Only a court decides guilt').first()).toBeVisible();
     // correction link and source link
     await expect(page.locator('a[href="/corrections/"]').first()).toBeVisible();
     await expect(page.locator('a[href*="adrindia.org"]').first()).toBeVisible();
     // adverse machine-checked profile is noindexed until human review
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+    // every profile exposes its generated standalone image card
+    const card = page.locator('img[src="/og/profiles/adv-dean-kuriakose-idukki.png"]');
+    await expect(card).toBeVisible();
+    await expect(card).toHaveAttribute('alt', /Share card:.*Dean Kuriakose/);
+    await expect(page.getByRole('link', { name: 'Download PNG' })).toHaveAttribute('download', /dean-kuriakose/);
+  });
+
+  test('profile share image responds as a PNG', async ({ request }) => {
+    const response = await request.get('/og/profiles/adv-dean-kuriakose-idukki.png');
+    expect(response.status()).toBe(200);
+    expect(response.headers()['content-type']).toContain('image/png');
   });
 
   test('zero-case profile states the sourced zero', async ({ page }) => {

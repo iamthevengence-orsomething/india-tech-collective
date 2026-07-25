@@ -10,6 +10,7 @@ import DataTable from '../charts/DataTable';
 import ShareRow from './ShareRow';
 
 const FILTER_KEYS = ['q', 'state', 'party', 'cases', 'statute', 'stage', 'review', 'cmpmode', 'cmp'];
+const SEARCH_FILTER_KEYS = ['q', 'state', 'party', 'cases', 'statute', 'stage', 'review'];
 
 const CASES_OPTIONS = [
   { value: '', label: 'Any declared-case status' },
@@ -187,57 +188,104 @@ export default function PoliticiansDashboard() {
   const cmpKeys = filters.cmp ? filters.cmp.split(',').filter(Boolean).slice(0, 3) : [];
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://www.indiatechcollective.org/politicians/';
-  const activeFilterCount = FILTER_KEYS.filter((k) => filters[k]).length;
+  const activeFilterCount = SEARCH_FILTER_KEYS.filter((key) => filters[key]).length;
 
   return (
     <div>
-      {/* ---------- filters ---------- */}
-      <section className="section" aria-label="Search and filters">
-        <div className="filter-bar" role="search">
-          <input
-            className="control search-box"
-            type="search"
-            placeholder="Find your MP, constituency, state or party…"
-            aria-label="Search representative, constituency, state, house or party"
-            value={filters.q ?? ''}
-            onChange={(e) => set('q', e.target.value)}
-          />
-          <select className="control" aria-label="Filter by state or union territory" value={selectedStates[0] && selectedStates.length === 1 ? selectedStates[0] : selectedStates.length > 1 ? '__multi' : ''} onChange={(e) => set('state', e.target.value === '__multi' ? filters.state ?? '' : e.target.value)}>
-            <option value="">All states/UTs</option>
-            {selectedStates.length > 1 && <option value="__multi">{selectedStates.length} selected (via tiles)</option>}
-            {[...new Map(rows.map((r) => [r.state, r.stateName])).entries()].sort((a, b) => a[1].localeCompare(b[1])).map(([code, name]) => (
-              <option key={code} value={code}>{name}</option>
-            ))}
-          </select>
-          <select className="control" aria-label="Filter by party at election" value={filters.party ?? ''} onChange={(e) => set('party', e.target.value)}>
-            <option value="">All parties (at election)</option>
-            {partiesAll.map((p) => <option key={p.id} value={p.id} title={p.name}>{p.label}</option>)}
-          </select>
-          <select className="control" aria-label="Filter by declared-case status" value={filters.cases ?? ''} onChange={(e) => set('cases', e.target.value)}>
-            {CASES_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-          </select>
-          <select className="control" aria-label="Filter by statute category" value={filters.statute ?? ''} onChange={(e) => set('statute', e.target.value)}>
-            <option value="">Any statute</option>
-            <option value="pcact">Prevention of Corruption Act (reviewed mapping)</option>
-          </select>
-          <select className="control" aria-label="Filter by case procedural stage" value={filters.stage ?? ''} onChange={(e) => set('stage', e.target.value)}>
-            <option value="">Any stage (as declared)</option>
-            <option value="chargesframed">Charges framed in ≥1 case</option>
-          </select>
-          <select className="control" aria-label="Filter by review status" value={filters.review ?? ''} onChange={(e) => set('review', e.target.value)}>
-            <option value="">Any review status</option>
-            <option value="machine_checked">Machine-checked</option>
-            <option value="human_verified">Human-verified (none yet)</option>
-          </select>
-          <span className="fchip" title="All records derive from the June 2024 affidavit digest">House: Lok Sabha · Election: 2024</span>
-          {activeFilterCount > 0 && (
-            <button type="button" className="btn btn-small" onClick={clearAll}>Clear all filters</button>
-          )}
+      {/* ---------- finder + immediate results ---------- */}
+      <section className="section record-finder" aria-labelledby="finder-h">
+        <div className="record-finder__head">
+          <div>
+            <p className="file-label">Search the public file</p>
+            <h2 className="section-title" id="finder-h">Find a representative.</h2>
+          </div>
+          <p>
+            Search by person, constituency, state, or party. Results update below without moving focus.
+          </p>
         </div>
-        <p className="result-note" role="status" aria-live="polite">
-          Showing <strong className="num">{filtered.length}</strong> of {rows.length} representatives
-          {filters.q ? ` matching “${filters.q}”` : ''}. Filters are saved in the page URL — copy it to share this exact view.
-        </p>
+
+        <form className="filter-bar record-filters" role="search" aria-labelledby="finder-h" onSubmit={(event) => event.preventDefault()}>
+          <div className="filter-field filter-field--search">
+            <label htmlFor="representative-search">Representative or place</label>
+            <input
+              id="representative-search"
+              className="control search-box"
+              type="search"
+              placeholder="Name, constituency, state, party…"
+              autoComplete="off"
+              aria-describedby="representative-results-count"
+              value={filters.q ?? ''}
+              onChange={(event) => set('q', event.target.value)}
+            />
+          </div>
+          <div className="filter-field">
+            <label htmlFor="representative-state">State or UT</label>
+            <select
+              id="representative-state"
+              className="control"
+              value={selectedStates[0] && selectedStates.length === 1 ? selectedStates[0] : selectedStates.length > 1 ? '__multi' : ''}
+              onChange={(event) => set('state', event.target.value === '__multi' ? filters.state ?? '' : event.target.value)}
+            >
+              <option value="">All states/UTs</option>
+              {selectedStates.length > 1 && <option value="__multi">{selectedStates.length} selected (via map)</option>}
+              {[...new Map(rows.map((row) => [row.state, row.stateName])).entries()].sort((a, b) => a[1].localeCompare(b[1])).map(([code, name]) => (
+                <option key={code} value={code}>{name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="filter-field">
+            <label htmlFor="representative-party">Party at election</label>
+            <select id="representative-party" className="control" value={filters.party ?? ''} onChange={(event) => set('party', event.target.value)}>
+              <option value="">All parties</option>
+              {partiesAll.map((party) => <option key={party.id} value={party.id} title={party.name}>{party.label}</option>)}
+            </select>
+          </div>
+          <div className="filter-field">
+            <label htmlFor="representative-cases">Declared cases</label>
+            <select id="representative-cases" className="control" value={filters.cases ?? ''} onChange={(event) => set('cases', event.target.value)}>
+              {CASES_OPTIONS.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+            </select>
+          </div>
+          <div className="filter-field">
+            <label htmlFor="representative-statute">Statute</label>
+            <select id="representative-statute" className="control" value={filters.statute ?? ''} onChange={(event) => set('statute', event.target.value)}>
+              <option value="">Any statute</option>
+              <option value="pcact">Prevention of Corruption Act</option>
+            </select>
+          </div>
+          <div className="filter-field">
+            <label htmlFor="representative-stage">Procedural stage</label>
+            <select id="representative-stage" className="control" value={filters.stage ?? ''} onChange={(event) => set('stage', event.target.value)}>
+              <option value="">Any declared stage</option>
+              <option value="chargesframed">Charges framed in ≥1 case</option>
+            </select>
+          </div>
+          <div className="filter-field">
+            <label htmlFor="representative-review">Review status</label>
+            <select id="representative-review" className="control" value={filters.review ?? ''} onChange={(event) => set('review', event.target.value)}>
+              <option value="">Any review status</option>
+              <option value="machine_checked">Machine-checked</option>
+              <option value="human_verified">Human-verified (none yet)</option>
+            </select>
+          </div>
+          <div className="record-filters__meta">
+            <span className="fchip" title="All records derive from the June 2024 affidavit digest">Lok Sabha · 2024 election</span>
+            {activeFilterCount > 0 && (
+              <button type="button" className="btn btn-small" onClick={clearAll}>Clear {activeFilterCount} filter{activeFilterCount === 1 ? '' : 's'}</button>
+            )}
+          </div>
+        </form>
+
+        <div className="record-results__head">
+          <h3 id="representative-results-h">Representative files</h3>
+          <p id="representative-results-count" className="result-note" role="status" aria-live="polite" aria-atomic="true">
+            Showing <strong className="num">{filtered.length}</strong> of {rows.length} representatives
+            {filters.q ? ` matching “${filters.q}”` : ''}. Filters are preserved in the URL.
+          </p>
+        </div>
+        <div aria-labelledby="representative-results-h">
+          <DataTable rows={filtered} />
+        </div>
       </section>
 
       {/* ---------- geography ---------- */}
@@ -245,7 +293,8 @@ export default function PoliticiansDashboard() {
         <h2 className="section-title" id="geo-h">Where declared cases concentrate</h2>
         <p className="section-sub">
           Share of covered representatives (current filter) who declared at least one criminal case, by state/UT.
-          Tiles approximate geography and depict no boundary; press a tile to filter by that state.
+          The geographic layer uses 2024 Local Government Directory state and Union Territory boundaries.
+          Select a region on the map or in the adjacent data index to filter the representative files above.
         </p>
         <StateGrid data={tileData} selected={selectedStates} onToggle={toggleState} metricLabel="% of covered representatives declaring ≥1 case" />
         <p className="metric-caption">
@@ -327,12 +376,6 @@ export default function PoliticiansDashboard() {
         {cmpKeys.length < 2 && <p className="small" style={{ color: 'var(--faint)' }}>Pick two or three to see a side-by-side comparison (full cohort, visible denominators).</p>}
       </section>
 
-      {/* ---------- table ---------- */}
-      <section className="section" aria-labelledby="table-h">
-        <h2 className="section-title" id="table-h">All representatives</h2>
-        <DataTable rows={filtered} />
-      </section>
-
       {/* ---------- downloads + share ---------- */}
       <section className="section" aria-labelledby="dl-h">
         <h2 className="section-title" id="dl-h">Take the data with you</h2>
@@ -351,7 +394,7 @@ export default function PoliticiansDashboard() {
             url: shareUrl,
             disclaimer: DEFAULT_DISCLAIMER,
           }}
-          cardHref="/og/card-politicians.png"
+          cardHref="/og/politicians.png"
         />
       </section>
     </div>

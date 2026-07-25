@@ -70,7 +70,7 @@ const buildInfo = loadBuildInfo<{ dataAsOf: string }>();
   </div>
 )}
 <Nav current={current} />
-<main id="main" data-print-date={buildInfo.dataAsOf}>
+<main id="main" tabindex="-1" data-print-date={buildInfo.dataAsOf}>
   <slot />
 </main>
 <Footer />

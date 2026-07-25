@@ -218,6 +218,21 @@
       "url": "https://onlinemaps.surveyofindia.gov.in/Digital_Product_Show.aspx"
     },
     {
+      "id": "bharatlas-lgd-states-2024",
+      "licenceName": "CC0-1.0 / CC-BY-4.0",
+      "licenceOrTermsUrl": "https://bharatlas.com/view/lgd_states",
+      "notes": [
+        "36 state and Union Territory polygons from the 2024 Local Government Directory snapshot.",
+        "Geometry is projected and visually simplified at build time; source coordinates remain authoritative."
+      ],
+      "publisher": "Local Government Directory via Bharatlas",
+      "retrieval": null,
+      "retrievalDate": "2026-07-24",
+      "sourceType": "boundary_data",
+      "title": "States and Union Territories (2024 LGD boundary layer)",
+      "url": "https://bharatlas.com/view/lgd_states"
+    },
+    {
       "id": "dst-geospatial-guidelines",
       "notes": [],
       "publisher": "Department of Science and Technology",
