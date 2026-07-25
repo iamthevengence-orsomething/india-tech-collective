@@ -28,9 +28,10 @@ const fonts = [
 ];
 
 const C = {
-  bg: '#F6F1E5', surface: '#FBF7EC', ink: '#211A10', strong: '#14100A',
-  muted: 'rgba(33,26,16,0.72)', faint: 'rgba(33,26,16,0.55)',
-  saffron: '#9A7420', green: '#6E5214', line: 'rgba(33,26,16,0.28)',
+  bg: '#F4EDDE', surface: '#FAF4E8', ink: '#1A1611', strong: '#100D09',
+  muted: 'rgba(26,22,17,0.72)', faint: 'rgba(26,22,17,0.53)',
+  violet: '#4B3A8F', violetDark: '#33275E', red: '#A52C24',
+  khaki: '#756846', line: 'rgba(26,22,17,0.30)',
 };
 
 const el = (type: string, style: Record<string, unknown>, children?: unknown): any => ({ type, props: { style, ...(children !== undefined ? { children } : {}) } });
@@ -50,33 +51,87 @@ interface CardSpec {
 function cardTree(spec: CardSpec, w: number, h: number) {
   const square = w === h;
   return el('div', {
-    width: '100%', height: '100%', display: 'flex', flexDirection: 'column',
-    background: C.bg, padding: square ? 60 : 52, fontFamily: 'Garamond', color: C.ink,
-    justifyContent: 'space-between',
-    border: `10px solid ${C.bg}`, boxShadow: `inset 0 0 0 2px ${C.line}`,
+    width: '100%', height: '100%', display: 'flex', position: 'relative',
+    background: C.bg, padding: square ? 52 : 42, fontFamily: 'Garamond', color: C.ink,
+    border: `12px solid ${C.bg}`, boxShadow: `inset 0 0 0 2px ${C.ink}`,
   }, [
-    el('div', { display: 'flex', flexDirection: 'column', padding: square ? 24 : 20 }, [
-      txt('INDIA TECH COLLECTIVE — ' + spec.kicker, {
-        fontFamily: 'Mono', fontSize: square ? 22 : 19, letterSpacing: 6, color: C.green, fontWeight: 500,
-      }),
-      txt(spec.headline, {
-        fontFamily: 'Garamond', fontWeight: 600, color: C.strong,
-        fontSize: square ? 68 : 58, lineHeight: 1.08, marginTop: 26, maxWidth: w - (square ? 160 : 140),
-      }),
-      spec.stat
-        ? el('div', { display: 'flex', alignItems: 'baseline', gap: 22, marginTop: 30 }, [
-            txt(spec.stat.value, { fontFamily: 'Mono', fontWeight: 500, fontSize: square ? 104 : 86, color: C.saffron, lineHeight: 1 }),
-            txt(spec.stat.label, { fontSize: square ? 31 : 26, color: C.muted, maxWidth: w * 0.5, lineHeight: 1.3 }),
-          ])
-        : el('div', { display: 'flex' }),
-    ]),
-    el('div', { display: 'flex', flexDirection: 'column', gap: 11, padding: square ? 24 : 20 }, [
-      txt(spec.definition, { fontSize: square ? 27 : 23, color: C.ink, maxWidth: w - (square ? 160 : 140), lineHeight: 1.35 }),
-      txt(`Data as of ${spec.asOf} · ${spec.source}`, { fontFamily: 'Mono', fontSize: square ? 19 : 16, color: C.muted }),
-      txt(spec.disclaimer, { fontFamily: 'GaramondItalic', fontStyle: 'italic', fontSize: square ? 24 : 21, color: C.faint, maxWidth: w - (square ? 160 : 140), lineHeight: 1.3 }),
-      el('div', { display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: `1px solid ${C.line}`, paddingTop: 16, marginTop: 4 }, [
-        txt(spec.url, { fontFamily: 'Mono', fontSize: square ? 21 : 18, color: C.green, fontWeight: 500 }),
-        txt('A PUBLIC RECORD, KEPT IN PUBLIC', { fontFamily: 'Mono', fontSize: square ? 15 : 13, letterSpacing: 3, color: C.faint }),
+    el('div', {
+      display: 'flex', width: square ? 46 : 38, marginRight: square ? 28 : 24,
+      borderRight: `3px solid ${C.red}`, alignItems: 'center', justifyContent: 'center',
+    }, txt('PUBLIC / FILE / ITC', {
+      fontFamily: 'Mono', fontSize: square ? 14 : 12, letterSpacing: 4,
+      color: C.khaki, writingMode: 'vertical-rl',
+    })),
+    el('div', { display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-between' }, [
+      el('div', { display: 'flex', flexDirection: 'column' }, [
+        el('div', {
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          paddingBottom: square ? 16 : 13, borderBottom: `1px solid ${C.line}`,
+        }, [
+          txt('INDIA TECH COLLECTIVE / ' + spec.kicker, {
+            fontFamily: 'Mono', fontSize: square ? 20 : 16, letterSpacing: 4, color: C.violet, fontWeight: 500,
+          }),
+          txt('SOURCE ATTACHED', {
+            fontFamily: 'Mono', fontSize: square ? 15 : 12, letterSpacing: 2, color: C.violet,
+            border: `2px solid ${C.violet}`, padding: square ? '8px 12px' : '6px 10px',
+          }),
+        ]),
+        txt(spec.headline, {
+          fontFamily: 'Garamond', fontWeight: 600, color: C.strong,
+          fontSize: square ? 68 : 57, lineHeight: .99, marginTop: square ? 28 : 21,
+          maxWidth: w - (square ? 190 : 170),
+        }),
+        spec.stat
+          ? el('div', {
+              display: 'flex', alignItems: 'center', gap: square ? 22 : 18,
+              marginTop: square ? 32 : 23, paddingTop: square ? 22 : 16,
+              borderTop: `1px solid ${C.line}`,
+            }, [
+              txt(spec.stat.value, {
+                fontFamily: 'Mono', fontWeight: 500, fontSize: square ? 100 : 78,
+                letterSpacing: -6, color: C.violetDark, lineHeight: .85,
+              }),
+              txt(spec.stat.label, {
+                fontSize: square ? 29 : 23, color: C.muted,
+                maxWidth: w * .46, lineHeight: 1.23,
+              }),
+            ])
+          : el('div', { display: 'flex' }),
+      ]),
+      el('div', { display: 'flex', flexDirection: 'column', gap: square ? 13 : 9 }, [
+        txt(spec.definition, {
+          fontSize: square ? 26 : 21, color: C.ink,
+          maxWidth: w - (square ? 190 : 170), lineHeight: 1.27,
+        }),
+        el('div', { display: 'flex', gap: 10, marginTop: 2 }, [
+          txt('PUBLIC RECORD', {
+            fontFamily: 'Mono', fontSize: square ? 14 : 11, letterSpacing: 2,
+            color: C.violet, border: `2px solid ${C.violet}`, padding: '6px 9px',
+          }),
+          txt(spec.disclaimer.toLowerCase().includes('accusation') ? 'ACCUSATION ≠ CONVICTION' : 'KEPT IN PUBLIC', {
+            fontFamily: 'Mono', fontSize: square ? 14 : 11, letterSpacing: 2,
+            color: C.red, border: `2px solid ${C.red}`, padding: '6px 9px',
+          }),
+        ]),
+        txt(`DATA AS OF ${spec.asOf} / ${spec.source}`, {
+          fontFamily: 'Mono', fontSize: square ? 17 : 13, color: C.muted,
+        }),
+        txt(spec.disclaimer, {
+          fontFamily: 'GaramondItalic', fontStyle: 'italic',
+          fontSize: square ? 23 : 18, color: C.faint,
+          maxWidth: w - (square ? 190 : 170), lineHeight: 1.22,
+        }),
+        el('div', {
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          borderTop: `2px solid ${C.ink}`, paddingTop: square ? 15 : 11, marginTop: 3,
+        }, [
+          txt(spec.url, {
+            fontFamily: 'Mono', fontSize: square ? 19 : 15, color: C.violet, fontWeight: 500,
+          }),
+          txt('RECORD://PUBLIC', {
+            fontFamily: 'Mono', fontSize: square ? 13 : 10, letterSpacing: 3, color: C.khaki,
+          }),
+        ]),
       ]),
     ]),
   ]);
@@ -95,7 +150,7 @@ async function main() {
 
   // cache: skip when the dataset hasn't changed
   const stampFile = `${OUT}/.stamp`;
-  const stamp = `${buildInfo.datasetVersion}:${isDemo ? 'demo' : 'prod'}:v4-manuscript`;
+  const stamp = `${buildInfo.datasetVersion}:${isDemo ? 'demo' : 'prod'}:v5-public-file`;
   if (existsSync(stampFile) && readFileSync(stampFile, 'utf8') === stamp) {
     log('og', 'cache hit — images match current datasetVersion');
     return;

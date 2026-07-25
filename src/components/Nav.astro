@@ -3,7 +3,7 @@ interface Props { current?: string }
 const { current } = Astro.props;
 const primary = [
   { href: '/toolkit/', label: 'Tools', keys: ['toolkit', 'tools'] },
-  { href: '/politicians/', label: 'Record', keys: ['politicians', 'corruption', 'record'] },
+  { href: '/politicians/', label: 'Record', keys: ['politicians', 'corruption', 'record', 'coverage', 'methodology', 'sources', 'corrections'] },
   { href: '/signals/', label: 'Signals', keys: ['signals'] },
   { href: '/frontier/', label: 'Frontier', keys: ['frontier'] },
   { href: '/contribute/', label: 'Contribute', keys: ['contribute'] },
@@ -13,7 +13,10 @@ const primary = [
   <div class="site-nav-in">
     <a class="wordmark" href="/" aria-label="India Tech Collective home">
       <img class="wordmark-mark" src="/brand/profile-picture.png" width="34" height="34" alt="" />
-      <span>India Tech Collective</span>
+      <span class="wordmark-copy">
+        <strong>India Tech Collective</strong>
+        <small>record://public</small>
+      </span>
     </a>
 
     <div class="nav-links" id="navLinks">
@@ -23,6 +26,7 @@ const primary = [
     </div>
 
     <div class="nav-actions">
+      <span class="nav-mode-label" title="English interface; Hindi contribution lane is open">EN / हिं</span>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" id="navToggle">
         Menu
       </button>

@@ -1,7 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
 import { loadArtifact } from '../lib/data';
 import { formatDate } from '../lib/format';
+
 const registry = loadArtifact<any>('sources');
 const typeLabel: Record<string, string> = {
   official_portal: 'Official portal',
@@ -14,63 +17,101 @@ const typeLabel: Record<string, string> = {
   boundary_data: 'Boundary data',
 };
 ---
-<Base
-  title="Source registry | India Tech Collective"
-  description="Every source behind the accountability dashboards: publisher, URL, licence/terms, retrieval date and known limitations — human-readable here, machine-readable at /data/sources.json."
-  path="/sources/"
-  current="methodology"
->
-  <div class="wrap">
-    <header class="page-head">
-      <p class="kicker">Sources · cite everything</p>
-      <h1 class="page-h1">Source registry</h1>
-      <p class="lede">
-        Every displayed number traces to entries below via source ids recorded on each record. Machine-readable
-        copy: <a href="/data/sources.json"><code>/data/sources.json</code></a>. Raw-file checksums live in the
-        repository manifest (<code>data/raw/manifest.json</code>).
-      </p>
-    </header>
 
-    <section class="section">
-      <div class="table-scroll">
-        <table class="data">
-          <caption>All registered sources ({registry.sources.length})</caption>
-          <thead>
-            <tr>
-              <th scope="col">Source</th>
-              <th scope="col">Publisher</th>
-              <th scope="col">Type</th>
-              <th scope="col">Licence / terms</th>
-              <th scope="col">Retrieved</th>
-              <th scope="col">Notes</th>
+<Base
+  title="Source registry — India Tech Collective"
+  description="Every source behind the accountability dashboards, with publisher, URL, licence, retrieval date, and known limitations."
+  path="/sources/"
+  current="sources"
+>
+  <PageHeader
+    file={`ITC/SOURCES/${String(registry.sources.length).padStart(3, '0')}`}
+    eyebrow="Source registry / cite everything"
+    title="The receipts drawer."
+    lede="Every displayed number resolves to a registered source. Publisher, retrieval date, terms, and known limits stay beside the link."
+    status={`${registry.sources.length} sources registered`}
+  >
+    <div class="share-row">
+      <a class="btn btn-primary" href="/data/sources.json">Open machine-readable registry</a>
+      <a class="btn" href="/methodology/">Read the method</a>
+    </div>
+  </PageHeader>
+
+  <FileSection
+    index="01"
+    eyebrow="Registry"
+    title="Every source in the build."
+    description="Source ids remain stable across the rendered pages and machine-readable artifacts."
+    wide={true}
+  >
+    <div class="registry-summary" aria-label="Source registry summary">
+      <div><span>entries</span><strong>{registry.sources.length}</strong></div>
+      <div><span>manifest</span><strong>checksummed</strong></div>
+      <div><span>retrieval</span><strong>dated</strong></div>
+      <div><span>limits</span><strong>kept visible</strong></div>
+    </div>
+
+    <div class="table-scroll source-table">
+      <table class="data">
+        <caption>Registered sources · public build</caption>
+        <thead>
+          <tr>
+            <th scope="col">Source / id</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Type</th>
+            <th scope="col">Licence / terms</th>
+            <th scope="col">Retrieved</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {registry.sources.map((source: any) => (
+            <tr id={source.id}>
+              <th scope="row">
+                <a href={source.url} rel="noopener">{source.title} ↗</a>
+                <code>{source.id}</code>
+              </th>
+              <td>{source.publisher}</td>
+              <td><span class="chip">{typeLabel[source.sourceType] ?? source.sourceType}</span></td>
+              <td class="small">
+                {source.licenceName ?? (source.licenceOrTermsUrl ? 'See terms' : '—')}
+                {source.licenceOrTermsUrl && <><br /><a href={source.licenceOrTermsUrl} rel="noopener">terms ↗</a></>}
+              </td>
+              <td class="small">
+                {source.retrieval?.retrievedAt
+                  ? formatDate(source.retrieval.retrievedAt.slice(0, 10))
+                  : source.retrievalDate
+                    ? formatDate(source.retrievalDate)
+                    : '—'}
+              </td>
+              <td class="small">{(source.notes ?? []).join(' ')}</td>
             </tr>
-          </thead>
-          <tbody>
-            {registry.sources.map((s: any) => (
-              <tr id={s.id}>
-                <th scope="row" style="font-weight:600;max-width:18rem;">
-                  <a href={s.url} rel="noopener">{s.title} ↗</a>
-                  <div class="small" style="color:var(--faint);font-weight:400;"><code>{s.id}</code></div>
-                </th>
-                <td>{s.publisher}</td>
-                <td><span class="chip">{typeLabel[s.sourceType] ?? s.sourceType}</span></td>
-                <td class="small">
-                  {s.licenceName ?? (s.licenceOrTermsUrl ? 'See terms' : '—')}
-                  {s.licenceOrTermsUrl && <><br /><a href={s.licenceOrTermsUrl} rel="noopener">terms ↗</a></>}
-                </td>
-                <td class="small">{s.retrieval?.retrievedAt ? formatDate(s.retrieval.retrievedAt.slice(0, 10)) : s.retrievalDate ? formatDate(s.retrievalDate) : '—'}</td>
-                <td class="small" style="max-width:24rem;">{(s.notes ?? []).join(' ')}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="metric-caption">
-        ADR/MyNeta material is used strictly as a single published report, cited, for non-commercial information
-        dissemination; no systematic or automated collection from their sites occurs, per their terms. Government
-        datasets are used under the Government Open Data License – India. This registry updates with every data
-        build.
-      </p>
-    </section>
-  </div>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="metric-caption">
+      ADR/MyNeta material is used as a cited published report for non-commercial information
+      dissemination; no systematic collection from their sites occurs. Government datasets
+      are used under the Government Open Data License – India. The registry rebuilds with the data.
+    </p>
+  </FileSection>
 </Base>
+
+<style>
+  .registry-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--line-strong);
+    background: var(--line-strong);
+  }
+  .registry-summary div { display: grid; gap: .6rem; padding: .9rem; background: var(--surface); }
+  .registry-summary span { font-family: var(--mono); font-size: .55rem; color: var(--faint); text-transform: uppercase; }
+  .registry-summary strong { font-family: var(--mono); color: var(--stamp-violet); font-weight: 500; }
+  .source-table table { min-width: 1050px; }
+  .source-table th[scope="row"] { max-width: 20rem; font-weight: 600; }
+  .source-table th code { display: block; margin-top: .3rem; color: var(--faint); font-size: .62rem; font-weight: 400; }
+  @media (max-width: 680px) { .registry-summary { grid-template-columns: repeat(2, 1fr); } }
+</style>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
 import { METRIC_DEFS } from '../lib/metrics/registry';
 import { loadBuildInfo } from '../lib/data';
 const build = loadBuildInfo<any>();
@@ -11,17 +12,34 @@ const build = loadBuildInfo<any>();
   current="methodology"
   ogImage="/og/methodology.png"
 >
-  <div class="wrap">
-    <header class="page-head">
-      <p class="kicker">Methodology · plain English</p>
-      <h1 class="page-h1">Every number, defined</h1>
-      <p class="lede">
-        This page explains what the data is, where it comes from, exactly how each figure is computed, and the
-        limits you should keep in mind. If anything here is unclear or wrong, use the
-        <a href="/corrections/">corrections process</a>.
-      </p>
-    </header>
+  <PageHeader
+    file="ITC/METHOD/001"
+    eyebrow="Methodology / plain English"
+    title="Every number, defined."
+    lede="What the data is, where it comes from, how each figure is computed, and where the record stops."
+    status={`dataset ${build.datasetVersion}`}
+  >
+    <div class="share-row">
+      <span class="stamp">Source · date · denominator</span>
+      <a class="btn" href="/corrections/">Challenge the method</a>
+    </div>
+  </PageHeader>
 
+  <div class="wrap">
+    <div class="trust-layout section">
+      <aside class="trust-index" aria-label="Methodology sections">
+        <p class="file-label">In this file</p>
+        <a href="#form26">Form 26</a>
+        <a href="#not-conviction">Case stages</a>
+        <a href="#sources-used">Sources used</a>
+        <a href="#metrics">Metric definitions</a>
+        <a href="#state-limits">State limits</a>
+        <a href="#statutes">Statute mapping</a>
+        <a href="#freshness">Freshness</a>
+        <a href="#corrections">Corrections</a>
+        <a href="#no-score">No composite score</a>
+        <a href="#legal">Editorial guardrails</a>
+      </aside>
     <div class="prose section">
       <h2 id="form26">What Form 26 contains</h2>
       <p>
@@ -186,6 +204,7 @@ const build = loadBuildInfo<any>();
         requires a pre-publication review by an Indian lawyer, which has <strong>not yet been done</strong> — see
         <code>docs/editorial-policy.md</code>. This site is not legal advice.
       </p>
+    </div>
     </div>
   </div>
 </Base>

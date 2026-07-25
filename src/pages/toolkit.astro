@@ -1,167 +1,237 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
 import ShareRow from '../components/islands/ShareRow.tsx';
 import { CATS, TOOLS } from '../data/tools';
+import { slugify } from '../lib/slug';
 
-const grouped = Object.entries(CATS).map(([key, cat]) => ({
-  key,
-  label: cat.label,
-  tools: TOOLS.filter((t) => t.cat === key),
-}));
+const scenarioByCategory: Record<string, string[]> = {
+  mesh: ['offline', 'slow'],
+  messaging: ['watched', 'slow'],
+  circum: ['slow', 'watched'],
+  evidence: ['offline', 'watched'],
+  monitor: ['slow'],
+  organize: ['slow'],
+  whistle: ['watched'],
+};
 const repoIssues = 'https://github.com/iamthevengence-orsomething/india-tech-collective/issues/new';
 ---
+
 <Base
-  title="The Toolkit — open-source instruments for speech under pressure | India Tech Collective"
-  description="Twenty-seven open-source tools for difficult days: mesh messengers that need no internet, secure channels, censorship circumvention, evidence preservation, monitoring, organizing and whistleblowing. Every entry links to its official source."
+  title="The Kit — open-source tools for difficult networks | India Tech Collective"
+  description="Twenty-seven open-source tools for offline messaging, secure channels, circumvention, evidence preservation, monitoring, organizing, and whistleblowing."
   path="/toolkit/"
   current="toolkit"
   ogImage="/og/toolkit.png"
 >
-  <div class="wrap">
-    <header class="page-head">
-      <p class="kicker">Part I · The Toolkit</p>
-      <h1 class="page-h1">Instruments, open to inspection</h1>
-      <p class="lede">
-        Twenty-seven open-source tools for when the network turns hostile: mesh messengers that work
-        without internet, channels that keep a confidence, lawful ways through blocks, and means of
-        preserving evidence. Every entry links to its official source; every line of code is open to
-        anyone’s reading — <em>trust is checked, not begged</em>.
-      </p>
-      <p class="metric-caption">
-        Chosen is not endorsed. Security is a moving target — read each project’s own documentation and
-        recent audits before trusting it with anything sensitive.
-      </p>
-    </header>
+  <PageHeader
+    file="ITC/KIT/027"
+    eyebrow="Tools / difficult networks"
+    title="State your situation."
+    lede="Twenty-seven open-source tools, organized by what the network is doing—not by product category alone."
+    status="27 source links attached"
+  >
+    <div class="kit-warning">
+      <span class="stamp">Source attached</span>
+      <p>Chosen is not endorsed. Security changes; inspect current project guidance before trusting a tool with sensitive work.</p>
+    </div>
+  </PageHeader>
 
-    <div class="filter-bar" id="catFilters" role="group" aria-label="Filter tools by category">
-      <button class="fchip" type="button" data-cat="all" aria-pressed="true">All · {TOOLS.length}</button>
-      {grouped.map((g) => (
-        <button class="fchip" type="button" data-cat={g.key} aria-pressed="false">{g.label} · {g.tools.length}</button>
+  <section class="scenario-panel wrap-wide" aria-labelledby="scenario-title">
+    <div>
+      <p class="file-label">Fast path / filter</p>
+      <h2 id="scenario-title">What is the network doing?</h2>
+    </div>
+    <div class="scenario-buttons" id="scenarioFilters" role="group" aria-label="Filter tools by situation">
+      <button type="button" data-scenario="offline" aria-pressed="false"><span>01</span><strong>No internet</strong><small>mesh + local evidence</small></button>
+      <button type="button" data-scenario="slow" aria-pressed="false"><span>02</span><strong>Slow / throttled</strong><small>reach + measure</small></button>
+      <button type="button" data-scenario="watched" aria-pressed="false"><span>03</span><strong>Watched</strong><small>protect + minimize</small></button>
+      <button type="button" data-scenario="all" aria-pressed="true"><span>00</span><strong>Show all</strong><small>full catalog</small></button>
+    </div>
+    <p id="scenarioResult" class="scenario-result" aria-live="polite">Showing all {TOOLS.length} tools.</p>
+  </section>
+
+  <FileSection
+    index="01"
+    eyebrow="The catalog"
+    title="Every tool keeps its limits visible."
+    description="Full catalog renders in HTML. The situation picker only narrows it."
+    wide={true}
+  >
+    <div class="tool-grid" id="toolGrid">
+      {TOOLS.map((tool, index) => (
+        <article
+          class="tool-file"
+          data-category={tool.cat}
+          data-scenarios={scenarioByCategory[tool.cat].join(' ')}
+        >
+          <div class="tool-file__top">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <i>{CATS[tool.cat].label}</i>
+          </div>
+          <h3><a href={`/tools/${slugify(tool.name)}/`}>{tool.name} →</a></h3>
+          <p class="tool-file__desc">{tool.desc}</p>
+          <div class="tool-file__proof">
+            <span>{tool.proofKind === 'why' ? 'WHEN IT MATTERS' : 'FIELD NOTE'}</span>
+            <p>{tool.proof}</p>
+          </div>
+          <div class:list={['tool-file__limit', { 'tool-file__limit--gap': !tool.caveat }]}>
+            <span>LIMITS</span>
+            <p>{tool.caveat ?? 'No project-specific limit has been added to this catalog entry yet. Check the source documentation.'}</p>
+          </div>
+          <a class="source-stamp" href={tool.url} rel="noopener">SOURCE ATTACHED</a>
+        </article>
       ))}
     </div>
+  </FileSection>
 
-    {grouped.map((g) => (
-      <section class="section cat-section" data-cat={g.key} aria-labelledby={`cat-${g.key}`}>
-        <h2 class="section-title" id={`cat-${g.key}`}>{g.label}</h2>
-        <div class="tool-rows">
-          {g.tools.map((t) => (
-            <article class="tool-row">
-              <div class="tool-head">
-                <a class="tool-name" href={t.url} rel="noopener">{t.name} <span aria-hidden="true">↗</span></a>
-                <span class="chip">{g.label}</span>
-              </div>
-              <p class="tool-desc">{t.desc}</p>
-              <p class="tool-proof"><span class="tool-proof-label">{t.proofKind === 'why' ? 'Why it matters' : 'In the field'}</span> {t.proof}</p>
-              {t.caveat && <p class="tool-caveat">⚠ {t.caveat}</p>}
-            </article>
-          ))}
-        </div>
-      </section>
-    ))}
-
-    <hr class="rule-double" />
-
-    <section class="section" aria-labelledby="learn-h">
-      <p class="kicker">Habits</p>
-      <h2 class="section-title" id="learn-h">Tools are half the answer</h2>
-      <p class="section-sub">Start from a threat model, not an app list. Three free guides used by journalists and human-rights defenders:</p>
-      <div class="tool-rows" style="margin-top:1rem;">
-        <article class="tool-row">
-          <a class="tool-name" href="https://securityinabox.org" rel="noopener">Security-in-a-Box <span aria-hidden="true">↗</span></a>
-          <p class="tool-desc">Front Line Defenders’ practical guides — device security, safer communication, account protection, step by step.</p>
-        </article>
-        <article class="tool-row">
-          <a class="tool-name" href="https://ssd.eff.org" rel="noopener">EFF Surveillance Self-Defense <span aria-hidden="true">↗</span></a>
-          <p class="tool-desc">Threat-modelling first: what are you protecting, from whom, and what follows from the answer.</p>
-        </article>
-        <article class="tool-row">
-          <a class="tool-name" href="https://secfirst.org" rel="noopener">Umbrella <span aria-hidden="true">↗</span></a>
-          <p class="tool-desc">Digital and physical safety lessons — including how to attend protests safely and lawfully.</p>
-        </article>
+  <FileSection
+    index="02"
+    eyebrow="Take the file"
+    title="Portable by default."
+    description="The repository and data packages can be copied now. A verified APK/ZIM bundle is not yet published."
+  >
+    <div class="kit-box">
+      <div>
+        <p class="file-label">Release package</p>
+        <h3>Take the records. Keep the source.</h3>
+        <p>Download the published datasets or clone the repository. Offline application bundles remain a visible distribution gap.</p>
       </div>
-    </section>
-
-    <section class="section" aria-labelledby="eco-h">
-      <p class="kicker">Company</p>
-      <h2 class="section-title" id="eco-h">You are not starting from zero</h2>
-      <div class="tool-rows" style="margin-top:1rem;">
-        <article class="tool-row">
-          <a class="tool-name" href="https://internetfreedom.in" rel="noopener">Internet Freedom Foundation <span aria-hidden="true">↗</span></a>
-          <p class="tool-desc">Litigation, policy and civic literacy for Indian digital rights.</p>
-        </article>
-        <article class="tool-row">
-          <a class="tool-name" href="https://sflc.in" rel="noopener">SFLC.in <span aria-hidden="true">↗</span></a>
-          <p class="tool-desc">Legal services for digital freedoms — and the team behind India’s internet-shutdown tracker.</p>
-        </article>
-        <article class="tool-row">
-          <a class="tool-name" href="https://datameet.org" rel="noopener">DataMeet <span aria-hidden="true">↗</span></a>
-          <p class="tool-desc">India’s open-data community — accountability starts with public numbers.</p>
-        </article>
-        <article class="tool-row">
-          <a class="tool-name" href="https://www.accessnow.org/campaign/keepiton" rel="noopener">Access Now · #KeepItOn <span aria-hidden="true">↗</span></a>
-          <p class="tool-desc">The global coalition against internet shutdowns — three hundred organizations, one demand.</p>
-        </article>
+      <div class="kit-box__actions">
+        <a class="btn btn-primary" href="/downloads/README.txt">Open download register</a>
+        <a class="btn" href="/mirrors/">Inspect mirrors</a>
+        <span class="stamp red">ZIM / APK bundle pending</span>
       </div>
-    </section>
+    </div>
+  </FileSection>
 
-    <hr class="rule-double" />
+  <FileSection
+    index="03"
+    eyebrow="Practice"
+    title="Tools are half the answer."
+    description="Start with a threat model. Keep project documentation close."
+  >
+    <div class="drawer-grid">
+      <a class="drawer" href="https://securityinabox.org" rel="noopener"><span class="drawer__no">A</span><p class="file-label">Guide</p><h3>Security-in-a-Box</h3><p>Device security, safer communication, and account protection.</p><small>open guide ↗</small></a>
+      <a class="drawer" href="https://ssd.eff.org" rel="noopener"><span class="drawer__no">B</span><p class="file-label">Guide</p><h3>Surveillance Self-Defense</h3><p>Threat modelling before product selection.</p><small>open guide ↗</small></a>
+      <a class="drawer" href="https://secfirst.org" rel="noopener"><span class="drawer__no">C</span><p class="file-label">Guide</p><h3>Umbrella</h3><p>Digital and physical safety lessons for difficult contexts.</p><small>open guide ↗</small></a>
+    </div>
+  </FileSection>
 
-    <section class="section" aria-labelledby="join-h">
-      <p class="kicker">Service</p>
-      <h2 class="section-title" id="join-h">Lend a hand</h2>
-      <p class="section-sub">Everything happens in the open, in the repository. One line about what you can do is enough.</p>
-      <div class="share-row" style="margin-top:1rem;">
-        <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('I want to help: [what I can do]')}`} rel="noopener">Volunteer — open an issue</a>
-        <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('Translation: [your language]')}`} rel="noopener">Translate</a>
-        <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('Workshop chapter: [your city]')}`} rel="noopener">Run a workshop</a>
-      </div>
-      <div style="margin-top:1.4rem;">
-        <ShareRow
-          client:visible
-          spec={{
-            headline: 'The India Tech Collective — a public record, kept in public',
-            definition: 'Open-source tools for speech under pressure, and open records of public power.',
-            asOf: '2026',
-            source: 'indiatechcollective.org',
-            url: 'https://www.indiatechcollective.org/toolkit/',
-            disclaimer: 'Non-partisan · lawful · grounded in Article 19.',
-          }}
-        />
-      </div>
-    </section>
-  </div>
+  <FileSection
+    index="04"
+    eyebrow="Corrections / additions"
+    title="Know a better tool?"
+    description="Open one issue with the source, the use case, and the limitation we should state."
+  >
+    <div class="share-row">
+      <a class="btn btn-primary" href={`${repoIssues}?title=${encodeURIComponent('Toolkit proposal: [tool name]')}`} rel="noopener">Propose a tool ↗</a>
+      <a class="btn" href={`${repoIssues}?title=${encodeURIComponent('Toolkit correction: [tool name]')}`} rel="noopener">Correct an entry ↗</a>
+    </div>
+    <ShareRow
+      client:visible
+      spec={{
+        headline: 'The India Tech Collective — tools for difficult networks',
+        definition: 'Twenty-seven open-source tools for offline communication, secure channels, circumvention, evidence, monitoring, and public-interest work.',
+        asOf: '2026',
+        source: 'official project links',
+        url: 'https://www.indiatechcollective.org/toolkit/',
+        disclaimer: 'Chosen is not endorsed. Read current project guidance before sensitive use.',
+      }}
+    />
+  </FileSection>
 </Base>
-
-<style>
-  .tool-rows { display: flex; flex-direction: column; }
-  .tool-row { border-top: 1px solid var(--line); padding: 1.05rem 0.3rem 1.1rem; transition: background 0.15s, padding-left 0.15s; }
-  .tool-row:last-child { border-bottom: 1px solid var(--line); }
-  .tool-row:hover { background: var(--surface); padding-left: 0.8rem; }
-  .tool-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-  .tool-name { font-family: var(--display); font-weight: 580; font-size: 1.3rem; color: var(--ink-strong); text-decoration: none; }
-  .tool-name:hover { color: var(--gold-deep); }
-  .tool-desc { color: var(--ink); margin-top: 0.25rem; max-width: 64ch; }
-  .tool-proof { margin-top: 0.35rem; color: var(--muted); font-size: 0.95rem; max-width: 66ch; }
-  .tool-proof-label {
-    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--gold-deep); margin-right: 0.5rem;
-  }
-  .tool-caveat { margin-top: 0.35rem; color: var(--alert); font-size: 0.92rem; max-width: 66ch; }
-  .cat-section.hidden { display: none; }
-</style>
 
 <script is:inline>
   (function () {
-    var chips = document.querySelectorAll('#catFilters .fchip');
-    var sections = document.querySelectorAll('.cat-section');
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        var cat = chip.getAttribute('data-cat');
-        chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
-        sections.forEach(function (s) {
-          s.classList.toggle('hidden', cat !== 'all' && s.getAttribute('data-cat') !== cat);
+    var controls = Array.from(document.querySelectorAll('#scenarioFilters button'));
+    var tools = Array.from(document.querySelectorAll('#toolGrid .tool-file'));
+    var result = document.getElementById('scenarioResult');
+    controls.forEach(function (control) {
+      control.addEventListener('click', function () {
+        var scenario = control.getAttribute('data-scenario') || 'all';
+        var visible = 0;
+        controls.forEach(function (item) { item.setAttribute('aria-pressed', item === control ? 'true' : 'false'); });
+        tools.forEach(function (tool) {
+          var match = scenario === 'all' || (tool.getAttribute('data-scenarios') || '').split(' ').includes(scenario);
+          tool.hidden = !match;
+          if (match) visible += 1;
         });
+        if (result) result.textContent = 'Showing ' + visible + ' tools for ' + control.querySelector('strong').textContent.toLowerCase() + '.';
       });
     });
   })();
 </script>
+
+<style>
+  .kit-warning { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; }
+  .kit-warning p { max-width: 58ch; color: var(--muted); font-size: .9rem; }
+  .scenario-panel {
+    display: grid;
+    grid-template-columns: minmax(220px, .45fr) 1.55fr;
+    gap: 2rem;
+    padding-block: clamp(3rem, 6vw, 5rem);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .scenario-panel h2 { margin-top: .7rem; font-size: clamp(2rem, 4vw, 3.4rem); line-height: .95; }
+  .scenario-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid var(--line-strong); background: var(--line-strong); }
+  .scenario-buttons button {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    background: var(--surface);
+    text-align: left;
+  }
+  .scenario-buttons button:hover { background: var(--paper-2); }
+  .scenario-buttons button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .scenario-buttons span { font-family: var(--mono); color: var(--seal-red); }
+  .scenario-buttons strong { margin-top: 2rem; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; }
+  .scenario-buttons small { margin-top: auto; color: var(--muted); font-size: .72rem; }
+  .scenario-buttons button[aria-pressed="true"] small { color: color-mix(in srgb, var(--paper) 62%, transparent); }
+  .scenario-result { grid-column: 2; font-family: var(--mono); font-size: .62rem; color: var(--muted); }
+  .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .tool-file {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 1.2rem 1.15rem 2rem;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    box-shadow: var(--shadow-file);
+  }
+  .tool-file::before { content: ""; position: absolute; inset: 0 auto 0 1rem; width: 2px; background: var(--seal-red); opacity: .55; }
+  .tool-file[hidden] { display: none; }
+  .tool-file__top { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .65rem; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: .56rem; }
+  .tool-file__top span { color: var(--seal-red); }
+  .tool-file__top i { color: var(--muted); font-style: normal; text-transform: uppercase; }
+  .tool-file h3 { margin-top: 1.4rem; font-size: 1.8rem; }
+  .tool-file h3 a { color: inherit; text-decoration: none; }
+  .tool-file h3 a:hover { color: var(--stamp-violet); }
+  .tool-file__desc { margin-top: .7rem; color: var(--ink); }
+  .tool-file__proof, .tool-file__limit { margin-top: 1rem; padding-top: .75rem; border-top: 1px dotted var(--line-strong); }
+  .tool-file__proof span, .tool-file__limit span { font-family: var(--mono); font-size: .52rem; letter-spacing: .1em; color: var(--stamp-violet); }
+  .tool-file__proof p, .tool-file__limit p { margin-top: .35rem; color: var(--muted); font-size: .86rem; }
+  .tool-file__limit span { color: var(--alert); }
+  .tool-file__limit--gap p { color: var(--faint); }
+  .source-stamp { width: fit-content; margin-top: auto; padding: .3rem .55rem; border: 2px solid var(--stamp-violet); color: var(--stamp-violet); font-family: var(--mono); font-size: .52rem; font-weight: 700; letter-spacing: .1em; text-decoration: none; transform: rotate(-1deg); }
+  .kit-box { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; padding: clamp(1.4rem, 4vw, 3rem); border: 1px solid var(--line-strong); background: color-mix(in srgb, var(--file-khaki) 16%, var(--surface)); box-shadow: var(--shadow-file); }
+  .kit-box h3 { margin-top: .7rem; font-size: clamp(2rem, 4vw, 3.5rem); }
+  .kit-box p:not(.file-label) { max-width: 54ch; margin-top: .8rem; color: var(--muted); }
+  .kit-box__actions { display: grid; gap: .8rem; min-width: 260px; }
+  @media (max-width: 1000px) {
+    .scenario-panel { grid-template-columns: 1fr; }
+    .scenario-result { grid-column: 1; }
+    .tool-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 720px) {
+    .scenario-buttons { grid-template-columns: repeat(2, 1fr); }
+    .tool-grid { grid-template-columns: 1fr; }
+    .tool-file { min-height: 390px; }
+    .kit-box { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 440px) { .scenario-buttons { grid-template-columns: 1fr; } }
+</style>

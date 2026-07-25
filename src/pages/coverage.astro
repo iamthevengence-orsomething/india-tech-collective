@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
 import { loadArtifact, loadBuildInfo, loadDataQuality } from '../lib/data';
 import { formatDate, formatInt } from '../lib/format';
 
@@ -18,16 +19,20 @@ const statusChip = (s: string) =>
   current="coverage"
   ogImage="/og/coverage.png"
 >
+  <PageHeader
+    file="ITC/COVERAGE/MATRIX"
+    eyebrow="Coverage / nothing hidden"
+    title="The denominator for the whole project."
+    lede="Every count on this site belongs to a stated cohort. Partial coverage stays partial; missing records are never rendered as zero."
+    status={`dataset ${build.datasetVersion}`}
+  >
+    <div class="share-row">
+      <span class="stamp">Pipeline dated {formatDate(build.dataAsOf)}</span>
+      <a class="btn" href="/sources/">Inspect sources</a>
+    </div>
+  </PageHeader>
+
   <div class="wrap">
-    <header class="page-head">
-      <p class="kicker">Coverage · nothing hidden</p>
-      <h1 class="page-h1">What this data covers — and what it doesn’t yet</h1>
-      <p class="lede">
-        Every number on this site comes with a denominator, and this page is the denominator for the whole
-        project. Where coverage is partial, that is stated here; missing data reduces coverage — it is never
-        silently shown as zero. Last pipeline run: {formatDate(build.dataAsOf)} · dataset&nbsp;<code>{build.datasetVersion}</code>.
-      </p>
-    </header>
 
     <section class="section" aria-labelledby="mat-h">
       <h2 class="section-title" id="mat-h">Houses</h2>

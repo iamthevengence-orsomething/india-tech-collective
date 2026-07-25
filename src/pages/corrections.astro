@@ -1,80 +1,121 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
 import { loadCurated } from '../lib/data';
 import { formatDate } from '../lib/format';
+
 const log = loadCurated<any>('corrections-log');
 const issueUrl =
   'https://github.com/iamthevengence-orsomething/india-tech-collective/issues/new?template=correction-request.yml&title=' +
   encodeURIComponent('Correction request: [profile or page]');
 ---
+
 <Base
-  title="Corrections & right of reply | India Tech Collective"
-  description="How to request a correction to any record on the accountability dashboards — including for representatives named on the site — and the public, append-only correction log."
+  title="Corrections — India Tech Collective"
+  description="Request a correction and inspect the append-only public correction log."
   path="/corrections/"
-  current="methodology"
+  current="corrections"
 >
-  <div class="wrap" style="max-width:880px;">
-    <header class="page-head">
-      <p class="kicker">Corrections · right of reply</p>
-      <h1 class="page-h1">Get the record fixed</h1>
-      <p class="lede">
-        If any record here is wrong, outdated, or missing context — especially if it concerns
-        <strong> you</strong> — ask for a correction. Requests are tracked publicly, applied in data (never by
-        silent edits), and logged below permanently.
-      </p>
-    </header>
+  <PageHeader
+    file="ITC/CORRECTIONS/OPEN"
+    eyebrow="Corrections / public diff"
+    title="Get the record fixed."
+    lede="Wrong, outdated, or missing context belongs in a tracked correction—not a silent edit."
+    status="request channel open"
+  >
+    <div class="share-row">
+      <a class="btn btn-primary" href={issueUrl} rel="noopener">Open a correction request ↗</a>
+      <a class="btn" href="/right-of-reply/">Named in the record?</a>
+    </div>
+  </PageHeader>
 
-    <section class="section">
-      <h2 class="section-title">How to request a correction</h2>
-      <div class="banner banner-review" style="margin:0.8rem 0;">
-        <span class="banner-icon" aria-hidden="true">⚠</span>
-        <p class="small">
-          <strong>Do not post private personal data</strong> (phone numbers, addresses, medical or financial
-          details) in a public request. Court orders and published documents are enough; redact anything private.
-        </p>
+  <FileSection
+    index="01"
+    eyebrow="Process"
+    title="Four fields. One public trail."
+    description="Do not include private phone numbers, addresses, medical details, or financial details in a public request."
+  >
+    <div class="correction-steps">
+      <article><span>01</span><strong>Page</strong><p>The exact URL carrying the disputed record.</p></article>
+      <article><span>02</span><strong>Field</strong><p>The specific value or sentence that needs review.</p></article>
+      <article><span>03</span><strong>Correction</strong><p>What the record should say, stated precisely.</p></article>
+      <article><span>04</span><strong>Source</strong><p>An authoritative document supporting the change.</p></article>
+    </div>
+    <aside class="banner banner-review">
+      <p><strong>Redact private details.</strong> Court orders, ECI records, gazettes, and official notices are enough.</p>
+    </aside>
+  </FileSection>
+
+  <FileSection
+    index="02"
+    eyebrow="How the edit appears"
+    title="No silent replacement."
+    description="A material correction changes the data version and remains legible as a diff."
+  >
+    <div class="diff-card">
+      <div><span>before</span><del>the disputed value</del></div>
+      <div><span>after</span><ins>the verified correction</ins></div>
+      <footer>date · field · reason · source · dataset version</footer>
+    </div>
+  </FileSection>
+
+  <FileSection
+    index="03"
+    eyebrow="Append-only log"
+    title="The correction register."
+    description="Every accepted correction appears here with the value that changed."
+    wide={true}
+  >
+    {log.corrections.length === 0 ? (
+      <div class="empty-state">
+        <p><strong>No corrections recorded in this release.</strong></p>
+        <p class="small">Future entries retain the date, field, old value, new value, reason, and source.</p>
       </div>
-      <ol class="prose" style="margin-left:1.2rem;">
-        <li>Open a correction request on GitHub (public, trackable):<br />
-          <a class="btn btn-primary" style="margin-top:0.5rem;" href={issueUrl} rel="noopener">Open a correction request ↗</a>
-        </li>
-        <li>Include: the <strong>page URL</strong>, the <strong>disputed field</strong>, <strong>what it should say</strong>, and an <strong>authoritative source</strong> (court order, ECI record, gazette, official press note).</li>
-        <li>A maintainer verifies the source, updates the data with a new dataset version, and appends an entry to the public log below. Materially adverse changes require human review before publication.</li>
-      </ol>
-      <p class="small" style="color:var(--muted);margin-top:0.8rem;">
-        If you are the person named and cannot use GitHub, any representative may file on your behalf; the
-        takedown/escalation path is documented in <code>docs/corrections-policy.md</code> in the repository.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Public correction log</h2>
-      {log.corrections.length === 0 ? (
-        <div class="empty-state">
-          <p><strong>No corrections yet.</strong></p>
-          <p class="small">Every future correction appears here permanently: date, field, old value, new value, reason and source.</p>
-        </div>
-      ) : (
-        <div class="table-scroll">
-          <table class="data">
-            <caption>Append-only correction log</caption>
-            <thead>
-              <tr><th scope="col">Date</th><th scope="col">Page</th><th scope="col">Field</th><th scope="col">Old</th><th scope="col">New</th><th scope="col">Reason / source</th></tr>
-            </thead>
-            <tbody>
-              {log.corrections.map((c: any) => (
-                <tr>
-                  <td>{formatDate(c.date)}</td>
-                  <td>{c.profileUrl ? <a href={c.profileUrl}>{c.profileUrl}</a> : '—'}</td>
-                  <td>{c.field}</td>
-                  <td>{c.oldValue}</td>
-                  <td>{c.newValue}</td>
-                  <td class="small">{c.reason}{c.authoritativeSourceUrl && <> · <a href={c.authoritativeSourceUrl} rel="noopener">source ↗</a></>}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </section>
-  </div>
+    ) : (
+      <div class="table-scroll">
+        <table class="data">
+          <caption>Append-only correction log</caption>
+          <thead>
+            <tr><th scope="col">Date</th><th scope="col">Page</th><th scope="col">Field</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Reason / source</th></tr>
+          </thead>
+          <tbody>
+            {log.corrections.map((entry: any) => (
+              <tr>
+                <td>{formatDate(entry.date)}</td>
+                <td>{entry.profileUrl ? <a href={entry.profileUrl}>{entry.profileUrl}</a> : '—'}</td>
+                <td>{entry.field}</td>
+                <td><del>{entry.oldValue}</del></td>
+                <td><ins>{entry.newValue}</ins></td>
+                <td class="small">{entry.reason}{entry.authoritativeSourceUrl && <> · <a href={entry.authoritativeSourceUrl} rel="noopener">source ↗</a></>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </FileSection>
 </Base>
+
+<style>
+  .correction-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--line-strong);
+    background: var(--line-strong);
+  }
+  .correction-steps article { min-height: 190px; padding: 1rem; background: var(--surface); }
+  .correction-steps span { font-family: var(--mono); color: var(--seal-red); }
+  .correction-steps strong { display: block; margin-top: 2.5rem; font-family: var(--mono); }
+  .correction-steps p { margin-top: .6rem; color: var(--muted); font-size: .92rem; }
+  .diff-card { border: 1px solid var(--line-strong); background: var(--surface); box-shadow: var(--shadow-file); }
+  .diff-card > div { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; padding: 1rem; border-bottom: 1px dotted var(--line); }
+  .diff-card span, .diff-card footer { font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; color: var(--faint); text-transform: uppercase; }
+  .diff-card del { color: var(--alert); text-decoration-thickness: 2px; }
+  .diff-card ins { color: var(--ok); text-decoration: none; background: color-mix(in srgb, var(--ok) 9%, transparent); }
+  .diff-card footer { padding: .75rem 1rem; }
+  @media (max-width: 760px) { .correction-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 440px) { .correction-steps { grid-template-columns: 1fr; } }
+</style>

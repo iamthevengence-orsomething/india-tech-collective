@@ -40,7 +40,7 @@ export default function DisclosuresLens() {
       </div>
     );
   }
-  if (!artifact) return <div className="empty-state" role="status">Loading disclosure data…</div>;
+  if (!artifact) return <div className="empty-state loading-state" role="status">Locating disclosure data…</div>;
 
   const cs = artifact.corruptionStatute;
   const rows: BarListRow[] = artifact.parties.slice(0, 14).map((p) => ({

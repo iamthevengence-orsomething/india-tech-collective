@@ -1,70 +1,166 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
 ---
+
 <Base
   title="About — India Tech Collective"
   description="Why the India Tech Collective keeps open tools and public records together."
   path="/about/"
 >
-  <article class="about wrap">
-    <header>
-      <p class="file-label">About / statement of purpose</p>
-      <h1>Tech unites for India.</h1>
-      <p class="lede">Open tools. Public records. One standard for every party.</p>
-    </header>
+  <PageHeader
+    file="ITC/ABOUT/001"
+    eyebrow="Statement of purpose"
+    title="The record belongs to the public."
+    lede="The Indian tech community can build tools for difficult networks and make public power easier to inspect. This is the file that holds both."
+  >
+    <div class="header-stamps">
+      <span class="stamp">Document, do not affiliate</span>
+      <span class="stamp red">One standard / every party</span>
+    </div>
+  </PageHeader>
 
-    <section class="oath">
-      <p>We hold that self-rule begins with self-information.</p>
-      <p>That what public servants declare on oath belongs to the public.</p>
+  <FileSection
+    index="01"
+    eyebrow="The oath"
+    title="Self-rule begins with self-information."
+    description="A short operating doctrine. The data is never made to perform."
+  >
+    <div class="oath-card">
+      <p>We hold that what public servants declare on oath belongs to the public.</p>
       <p>That an accusation is not guilt, and guilt is for courts alone.</p>
       <p>That where the record is incomplete, the gap must be stated, not filled.</p>
-    </section>
+      <p>That silence, at scale, is compliance.</p>
+      <span class="stamp">True copy / operating doctrine</span>
+    </div>
+  </FileSection>
 
-    <section class="about-grid">
-      <div>
-        <p class="file-label">Posture</p>
-        <h2>Document, do not affiliate.</h2>
-        <p>
-          The Collective is not a political party, an opposition outlet, or a
-          prosecutor. It takes a position on whether the governed are entitled to
-          the public record.
-        </p>
-      </div>
-      <div>
-        <p class="file-label">Method</p>
-        <h2>Source, date, denominator.</h2>
-        <p>
-          Public figures are attached to their sources and limits. Corrections
-          remain visible. Named records carry a standing right of reply.
-        </p>
-      </div>
-      <div>
-        <p class="file-label">Privacy</p>
-        <h2>No surveillance required.</h2>
-        <p>
-          The site has no advertising trackers. Contributor identities may be
-          pseudonymous where disclosure would create risk.
-        </p>
-      </div>
-    </section>
+  <FileSection
+    index="02"
+    eyebrow="Posture"
+    title="Useful, sourced, non-partisan."
+    description="The Collective does not decide who should govern. It insists that the governed are entitled to the file."
+  >
+    <div class="drawer-grid">
+      <article class="drawer">
+        <span class="drawer__no">A</span>
+        <p class="file-label">Document</p>
+        <h3>No affiliation.</h3>
+        <p>Events and declarations are recorded with dates and sources, not turned into party messaging.</p>
+        <small>editorial posture</small>
+      </article>
+      <article class="drawer">
+        <span class="drawer__no">B</span>
+        <p class="file-label">Measure</p>
+        <h3>Show the denominator.</h3>
+        <p>Figures carry their cohort, source date, and known limits. Missing is never rendered as zero.</p>
+        <small>data posture</small>
+      </article>
+      <article class="drawer">
+        <span class="drawer__no">C</span>
+        <p class="file-label">Correct</p>
+        <h3>Keep the diff.</h3>
+        <p>Corrections stay visible. Named people have a standing route to reply or challenge a record.</p>
+        <small>trust posture</small>
+      </article>
+    </div>
+  </FileSection>
 
-    <blockquote>
-      “All citizens shall have the right to freedom of speech and expression.”
+  <FileSection
+    index="03"
+    eyebrow="Constitutional basis"
+    title="Speech and expression."
+    description="The site’s civic posture begins with the constitutional text, not a campaign identity."
+  >
+    <blockquote class="constitution">
+      <p>“All citizens shall have the right to freedom of speech and expression.”</p>
       <cite>Constitution of India · Article 19(1)(a)</cite>
     </blockquote>
-  </article>
+  </FileSection>
+
+  <FileSection
+    index="04"
+    eyebrow="Governance"
+    title="Built where it can be inspected."
+    description="Code, content methods, data versions, and correction history live in the open repository."
+  >
+    <div class="docket-grid">
+      <article><span>maintainers</span><strong>opt-in or pseudonymous</strong><p>Identity disclosure is never a contribution requirement.</p></article>
+      <article><span>privacy</span><strong>no trackers</strong><p>The site does not need a visitor dossier to keep a public file.</p></article>
+      <article><span>funding</span><strong>declare before accepting</strong><p>Any funding policy or material support must be stated publicly.</p></article>
+    </div>
+  </FileSection>
 </Base>
 
 <style>
-  .about { padding-block: clamp(4rem, 10vw, 9rem); }
-  .about h1 { margin-top: 1rem; font-size: clamp(3.5rem, 9vw, 7rem); letter-spacing: -0.05em; line-height: 0.86; max-width: 8ch; }
-  .about .lede { margin-top: 1.4rem; }
-  .oath { margin: clamp(4rem, 9vw, 8rem) 0; padding: 2rem 0 2rem 2rem; border-left: 3px solid var(--seal-red); font-size: clamp(1.35rem, 2.6vw, 2rem); line-height: 1.35; }
-  .oath p + p { margin-top: 0.9rem; }
-  .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .about-grid h2 { margin-top: 0.8rem; font-size: 1.6rem; }
-  .about-grid div > p:last-child { margin-top: 0.8rem; color: var(--muted); }
-  blockquote { margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--line-strong); font-size: clamp(1.6rem, 4vw, 3.2rem); line-height: 1.1; }
-  cite { display: block; margin-top: 1rem; font-family: var(--mono); font-size: 0.65rem; font-style: normal; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+  .header-stamps { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .oath-card {
+    position: relative;
+    padding: clamp(1.5rem, 4vw, 3.4rem);
+    border: 1px solid var(--line-strong);
+    background:
+      repeating-radial-gradient(circle at 0 0, transparent 0 15px, color-mix(in srgb, var(--stamp-violet) 4%, transparent) 16px 17px),
+      var(--surface);
+    box-shadow: var(--shadow-file);
+  }
+  .oath-card::before {
+    content: "ITC / OATH / PUBLIC";
+    display: block;
+    margin-bottom: 1.4rem;
+    padding-bottom: .7rem;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: .58rem;
+    letter-spacing: .12em;
+    color: var(--faint);
+  }
+  .oath-card p {
+    max-width: 34ch;
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.2;
+  }
+  .oath-card p + p { margin-top: .9rem; }
+  .oath-card .stamp { margin-top: 2rem; }
+  .constitution {
+    position: relative;
+    margin: 0;
+    padding: clamp(2rem, 5vw, 5rem);
+    border: 1px solid var(--line-strong);
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: 10px 10px 0 var(--stamp-violet);
+  }
+  .constitution p {
+    max-width: 24ch;
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 4.6rem);
+    line-height: .98;
+  }
+  .constitution cite {
+    display: block;
+    margin-top: 2rem;
+    font-family: var(--mono);
+    font-size: .62rem;
+    font-style: normal;
+    letter-spacing: .12em;
+    color: color-mix(in srgb, var(--paper) 66%, transparent);
+    text-transform: uppercase;
+  }
+  .docket-grid article { min-height: 190px; }
+  .docket-grid span {
+    font-family: var(--mono);
+    font-size: .56rem;
+    letter-spacing: .12em;
+    color: var(--faint);
+    text-transform: uppercase;
+  }
+  .docket-grid strong {
+    display: block;
+    margin-top: 1.5rem;
+    font-family: var(--mono);
+    color: var(--stamp-violet);
+  }
+  .docket-grid p { margin-top: .7rem; color: var(--muted); font-size: .95rem; }
 </style>

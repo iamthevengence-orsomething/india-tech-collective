@@ -17,18 +17,25 @@ export default function ShareRow({ spec, cardHref }: { spec: ShareSpec; cardHref
   };
 
   return (
-    <div className="share-row" role="group" aria-label="Share this view">
-      <a className="btn btn-small" href={whatsappUrl(text)} target="_blank" rel="noopener">WhatsApp</a>
-      <a className="btn btn-small" href={telegramUrl(text, spec.url)} target="_blank" rel="noopener">Telegram</a>
-      <a className="btn btn-small" href={xUrl(text)} target="_blank" rel="noopener">Post on X</a>
-      <button className="btn btn-small" type="button" onClick={copy} aria-live="polite">
-        {copied ? 'Copied ✓' : 'Copy link'}
-      </button>
-      {cardHref && (
-        <a className="btn btn-small" href={cardHref} download>
-          Download share card
-        </a>
-      )}
+    <div className={`share-station${copied ? ' is-stamped' : ''}`}>
+      <div className="share-station__head">
+        <span>STAMP / SHARE / SOURCE INCLUDED</span>
+        <i aria-hidden="true">{copied ? 'TRUE COPY' : 'PUBLIC LINK'}</i>
+      </div>
+      <div className="share-row" role="group" aria-label="Share this view">
+        <a className="btn btn-small" href={whatsappUrl(text)} target="_blank" rel="noopener">WhatsApp</a>
+        <a className="btn btn-small" href={telegramUrl(text, spec.url)} target="_blank" rel="noopener">Telegram</a>
+        <a className="btn btn-small" href={xUrl(text)} target="_blank" rel="noopener">Post on X</a>
+        <button className="btn btn-small" type="button" onClick={copy} aria-live="polite">
+          {copied ? 'Stamped · copied' : 'Stamp & copy link'}
+        </button>
+        {cardHref && (
+          <a className="btn btn-small" href={cardHref} download>
+            Download share card
+          </a>
+        )}
+      </div>
+      <p className="share-station__note">Definition, date, source, and caveat travel with the link.</p>
     </div>
   );
 }

@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import FileSection from '../../components/FileSection.astro';
+import ShareRow from '../../components/islands/ShareRow.tsx';
+import { CATS, TOOLS } from '../../data/tools';
+import { slugify } from '../../lib/slug';
+
+export function getStaticPaths() {
+  return TOOLS.map((tool, index) => ({
+    params: { slug: slugify(tool.name) },
+    props: { tool, index },
+  }));
+}
+
+const { tool, index } = Astro.props as any;
+const category = CATS[tool.cat];
+---
+
+<Base
+  title={`${tool.name} — The Kit | India Tech Collective`}
+  description={`${tool.name}: ${tool.desc} Limits and official source attached.`}
+  path={`/tools/${slugify(tool.name)}/`}
+  current="toolkit"
+  ogImage="/og/toolkit.png"
+>
+  <PageHeader
+    file={`ITC/KIT/${String(index + 1).padStart(3, '0')}`}
+    eyebrow={`${category.label} / tool record`}
+    title={tool.name}
+    lede={tool.desc}
+    status="official source attached"
+    compact={true}
+  >
+    <div class="share-row">
+      <a class="btn btn-primary" href={tool.url} rel="noopener">Open official project ↗</a>
+      <a class="btn" href="/toolkit/">Return to the kit</a>
+    </div>
+  </PageHeader>
+
+  <FileSection
+    index="01"
+    eyebrow="When it matters"
+    title={tool.proofKind === 'why' ? 'Why this belongs in the kit.' : 'Field note.'}
+  >
+    <article class="tool-noting">
+      <span>NOTING / USE CASE</span>
+      <p>{tool.proof}</p>
+    </article>
+  </FileSection>
+
+  <FileSection
+    index="02"
+    eyebrow="Limits"
+    title="Read this before relying on it."
+  >
+    <aside class:list={['limit-file', { 'limit-file--gap': !tool.caveat }]}>
+      <span class={tool.caveat ? 'stamp red' : 'stamp'}>{tool.caveat ? 'Limit recorded' : 'Gap in record'}</span>
+      <p>{tool.caveat ?? 'A project-specific limitation has not yet been added to this catalog entry. Read the current project documentation, threat model, and audit history before sensitive use.'}</p>
+    </aside>
+  </FileSection>
+
+  <FileSection
+    index="03"
+    eyebrow="Source"
+    title="Inspect the project itself."
+  >
+    <div class="source-file">
+      <div><span>project</span><strong>{tool.name}</strong></div>
+      <div><span>category</span><strong>{category.label}</strong></div>
+      <div><span>official URL</span><a href={tool.url} rel="noopener">{tool.url} ↗</a></div>
+      <div><span>catalog posture</span><strong>chosen is not endorsed</strong></div>
+    </div>
+    <ShareRow
+      client:visible
+      spec={{
+        headline: `${tool.name} — India Tech Collective kit`,
+        definition: tool.desc,
+        asOf: '2026',
+        source: tool.url,
+        url: `https://www.indiatechcollective.org/tools/${slugify(tool.name)}/`,
+        disclaimer: tool.caveat ?? 'Check current project documentation before sensitive use.',
+      }}
+    />
+  </FileSection>
+</Base>
+
+<style>
+  .tool-noting {
+    min-height: 260px;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--line-strong);
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: 8px 8px 0 var(--stamp-violet);
+  }
+  .tool-noting span { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; color: var(--phosphor); }
+  .tool-noting p { max-width: 36ch; margin-top: 2.2rem; font-family: var(--display); font-size: clamp(1.6rem, 3.5vw, 2.8rem); line-height: 1.15; }
+  .limit-file { padding: 1.5rem; border: 1px solid var(--line-strong); background: var(--surface); box-shadow: var(--shadow-file); }
+  .limit-file p { max-width: 62ch; margin-top: 1.4rem; color: var(--muted); }
+  .limit-file--gap { border-style: dashed; }
+  .source-file { display: grid; border: 1px solid var(--line-strong); background: var(--surface); box-shadow: var(--shadow-file); }
+  .source-file div { display: grid; grid-template-columns: 160px 1fr; gap: 1rem; padding: .8rem 1rem; border-bottom: 1px dotted var(--line); }
+  .source-file div:last-child { border-bottom: 0; }
+  .source-file span { font-family: var(--mono); font-size: .56rem; color: var(--faint); text-transform: uppercase; }
+  .source-file strong, .source-file a { overflow-wrap: anywhere; font-family: var(--mono); font-size: .72rem; font-weight: 500; }
+  .source-file a { color: var(--stamp-violet); }
+  @media (max-width: 520px) { .source-file div { grid-template-columns: 1fr; } }
+</style>
+

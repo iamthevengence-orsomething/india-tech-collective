@@ -1,97 +1,193 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
+
 const benches = [
   {
     index: '01',
     name: 'The Answering Machine',
     tag: 'affidavit search',
+    command: 'ask(record) → answer + citation',
     copy: 'A citation-first interface for asking questions of sworn election records. If the source does not support an answer, it should say so.',
     status: 'specification',
+    refusal: 'Not in the file.',
   },
   {
     index: '02',
     name: 'Signal Sentinel',
     tag: 'network measurement',
+    command: 'observe(network) → disruption?',
     copy: 'An open measurement layer for detecting connectivity disruption from public probes. Detection first; attribution only with evidence.',
     status: 'research',
+    refusal: 'Detects. Does not attribute.',
   },
   {
     index: '03',
     name: 'Said / Did',
     tag: 'document diffing',
+    command: 'diff(statement, record)',
     copy: 'A careful comparison of parliamentary records, public statements, and manifesto claims, rendered as source-linked document diffs.',
     status: 'scoping',
+    refusal: 'No match without a source.',
   },
 ];
 ---
+
 <Base
   title="The Workbench — India Tech Collective"
   description="Small, inspectable civic-tech prototypes built in public and grounded in source material."
   path="/frontier/"
   current="frontier"
 >
-  <header class="bench-head wrap">
-    <div class="stamp">Under construction · in public</div>
-    <p class="file-label">Frontier / workbench</p>
-    <h1>Useful before impressive.</h1>
-    <p>
-      Three prototypes. Each begins with a source, a refusal condition, and a public
-      issue tracker.
-    </p>
-  </header>
+  <PageHeader
+    file="ITC/BENCH/ALPHA"
+    eyebrow="Frontier / workbench"
+    title="Useful before impressive."
+    lede="Three prototypes. Each begins with a source, a refusal condition, and a public issue tracker."
+    status="under construction / in public"
+  >
+    <span class="stamp red">Under construction</span>
+  </PageHeader>
 
-  <section class="bench-list wrap-wide" aria-label="Workbench projects">
-    {benches.map((bench) => (
-      <article class="bench file-card">
-        <div class="bench-index">{bench.index}</div>
-        <div class="bench-main">
-          <p class="file-label">{bench.tag}</p>
-          <h2>{bench.name}</h2>
-          <p>{bench.copy}</p>
-        </div>
-        <div class="bench-status">
-          <span>status</span>
-          <strong>{bench.status}</strong>
-          <a href="https://github.com/iamthevengence-orsomething/india-tech-collective/issues" rel="noopener">
-            View issues ↗
-          </a>
-        </div>
-      </article>
-    ))}
-  </section>
-
-  <section class="bench-rules wrap">
-    <p class="file-label">Workbench rules</p>
+  <section class="bench-plate wrap-wide" aria-label="Workbench identity plate">
+    <img
+      src="/brand/systems-triptych.webp"
+      width="1800"
+      height="600"
+      alt="Engraved civic-tech systems: a mesh lantern, an open ledger, and a signal mast"
+    />
     <div>
-      <p><strong>01</strong> Every output links back to a source.</p>
-      <p><strong>02</strong> Missing evidence is a valid result.</p>
-      <p><strong>03</strong> Evaluation happens in public.</p>
+      <span>input</span><strong>public records</strong>
+      <span>constraint</span><strong>citation required</strong>
+      <span>output</span><strong>inspectable</strong>
     </div>
   </section>
+
+  <FileSection
+    index="01"
+    eyebrow="Active benches"
+    title="Three systems. Three refusal conditions."
+    description="A prototype earns trust by knowing when it cannot answer."
+    wide={true}
+  >
+    <div class="bench-list">
+      {benches.map((bench) => (
+        <article class="bench-card file-card">
+          <div class="bench-card__index">{bench.index}</div>
+          <div class="bench-card__main">
+            <p class="file-label">{bench.tag}</p>
+            <h3>{bench.name}</h3>
+            <code>{bench.command}</code>
+            <p>{bench.copy}</p>
+          </div>
+          <div class="bench-card__state">
+            <span>status</span>
+            <strong>{bench.status}</strong>
+            <span>refusal</span>
+            <em>“{bench.refusal}”</em>
+            <a href="https://github.com/iamthevengence-orsomething/india-tech-collective/issues" rel="noopener">
+              Inspect issues ↗
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </FileSection>
+
+  <FileSection
+    index="02"
+    eyebrow="Workbench protocol"
+    title="The machine shows its work."
+  >
+    <div class="docket-grid rules">
+      <article><span>01</span><strong>Source first.</strong><p>Every output resolves to a record a reader can inspect.</p></article>
+      <article><span>02</span><strong>Refusal is valid.</strong><p>Missing evidence produces a gap, never plausible filler.</p></article>
+      <article><span>03</span><strong>Evaluation is public.</strong><p>Known limits and failure cases belong beside the demo.</p></article>
+    </div>
+  </FileSection>
 </Base>
 
 <style>
-  .bench-head { padding-block: clamp(4rem, 9vw, 8rem); }
-  .bench-head .stamp { margin-bottom: 2rem; }
-  .bench-head h1 { margin-top: 1rem; font-size: clamp(3.3rem, 8vw, 6.8rem); letter-spacing: -0.045em; line-height: 0.86; max-width: 8ch; }
-  .bench-head > p:last-child { margin-top: 1.5rem; max-width: 46ch; color: var(--muted); font-size: 1.2rem; }
+  .bench-plate {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 1px;
+    margin-block: clamp(2rem, 5vw, 4rem) 0;
+    border: 1px solid var(--line-strong);
+    background: var(--line-strong);
+    box-shadow: var(--shadow-file);
+  }
+  .bench-plate img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    background: var(--surface);
+    mix-blend-mode: multiply;
+  }
+  .bench-plate > div {
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr;
+    gap: .25rem;
+    padding: 1.2rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: .6rem;
+  }
+  .bench-plate span { margin-top: .8rem; color: color-mix(in srgb, var(--paper) 50%, transparent); }
+  .bench-plate strong { font-weight: 500; color: var(--phosphor); }
   .bench-list { display: grid; gap: 1rem; }
-  .bench { display: grid; grid-template-columns: 90px 1fr 220px; gap: 2rem; align-items: start; padding: 2rem 2rem 2rem 2.6rem; min-height: 250px; }
-  .bench-index { font-family: var(--mono); font-size: 2.4rem; color: var(--seal-red); }
-  .bench-main h2 { margin-top: 0.55rem; font-size: clamp(1.8rem, 4vw, 3rem); }
-  .bench-main > p:last-child { margin-top: 1rem; max-width: 52ch; color: var(--muted); }
-  .bench-status { display: grid; gap: 0.45rem; padding-left: 1rem; border-left: 1px solid var(--line); font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.06em; }
-  .bench-status span { color: var(--faint); }
-  .bench-status strong { color: var(--stamp-violet); font-weight: 600; }
-  .bench-status a { margin-top: 2.5rem; color: var(--ink); text-underline-offset: 4px; }
-  .bench-rules { padding-block: clamp(4rem, 8vw, 7rem); }
-  .bench-rules > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
-  .bench-rules p { color: var(--muted); }
-  .bench-rules strong { display: block; font-family: var(--mono); color: var(--stamp-violet); margin-bottom: 0.6rem; }
-  @media (max-width: 760px) {
-    .bench { grid-template-columns: 54px 1fr; padding: 1.5rem 1.2rem 1.5rem 2rem; gap: 1rem; }
-    .bench-status { grid-column: 2; }
-    .bench-status a { margin-top: 0.6rem; }
-    .bench-rules > div { grid-template-columns: 1fr; }
+  .bench-card {
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr) 230px;
+    gap: 2rem;
+    min-height: 280px;
+    padding: 1.7rem 1.7rem 1.7rem 2.6rem;
+  }
+  .bench-card__index { font-family: var(--mono); font-size: 2.4rem; color: var(--seal-red); }
+  .bench-card__main h3 { margin-top: .6rem; font-size: clamp(2rem, 4vw, 3.4rem); }
+  .bench-card__main code {
+    display: block;
+    width: fit-content;
+    margin-top: .8rem;
+    padding: .35rem .55rem;
+    border: 1px solid var(--line);
+    background: var(--ink);
+    color: var(--phosphor);
+    font-family: var(--mono);
+    font-size: .65rem;
+  }
+  .bench-card__main > p:last-child { max-width: 55ch; margin-top: 1rem; color: var(--muted); }
+  .bench-card__state {
+    display: grid;
+    align-content: start;
+    gap: .4rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: .6rem;
+  }
+  .bench-card__state span { margin-top: .55rem; color: var(--faint); text-transform: uppercase; }
+  .bench-card__state strong { color: var(--stamp-violet); font-weight: 500; }
+  .bench-card__state em { font-family: var(--body); font-size: .9rem; color: var(--muted); }
+  .bench-card__state a { margin-top: auto; color: var(--stamp-violet); text-underline-offset: 4px; }
+  .rules article { min-height: 180px; }
+  .rules span { font-family: var(--mono); color: var(--seal-red); }
+  .rules strong { display: block; margin-top: 1.5rem; font-size: 1.2rem; }
+  .rules p { margin-top: .6rem; color: var(--muted); }
+  html[data-theme="blackout"] .bench-plate img { mix-blend-mode: screen; filter: grayscale(1) invert(1) sepia(1) hue-rotate(70deg) saturate(4); }
+  @media (max-width: 820px) {
+    .bench-plate { grid-template-columns: 1fr; }
+    .bench-plate > div { grid-template-columns: auto 1fr; gap: .55rem 1rem; }
+    .bench-plate span { margin-top: 0; }
+    .bench-card { grid-template-columns: 48px 1fr; gap: 1rem; }
+    .bench-card__state { grid-column: 2; }
+  }
+  @media (max-width: 560px) {
+    .bench-card { grid-template-columns: 1fr; padding-left: 2rem; }
+    .bench-card__state { grid-column: 1; }
   }
 </style>

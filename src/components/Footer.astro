@@ -2,12 +2,24 @@
 import { loadBuildInfo } from '../lib/data';
 const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode: string }>();
 ---
+
 <footer class="site-footer">
   <div class="wrap">
-    <div class="foot-oath">
-      <p>Tools for when the network goes dark.</p>
-      <p>Evidence for when public memory does.</p>
-      <span class="stamp neutral">Kept in public</span>
+    <div class="footer-brand">
+      <div>
+        <p class="file-label">The public file remains open</p>
+        <h2>Tools for the dark. Evidence for the record.</h2>
+        <p>
+          Built in public, versioned in git, and held to one standard across every party.
+          Where a record ends, the gap is marked.
+        </p>
+      </div>
+      <div class="footer-system" aria-label="Current site status">
+        <div><span>dataset</span><strong>{build.datasetVersion}</strong></div>
+        <div><span>updated</span><strong>{build.dataAsOf}</strong></div>
+        <div><span>mode</span><strong>{build.dataMode}</strong></div>
+        <div><span>tracking</span><strong>none</strong></div>
+      </div>
     </div>
 
     <div class="foot-grid">
@@ -17,6 +29,7 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
           <li><a href="/toolkit/">The kit</a></li>
           <li><a href="/politicians/">The record</a></li>
           <li><a href="/signals/">The signals</a></li>
+          <li><a href="/frontier/">The workbench</a></li>
         </ul>
       </div>
       <div>
@@ -24,7 +37,9 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
         <ul>
           <li><a href="/methodology/">Methodology</a></li>
           <li><a href="/sources/">Source registry</a></li>
-          <li><a href="/corrections/">Corrections &amp; right of reply</a></li>
+          <li><a href="/coverage/">Coverage &amp; gaps</a></li>
+          <li><a href="/corrections/">Corrections</a></li>
+          <li><a href="/right-of-reply/">Right of reply</a></li>
         </ul>
       </div>
       <div>
@@ -32,6 +47,7 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
         <ul>
           <li><a href="/contribute/">Contribute</a></li>
           <li><a href="/mirrors/">Mirrors &amp; downloads</a></li>
+          <li><a href="/about/">About the Collective</a></li>
           <li><a href="https://github.com/iamthevengence-orsomething/india-tech-collective" rel="noopener">GitHub</a></li>
         </ul>
       </div>
@@ -47,17 +63,6 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
 </footer>
 
 <style>
-  .foot-oath {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem 1.1rem;
-    margin-bottom: 2rem;
-    font-family: var(--display);
-    font-size: clamp(1.15rem, 2.3vw, 1.55rem);
-    color: var(--ink-strong);
-  }
-  .foot-oath .stamp { margin-left: auto; font-size: 0.55rem; }
   .foot-signoff {
     margin-top: 1rem;
     font-family: var(--mono);
@@ -65,9 +70,5 @@ const build = loadBuildInfo<{ dataAsOf: string; datasetVersion: string; dataMode
     letter-spacing: 0.1em;
     color: var(--file-khaki);
     text-transform: uppercase;
-  }
-  @media (max-width: 680px) {
-    .foot-oath { display: grid; }
-    .foot-oath .stamp { margin: 0.5rem 0 0; }
   }
 </style>

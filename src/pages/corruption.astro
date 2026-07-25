@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
 import CaveatBanner from '../components/CaveatBanner.astro';
 import PipelineInReview from '../components/PipelineInReview.astro';
 import EnforcementLens from '../components/islands/EnforcementLens.tsx';
@@ -18,23 +19,20 @@ const cag = loadCurated<any>('cag-reports');
   current="corruption"
   ogImage="/og/corruption.png"
 >
-  <header class="page-head wrap">
-    <p class="kicker green">Part III · Corruption Data — three records, kept separate</p>
-    <h1 class="page-h1">Corruption data without a fake score</h1>
-    <p class="lede">
-      “Corruption” is not one number. This dashboard keeps three very different kinds of public records in
-      three clearly separated views: <strong>state enforcement</strong> statistics from the NCRB,
-      <strong> disclosures by elected representatives</strong> from their own election affidavits, and
-      <strong> audit findings</strong> from the CAG. They use different units and cannot be added together —
-      so this site never combines them into a score.
-    </p>
+  <PageHeader
+    file="ITC/RECORD/LENSES-03"
+    eyebrow="Enforcement / disclosures / audits"
+    title="Three files. No fake score."
+    lede="State enforcement statistics, representatives’ sworn disclosures, and audit findings use different units. This page keeps them separate."
+    status={`${stats.publicationLabel} / ${stats.dataYear}`}
+  >
     <nav class="subnav" aria-label="Corruption dashboard sections" style="margin-top:1.2rem;">
       <a href="#enforcement">State enforcement</a>
       <a href="#disclosures">Representative disclosures</a>
       <a href="#audit">Audit findings</a>
       <a href="/methodology/">Methodology ↗</a>
     </nav>
-  </header>
+  </PageHeader>
 
   <div class="wrap">
     <!-- ============ LENS A: STATE ENFORCEMENT ============ -->

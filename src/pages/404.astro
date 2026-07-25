@@ -1,24 +1,103 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
 ---
+
 <Base
-  title="Page not found | India Tech Collective"
-  description="This page does not exist."
+  title="File not found — India Tech Collective"
+  description="This page is not in the public file."
   path="/404"
   noindex={true}
 >
-  <div class="wrap" style="max-width:720px;">
-    <header class="page-head" style="text-align:center;padding:6rem 0;">
-      <p class="kicker" style="justify-content:center;">404</p>
-      <h1 class="page-h1" style="margin-inline:auto;">This page isn’t on the record.</h1>
-      <p class="lede" style="margin-inline:auto;">
-        The address may have changed, or the profile you’re after may use a different spelling.
+  <PageHeader
+    file="ITC/404/GAP"
+    eyebrow="Missing file / stated plainly"
+    title="This page is not in the file."
+    lede="Unlike some record-keepers, we say so."
+    status="gap in record"
+    compact={true}
+  >
+    <span class="stamp red">Gap in record</span>
+  </PageHeader>
+
+  <section class="missing wrap" aria-labelledby="missing-title">
+    <div class="empty-folder" aria-hidden="true">
+      <span></span>
+      <i></i>
+    </div>
+    <div>
+      <p class="file-label">Recovery options</p>
+      <h2 id="missing-title">Try another drawer.</h2>
+      <p>
+        The address may have moved, or the record may not exist yet. Search the representative
+        file, inspect coverage, or report the missing thing.
       </p>
-      <div class="share-row" style="justify-content:center;margin-top:1.4rem;">
-        <a class="btn btn-primary" href="/politicians/">Search representatives</a>
-        <a class="btn" href="/">Toolkit home</a>
-        <a class="btn" href="/coverage/">Coverage</a>
+      <div class="share-row">
+        <a class="btn btn-primary" href="/politicians/">Search the record</a>
+        <a class="btn" href="/coverage/">Inspect coverage</a>
+        <a class="btn" href="/corrections/">Report a missing thing</a>
       </div>
-    </header>
-  </div>
+    </div>
+  </section>
 </Base>
+
+<style>
+  .missing {
+    display: grid;
+    grid-template-columns: minmax(260px, .7fr) minmax(300px, 1fr);
+    gap: clamp(2rem, 8vw, 7rem);
+    align-items: center;
+    padding-block: clamp(4rem, 9vw, 8rem);
+  }
+  .missing h2 { margin-top: .75rem; font-size: clamp(2.4rem, 5vw, 4.5rem); }
+  .missing p:not(.file-label) { max-width: 48ch; margin-top: 1rem; color: var(--muted); }
+  .missing .share-row { margin-top: 1.5rem; }
+  .empty-folder {
+    position: relative;
+    min-height: 310px;
+    border: 1px solid var(--line-strong);
+    background: color-mix(in srgb, var(--file-khaki) 22%, var(--surface));
+    box-shadow: 10px 10px 0 color-mix(in srgb, var(--ink) 9%, transparent);
+    transform: rotate(-1.5deg);
+  }
+  .empty-folder::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: -2rem;
+    width: 42%;
+    height: 2rem;
+    border: 1px solid var(--line-strong);
+    border-bottom: 0;
+    background: inherit;
+  }
+  .empty-folder span {
+    position: absolute;
+    inset: 2rem;
+    border: 1px dashed var(--line-strong);
+    opacity: .45;
+  }
+  .empty-folder i {
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    width: 2px;
+    height: 78%;
+    background: var(--seal-red);
+    transform: rotate(16deg);
+    transform-origin: bottom;
+  }
+  .empty-folder i::after {
+    content: "?";
+    position: absolute;
+    bottom: -1.7rem;
+    left: -1rem;
+    color: var(--seal-red);
+    font-family: var(--mono);
+    font-size: 2.2rem;
+  }
+  @media (max-width: 720px) {
+    .missing { grid-template-columns: 1fr; }
+    .empty-folder { min-height: 230px; }
+  }
+</style>

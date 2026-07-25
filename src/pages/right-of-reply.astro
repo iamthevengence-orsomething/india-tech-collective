@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
+
+const issueUrl =
+  'https://github.com/iamthevengence-orsomething/india-tech-collective/issues/new?title=' +
+  encodeURIComponent('Right of reply: [name / record]');
+---
+
+<Base
+  title="Right of reply — India Tech Collective"
+  description="A standing route for anyone named in the public record to submit a sourced reply."
+  path="/right-of-reply/"
+  current="corrections"
+>
+  <PageHeader
+    file="ITC/REPLY/OPEN"
+    eyebrow="Standing right of reply"
+    title="Named in the file? The reply line is open."
+    lede="A sourced reply can sit beside the record it addresses. Publication does not require agreement; it requires identity verification, relevance, and care with private information."
+    status="reply mechanism open"
+  >
+    <a class="btn btn-primary" href={issueUrl} rel="noopener">Start a reply request ↗</a>
+  </PageHeader>
+
+  <FileSection
+    index="01"
+    eyebrow="What to provide"
+    title="Enough to verify. Nothing extra."
+  >
+    <div class="docket-grid reply-grid">
+      <article><span>record</span><strong>Exact URL</strong><p>The page or declaration your reply addresses.</p></article>
+      <article><span>reply</span><strong>Plain statement</strong><p>The text you want linked beside that record.</p></article>
+      <article><span>support</span><strong>Authoritative source</strong><p>A court order, official filing, or other inspectable document where relevant.</p></article>
+    </div>
+  </FileSection>
+
+  <FileSection
+    index="02"
+    eyebrow="Publication rules"
+    title="The record and the reply remain distinct."
+  >
+    <div class="reply-rules">
+      <article><span>01</span><p>A reply is labelled as a reply. It does not silently rewrite the underlying declaration.</p></article>
+      <article><span>02</span><p>Private personal data is redacted before public processing.</p></article>
+      <article><span>03</span><p>Material factual corrections follow the corrections log and update the dataset version.</p></article>
+      <article><span>04</span><p>Where identity cannot be verified safely, maintainers work through an authorised representative.</p></article>
+    </div>
+  </FileSection>
+
+  <FileSection
+    index="03"
+    eyebrow="Correction or reply?"
+    title="Use the right drawer."
+  >
+    <div class="drawer-grid">
+      <a class="drawer" href="/corrections/">
+        <span class="drawer__no">A</span>
+        <p class="file-label">Correction</p>
+        <h3>A field is wrong.</h3>
+        <p>Request a sourced change to a value, date, status, or description.</p>
+        <small>open corrections →</small>
+      </a>
+      <a class="drawer" href={issueUrl}>
+        <span class="drawer__no">B</span>
+        <p class="file-label">Reply</p>
+        <h3>Context belongs beside it.</h3>
+        <p>Submit a statement that directly addresses a named record.</p>
+        <small>start reply ↗</small>
+      </a>
+      <a class="drawer" href="/methodology/">
+        <span class="drawer__no">C</span>
+        <p class="file-label">Method</p>
+        <h3>Understand the record.</h3>
+        <p>Inspect how declarations, stages, dates, and review states are represented.</p>
+        <small>read methodology →</small>
+      </a>
+    </div>
+  </FileSection>
+</Base>
+
+<style>
+  .reply-grid article { min-height: 190px; }
+  .reply-grid span { font-family: var(--mono); font-size: .55rem; color: var(--faint); text-transform: uppercase; }
+  .reply-grid strong { display: block; margin-top: 1.7rem; font-family: var(--mono); color: var(--stamp-violet); }
+  .reply-grid p { margin-top: .7rem; color: var(--muted); }
+  .reply-rules { display: grid; gap: 1px; border: 1px solid var(--line-strong); background: var(--line-strong); }
+  .reply-rules article { display: grid; grid-template-columns: 80px 1fr; gap: 1rem; padding: 1rem; background: var(--surface); }
+  .reply-rules span { font-family: var(--mono); color: var(--seal-red); }
+  .reply-rules p { max-width: 68ch; }
+</style>

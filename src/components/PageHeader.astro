@@ -1,0 +1,45 @@
+---
+interface Props {
+  file: string;
+  eyebrow: string;
+  title: string;
+  lede: string;
+  status?: string;
+  tone?: 'paper' | 'terminal';
+  compact?: boolean;
+}
+
+const {
+  file,
+  eyebrow,
+  title,
+  lede,
+  status = 'public / inspectable',
+  tone = 'paper',
+  compact = false,
+} = Astro.props;
+---
+
+<header class:list={['identity-head', `identity-head--${tone}`, { 'identity-head--compact': compact }]}>
+  <div class="identity-head__rail" aria-hidden="true">
+    <span>{file}</span>
+    <i></i>
+    <span>ITC</span>
+  </div>
+  <div class="identity-head__body">
+    <div class="identity-head__meta">
+      <p>{eyebrow}</p>
+      <span>{status}</span>
+    </div>
+    <h1>{title}</h1>
+    <p class="identity-head__lede">{lede}</p>
+    <div class="identity-head__slot">
+      <slot />
+    </div>
+  </div>
+  <div class="identity-head__seal" aria-hidden="true">
+    <span>OPEN</span>
+    <small>FILE</small>
+  </div>
+</header>
+

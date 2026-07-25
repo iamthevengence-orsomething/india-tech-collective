@@ -147,7 +147,7 @@ export default function PoliticiansDashboard() {
     );
   }
   if (!artifact) {
-    return <div className="empty-state" role="status" aria-live="polite">Loading 543 representative records…</div>;
+    return <div className="empty-state loading-state" role="status" aria-live="polite">Locating 543 representative records…</div>;
   }
 
   const rows = artifact.rows;

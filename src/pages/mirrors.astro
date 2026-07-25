@@ -1,59 +1,137 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
+
 const live = [
-  ['Canonical site', 'https://www.indiatechcollective.org', 'https://www.indiatechcollective.org'],
-  ['Source repository', 'github.com/iamthevengence-orsomething/india-tech-collective', 'https://github.com/iamthevengence-orsomething/india-tech-collective'],
-  ['Record downloads', '/downloads/', '/downloads/README.txt'],
+  ['Canonical site', 'www.indiatechcollective.org', 'https://www.indiatechcollective.org', 'verified location'],
+  ['Source repository', 'github.com/iamthevengence-orsomething/india-tech-collective', 'https://github.com/iamthevengence-orsomething/india-tech-collective', 'source + history'],
+  ['Record downloads', '/downloads/README.txt', '/downloads/README.txt', 'data package'],
 ];
-const gaps = ['IPFS release', 'Onion service', 'Kiwix ZIM'];
+const gaps = [
+  ['IPFS release', 'CID not yet published'],
+  ['Onion service', 'Address not yet published'],
+  ['Kiwix ZIM', 'Offline archive not yet published'],
+];
 ---
+
 <Base
   title="Mirrors — India Tech Collective"
   description="Available copies, downloads, and explicit gaps in the India Tech Collective distribution plan."
   path="/mirrors/"
 >
-  <header class="mirror-head wrap">
-    <p class="file-label">Distribution / mirrors</p>
-    <h1>This site is a file.</h1>
-    <p>Files are for copying. Only verified locations are listed as live.</p>
-  </header>
+  <PageHeader
+    file="ITC/DISTRIBUTION/001"
+    eyebrow="Mirrors / copies / downloads"
+    title="This site is a file."
+    lede="Files are for copying. Only verified locations are marked live; the rest remain visible as gaps."
+    status="canonical online"
+  >
+    <span class="stamp">Copy permitted</span>
+  </PageHeader>
 
-  <section class="mirror-list wrap" aria-label="Verified locations">
-    <p class="file-label">Available now</p>
-    {live.map(([label, text, href]) => (
-      <a href={href} class="mirror-row">
-        <span>{label}</span>
-        <strong>{text}</strong>
-        <i>verified ↗</i>
-      </a>
-    ))}
-  </section>
+  <FileSection
+    index="01"
+    eyebrow="Available now"
+    title="Verified locations."
+    description="Each row names what exists today. No placeholder address is presented as a mirror."
+  >
+    <div class="mirror-register">
+      {live.map(([label, address, href, type], index) => (
+        <a href={href} class="mirror-row">
+          <span class="mirror-row__index">{String(index + 1).padStart(2, '0')}</span>
+          <span class="mirror-row__label">{label}</span>
+          <strong>{address}</strong>
+          <small>{type} ↗</small>
+        </a>
+      ))}
+    </div>
+  </FileSection>
 
-  <section class="mirror-list gaps wrap" aria-label="Distribution gaps">
-    <p class="file-label">Not yet published</p>
-    {gaps.map((label) => (
-      <div class="mirror-row">
-        <span>{label}</span>
-        <strong>Address not in the file.</strong>
-        <i>gap</i>
-      </div>
-    ))}
-  </section>
+  <FileSection
+    index="02"
+    eyebrow="Distribution gaps"
+    title="Not in the file yet."
+    description="An absent mirror is a gap to close, not a reason to invent an address."
+  >
+    <div class="gap-register">
+      {gaps.map(([label, note]) => (
+        <article>
+          <span class="stamp red">Gap in record</span>
+          <h3>{label}</h3>
+          <p>{note}.</p>
+          <a href="/contribute/">Help publish this copy →</a>
+        </article>
+      ))}
+    </div>
+  </FileSection>
+
+  <FileSection
+    index="03"
+    eyebrow="Portable records"
+    title="Take the data."
+    description="Downloads include their provenance and licence notes."
+  >
+    <div class="download-strip">
+      <a href="/downloads/representatives-ls2024.csv" download><span>CSV</span><strong>Lok Sabha representative records</strong><small>download</small></a>
+      <a href="/downloads/representatives-ls2024.json" download><span>JSON</span><strong>Lok Sabha representative records</strong><small>download</small></a>
+      <a href="/downloads/state-enforcement-2023.csv" download><span>CSV</span><strong>State enforcement records</strong><small>download</small></a>
+    </div>
+  </FileSection>
 </Base>
 
 <style>
-  .mirror-head { padding-block: clamp(4rem, 10vw, 8rem); }
-  .mirror-head h1 { margin-top: 1rem; font-size: clamp(3.6rem, 9vw, 7rem); letter-spacing: -0.055em; line-height: 0.86; max-width: 8ch; }
-  .mirror-head > p:last-child { margin-top: 1.5rem; color: var(--muted); }
-  .mirror-list { margin-bottom: 4rem; }
-  .mirror-list > .file-label { margin-bottom: 0.7rem; }
-  .mirror-row { display: grid; grid-template-columns: 180px 1fr auto; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line); color: inherit; text-decoration: none; }
-  .mirror-row:last-child { border-bottom: 1px solid var(--line); }
-  .mirror-row span, .mirror-row i { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.05em; color: var(--muted); font-style: normal; }
-  .mirror-row strong { font-family: var(--mono); font-size: 0.75rem; font-weight: 500; overflow-wrap: anywhere; }
-  .mirror-row i { color: var(--stamp-violet); }
-  .mirror-list a:hover strong { color: var(--stamp-violet); }
-  .gaps .mirror-row { opacity: 0.66; }
-  .gaps .mirror-row i { color: var(--seal-red); text-transform: uppercase; }
-  @media (max-width: 680px) { .mirror-row { grid-template-columns: 1fr auto; } .mirror-row strong { grid-column: 1 / -1; grid-row: 2; } }
+  .mirror-register { border: 1px solid var(--line-strong); box-shadow: var(--shadow-file); }
+  .mirror-row {
+    display: grid;
+    grid-template-columns: 50px 180px minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    min-height: 68px;
+    padding: .85rem 1rem;
+    border-bottom: 1px dotted var(--line-strong);
+    background: var(--surface);
+    color: inherit;
+    text-decoration: none;
+  }
+  .mirror-row:last-child { border-bottom: 0; }
+  .mirror-row:hover { background: color-mix(in srgb, var(--stamp-violet) 7%, var(--surface)); }
+  .mirror-row__index, .mirror-row__label, .mirror-row small {
+    font-family: var(--mono);
+    font-size: .58rem;
+    letter-spacing: .06em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .mirror-row__index { color: var(--seal-red); }
+  .mirror-row strong { overflow-wrap: anywhere; font-family: var(--mono); font-size: .72rem; font-weight: 500; }
+  .mirror-row small { color: var(--stamp-violet); }
+  .gap-register { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .gap-register article {
+    min-height: 240px;
+    padding: 1.3rem;
+    border: 1px dashed var(--line-strong);
+    background: var(--surface);
+  }
+  .gap-register h3 { margin-top: 2.2rem; font-size: 1.5rem; }
+  .gap-register p { margin-top: .6rem; color: var(--muted); }
+  .gap-register a { display: inline-block; margin-top: 1.2rem; color: var(--stamp-violet); font-family: var(--mono); font-size: .62rem; }
+  .download-strip { display: grid; gap: 1px; border: 1px solid var(--line-strong); background: var(--line-strong); }
+  .download-strip a {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--surface);
+    color: inherit;
+    text-decoration: none;
+  }
+  .download-strip span, .download-strip small { font-family: var(--mono); font-size: .6rem; color: var(--stamp-violet); text-transform: uppercase; }
+  .download-strip strong { font-weight: 500; }
+  @media (max-width: 760px) {
+    .mirror-row { grid-template-columns: 40px 1fr; }
+    .mirror-row strong { grid-column: 2; }
+    .mirror-row small { grid-column: 2; }
+    .gap-register { grid-template-columns: 1fr; }
+  }
 </style>

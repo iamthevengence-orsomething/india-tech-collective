@@ -18,6 +18,11 @@ const noindexSlugs = new Set(
 export default defineConfig({
   site: 'https://www.indiatechcollective.org',
   trailingSlash: 'ignore',
+  redirects: {
+    '/tools': '/toolkit/',
+    '/record': '/politicians/',
+    '/record/find': '/politicians/',
+  },
   integrations: [
     react(),
     sitemap({

@@ -1,93 +1,180 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FileSection from '../components/FileSection.astro';
+
 const needs = [
-  ['Data', 'Verify constituency and affidavit records.'],
-  ['Design', 'Refine stamps, print layouts, and small-screen states.'],
-  ['Engineering', 'Improve offline delivery, search, and accessibility.'],
-  ['Language', 'Translate field guidance without losing precision.'],
-  ['Research', 'Trace every claim to its primary record.'],
+  ['01', 'Data', 'Verify constituency mappings and affidavit records.'],
+  ['02', 'Design', 'Refine stamps, print files, and small-screen states.'],
+  ['03', 'Engineering', 'Improve offline delivery, search, and accessibility.'],
+  ['04', 'Language', 'Translate field guidance without losing precision.'],
+  ['05', 'Research', 'Trace every claim to its primary record.'],
 ];
+const repo = 'https://github.com/iamthevengence-orsomething/india-tech-collective';
 ---
+
 <Base
   title="Contribute — India Tech Collective"
   description="Contribute code, verification, translation, design, or documentation to the public civic-tech record."
   path="/contribute/"
   current="contribute"
 >
-  <header class="rolls-head wrap-wide">
-    <div>
-      <p class="file-label">The rolls / contributors</p>
-      <h1>We take commits.</h1>
-      <p>Small, reviewable work is welcome. The issue tracker is the front door.</p>
-    </div>
-    <a class="repo-ticket" href="https://github.com/iamthevengence-orsomething/india-tech-collective" rel="noopener">
-      <span>Repository</span>
-      <strong>india-tech-collective</strong>
-      <small>Open on GitHub ↗</small>
-    </a>
-  </header>
+  <PageHeader
+    file="ITC/ROLLS/OPEN"
+    eyebrow="The rolls / contributors"
+    title="We take commits."
+    lede="Small, reviewable work is welcome. Stars are accepted as a gateway commit."
+    status="issue tracker open"
+  >
+    <a class="btn btn-primary" href={repo} rel="noopener">Open the repository ↗</a>
+  </PageHeader>
 
-  <section class="needs wrap-wide" aria-labelledby="needs-title">
-    <p class="file-label">What the file needs now</p>
-    <h2 id="needs-title">Choose a lane.</h2>
+  <FileSection
+    index="01"
+    eyebrow="What the file needs"
+    title="Choose a lane."
+    description="The useful unit is a merged improvement, not a pledge."
+    wide={true}
+  >
     <div class="need-grid">
-      {needs.map(([name, copy], index) => (
-        <a class="need-card" href="https://github.com/iamthevengence-orsomething/india-tech-collective/issues" rel="noopener">
-          <span>{String(index + 1).padStart(2, '0')}</span>
+      {needs.map(([index, name, copy]) => (
+        <a class="need-card" href={`${repo}/issues`} rel="noopener">
+          <span>{index}</span>
           <h3>{name}</h3>
           <p>{copy}</p>
-          <small>View issues ↗</small>
+          <small>inspect issues ↗</small>
         </a>
       ))}
     </div>
-  </section>
+  </FileSection>
 
-  <section class="risk wrap">
-    <p class="file-label">Contributor safety</p>
-    <h2>Use the name that keeps you safe.</h2>
-    <div>
-      <article>
-        <h3>Public</h3>
-        <p>Contribute through your usual GitHub identity.</p>
+  <FileSection
+    index="02"
+    eyebrow="Contributor safety"
+    title="Use the name that keeps you safe."
+    description="Identity is not a leaderboard. Work can be public without making every contributor public."
+  >
+    <div class="drawer-grid">
+      <article class="drawer">
+        <span class="drawer__no">A</span>
+        <p class="file-label">Public</p>
+        <h3>Your usual identity.</h3>
+        <p>Contribute through the account and commit metadata you already use.</p>
+        <small>lowest setup</small>
       </article>
-      <article>
-        <h3>Pseudonymous</h3>
-        <p>Use a separate account and remove personal metadata from commits.</p>
+      <article class="drawer">
+        <span class="drawer__no">B</span>
+        <p class="file-label">Pseudonymous</p>
+        <h3>Separate the file.</h3>
+        <p>Use a fresh account and remove personal metadata from commits and issue content.</p>
+        <small>privacy-first</small>
       </article>
-      <article>
-        <h3>No code</h3>
-        <p>Report a correction, check a source, or improve documentation.</p>
+      <article class="drawer">
+        <span class="drawer__no">C</span>
+        <p class="file-label">No code</p>
+        <h3>Check the work.</h3>
+        <p>Report a correction, trace a source, test a translation, or improve documentation.</p>
+        <small>no repository setup</small>
       </article>
     </div>
-  </section>
+  </FileSection>
+
+  <FileSection
+    index="03"
+    eyebrow="The stamp wall"
+    title="Contribution leaves a mark."
+    description="The role matters more than the handle. These are the marks the project is recruiting for now."
+  >
+    <div class="stamp-wall" aria-label="Open contribution roles">
+      {needs.map(([, name]) => <span class="stamp">{name} / roll open</span>)}
+      <span class="stamp red">Source attached</span>
+      <span class="stamp">Reviewed in public</span>
+    </div>
+  </FileSection>
+
+  <FileSection
+    index="04"
+    eyebrow="Repository badge"
+    title="Keep it in the README."
+    description="A small signal for projects that publish their methods and correction path."
+  >
+    <div class="badge-file">
+      <span class="public-badge">KEPT IN PUBLIC · ITC</span>
+      <code>[Kept in public](https://www.indiatechcollective.org/contribute/)</code>
+      <a class="btn" href={repo} rel="noopener">Start with one issue ↗</a>
+    </div>
+  </FileSection>
 </Base>
 
 <style>
-  .rolls-head { display: grid; grid-template-columns: 1fr minmax(280px, 0.45fr); gap: 3rem; align-items: end; padding-block: clamp(4rem, 10vw, 9rem); }
-  .rolls-head h1 { margin-top: 1rem; font-size: clamp(4rem, 10vw, 8rem); letter-spacing: -0.06em; line-height: 0.82; }
-  .rolls-head > div > p:last-child { margin-top: 1.5rem; color: var(--muted); font-size: 1.2rem; }
-  .repo-ticket { display: grid; padding: 1.4rem; border: 1px solid var(--line-strong); background: var(--paper-2); color: inherit; text-decoration: none; box-shadow: 6px 6px 0 rgba(75, 58, 143, 0.12); }
-  .repo-ticket span, .repo-ticket small { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-  .repo-ticket strong { margin-block: 1.8rem; overflow-wrap: anywhere; font-family: var(--mono); font-size: 1.05rem; color: var(--stamp-violet); }
-  .needs { padding-block: 1rem 6rem; }
-  .needs h2, .risk h2 { margin-top: 0.6rem; font-size: clamp(2.2rem, 5vw, 4rem); }
-  .need-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin-top: 2rem; background: var(--line-strong); border: 1px solid var(--line-strong); }
-  .need-card { min-height: 300px; display: flex; flex-direction: column; padding: 1.2rem; background: var(--surface); color: inherit; text-decoration: none; transition: background 120ms, color 120ms; }
-  .need-card:hover { background: var(--stamp-violet-dark); color: #f4edde; }
+  .need-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    border: 1px solid var(--line-strong);
+    background: var(--line-strong);
+  }
+  .need-card {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    background: var(--surface);
+    color: inherit;
+    text-decoration: none;
+    transition: background var(--ease-snap), color var(--ease-snap);
+  }
+  .need-card:hover { background: var(--ink); color: var(--paper); }
   .need-card > span { font-family: var(--mono); color: var(--seal-red); }
   .need-card h3 { margin-top: 3rem; font-size: 1.6rem; color: inherit; }
-  .need-card p { margin-top: 0.8rem; color: var(--muted); }
-  .need-card:hover p { color: rgba(244, 237, 222, 0.75); }
-  .need-card small { margin-top: auto; font-family: var(--mono); font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  .risk { padding-block: 5rem 8rem; border-top: 1px solid var(--line-strong); }
-  .risk > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-  .risk article { border-top: 2px solid var(--stamp-violet); padding-top: 1rem; }
-  .risk h3 { font-size: 1.5rem; }
-  .risk article p { margin-top: 0.65rem; color: var(--muted); }
-  @media (max-width: 960px) { .need-grid { grid-template-columns: repeat(2, 1fr); } }
+  .need-card p { margin-top: .8rem; color: var(--muted); }
+  .need-card:hover p { color: color-mix(in srgb, var(--paper) 72%, transparent); }
+  .need-card small {
+    margin-top: auto;
+    font-family: var(--mono);
+    font-size: .58rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .stamp-wall {
+    min-height: 330px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 1.3rem;
+    padding: 2rem;
+    border: 1px solid var(--line-strong);
+    background:
+      radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--stamp-violet) 8%, transparent), transparent 55%),
+      var(--surface);
+    box-shadow: var(--shadow-file);
+  }
+  .stamp-wall .stamp:nth-child(2n) { transform: rotate(2deg); }
+  .stamp-wall .stamp:nth-child(3n) { transform: rotate(-3deg); }
+  .badge-file {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.2rem;
+    align-items: center;
+    padding: 1.4rem;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    box-shadow: var(--shadow-file);
+  }
+  .public-badge {
+    padding: .45rem .7rem;
+    background: var(--stamp-violet-dark);
+    color: var(--ledger);
+    font-family: var(--mono);
+    font-size: .58rem;
+    letter-spacing: .08em;
+  }
+  .badge-file code { overflow-wrap: anywhere; font-family: var(--mono); font-size: .7rem; }
+  @media (max-width: 980px) { .need-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 680px) {
-    .rolls-head { grid-template-columns: 1fr; }
-    .need-grid, .risk > div { grid-template-columns: 1fr; }
+    .need-grid { grid-template-columns: 1fr; }
     .need-card { min-height: 220px; }
+    .badge-file { grid-template-columns: 1fr; }
   }
 </style>

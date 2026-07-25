@@ -67,7 +67,7 @@ export default function EnforcementLens() {
       </div>
     );
   }
-  if (!artifact) return <div className="empty-state" role="status">Loading NCRB tables…</div>;
+  if (!artifact) return <div className="empty-state loading-state" role="status">Locating NCRB tables…</div>;
 
   const def = artifact.metricDefs.find((d) => d.metricId === metricId)!;
   const isRate = def.unit === 'percent';

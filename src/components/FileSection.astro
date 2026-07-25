@@ -1,0 +1,28 @@
+---
+interface Props {
+  index: string;
+  eyebrow: string;
+  title: string;
+  description?: string;
+  id?: string;
+  wide?: boolean;
+  ruled?: boolean;
+}
+
+const { index, eyebrow, title, description, id, wide = false, ruled = true } = Astro.props;
+---
+
+<section id={id} class:list={['file-section', { 'file-section--wide': wide, 'file-section--ruled': ruled }]}>
+  <header class="file-section__head">
+    <div class="file-section__index" aria-hidden="true">{index}</div>
+    <div>
+      <p class="file-label">{eyebrow}</p>
+      <h2>{title}</h2>
+      {description && <p>{description}</p>}
+    </div>
+  </header>
+  <div class="file-section__body">
+    <slot />
+  </div>
+</section>
+

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import CoverageBanner from '../../components/CoverageBanner.astro';
 import TrendCohorts from '../../components/TrendCohorts.astro';
 import PoliticiansDashboard from '../../components/islands/PoliticiansDashboard.tsx';
@@ -27,16 +28,21 @@ const ls = coverage.rows.find((r: any) => r.houseType === 'lok_sabha');
   current="politicians"
   ogImage="/og/politicians.png"
 >
-  <header class="page-head wrap">
-    <p class="kicker">Part II · Politician Cases — declared on oath</p>
-    <h1 class="page-h1">Cases declared by elected representatives</h1>
-    <p class="lede">
-      Before every election, candidates must disclose their criminal cases in a sworn affidavit
-      (<a href="/methodology/">Form 26</a>) filed with the Election Commission. This dashboard makes those
-      disclosures searchable for the winners of the 2024 Lok Sabha election. <strong>A declared case is an
-      accusation at a stated procedural stage — not a conviction.</strong> Every person is presumed innocent
-      unless a court convicts them.
-    </p>
+  <PageHeader
+    file="ITC/RECORD/LS-2024"
+    eyebrow="Sworn affidavits / 18th Lok Sabha"
+    title="One file for every representative."
+    lede="Search the 2024 Lok Sabha winners by name, constituency, state, or party. The record republishes sworn declarations; it does not decide guilt."
+    status={`${formatInt(covered?.value)} records indexed`}
+  >
+    <div class="record-stamps">
+      <span class="stamp">Sworn on oath</span>
+      <span class="stamp red">Accusation ≠ conviction</span>
+      <a class="btn" href="/methodology/">How the file is made</a>
+    </div>
+  </PageHeader>
+
+  <section class="record-overview wrap-wide" aria-label="Record coverage and headline counts">
     <div style="margin-top:1.2rem;">
       <CoverageBanner
         covered={ls.summaryRecords}
@@ -81,7 +87,7 @@ const ls = coverage.rows.find((r: any) => r.houseType === 'lok_sabha');
       joined to official OGD results (GODL). Records are machine-checked against the report's own printed totals;
       none are human-verified yet — see the <a href="/coverage/">coverage page</a>.
     </p>
-  </header>
+  </section>
 
   <div class="wrap">
     <PoliticiansDashboard client:load />
@@ -92,3 +98,19 @@ const ls = coverage.rows.find((r: any) => r.houseType === 'lok_sabha');
     </section>
   </div>
 </Base>
+
+<style>
+  .record-stamps { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
+  .record-overview {
+    padding-block: clamp(2.5rem, 5vw, 4.5rem);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .record-overview .kpi-row { margin-top: 1rem; grid-template-columns: repeat(5, 1fr); }
+  .record-overview .metric-caption { margin-top: 1rem; }
+  @media (max-width: 900px) {
+    .record-overview .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .record-overview .kpi-row { grid-template-columns: 1fr; }
+  }
+</style>

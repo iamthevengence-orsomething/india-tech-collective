@@ -35,14 +35,22 @@ const desc = `${p.name} (${p.partyShort}), ${p.constituency}, ${p.stateName} —
   noindex={noindex}
 >
   <div class="wrap" style="max-width:880px;">
-    <header class="page-head" style="padding-bottom:0.6rem;">
-      <p class="kicker">{p.constituency} · {p.stateName} · Lok Sabha</p>
-      <h1 class="page-h1" style="max-width:none;">{p.name}</h1>
-      <p class="lede">
+    <header class="profile-file">
+      <div class="profile-file__topline">
+        <span>Lok Sabha · {p.constituency} · {p.stateName}</span>
+        <span>ITC/LS24/{p.slug}</span>
+      </div>
+      <h1 class="profile-file__name">{p.name}</h1>
+      <p class="profile-file__sub">
         <strong>{p.party}</strong> ({p.partyShort}) — party at the {election.year} election.
         Won {p.constituency} in the {election.termLabel.replace(' (2024–)', '')} general election.
       </p>
-      <div class="filter-bar" style="margin-top:0.8rem;">
+      <div class="profile-file__stamps">
+        <span class="stamp">Sworn on oath</span>
+        <span class="stamp red">Accusation ≠ conviction</span>
+        <span class="stamp neutral">Right of reply open</span>
+      </div>
+      <div class="filter-bar">
         <span class="chip">Status: winner at election, as of {formatDate(p.statusAsOf)}</span>
         <ReviewChip status={p.reviewStatus} />
         {p.age !== null && <span class="chip">Age at election: {p.age}</span>}
